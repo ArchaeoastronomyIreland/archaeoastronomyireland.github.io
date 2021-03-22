@@ -84,7 +84,7 @@ var Newspaperlayer = L.esri.Vector.basemap('Newspaper')
 
 var cartoLight = L.tileLayer(
   "https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png", {
-    maxZoom: 19,
+    maxZoom: 28,
     useCache: true,
 	crossOrigin: true,
 	attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="https://cartodb.com/attributions">CartoDB</a>'
@@ -93,11 +93,12 @@ var cartoLight = L.tileLayer(
   
 var Esri_WorldImagery = L.tileLayer(
   'http://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
-    attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
+    maxZoom: 28,
+	attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
   });
   
 var googleSat = L.tileLayer('http://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}',{
-        maxZoom: 20,
+        maxZoom: 28,
         subdomains:['mt0','mt1','mt2','mt3']
 		});
   
@@ -148,17 +149,42 @@ var baseLayers = {
 
 
 
-
-
+var ImageOverlayJpg = L.layerGroup();
+var ImageOverlaySvg = L.layerGroup();
+var ImageOverlayPng = L.layerGroup();
 
 
 // Create the map
+
+
+
+
 var map = L.map('map', { // div id holding map
     layers: [Newspaperlayer], // default map
     worldCopyJump: true, // move markers if scrolling horizontally across new map
     minZoom: 1, // minimum zoom level, skip level 0
     zoomControl: true // don't show zoom buttons, we're using zoomslider instead
 }).setView([startLat, startLng], 7); // center map at starting position, zoom level 3
+
+
+        jpgimg = L.distortableImageOverlay('assets/imageoverlayjs/files/overlay.jpg', {
+          mode: 'freeRotate',
+		  selected: true,
+          fullResolutionSrc: 'assets/imageoverlayjs/files/overlay.jpg',
+        }).addTo(ImageOverlayJpg);
+		
+		svgimg = L.distortableImageOverlay('assets/imageoverlayjs/files/overlay.svg', {
+          mode: 'freeRotate',
+		  selected: true,
+          fullResolutionSrc: 'assets/imageoverlayjs/files/overlay.svg',
+        }).addTo(ImageOverlaySvg);
+		
+		pngimg = L.distortableImageOverlay('assets/imageoverlayjs/files/overlay.png', {
+          mode: 'freeRotate',
+		  selected: true,
+          fullResolutionSrc: 'assets/imageoverlayjs/files/overlay.png',
+        }).addTo(ImageOverlayPng);
+      
 
 //map.addControl(new L.Control.Zoomslider());
 
@@ -273,6 +299,9 @@ var overlayMaps = {
     "National Monuments": source.getLayer("2"),
 	"Measurements": orthodrome,
 	"Lat Lon Graticule ": latlngGraticule,
+	"ImageOverlayJpg ": ImageOverlayJpg,
+	"ImageOverlaySvg ": ImageOverlaySvg,
+	"ImageOverlayPng ": ImageOverlayPng,
 	
 
 };

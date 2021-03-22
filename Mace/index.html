@@ -9,15 +9,25 @@
       <meta name="theme-color" content="#000000">
       <meta name="description" content="Map based Archaeoastronomic Calculation and Exploration.">
       <title>MACE</title>
-      <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js"
-         integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw=="
-         crossorigin=""></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
-      <link rel="icon" type="image/x-icon" href="assets/css/jquery-ui.css">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin="anonymous"></script>
+	  
+	  <script src="assets/js/vendor.js"></script>
+      <script src="assets/js/leaflet.distortableimage.js"></script>
+      
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js" integrity="sha512-n/4gHW3atM3QqRcbCn6ewmpxcLAHGaDjpEBu4xZd47N0W2oQ+6q7oc3PXstrJYXcbNU1OHdQ1T7pAP+gi5Yu8g==" crossorigin="anonymous"></script>
+      
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" integrity="sha512-uto9mlQzrs59VwILcLiRYeLKPPbS/bT71da/OEBYEwcdNUk8jYIy+D176RYoop1Da+f9mvkYrmj5MCLZWEtQuA==" crossorigin="anonymous"></script>
+	  
+	  
+	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" integrity="sha512-aOG0c6nPNzGk+5zjwyJaoRUgCdOrfSDhmMID2u4+OIslr0GjpLKo7Xm0Ao3xmpM4T8AmIouRkqwj1nrdVsLKEQ==" crossorigin="anonymous" />
+	  
 	  <link rel="stylesheet" href="https://unpkg.com/mapbox-gl@1.13.0/dist/mapbox-gl.css"/>
-      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-      <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-      <link rel="stylesheet" href="assets/css/lobipanel.min.css"/>
+      
+	  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+      
+	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.css" integrity="sha512-++bHK0UNrNHW3LVNLzgTm2G7uOH6Kd+Ved0sskOL0+TY7pr5AcWQgR19kdjAhyyiQRDjFwXubDGqTvjnS09HNA==" crossorigin="anonymous" />
+      
+	  <link rel="stylesheet" href="assets/css/lobipanel.min.css"/>
       <link rel="stylesheet" href="assets/css/Control.Coordinates.css" />
       <link rel="stylesheet" href="assets/css/MarkerCluster.css">
       <link rel="stylesheet" href="assets/css/MarkerCluster.Default.css">
@@ -26,12 +36,15 @@
       <link rel="stylesheet" href="assets/css/app.css">
       <link rel="stylesheet" href="assets/css/Leaflet.PolylineMeasure.css">
       <link rel="stylesheet" href="assets/css/L.Control.Zoomslider.css">
-      <link rel="stylesheet" href="assets/css/leaflet.css">
-      <link rel="stylesheet" href="assets/css/L.Control.HtmlLegend.css" />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="anonymous" />
+      
+	  <link rel="stylesheet" href="assets/css/vendor.css">
+      <link rel="stylesheet" href="assets/css/leaflet.distortableimage.css" media="screen" title="no title">
+	  
+	  <link rel="stylesheet" href="assets/css/L.Control.HtmlLegend.css" />
       <link rel="stylesheet" href="assets/css/leaflet.fullscreen.css" />
       <link rel="stylesheet" href="assets/css/scrollbar.css" />
-      <link rel="stylesheet" href="assets/css/leaflet.magnifyingglass.css" />
-      <link rel="stylesheet" href="assets/css/Control.MagnifyingGlass.css" />
+      
       <link rel="stylesheet" href="assets/css/L.Control.ZoomBox.css" />
       <link rel="stylesheet" href="assets/css/Control.MiniMap.css" />
       <link rel="stylesheet" href="assets/css/printsettings.css" />
@@ -40,7 +53,29 @@
       <link rel="stylesheet" href="assets/css/jquery.treegrid.css" />
       <link rel="stylesheet" href="assets/css/material-switch.css" />
       <link rel="stylesheet" href="assets/css/titatoggle-dist.css" />
-      <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png">
+      <link href='https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.css' rel='stylesheet' />
+	  
+	  
+	  <!-- Image Upload Custom styles -->
+     <link href="assets/imageoverlaycss/jquery.dm-uploader.min.css" rel="stylesheet">
+     <link href="assets/imageoverlaycss/styles.css" rel="stylesheet">
+	  
+	 <style>
+.padding {
+  
+  
+  padding-right: 50px;
+  padding-bottom: 25px;
+  padding-left: 50px;
+}
+</style> 
+	  
+	  
+	  
+	  
+	  
+	  
+	  <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png">
       <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
       <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png">
       <link rel="mask-icon" href="assets/img/safari-pinned-tab.svg" color="#5bbad5">
@@ -56,8 +91,8 @@
          border-radius: 0px;
          }
          .navbar-default {
-         background-color: #c51162;
-         border-color: #c51162;
+         background-color: #4a148c;
+         border-color: #4a148c;
          }
          .navbar-default .navbar-brand {
          color: #fafafa;
@@ -385,6 +420,7 @@
                <li><a href="#context" role="tab" data-toggle="tooltip" data-placement="right" data-container="body" title="View Azimuths"><i class="fa fa-list"></i></a></li>
                <li><a href="#methodology" role="tab" data-toggle="tooltip" data-placement="right" data-container="body" title="Output Table"><i class="fa fa-table"></i></a></li>
                <li><a href="#analysis" role="tab" data-toggle="tooltip" data-placement="right" data-container="body" title="Save Output"><i class="fa fa-save"></i></a></li>
+			   <li><a href="#image" role="tab" data-toggle="tooltip" data-placement="right" data-container="body" title="Image Overlay"><i class="fa fa-image"></i></a></li>
             </ul>
             <ul role="tablist">
                <li><a href="#settings" role="tab" data-toggle="tooltip" data-placement="right" data-container="body" title="About MACE"><i class="fa fa-info"></i></a></li>
@@ -1582,6 +1618,77 @@
                   </div>
                </div>
             </div>
+			
+			
+			<!-- Tab panes - Image Overlay -->
+         <div class="leaflet-sidebar-pane" id="image">
+		<h1 class="leaflet-sidebar-header">Image Upload
+		<span class="leaflet-sidebar-close">
+			<i class="fa fa-chevron-left"></i>
+		</span>
+		</h1>
+		<div>
+		<div class="poibar-table">
+			<div class="rightpadding">
+				<div class="row">
+					<div class="padding">
+					
+<div><p>JPG, PNG and SVG file types supported</p></div>
+<div><p>Files MUST be named overlay.xxx (e.g. overlay.jpg)</p></div>
+<div><p>A single instance of each file type can be overlain simultaneously</p></div>					
+					
+<!-- Our markup, the important part here! -->
+<div id="drag-and-drop-zone" class="dm-uploader padding">
+	<h3 class="text-muted">Drag &amp; drop files here</h3>
+	<div class="btn btn-primary">
+		<span>File Browser</span>
+		<input type="file" title='Click to add Files' />
+	</div>
+</div>
+<!-- /uploader --></div><div class="padding">
+<div class="panel panel-success">
+	<div class="panel-heading">File List</div>
+	<div class="panel-body center-block">
+		<ul class="list-unstyled" id="files">
+			<li class="text-muted">No files uploaded.</li>
+		</ul>
+	</div>
+</div>					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
             <div class="leaflet-sidebar-pane" id="settings">
                <h1 class="leaflet-sidebar-header">About Mace<span class="leaflet-sidebar-close"><i class="fa fa-chevron-left"></i></span></h1>
                <div>
@@ -1738,59 +1845,154 @@
       <!-- /.modal -->
 	  
 	  
+	  <!-- File item template -->
+    <script type="text/html" id="files-template">
+      <li class="media">
+        <div class="media-body mb-1">
+          <p class="mb-2">
+            <strong>%%filename%%</strong> - Status: <span class="text-muted">Waiting</span>
+          </p>
+          <div class="progress">
+            <div class="progress-bar progress-bar-striped progress-bar-animated bg-primary" 
+              role="progressbar"
+              style="width: 0%" 
+              aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+            </div>
+          </div>
+          <hr class="mt-1 mb-1" />
+        </div>
+      </li>
+    </script>
+	
+	<!-- Debug item template -->
+    <script type="text/html" id="debug-template">
+      <li class="list-group-item text-%%color%%"><strong>%%date%%</strong>: %%message%%</li>
+    </script>
 	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+
 	  
       <form name="convert1" id="convert1">
          <input type="hidden" checked = "true" name="deg-format" id="deg-format-d" value="d" >
          <input type="hidden" name="deg-format" id="deg-format-dm" value="dm">
          <input type="hidden" name="deg-format" id="deg-format-dms" value="dms">
+		 <input type="file" class="ldi" id="inputimage" accept="image/*" />
       </form>
-      <script src="assets/js/jquery-2.1.4.min.js"></script> 
-      <script src="assets/js/jquery-ui.min.js"></script> 
+      
       <script src="assets/js/jquery.ui.touch-punch.min.js"></script> 
-      <script src="assets/js/bootstrap.min.js"></script> 
-      <script src="https://unpkg.com/esri-leaflet@2.5.0/dist/esri-leaflet.js"
+     
+	 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script> 
+      
+	  <script src="https://unpkg.com/esri-leaflet@2.5.0/dist/esri-leaflet.js"
     integrity="sha512-ucw7Grpc+iEQZa711gcjgMBnmd9qju1CICsRaryvX7HJklK0pGl/prxKvtHwpgm5ZHdvAil7YPxI1oWPOWK3UQ=="
     crossorigin=""></script>
+	  
 	  <script src="https://cdn.jsdelivr.net/npm/leaflet-bing-layer@3.3.1/leaflet-bing-layer.min.js"></script>
+	  
 	  <script src="https://unpkg.com/mapbox-gl@1.13.0/dist/mapbox-gl.js"></script>
       <!--<script src="https://unpkg.com/esri-leaflet-vector/dist/esri-leaflet-vector.js"></script>-->
+	  
 	  <script src="https://unpkg.com/esri-leaflet-vector@2.0.2/dist/esri-leaflet-vector.js"></script>
+	  
 	  <script src="assets/js/lobipanel.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/leaflet.wms@0.2.0/dist/leaflet.wms.min.js"></script>	  
-      <script src="assets/js/leaflet.groupedlayercontrol.js"></script> 
-      <script src="assets/js/tangram.min.js"></script> 
-      <script src="assets/js/leaflet-touch-helper.js"></script> 
-      <script src="assets/js/Control.Coordinates.js"></script> 
-      <script src="assets/js/Leaflet.PolylineMeasure.js"></script> 
-      <script src="assets/js/L.Control.HtmlLegend.js"></script> 
-      <script src="assets/js/Leaflet.fullscreen.js"></script> 
-      <script src="assets/js/leaflet-bing-layer.js"></script>
-      <script src="assets/js/omphalopsychicsingle.js"></script>
-      <script src="assets/js/layercontrol.js"></script> 
-      <script src="assets/js/leaflet-sidebar.js"></script> 
-      <script src="assets/js/js.cookie.min.js"></script>
-      <script src="assets/js/latlon-spherical.js"></script>
-      <script src="assets/js/leaflet.latlng-graticule.js"></script>
+      
+	  <script src="https://cdn.jsdelivr.net/npm/leaflet.wms@0.2.0/dist/leaflet.wms.min.js"></script>	  
+      
+	  <script src="assets/js/leaflet.groupedlayercontrol.js"></script> 
+      
+	  <script src="assets/js/tangram.min.js"></script> 
+      
+	  <script src="assets/js/leaflet-touch-helper.js"></script> 
+      
+	  <script src="assets/js/Control.Coordinates.js"></script> 
+      
+	  <script src="assets/js/Leaflet.PolylineMeasure.js"></script> 
+      
+	  <script src="assets/js/L.Control.HtmlLegend.js"></script> 
+      
+	  <script src="assets/js/Leaflet.fullscreen.js"></script> 
+      
+	  <script src="assets/js/leaflet-bing-layer.js"></script>
+      
+	  <script src="assets/js/omphalopsychicsingle.js"></script>
+      
+	  <script src="assets/js/layercontrol.js"></script> 
+      
+	  <script src="assets/js/leaflet-sidebar.js"></script> 
+      
+	  <script src="assets/js/js.cookie.min.js"></script>
+      
+	  <script src="assets/js/latlon-spherical.js"></script>
+      
+	  <script src="assets/js/leaflet.latlng-graticule.js"></script>
+	  
 	  <script src="assets/js/dms.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/leaflet.geodesic"></script>
+      
+	  <script src="https://cdn.jsdelivr.net/npm/leaflet.geodesic"></script>
+	  
 	  <script src="assets/js/map.js"></script>
-      <script src="assets/js/leaflet.browser.print.js"></script> 
-      <script src="assets/js/leaflet.browser.print.utils.js"></script> 
-      <script src="assets/js/printsettings.js"></script>
-      <!-- <script src="assets/js/Leaflet.Geodesic.orig.js"></script>-->
-      <script src="assets/js/Leaflet.Geodesic.js"></script>
+      
+	  <script src="assets/js/leaflet.browser.print.js"></script> 
+      
+	  <script src="assets/js/leaflet.browser.print.utils.js"></script> 
+      
+	  <script src="assets/js/printsettings.js"></script>
+      
+	  <!-- <script src="assets/js/Leaflet.Geodesic.orig.js"></script>-->
+      
+	  <script src="assets/js/Leaflet.Geodesic.js"></script>
+	  
 	  <script src="https://unpkg.com/leaflet-kmz@latest/dist/leaflet-kmz.js"></script>
+	  
 	  <script src="https://unpkg.com/togeojson@0.16.0"></script>
-      <!-- <script src="assets/js/leaflet.filelayer.js"></script>-->
-      <script src="assets/js/leaflet.filelayertest.js"></script>
+      
+	  <!-- <script src="assets/js/leaflet.filelayer.js"></script>-->
+      
+	  <script src="assets/js/leaflet.filelayertest.js"></script>
+	  
 	  <script src="assets/js/leaflet-bootstrapmodal.js"></script>
-	  <link href='https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.css' rel='stylesheet' />
+	  
       <script src="assets/js/helpmodal.js"></script>	  
-      <script src="assets/js/style.js"></script>
+      
+	  <script src="assets/js/style.js"></script>
+	  
 	  <script src="assets/js/LatLonControl.js"></script>
-      <script src='https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.js'></script>
+      
+	  <script src='https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.js'></script>
+	  
 	  <script src="assets/js/draw.js"></script>
+	  
+	  
+	  
+	  <script src="assets/imageoverlayjs/jquery.dm-uploader.min.js"></script>
+      <script src="assets/imageoverlayjs/overlay-ui.js"></script>
+      <script src="assets/imageoverlayjs/overlay-config.js"></script>
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
 	  
 	  
       <script>
@@ -1977,6 +2179,25 @@
            $temp.remove();
          }
          
+               
+      </script>
+      <script>
+         $('#clickhere').click(function() {
+            downloadeverything();
+         });
+         
+         function downloadeverything() {
+            function downloadInnerHtml(filename, elId, mimeType) {
+               var elHtml = $('#' + elId).text();
+               var link = document.createElement('a');
+               mimeType = mimeType || 'text/plain';
+               link.setAttribute('download', filename);
+               link.setAttribute('href', 'data:' + mimeType + ';charset=utf-8,' + encodeURIComponent(elHtml));
+               link.click();
+            }
+            var fileName = 'maceoutput.geojson';
+            downloadInnerHtml(fileName, 'geojson', 'text/html');
+         }
                
       </script>
       

@@ -49,10 +49,11 @@ input[type="radio"], input[type="checkbox"] {
 .white {
   color: #FFFFFF;
 }
-
+/*
 .panel-body{
   width: 500px;
 }
+*/
 .feature-row {
   cursor: pointer;
   width: 250px;
