@@ -3602,13 +3602,23 @@ new L.SwoopyArrow([53.4962,  -7.5735], [53.4869, -7.5655], {
 
 
 
-var osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                  attribution: 'Map data &copy; 2013 OpenStreetMap contributors'
-              });
+var osm = L.tileLayer(
+  "https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png", {
+    maxZoom: 28,
+    useCache: true,
+	crossOrigin: true,
+	attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="https://cartodb.com/attributions">CartoDB</a>'
+  
+  });
         
-var osm2 = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                  attribution: 'Map data &copy; 2013 OpenStreetMap contributors'
-              });
+var osm2 = L.tileLayer(
+  "https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png", {
+    maxZoom: 28,
+    useCache: true,
+	crossOrigin: true,
+	attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="https://cartodb.com/attributions">CartoDB</a>'
+  
+  });
       		
       
 
