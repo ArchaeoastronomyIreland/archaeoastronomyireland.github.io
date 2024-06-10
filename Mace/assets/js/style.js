@@ -1,5 +1,7 @@
 //Create a color dictionary based off of lines geojson feature.properties.stroke
 var lineColors = {
+  
+  "#ff7800": "ff7800",
   "#ffb74d": "#ffb74d",
   "#fff176": "#fff176",
   "#aed581": "#97dc4bff",
@@ -39,21 +41,21 @@ var lineColors = {
 style = function (feature) {
                 return {
                     //color: lineColors[feature.properties.stroke],
-					color: '#9fa8da',
+					color: '#F474F0',
 					steps: 50,
                     geodesic: "true",
 					geodesic_steps: 50,
 					geodesic_wrap: "true",
-					weight: 2,
+					weight: .5,
                     opacity: 1.0,
-                    //dashArray: "5 5",
-                    radius: 5,
+                    dashArray: "5 5",
+                    radius: 3,
                 };
+				
             },
 			
 			
-	
-			
+
 			
 			
 			
@@ -79,11 +81,22 @@ var fileload = new L.Control.fileLayerLoad({
     fileSizeLimit: 5000,
     fitBounds: true, //MOVE THE CENTER OF THE SCREEN
     layerOptions: {
-		style: style,
+		
 		pointToLayer: function(feature, latlng) {
         return new L.CircleMarker(latlng, {
+			
+			
+			radius:4, //expressed in pixels
+            fillColor: "#ffff00",
+            color: "#000000", //black outline
+            weight: .5, //outline width
+            opacity: 1, //line opacity
+            fillOpacity: 0.8
         	
         });
+		
+		        	
+        
     },
              
         onEachFeature: function(feature, layer) {

@@ -43,6 +43,7 @@
         options: {
             layer: L.geoJson,
             layerOptions: {},
+			
             fileSizeLimit: 1024
         },
 

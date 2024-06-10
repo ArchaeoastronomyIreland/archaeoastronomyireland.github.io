@@ -68,11 +68,20 @@ var startZone = (cookee) ? cookee : "-0"
 
 /* Basemap Layers */
 
+/* Old NMS URL "http://webservices.archaeology.ie/arcgis/services/NM/NationalMonuments/MapServer/WMSServer?" */
 
-var NationalMonuments = L.esri
-        .featureLayer({
-            url: "https://services-eu1.arcgis.com/HyjXgkV6KGMSF3jt/ArcGIS/rest/services/SMROpenData/FeatureServer/3"
-	});
+var source = L.WMS.source("https://services-eu1.arcgis.com/HyjXgkV6KGMSF3jt/arcgis/rest/services/SMROpenData/FeatureServer", {
+            'transparent': true,
+      	    'format': 'image/png',
+            'opacity': 0.5,
+            'info_format': 'text/html',
+            'attribution': 'National Monuments Service (Ireland)'
+      	
+   });
+
+
+
+var Newspaperlayer = L.esri.Vector.basemap('Newspaper')
 
 
 var cartoLight = L.tileLayer(
@@ -85,20 +94,12 @@ var cartoLight = L.tileLayer(
   });
   
 var Esri_WorldImagery = L.tileLayer(
-  'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+  'http://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
     maxZoom: 28,
 	attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
   });
   
-
-var Esri_WorldImagery_Clarity = L.tileLayer(
-  'https://clarity.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
-    maxZoom: 38,
-	attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
-  });
-  
- 
-var googleSat = L.tileLayer('https://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}',{
+var googleSat = L.tileLayer('http://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}',{
         maxZoom: 28,
         subdomains:['mt0','mt1','mt2','mt3']
 		});
@@ -123,17 +124,32 @@ var BING_KEY = 'AmPQVvaKSid_g48EnFJjbYUOyWPlkQh1QGJlsFFZnw1EnJioQ5kvSiv2w7SUaJ9B
 
 var bingLayer = L.tileLayer.bing(BING_KEY)
 
+
+  
+
 var baseLayers = {
-    
+    "Esri Vector": Newspaperlayer,
 	"OSM Street": cartoLight,
     "ESRI Aerial": Esri_WorldImagery,
-	"ESRI Clarity": Esri_WorldImagery_Clarity,
 	"Google Aerial": googleSat,
 	"Bing Aerial": bingLayer,
 	"OSM Topographic": topoUrl,
 	"Hillshade": terrain,
-		
+	
 };
+
+
+
+
+
+              
+
+
+
+
+
+
+
 
 var ImageOverlayJpg = L.layerGroup();
 var ImageOverlaySvg = L.layerGroup();
@@ -142,12 +158,14 @@ var ImageOverlayPng = L.layerGroup();
 
 // Create the map
 
+
+
+
 var map = L.map('map', { // div id holding map
-    layers: [cartoLight], // default map
+    layers: [Newspaperlayer], // default map
     worldCopyJump: true, // move markers if scrolling horizontally across new map
     minZoom: 1, // minimum zoom level, skip level 0
     zoomControl: true // don't show zoom buttons, we're using zoomslider instead
-
 }).setView([startLat, startLng], 7); // center map at starting position, zoom level 3
 
 
@@ -280,13 +298,12 @@ var latlngGraticule = L.latlngGraticule({
 
 
 var overlayMaps = {
-    "National Monuments": NationalMonuments,
+    "National Monuments": source.getLayer("2"),
 	"Measurements": orthodrome,
 	"Lat Lon Graticule ": latlngGraticule,
 	"ImageOverlayJpg ": ImageOverlayJpg,
 	"ImageOverlaySvg ": ImageOverlaySvg,
 	"ImageOverlayPng ": ImageOverlayPng,
-	
 	
 
 };
@@ -728,18 +745,6 @@ function latlongChanged() {
 
 
 }
-
-
-/*----------------------------------------------------------------*/
-// Show National Monuments Layer Details
-
-NationalMonuments.bindPopup(function (layer) {
-        return L.Util.template(
-          
-		  "<p><strong>Monument Type:</strong> {MONUMENT_CLASS}</p><p><strong>SMR:</strong> {SMRS}</p><p><strong>Name:</strong> {TOWNLAND}</p><p><strong>LAT/LON:</strong> {LATITUDE}, {LONGITUDE}</p><p><small>{WEB_NOTES}</small></p>",
-          layer.feature.properties
-        );
-		});
 
 
 

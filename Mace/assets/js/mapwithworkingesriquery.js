@@ -71,8 +71,22 @@ var startZone = (cookee) ? cookee : "-0"
 
 var NationalMonuments = L.esri
         .featureLayer({
-            url: "https://services-eu1.arcgis.com/HyjXgkV6KGMSF3jt/ArcGIS/rest/services/SMROpenData/FeatureServer/3"
+            url: "https://services-eu1.arcgis.com/HyjXgkV6KGMSF3jt/ArcGIS/rest/services/SMROpenData/FeatureServer/3",
+			where: "MONUMENT_CLASS = 'Megalithic tomb - passage tomb'",
 	});
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 var cartoLight = L.tileLayer(

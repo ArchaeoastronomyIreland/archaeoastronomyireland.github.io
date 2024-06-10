@@ -8,6 +8,7 @@
       <meta name="apple-mobile-web-app-capable" content="yes">
       <meta name="theme-color" content="#000000">
       <meta name="description" content="Map based Archaeoastronomic Calculation and Exploration.">
+	  
       <title>MACE</title>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin="anonymous"></script>
 	  
@@ -21,7 +22,7 @@
 	  
 	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" integrity="sha512-aOG0c6nPNzGk+5zjwyJaoRUgCdOrfSDhmMID2u4+OIslr0GjpLKo7Xm0Ao3xmpM4T8AmIouRkqwj1nrdVsLKEQ==" crossorigin="anonymous" />
 	  
-	  <link rel="stylesheet" href="https://unpkg.com/mapbox-gl@1.13.0/dist/mapbox-gl.css"/>
+	  
       
 	  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
       
@@ -91,8 +92,8 @@
          border-radius: 0px;
          }
          .navbar-default {
-         background-color: #4a148c;
-         border-color: #4a148c;
+         background-color: #990617;
+         border-color: #990617;
          }
          .navbar-default .navbar-brand {
          color: #fafafa;
@@ -386,6 +387,31 @@
         }
  </style>
  
+ <style>
+
+
+.leaflet-popup-content-wrapper {
+   background: #FFFFFF;
+   border-radius: 2px;
+   }
+
+.leaflet-popup {
+    position: absolute;
+    text-align: center;
+    }
+
+.leaflet-popup-content {
+    margin-top: 20px;
+    margin-right: 2px;
+    padding-right: 12px;
+    min-width: 100 px !important;
+    max-height: 300px;
+    overflow: auto;
+    }
+</style>
+
+<div class='custom-popup' id='map'></div>
+ 
    
    </head>
    <body onload="compute(); latlongChanged();">
@@ -410,7 +436,8 @@
          
       </script>
       <div id="map"></div>
-	  <div id="delete" class="leaflet-bar leaflet-control delete" data-toggle="tooltip" data-placement="right" data-container="body" title="Delete Drawing"></div>
+	  
+      <div id="delete" class="leaflet-bar leaflet-control delete" data-toggle="tooltip" data-placement="right" data-container="body" title="Delete Drawing"></div>
 	  <a href='#' id='export' class="leaflet-bar leaflet-control export data-toggle="tooltip" data-placement="right" data-container="body" title="Save Drawing""></a>
       <div id="sidebar" class="leaflet-sidebar collapsed">
          <!-- Nav tabs -->
@@ -1732,7 +1759,7 @@
          <div class="container-fluid">
             <div class="navbar-header">
                <div class="navbar-icon-container"> <a href="#" class="navbar-icon pull-right visible-xs" id="nav-btn"><i class="fa fa-bars fa-lg white"></i></a> <a href="#" class="navbar-icon pull-right visible-xs" id="poibar-toggle-btn"><i class="fa fa-search fa-lg white"></i></a> </div>
-               <a class="navbar-brand" href="#"><i class="fa fa-dot-circle-o white"></i>&nbsp;MACE&nbsp;&nbsp;<small>Map based Archaeoastronomic Calculation & Exploration</small></a> 
+               <a class="navbar-brand" href="#"><i class="fa fa-dot-circle-o"></i>&nbsp;MACE&nbsp;&nbsp;<small>Map based Archaeoastronomic Calculation & Exploration</small></a> 
             </div>
             <div class="navbar-collapse collapse">
                <ul class="nav navbar-nav navbar-right">
@@ -1900,15 +1927,29 @@
       <script src="assets/js/jquery.ui.touch-punch.min.js"></script> 
      
 	 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script> 
-      
+ 
+
+
+
+
+
+ 
 	  <script src="https://unpkg.com/esri-leaflet@2.5.0/dist/esri-leaflet.js"
     integrity="sha512-ucw7Grpc+iEQZa711gcjgMBnmd9qju1CICsRaryvX7HJklK0pGl/prxKvtHwpgm5ZHdvAil7YPxI1oWPOWK3UQ=="
     crossorigin=""></script>
+	
+	<!-- Load Esri Leaflet Renderers from CDN -->
+	
+    <script src="https://unpkg.com/esri-leaflet-renderers@3.0.0" crossorigin=""></script>
+	
+    <!-- Load Esri Leaflet Vector from CDN -->
+	
+      <script src="https://unpkg.com/esri-leaflet-vector@4.2.3/dist/esri-leaflet-vector.js" crossorigin=""></script>
 	  
 	  <script src="https://cdn.jsdelivr.net/npm/leaflet-bing-layer@3.3.1/leaflet-bing-layer.min.js"></script>
 	  
-	  <script src="https://unpkg.com/mapbox-gl@1.13.0/dist/mapbox-gl.js"></script>
-      <!--<script src="https://unpkg.com/esri-leaflet-vector/dist/esri-leaflet-vector.js"></script>-->
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/mapbox-gl/3.3.0/mapbox-gl.js"></script>
+      
 	  
 	  <script src="https://unpkg.com/esri-leaflet-vector@2.0.2/dist/esri-leaflet-vector.js"></script>
 	  
