@@ -142,6 +142,24 @@ var MoundBarrow = L.esri
             return { fillColor: '#AF7EFA' };
           }
         })
+		
+var MegTombUnc = L.esri
+        .featureLayer({
+            url: "https://services-eu1.arcgis.com/HyjXgkV6KGMSF3jt/ArcGIS/rest/services/SMROpenData/FeatureServer/3",
+			where: "MONUMENT_CLASS = 'Megalithic tomb - unclassified'",
+			style: function (feature) {
+            return { fillColor: '#D4FC67' };
+          }
+        })
+		
+var StandingStone = L.esri
+        .featureLayer({
+            url: "https://services-eu1.arcgis.com/HyjXgkV6KGMSF3jt/ArcGIS/rest/services/SMROpenData/FeatureServer/3",
+			where: "MONUMENT_CLASS = 'Standing stone'",
+			style: function (feature) {
+            return { fillColor: '#49C9FC' };
+          }
+        })
 
 var cartoLight = L.tileLayer(
   "https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png", {
@@ -218,6 +236,7 @@ var overlayMaps = {
 	"Passage Tombs": PassageTombs,
 	"Wedge Tombs": Wedges,
 	"Court Tombs": Courttombs,
+	"Megalithic Tomb Unclassified": MegTombUnc,
 	"Henges": Henges,
 	"Cursus": Cursus,
 	"Rockart": Rockart,
@@ -225,6 +244,7 @@ var overlayMaps = {
 	"Embanked Enclosure": EmbankedEnclosure,
 	"Ceremonial Enclosure": CeremonialEnclosure,
 	"Mound Barrows": MoundBarrow,
+	"Standing Stone": StandingStone,
 	"Stone Circle": StoneCircle,
 	"Stone Circle Five Stone": StoneCircleFiveStone,
 	"Cairns - Unclassified": Cairns,
@@ -371,6 +391,22 @@ CeremonialEnclosure.bindPopup(function (layer) {
 		});
 		
 MoundBarrow.bindPopup(function (layer) {
+        return L.Util.template(
+          
+		  "<p><strong>Monument Type:</strong> {MONUMENT_CLASS}</p><p><strong>SMR:</strong> {SMRS}</p><p><strong>Name:</strong> {TOWNLAND}</p><p><strong>LAT/LON:</strong> {LATITUDE}, {LONGITUDE}</p><p><small>{WEB_NOTES}</small></p>",
+          layer.feature.properties
+        );
+		});
+		
+MegTombUnc.bindPopup(function (layer) {
+        return L.Util.template(
+          
+		  "<p><strong>Monument Type:</strong> {MONUMENT_CLASS}</p><p><strong>SMR:</strong> {SMRS}</p><p><strong>Name:</strong> {TOWNLAND}</p><p><strong>LAT/LON:</strong> {LATITUDE}, {LONGITUDE}</p><p><small>{WEB_NOTES}</small></p>",
+          layer.feature.properties
+        );
+		});
+		
+StandingStone.bindPopup(function (layer) {
         return L.Util.template(
           
 		  "<p><strong>Monument Type:</strong> {MONUMENT_CLASS}</p><p><strong>SMR:</strong> {SMRS}</p><p><strong>Name:</strong> {TOWNLAND}</p><p><strong>LAT/LON:</strong> {LATITUDE}, {LONGITUDE}</p><p><small>{WEB_NOTES}</small></p>",
