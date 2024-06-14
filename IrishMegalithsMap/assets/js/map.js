@@ -354,8 +354,8 @@ var overlayMaps = {
    "<img src='assets/img/linkardstownburial.svg' height='10'>&nbsp;Linkardstown burial": LinkardstownBurial,
    "<img src='assets/img/cairn.svg' height='10'>&nbsp;Cairns - Unclassified": Cairns,
    "<img src='assets/img/passagetomb.svg' height='10'>&nbsp;Megalithic Tombs NI": MegalithicTombsNI,
-   "<img src='assets/img/all.svg' height='10'>&nbsp;All NMI": NationalMonuments,
-   "<img src='assets/img/all.svg' height='10'>&nbsp;All NI NM": NationalMonumentsNI,
+   "<img src='assets/img/all.svg' height='10'>&nbsp;All NMI": NationalMonuments ROI,
+   "<img src='assets/img/all.svg' height='10'>&nbsp;All NI NM": NationalMonuments NI,
 
 };
 
