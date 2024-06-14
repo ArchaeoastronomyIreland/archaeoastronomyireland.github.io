@@ -70,9 +70,26 @@ var startZone = (cookee) ? cookee : "-0"
 
 
 var NationalMonuments = L.esri
-        .featureLayer({
-            url: "https://services-eu1.arcgis.com/HyjXgkV6KGMSF3jt/ArcGIS/rest/services/SMROpenData/FeatureServer/3"
-	});
+   .featureLayer({
+      url: "https://services-eu1.arcgis.com/HyjXgkV6KGMSF3jt/ArcGIS/rest/services/SMROpenData/FeatureServer/3",
+      minZoom:13,
+	  style: function(feature) {
+         return {
+            fillColor: '#F22E87'
+         };
+      }
+   })
+   
+var NationalMonumentsNI = L.esri
+   .featureLayer({
+      url: "https://services3.arcgis.com/sae2uhr3iZOENSDH/arcgis/rest/services/ni_sites_monuments/FeatureServer/0",
+      minZoom:13,
+	  style: function(feature) {
+         return {
+            fillColor: '#F22E87'
+         };
+      }
+   })
 
 
 var cartoLight = L.tileLayer(
@@ -280,7 +297,8 @@ var latlngGraticule = L.latlngGraticule({
 
 
 var overlayMaps = {
-    "National Monuments": NationalMonuments,
+    "National Monuments ROI": NationalMonuments,
+	"National Monuments NI": NationalMonumentsNI,
 	"Measurements": orthodrome,
 	"Lat Lon Graticule ": latlngGraticule,
 	"ImageOverlayJpg ": ImageOverlayJpg,
@@ -746,3 +764,13 @@ NationalMonuments.bindPopup(function (layer) {
 //  add Fullscreen to an existing map:
 map.addControl(new L.Control.Fullscreen());
 
+/*----------------------------------------------------------------*/
+// Show National Monuments NI Layer Details
+
+NationalMonumentsNI.bindPopup(function(layer) {
+   return L.Util.template(
+
+'<p><a href="https://apps.communities-ni.gov.uk/NISMR-public/Details.aspx?MonID={MONID}">Link to NISMR entry</a></p><p><strong>Edited Type:</strong> {Edited_Typ}</p><p><strong>SMR:</strong> {SMRNo}</p><p><strong>Name:</strong> {Townland_s}</p><p><strong>Grid Reference:</strong> {Grid_Refer}</p><p><strong>General Type:</strong> {General_Ty}</p><p><strong>General Period:</strong> {General_Pe}</p>',
+      layer.feature.properties
+   );
+});
