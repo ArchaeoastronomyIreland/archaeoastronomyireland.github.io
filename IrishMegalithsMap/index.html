@@ -1,68 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="theme-color" content="#000000">
-    <meta name="description" content="Mapped and categorised sites -  with a focus on the Irish neolithic and bronze ages.">
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png">
-    <link rel="mask-icon" href="assets/img/safari-pinned-tab.svg" color="#5bbad5">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="theme-color" content="#ffffff">
-    <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
-    
-	<title>Irish Megaliths</title>
-    
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin="anonymous"></script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js" integrity="sha512-n/4gHW3atM3QqRcbCn6ewmpxcLAHGaDjpEBu4xZd47N0W2oQ+6q7oc3PXstrJYXcbNU1OHdQ1T7pAP+gi5Yu8g==" crossorigin="anonymous"></script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" integrity="sha512-uto9mlQzrs59VwILcLiRYeLKPPbS/bT71da/OEBYEwcdNUk8jYIy+D176RYoop1Da+f9mvkYrmj5MCLZWEtQuA==" crossorigin="anonymous"></script>
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" integrity="sha512-aOG0c6nPNzGk+5zjwyJaoRUgCdOrfSDhmMID2u4+OIslr0GjpLKo7Xm0Ao3xmpM4T8AmIouRkqwj1nrdVsLKEQ==" crossorigin="anonymous" />
-
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.css" integrity="sha512-++bHK0UNrNHW3LVNLzgTm2G7uOH6Kd+Ved0sskOL0+TY7pr5AcWQgR19kdjAhyyiQRDjFwXubDGqTvjnS09HNA==" crossorigin="anonymous" />
-    <link rel="stylesheet" href="assets/css/Control.Coordinates.css" />
-    <link rel="stylesheet" href="assets/leaflet-groupedlayercontrol/leaflet.groupedlayercontrol.css">
-    <link rel="stylesheet" href="assets/css/app.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="anonymous" />
-    <link rel="stylesheet" href="assets/css/leaflet.fullscreen.css" />
-    <link rel="stylesheet" href="assets/css/scrollbar.css" />
-    <link rel="stylesheet" href="assets/css/printsettings.css" />
-    <link rel="stylesheet" href="assets/css/leaflet-bootstrapmodal.css" />
-    <link rel="stylesheet" href="assets/css/leaflet-sidebar.css" />
-    <link rel="stylesheet" href="assets/css/jquery.treegrid.css" />
-
-
-
-
-
-
-    <style>
-        .padding {
-          
-          
-          padding-right: 50px;
-          padding-bottom: 25px;
-          padding-left: 50px;
-        }
-    </style>
-
-
-
-
-
-
-    
-    <style>
-        .leaflet-container.crosshair-cursor-enabled {
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
+      <meta name="mobile-web-app-capable" content="yes">
+      <meta name="apple-mobile-web-app-capable" content="yes">
+      <meta name="theme-color" content="#000000">
+      <meta name="description" content="Mapped and categorised sites -  with a focus on the Irish neolithic and bronze ages.">
+      <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png">
+      <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+      <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png">
+      <link rel="mask-icon" href="assets/img/safari-pinned-tab.svg" color="#5bbad5">
+      <meta name="msapplication-TileColor" content="#da532c">
+      <meta name="theme-color" content="#ffffff">
+      <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
+      <title>Irish Megaliths Map</title>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js" integrity="sha512-n/4gHW3atM3QqRcbCn6ewmpxcLAHGaDjpEBu4xZd47N0W2oQ+6q7oc3PXstrJYXcbNU1OHdQ1T7pAP+gi5Yu8g==" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" integrity="sha512-uto9mlQzrs59VwILcLiRYeLKPPbS/bT71da/OEBYEwcdNUk8jYIy+D176RYoop1Da+f9mvkYrmj5MCLZWEtQuA==" crossorigin="anonymous"></script>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" integrity="sha512-aOG0c6nPNzGk+5zjwyJaoRUgCdOrfSDhmMID2u4+OIslr0GjpLKo7Xm0Ao3xmpM4T8AmIouRkqwj1nrdVsLKEQ==" crossorigin="anonymous" />
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.css" integrity="sha512-++bHK0UNrNHW3LVNLzgTm2G7uOH6Kd+Ved0sskOL0+TY7pr5AcWQgR19kdjAhyyiQRDjFwXubDGqTvjnS09HNA==" crossorigin="anonymous" />
+      <link rel="stylesheet" href="assets/css/Control.Coordinates.css" />
+      <link rel="stylesheet" href="assets/leaflet-groupedlayercontrol/leaflet.groupedlayercontrol.css">
+      <link rel="stylesheet" href="assets/css/app.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="anonymous" />
+      <link rel="stylesheet" href="assets/css/leaflet.fullscreen.css" />
+      <link rel="stylesheet" href="assets/css/scrollbar.css" />
+      <link rel="stylesheet" href="assets/css/printsettings.css" />
+      <link rel="stylesheet" href="assets/css/leaflet-bootstrapmodal.css" />
+      <link rel="stylesheet" href="assets/css/leaflet-sidebar.css" />
+      <link rel="stylesheet" href="assets/css/jquery.treegrid.css" />
+	  <link rel="stylesheet" href="assets/css/leaflet.zoomhome.css"/>
+      <style>
+         .padding {
+         padding-right: 50px;
+         padding-bottom: 25px;
+         padding-left: 50px;
+         }
+      </style>
+      <style>
+         .leaflet-container.crosshair-cursor-enabled {
          cursor: crosshair;
          }
          .btn {
@@ -161,9 +140,9 @@
          affixed{
          position:fixed;
          top:50px;
-    </style>
-    <style>
-        .disableScroll{
+      </style>
+      <style>
+         .disableScroll{
          overflow-y:hidden;
          overflow-x:hidden;
          }
@@ -183,17 +162,16 @@
          .rightpadding20 {
          padding-right: 20px;
          }
-    </style>
-    
-    <style>
-        .icon {
+      </style>
+      <style>
+         .icon {
          max-width: 70%;
          max-height: 70%;
          margin: 4px;
          }
-    </style>
-    <style>
-        hr.major {
+      </style>
+      <style>
+         hr.major {
          background-color: #fff;
          border-top: 2px dashed #428bca;
          }
@@ -244,291 +222,147 @@
          color: #fff; 
          opacity: 1;
          }
-    </style>
-
-    <style>
-        table, th, td {
-                 border: 1px solid #000;
-                 }
-                 th, td {
-                 padding: 5px;
-                 }
-                 table {
-                 max-width: 100%;
-                 }
-                 @media screen and (max-width:1767px) {
-                 table tr > * {
-                 display: block;
-                 }
-                 table tr {
-                 display: table-cell;
-                 vertical-align: top;
-                 }
-    </style>
-
-    
-
-    <style>
-        .leaflet-popup-content-wrapper {
-           background: #FFFFFF;
-           border-radius: 2px;
-           }
-        
-        .leaflet-popup {
-            position: absolute;
-            text-align: center;
-            }
-        
-        .leaflet-popup-content {
-            margin-top: 20px;
-            margin-right: 2px;
-            padding-right: 12px;
-            min-width: 100 px !important;
-            max-height: 300px;
-            overflow: auto;
-            }
-    </style>
-
-    <div class='custom-popup' id='map'></div>
-
-
-
-
-
-
-
-</head>
-
-<body>
-
-    <div id="map"></div>
-
-
-    <div id="sidebar" class="leaflet-sidebar collapsed">
-        <!-- Nav tabs -->
-        <div class="leaflet-sidebar-tabs">
-
+      </style>
+      <style>
+         table, th, td {
+         border: 1px solid #000;
+         }
+         th, td {
+         padding: 5px;
+         }
+         table {
+         max-width: 100%;
+         }
+         @media screen and (max-width:1767px) {
+         table tr > * {
+         display: block;
+         }
+         table tr {
+         display: table-cell;
+         vertical-align: top;
+         }
+      </style>
+      <style>
+         .leaflet-popup-content-wrapper {
+         background: #FFFFFF;
+         border-radius: 2px;
+         }
+         .leaflet-popup {
+         position: absolute;
+         text-align: center;
+         }
+         .leaflet-popup-content {
+         margin-top: 20px;
+         margin-right: 2px;
+         padding-right: 12px;
+         min-width: 100 px !important;
+         max-height: 300px;
+         overflow: auto;
+         }
+      </style>
+      <div class='custom-popup' id='map'></div>
+   </head>
+   <body>
+      <div id="map"></div>
+      <div id="sidebar" class="leaflet-sidebar collapsed">
+         <!-- Nav tabs -->
+         <div class="leaflet-sidebar-tabs">
             <ul role="tablist">
-                <li><a href="#settings" role="tab" data-toggle="tooltip" data-placement="right" data-container="body" title="About Irish Megaliths Map"><i class="fa fa-info"></i></a></li>
+               <li><a href="#settings" role="tab" data-toggle="tooltip" data-placement="right" data-container="body" title="About Irish Megaliths Map"><i class="fa fa-info"></i></a></li>
             </ul>
-        </div>
-        <!-- Tab panes - Section 1 -->
-        <div class="leaflet-sidebar-content">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+         </div>
+         <!-- Tab panes - Section 1 -->
+         <div class="leaflet-sidebar-content">
             <div class="leaflet-sidebar-pane" id="settings">
-                <h1 class="leaflet-sidebar-header">About Irish Megaliths Map<span class="leaflet-sidebar-close"><i class="fa fa-chevron-left"></i></span></h1>
-                <div>
-                    <div class="poibar-table">
-                        <div class="rightpadding">
-                            <div><img class="center-block" src="assets/img/kerbstone52.png" width="300"></div>
-                            <div>
-                                <h1 class="text-center">Irish Megaliths Map</h1>
-                            </div>
-                            <div>
-                                <p class="text-center">Mapped and categorised sites -  with a focus on the Irish neolithic and bronze ages.</p>
-                            </div>
-                            <div>
-                                <p class="text-center">v1.0</p>
-                            </div>
-                            <div>
-                                <p class="text-center">Brian Doyle</p>
-                            </div>
-                            <div>
-                                <p class="text-center">for</p>
-                            </div>
-							<div>
-                                <p class="text-center"><i class="fa fa-facebook" aria-hidden="true"></i>&nbsp;The Irish Megalithic Research Group</p>
-                            </div>
-                            <div>
-                                <p class="text-center"><em>With special thanks to:</em></p>
-                            </div>
-                            <div>
-                                <p class="text-center">National Monuments Service.</p>
-                            </div>
-                            <div>
-                                <p class="text-center">ESRI and the various basemap providers.</p>
-                            </div>
-                            <div>
-                                <p class="text-center">Vladimir Agafonkin - Leaflet.</p>
-                            </div>
+               <h1 class="leaflet-sidebar-header">About Irish Megaliths Map<span class="leaflet-sidebar-close"><i class="fa fa-chevron-left"></i></span></h1>
+               <div>
+                  <div class="poibar-table">
+                     <div class="rightpadding">
+                        <div><img class="center-block" src="assets/img/kerbstone52.png" width="300"></div>
+                        <div>
+                           <h1 class="text-center">Irish Megaliths Map</h1>
                         </div>
-                    </div>
-                </div>
+                        <div>
+                           <p class="text-center">Mapped and categorised sites -  with a focus on the Irish neolithic and bronze ages.</p>
+                        </div>
+                        <div>
+                           <p class="text-center">v1.0</p>
+                        </div>
+                        <div>
+                           <p class="text-center">Brian Doyle</p>
+                        </div>
+                        <div>
+                           <p class="text-center">for</p>
+                        </div>
+                        <div>
+                           <p class="text-center"><i class="fa fa-facebook" aria-hidden="true"></i>&nbsp;The Irish Megalithic Research Group</p>
+                        </div>
+                        <div>
+                           <p class="text-center"><em>With special thanks to:</em></p>
+                        </div>
+                        <div>
+                           <p class="text-center">National Monuments Service.</p>
+                        </div>
+                        <div>
+                           <p class="text-center">ESRI and the various basemap providers.</p>
+                        </div>
+                        <div>
+                           <p class="text-center">Vladimir Agafonkin - Leaflet.</p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
             </div>
-        </div>
-    </div>
-    <div class="navbar navbar-default navbar-fixed-top " role="navigation">
-        <div class="container-fluid">
+         </div>
+      </div>
+      <div class="navbar navbar-default navbar-fixed-top " role="navigation">
+         <div class="container-fluid">
             <div class="navbar-header">
-                <div class="navbar-icon-container"> <a href="#" class="navbar-icon pull-right visible-xs" id="nav-btn"><i class="fa fa-bars fa-lg white"></i></a> <a href="#" class="navbar-icon pull-right visible-xs" id="poibar-toggle-btn"><i class="fa fa-search fa-lg white"></i></a> </div>
-                <a class="navbar-brand" href="#"><i class="fa fa-eye"></i>&nbsp;Irish Megaliths Map&nbsp;&nbsp;&nbsp;<small>Mapped and categorised sites -  with a focus on the Irish neolithic and bronze ages.</small></a>
+               <div class="navbar-icon-container"> <a href="#" class="navbar-icon pull-right visible-xs" id="nav-btn"><i class="fa fa-bars fa-lg white"></i></a> <a href="#" class="navbar-icon pull-right visible-xs" id="poibar-toggle-btn"><i class="fa fa-search fa-lg white"></i></a> </div>
+               <a class="navbar-brand" href="#"><i class="fa fa-globe"></i>&nbsp;Irish Megaliths Map</a>
             </div>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="hidden-xs"><a href="https://github.com/kerbstone52/IrishMegalithsMap" class="text-white py-1 text-decoration-none ml-auto mx-sm-0 order-0 order-sm-last" title="View project on GitHub"><span class="fa fa-github fa-lg " aria-hidden="true"></span>
+               <ul class="nav navbar-nav navbar-right">
+                  <li class="hidden-xs"><a href="https://github.com/kerbstone52/IrishMegalithsMap" class="text-white py-1 text-decoration-none ml-auto mx-sm-0 order-0 order-sm-last" title="View project on GitHub"><span class="fa fa-github fa-lg " aria-hidden="true"></span>
                      </a>
-                    </li>
-                </ul>
+                  </li>
+               </ul>
             </div>
             <!--/.navbar-collapse -->
-        </div>
-    </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <script src="assets/js/jquery.ui.touch-punch.min.js"></script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
-
-
-
-
-
-
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/esri-leaflet/3.0.6/esri-leaflet.js"></script>
-
-    <!-- Load Esri Leaflet Renderers from CDN -->
-
-    <script src="https://unpkg.com/esri-leaflet-renderers@3.0.0" crossorigin=""></script>
-
-    <!-- Load Esri Leaflet Vector from CDN -->
-
-    <script src="https://unpkg.com/esri-leaflet-vector@4.2.3/dist/esri-leaflet-vector.js" crossorigin=""></script>
-
-    <script src="https://cdn.jsdelivr.net/npm/leaflet-bing-layer@3.3.1/leaflet-bing-layer.min.js"></script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mapbox-gl/3.3.0/mapbox-gl.js"></script>
-
-
-
-
-
-
-    <script src="assets/js/leaflet.groupedlayercontrol.js"></script>
-
-    <script src="assets/js/tangram.min.js"></script>
-
-    <script src="assets/js/leaflet-touch-helper.js"></script>
-
-    <script src="assets/js/Control.Coordinates.js"></script>
-
-
-
-    <script src="assets/js/L.Control.HtmlLegend.js"></script>
-
-    <script src="assets/js/Leaflet.fullscreen.js"></script>
-
-    <script src="assets/js/leaflet-bing-layer.js"></script>
-
-
-
-    <script src="assets/js/layercontrol.js"></script>
-
-    <script src="assets/js/leaflet-sidebar.js"></script>
-
-
-
-
-
-
-
-    <script src="assets/js/map.js"></script>
-
-    <script src="assets/js/leaflet.browser.print.js"></script>
-
-    <script src="assets/js/leaflet.browser.print.utils.js"></script>
-
-    <script src="assets/js/printsettings.js"></script>
-
-    <!-- <script src="assets/js/Leaflet.Geodesic.orig.js"></script>-->
-
-
-
-
-
-
-
-    <!-- <script src="assets/js/leaflet.filelayer.js"></script>-->
-
-
-   
-
-    
-
-    <script src="assets/js/style.js"></script>
-
-    <script src="assets/js/LatLonControl.js"></script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <script>
-        var sidebar = L.control.sidebar({ container: 'sidebar', autopan: true })
-                     .addTo(map);
-    </script>
-
-
-
-
-
-</body>
-
+         </div>
+      </div>
+      <script src="assets/js/jquery.ui.touch-punch.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/esri-leaflet/3.0.6/esri-leaflet.js"></script>
+      <!-- Load Esri Leaflet Renderers from CDN -->
+      <script src="https://unpkg.com/esri-leaflet-renderers@3.0.0" crossorigin=""></script>
+      <!-- Load Esri Leaflet Vector from CDN -->
+      <script src="https://unpkg.com/esri-leaflet-vector@4.2.3/dist/esri-leaflet-vector.js" crossorigin=""></script>
+      <script src="https://cdn.jsdelivr.net/npm/leaflet-bing-layer@3.3.1/leaflet-bing-layer.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mapbox-gl/3.3.0/mapbox-gl.js"></script>
+      <script src="assets/js/leaflet.groupedlayercontrol.js"></script>
+      <script src="assets/js/tangram.min.js"></script>
+      <script src="assets/js/leaflet-touch-helper.js"></script>
+      <script src="assets/js/Control.Coordinates.js"></script>
+      <script src="assets/js/L.Control.HtmlLegend.js"></script>
+      <script src="assets/js/Leaflet.fullscreen.js"></script>
+      <script src="assets/js/leaflet-bing-layer.js"></script>
+      <script src="assets/js/layercontrol.js"></script>
+      <script src="assets/js/leaflet-sidebar.js"></script>
+      <script src="assets/js/leaflet.zoomhome.js"></script>
+	  <script src="assets/js/map.js"></script>
+      <script src="assets/js/leaflet.browser.print.js"></script>
+      <script src="assets/js/leaflet.browser.print.utils.js"></script>
+      <script src="assets/js/printsettings.js"></script>
+      <!-- <script src="assets/js/Leaflet.Geodesic.orig.js"></script>-->
+      <!-- <script src="assets/js/leaflet.filelayer.js"></script>-->
+      <script src="assets/js/style.js"></script>
+      <script src="assets/js/LatLonControl.js"></script>
+	  
+	  
+      <script>
+         var sidebar = L.control.sidebar({ container: 'sidebar', autopan: true })
+                      .addTo(map);
+      </script>
+   </body>
 </html>
