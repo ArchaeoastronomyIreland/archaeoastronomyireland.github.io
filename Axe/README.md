@@ -3,7 +3,7 @@ Axe
 
 A live version is available @
 
-https://kerbstone52.github.io/IrishMegalithsMap/index.html
+https://kerbstone52.github.io/Axe/index.html
 
 <p align="center">
   <img width="1024" src="https://github.com/kerbstone52/Axe/blob/main/Axe.png">
