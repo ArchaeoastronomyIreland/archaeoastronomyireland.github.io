@@ -22,21 +22,18 @@
 	  
 	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" integrity="sha512-aOG0c6nPNzGk+5zjwyJaoRUgCdOrfSDhmMID2u4+OIslr0GjpLKo7Xm0Ao3xmpM4T8AmIouRkqwj1nrdVsLKEQ==" crossorigin="anonymous" />
 	  
-	  
-      
 	  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
       
 	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.css" integrity="sha512-++bHK0UNrNHW3LVNLzgTm2G7uOH6Kd+Ved0sskOL0+TY7pr5AcWQgR19kdjAhyyiQRDjFwXubDGqTvjnS09HNA==" crossorigin="anonymous" />
-      
+      <link rel="stylesheet" href="assets/css/L.Control.ZoomBox.css" />
 	  <link rel="stylesheet" href="assets/css/lobipanel.min.css"/>
       <link rel="stylesheet" href="assets/css/Control.Coordinates.css" />
-      <link rel="stylesheet" href="assets/css/MarkerCluster.css">
-      <link rel="stylesheet" href="assets/css/MarkerCluster.Default.css">
       <link rel="stylesheet" href="assets/css/L.Control.Locate.css">
-      <link rel="stylesheet" href="assets/leaflet-groupedlayercontrol/leaflet.groupedlayercontrol.css">
+	  <link rel="stylesheet" href="assets/css/leaflet.zoomhome.css"/>
+      
       <link rel="stylesheet" href="assets/css/app.css">
-      <link rel="stylesheet" href="assets/css/Leaflet.PolylineMeasure.css">
-      <link rel="stylesheet" href="assets/css/L.Control.Zoomslider.css">
+      
+      
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="anonymous" />
       
 	  <link rel="stylesheet" href="assets/css/vendor.css">
@@ -46,13 +43,13 @@
       <link rel="stylesheet" href="assets/css/leaflet.fullscreen.css" />
       <link rel="stylesheet" href="assets/css/scrollbar.css" />
       
-      <link rel="stylesheet" href="assets/css/L.Control.ZoomBox.css" />
-      <link rel="stylesheet" href="assets/css/Control.MiniMap.css" />
+      
+      
       <link rel="stylesheet" href="assets/css/printsettings.css" />
       <link rel="stylesheet" href="assets/css/leaflet-bootstrapmodal.css" />
       <link rel="stylesheet" href="assets/css/leaflet-sidebar.css" />
       <link rel="stylesheet" href="assets/css/jquery.treegrid.css" />
-      <link rel="stylesheet" href="assets/css/material-switch.css" />
+      
       <link rel="stylesheet" href="assets/css/titatoggle-dist.css" />
       <link href='https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.css' rel='stylesheet' />
 	  
@@ -429,11 +426,8 @@
          	$('#age').change(function(){ latlongChanged(); });
          	$('#dist').change(function(){ latlongChanged(); });
          
-         	
-        	
-         
+          
          });
-         
       </script>
       <div id="map"></div>
 	  
@@ -1701,22 +1695,7 @@
 		</div>
 	</div>
 </div>
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-            <div class="leaflet-sidebar-pane" id="settings">
+    <div class="leaflet-sidebar-pane" id="settings">
                <h1 class="leaflet-sidebar-header">About Mace<span class="leaflet-sidebar-close"><i class="fa fa-chevron-left"></i></span></h1>
                <div>
                   <div class="poibar-table">
@@ -1892,30 +1871,10 @@
     </script>
 	
 	<!-- Debug item template -->
-    <script type="text/html" id="debug-template">
-      <li class="list-group-item text-%%color%%"><strong>%%date%%</strong>: %%message%%</li>
-    </script>
+       <script type="text/html" id="debug-template">
+       <li class="list-group-item text-%%color%%"><strong>%%date%%</strong>: %%message%%</li>
+       </script>
 	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-
 	  
       <form name="convert1" id="convert1">
          <input type="hidden" checked = "true" name="deg-format" id="deg-format-d" value="d" >
@@ -1926,46 +1885,29 @@
       
       <script src="assets/js/jquery.ui.touch-punch.min.js"></script> 
      
-	 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script> 
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script> 
  
-
-
-
-
-
- 
-	  <script src="https://unpkg.com/esri-leaflet@2.5.0/dist/esri-leaflet.js"
-    integrity="sha512-ucw7Grpc+iEQZa711gcjgMBnmd9qju1CICsRaryvX7HJklK0pGl/prxKvtHwpgm5ZHdvAil7YPxI1oWPOWK3UQ=="
-    crossorigin=""></script>
+      <script src="https://unpkg.com/esri-leaflet@2.5.0/dist/esri-leaflet.js"
+      integrity="sha512-ucw7Grpc+iEQZa711gcjgMBnmd9qju1CICsRaryvX7HJklK0pGl/prxKvtHwpgm5ZHdvAil7YPxI1oWPOWK3UQ=="
+      crossorigin=""></script>
 	
-	<!-- Load Esri Leaflet Renderers from CDN -->
-	
-    <script src="https://unpkg.com/esri-leaflet-renderers@3.0.0" crossorigin=""></script>
-	
-    <!-- Load Esri Leaflet Vector from CDN -->
+      <script src="https://unpkg.com/esri-leaflet-renderers@3.0.0" crossorigin=""></script>
 	
       <script src="https://unpkg.com/esri-leaflet-vector@4.2.3/dist/esri-leaflet-vector.js" crossorigin=""></script>
 	  
 	  <script src="https://cdn.jsdelivr.net/npm/leaflet-bing-layer@3.3.1/leaflet-bing-layer.min.js"></script>
 	  
 	  <script src="https://cdnjs.cloudflare.com/ajax/libs/mapbox-gl/3.3.0/mapbox-gl.js"></script>
-      
-	  
-	  <script src="https://unpkg.com/esri-leaflet-vector@2.0.2/dist/esri-leaflet-vector.js"></script>
-	  
+      	  
 	  <script src="assets/js/lobipanel.js"></script>
       
 	  <script src="https://cdn.jsdelivr.net/npm/leaflet.wms@0.2.0/dist/leaflet.wms.min.js"></script>	  
-      
-	  <script src="assets/js/leaflet.groupedlayercontrol.js"></script> 
       
 	  <script src="assets/js/tangram.min.js"></script> 
       
 	  <script src="assets/js/leaflet-touch-helper.js"></script> 
       
 	  <script src="assets/js/Control.Coordinates.js"></script> 
-      
-	  <script src="assets/js/Leaflet.PolylineMeasure.js"></script> 
       
 	  <script src="assets/js/L.Control.HtmlLegend.js"></script> 
       
@@ -1974,8 +1916,6 @@
 	  <script src="assets/js/leaflet-bing-layer.js"></script>
       
 	  <script src="assets/js/omphalopsychicsingle.js"></script>
-      
-	  <script src="assets/js/layercontrol.js"></script> 
       
 	  <script src="assets/js/leaflet-sidebar.js"></script> 
       
@@ -1989,6 +1929,10 @@
       
 	  <script src="https://cdn.jsdelivr.net/npm/leaflet.geodesic"></script>
 	  
+	  <script src="assets/js/leaflet.zoomhome.min.js"></script>
+	  
+	  <script src="assets/js/L.Control.ZoomBox.js"></script>
+	  
 	  <script src="assets/js/map.js"></script>
       
 	  <script src="assets/js/leaflet.browser.print.js"></script> 
@@ -1997,18 +1941,12 @@
       
 	  <script src="assets/js/printsettings.js"></script>
       
-	  <!-- <script src="assets/js/Leaflet.Geodesic.orig.js"></script>-->
-      
-	  <script src="assets/js/Leaflet.Geodesic.js"></script>
-	  
 	  <script src="https://unpkg.com/leaflet-kmz@latest/dist/leaflet-kmz.js"></script>
 	  
 	  <script src="https://unpkg.com/togeojson@0.16.0"></script>
       
-	  <!-- <script src="assets/js/leaflet.filelayer.js"></script>-->
+	  <script src="assets/js/leaflet.filelayer.js"></script>
       
-	  <script src="assets/js/leaflet.filelayertest.js"></script>
-	  
 	  <script src="assets/js/leaflet-bootstrapmodal.js"></script>
 	  
       <script src="assets/js/helpmodal.js"></script>	  
@@ -2021,227 +1959,15 @@
 	  
 	  <script src="assets/js/draw.js"></script>
 	  
-	  
-	  
 	  <script src="assets/imageoverlayjs/jquery.dm-uploader.min.js"></script>
-      <script src="assets/imageoverlayjs/overlay-ui.js"></script>
-      <script src="assets/imageoverlayjs/overlay-config.js"></script>
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-      <script>
-         function setModalMaxHeight(element) {
-         this.$element     = $(element);  
-         this.$content     = this.$element.find('.modal-content');
-         var borderWidth   = this.$content.outerHeight() - this.$content.innerHeight();
-         var dialogMargin  = $(window).width() < 768 ? 20 : 60;
-         var contentHeight = $(window).height() - (dialogMargin + borderWidth);
-         var headerHeight  = this.$element.find('.modal-header').outerHeight() || 0;
-         var footerHeight  = this.$element.find('.modal-footer').outerHeight() || 0;
-         var maxHeight     = contentHeight - (headerHeight + footerHeight);
-         this.$content.css({
-            'overflow': 'hidden'
-         });
-         this.$element
-          .find('.modal-body').css({
-            'max-height': maxHeight,
-            'overflow-y': 'auto'
-         });
-         }
-         $('.modal').on('show.bs.modal', function() {
-         $(this).show();
-         setModalMaxHeight(this);
-         });
-         $(window).resize(function() {
-         if ($('.modal.in').length != 0) {
-          setModalMaxHeight($('.modal.in'));
-         }
-         });
-      </script> 
-      <script>   
-         $("#featureModal").draggable({
-              handle: ".modal-header"
-          });  
-      </script> 
-      <script>    
-         var sidebar = L.control.sidebar({ container: 'sidebar', autopan: true })
-                     .addTo(map);   
-      </script> 
-      <script>
-         $(function(){
-             $('#lobipanel-multiple').find('.panel').lobiPanel({
-                 state: 'collapsed',
-         sortable: true,
-         reload: false,
-         close: false,
-         editTitle: false
-             });
-         });
-      </script> 
-      <script>
-         $(function(){
-             $('#lobipanel-multiple1').find('.panel').lobiPanel({
-                 state: 'open',
-         sortable: true,
-         reload: false,
-         close: false,
-         editTitle: false
-             });
-         });
-      </script> 	
-      <script>
-         $(function(){
-             $('#lobipanel-multiple3').find('.panel').lobiPanel({
-                 state: 'collapsed',
-         sortable: true,
-         reload: false,
-         close: false,
-         editTitle: false
-             });
-         });
-      </script>
-      <script>
-         $(function(){
-            $('#lobipanel-multiple4').find('.panel').lobiPanel({
-                 state: 'collapsed',
-         sortable: true,
-         reload: false,
-         close: false,
-         editTitle: false
-             });
-         });
-      </script>
-      <script>
-         $(function(){
-           $('#lobipanel-multiple6').find('.panel').lobiPanel({
-                 state: 'collapsed',
-         sortable: true,
-         reload: false,
-         close: false,
-         editTitle: false
-             });
-         });
-      </script>
-      <script>
-         $(function(){
-           $('#lobipanel-multiple7').find('.panel').lobiPanel({
-                 state: 'collapsed',
-         sortable: true,
-         reload: false,
-         close: false,
-         editTitle: false
-             });
-         });
-      </script>
-      <script>
-         $(function(){
-              $('#lobipanel-multiple8').find('.panel').lobiPanel({
-                 state: 'open',
-         sortable: true,
-         reload: false,
-         close: false,
-         editTitle: false
-             });
-         });
-      </script>
-      <script>
-         $(function(){
-           $('#lobipanel-multiple9').find('.panel').lobiPanel({
-                 state: 'collapsed',
-         sortable: true,
-         reload: false,
-         close: false,
-         editTitle: false
-             });
-         });
-      </script>
-      <script>
-         $(function(){
-          $('#lobipanel-multiple11').find('.panel').lobiPanel({
-                 state: 'collapsed',
-         sortable: true,
-         reload: false,
-         close: false,
-         editTitle: false
-             });
-         });
-      </script>
-      <script>
-         $(function(){
-          $('#lobipanel-multiple14').find('.panel').lobiPanel({
-                 state: 'collapsed',
-         sortable: true,
-         reload: false,
-         close: false,
-         editTitle: false
-             });
-         });
-      </script>
-      <script>
-         $(function(){
-          $('#lobipanel-multiple19').find('.panel').lobiPanel({
-                 state: 'open',
-         sortable: true,
-         reload: false,
-         close: false,
-         editTitle: false
-             });
-         });
-      </script>
-      <script>
-         $(function(){
-          $('#lobipanel-multiple20').find('.panel').lobiPanel({
-                 state: 'open',
-         sortable: true,
-         reload: false,
-         close: false,
-         editTitle: false
-             });
-         });
-      </script>
-      <script> 
-         $(document).ready(function(){
-             $('[rel=tooltip]').tooltip({ trigger: "hover" });
-         });
-         
-      </script>
-      <script >function copyToClipboard(element) {
-         var $temp = $("<input>");
-           $("body").append($temp);
-           $temp.val($(element).text()).select();
-           document.execCommand("copy");
-           $temp.remove();
-         }
-         
-               
-      </script>
-      <script>
-         $('#clickhere').click(function() {
-            downloadeverything();
-         });
-         
-         function downloadeverything() {
-            function downloadInnerHtml(filename, elId, mimeType) {
-               var elHtml = $('#' + elId).text();
-               var link = document.createElement('a');
-               mimeType = mimeType || 'text/plain';
-               link.setAttribute('download', filename);
-               link.setAttribute('href', 'data:' + mimeType + ';charset=utf-8,' + encodeURIComponent(elHtml));
-               link.click();
-            }
-            var fileName = 'maceoutput.geojson';
-            downloadInnerHtml(fileName, 'geojson', 'text/html');
-         }
-               
-      </script>
       
+	  <script src="assets/imageoverlayjs/overlay-ui.js"></script>
+      
+	  <script src="assets/imageoverlayjs/overlay-config.js"></script>
+	  
+	  
+	  
+	  
 
    </body>
 </html>
