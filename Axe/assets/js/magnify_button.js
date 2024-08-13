@@ -63,7 +63,7 @@
 })();
 
 function init() {
-  var tileUrl = 'http://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}';
+  var tileUrl = "https://clarity.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}";
   var tileOptions = {
     attribution: 'arcgis'
   };

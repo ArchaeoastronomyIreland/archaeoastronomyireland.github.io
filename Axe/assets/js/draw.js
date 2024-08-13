@@ -6,7 +6,7 @@ var markericon = L.icon({
 
 
 
-drawControl = new L.Control.Draw({
+var drawControl = new L.Control.Draw({
     draw : {
         position : 'topleft',
         polygon : true,

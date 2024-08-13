@@ -137,16 +137,7 @@ var NationalMonumentsEng = L.esri
          };
       }
    })
-var CountiesEng = L.esri
-   .featureLayer({
-      url: "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/Counties_and_Unitary_Authorities_May_2023_UK_BFC/FeatureServer/0",
-      minZoom:14,
-	  style: function(feature) {
-         return {
-            fillColor: 'white'
-         };
-      }
-   })
+
 
 var Esri_WorldImagery = L.tileLayer(
    'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
@@ -224,7 +215,8 @@ function zoomTo() {
 var zoomHome = L.Control.zoomHome();
 zoomHome.addTo(map);
 
-
+//  add Fullscreen to an existing map:
+map.addControl(new L.Control.Fullscreen());
 
 const baseLayers = {
 	'<i class="fa fa-map"></i>&nbsp;OpenStreetMap': osm,
@@ -238,38 +230,47 @@ const baseLayers = {
 	
 };
 
-var overlayMaps = {
-   '<i class="fa fa-map-pin"></i>&nbsp;Monuments Eng': NationalMonumentsEng,
-   '<i class="fa fa-eye"></i>&nbsp;Lidar England': LidarEng,
-   '<i class="fa fa-map"></i>&nbsp;IRL Historic OSM': osmGSGS3906,
-   '<i class="fa fa-map-pin"></i>&nbsp;Monuments ROI': NationalMonuments,
-   '<i class="fa fa-eye"></i>&nbsp;IRL Lidar GSI 1': LidarGSI,
-   '<i class="fa fa-eye"></i>&nbsp;IRL Lidar OPW': LidarOPW,
-   '<i class="fa fa-eye"></i>&nbsp;Lidar TII Roads': LidarTIIRoads,
-   '<i class="fa fa-eye"></i>&nbsp;Lidar GSI 2': LidarGSI2,
-   '<i class="fa fa-eye"></i>&nbsp;Lidar Dublin': LidarDublin,
-   '<i class="fa fa-eye"></i>&nbsp;Lidar Cork': LidarCork,
-   '<i class="fa fa-eye"></i>&nbsp;Lidar Coastal': LidarCoastal,
-   '<i class="fa fa-eye"></i>&nbsp;Uisneach': LidarUisneach,
-   '<i class="fa fa-map-pin"></i>&nbsp;Monuments NI': NationalMonumentsNI,
-   '<i class="fa fa-eye"></i>&nbsp;Lidar Scotland Phase 1': LidarScot1,
-   '<i class="fa fa-eye"></i>&nbsp;Lidar Scotland Phase 2': LidarScot2,
-   '<i class="fa fa-eye"></i>&nbsp;Lidar Scotland Phase 3': LidarScot3,
-   '<i class="fa fa-eye"></i>&nbsp;Lidar Scotland Phase 4': LidarScot4,
-   '<i class="fa fa-eye"></i>&nbsp;Lidar Scotland Phase 5': LidarScot5,
-   '<i class="fa fa-eye"></i>&nbsp;Lidar Scotland Phase 6': LidarScot6,   
-   '<i class="fa fa-eye"></i>&nbsp;Lidar Wales': LidarWales    
-   
-  
-};
 
 
+
+// Overlay layers are grouped
+    var groupedOverlays = {
+      "England": {
+        '<i class="fa fa-map-pin"></i>&nbsp;Monuments Eng': NationalMonumentsEng,
+        '<i class="fa fa-eye"></i>&nbsp;Lidar England': LidarEng,
+      },
+      "Ireland ROI": {
+        '<i class="fa fa-map"></i>&nbsp;Historic OSM': osmGSGS3906,
+        '<i class="fa fa-map-pin"></i>&nbsp;Monuments ROI': NationalMonuments,
+		'<i class="fa fa-eye"></i>&nbsp;IRL Lidar GSI 1': LidarGSI,
+	    '<i class="fa fa-eye"></i>&nbsp;IRL Lidar OPW': LidarOPW,
+	    '<i class="fa fa-eye"></i>&nbsp;Lidar TII Roads': LidarTIIRoads,
+	    '<i class="fa fa-eye"></i>&nbsp;Lidar GSI 2': LidarGSI2,
+	    '<i class="fa fa-eye"></i>&nbsp;Lidar Dublin': LidarDublin,
+	    '<i class="fa fa-eye"></i>&nbsp;Lidar Cork': LidarCork,
+	    '<i class="fa fa-eye"></i>&nbsp;Lidar Coastal': LidarCoastal,
+	    '<i class="fa fa-eye"></i>&nbsp;Uisneach': LidarUisneach
+      },
+	  "Ireland NI": {
+        '<i class="fa fa-m"></i>&nbsp;Monuments NI': NationalMonumentsNI
+        
+      },
+	  "Scotland": {
+        '<i class="fa fa-eye"></i>&nbsp;Lidar Scotland Phase 1': LidarScot1,
+	    '<i class="fa fa-eye"></i>&nbsp;Lidar Scotland Phase 2': LidarScot2,
+	    '<i class="fa fa-eye"></i>&nbsp;Lidar Scotland Phase 3': LidarScot3,
+	    '<i class="fa fa-eye"></i>&nbsp;Lidar Scotland Phase 4': LidarScot4,
+	    '<i class="fa fa-eye"></i>&nbsp;Lidar Scotland Phase 5': LidarScot5,
+	    '<i class="fa fa-eye"></i>&nbsp;Lidar Scotland Phase 6': LidarScot6
+      },
+	  "Wales": {
+        '<i class="fa fa-eye"></i>&nbsp;Lidar Wales': LidarWales
+        
+      },
+    };
 
     // Use the custom grouped layer control, not "L.control.layers"
-    var layerswitcher = L.control.layers(baseLayers, overlayMaps,).addTo(map);
-	
-	
-	
+    L.control.groupedLayers(baseLayers, groupedOverlays).addTo(map);
 
 
 

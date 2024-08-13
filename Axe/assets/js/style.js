@@ -49,7 +49,7 @@ style = function (feature) {
 					weight: .5,
                     opacity: 1.0,
                     dashArray: "5 5",
-                    radius: 3,
+                    radius: 8,
                 };
 				
             },
