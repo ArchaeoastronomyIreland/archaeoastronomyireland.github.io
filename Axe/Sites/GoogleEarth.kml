@@ -1,0 +1,790 @@
+<kml xmlns="http://www.opengis.net/kml/2.2"><Document>
+<Placemark>
+<name>Circle feature visible in Bing aerial imagery 2024 and lidar.  51.8846  -0.9627</name><ExtendedData>
+  <Data name="image"><value>null</value></Data></ExtendedData>
+  <Polygon>
+<outerBoundaryIs>
+  <LinearRing><coordinates>-0.962594,51.884555
+-0.962559,51.884528
+-0.962552,51.884491
+-0.962588,51.884446
+-0.962668,51.884433
+-0.96276,51.884449
+-0.962804,51.884491
+-0.96279,51.88454
+-0.962749,51.884565
+-0.96268,51.884578
+-0.962631,51.884573
+-0.962594,51.884555</coordinates></LinearRing></outerBoundaryIs></Polygon></Placemark>
+<Placemark>
+<name>Circle feature visible in Bing aerial imagery 2024 and lidar.  51.8846  -0.9627</name><ExtendedData>
+  <Data name="image"><value>null</value></Data></ExtendedData>
+  <Point><coordinates>-0.962736,51.884585</coordinates></Point></Placemark>
+<Placemark>
+<name>Circle feature evident in lidar and Bing aerials 2024  52.0700  -0.8463</name><ExtendedData>
+  <Data name="image"><value>null</value></Data></ExtendedData>
+  <Polygon>
+<outerBoundaryIs>
+  <LinearRing><coordinates>-0.846173,52.069885
+-0.846173,52.069832
+-0.846226,52.069776
+-0.846355,52.069773
+-0.846452,52.069809
+-0.846478,52.069901
+-0.846393,52.069941
+-0.846291,52.069951
+-0.846205,52.069938
+-0.846173,52.069885</coordinates></LinearRing></outerBoundaryIs></Polygon></Placemark>
+<Placemark>
+<name>Circle feature evident in lidar and Bing aerials 2024  52.0700  -0.8463</name><ExtendedData>
+  <Data name="image"><value>null</value></Data></ExtendedData>
+  <Point><coordinates>-0.84636,52.07001</coordinates></Point></Placemark>
+<Placemark>
+<name>Series of circular features evident on Bing Aerial Imagery 2024 and partially evident on Lidar north of List Entry: 1005688
+
+Description: 'Ende Burgh' long barrow
+
+Link to NHLE entry
+
+Easting/Northing: 415893, 134041
+
+National Grid Reference: SU 15893 34041 Lat/Long  51.1105  -1.7696</name><ExtendedData>
+  <Data name="image"><value>null</value></Data></ExtendedData>
+  <Polygon>
+<outerBoundaryIs>
+  <LinearRing><coordinates>-1.770864,51.110342
+-1.770355,51.11041
+-1.769931,51.110443
+-1.769496,51.110447
+-1.769094,51.11041
+-1.768584,51.110356
+-1.768166,51.110248
+-1.767806,51.110127
+-1.767608,51.110009
+-1.767592,51.109888
+-1.767667,51.109783
+-1.767903,51.109726
+-1.768187,51.10981
+-1.768434,51.109921
+-1.768815,51.109959
+-1.769196,51.110022
+-1.769641,51.110046
+-1.769979,51.110016
+-1.770381,51.109992
+-1.770666,51.109932
+-1.770961,51.109915
+-1.771127,51.110049
+-1.771165,51.110191
+-1.771073,51.110289
+-1.770864,51.110342</coordinates></LinearRing></outerBoundaryIs></Polygon></Placemark>
+<Placemark>
+<name>Series of circular features evident on Bing Aerial Imagery 2024 and partially evident on Lidar north of List Entry: 1005688
+
+Description: 'Ende Burgh' long barrow
+
+Link to NHLE entry
+
+Easting/Northing: 415893, 134041
+
+National Grid Reference: SU 15893 34041 Lat/Long  51.1105  -1.7696</name><ExtendedData>
+  <Data name="image"><value>null</value></Data></ExtendedData>
+  <Point><coordinates>-1.769544,51.110518</coordinates></Point></Placemark>
+<Placemark>
+<name>Surely known but unmarked barrow at the southern end of White Sheet Downs Neolithic Causewayed Camp - List Entry: 1005640 Lat/Long  51.1146  -2.2842</name><ExtendedData>
+  <Data name="image"><value>null</value></Data></ExtendedData>
+  <Polygon>
+<outerBoundaryIs>
+  <LinearRing><coordinates>-2.284132,51.114717
+-2.284266,51.114653
+-2.284411,51.11468
+-2.284475,51.114778
+-2.284368,51.114852
+-2.284244,51.114862
+-2.284126,51.114815
+-2.284132,51.114717</coordinates></LinearRing></outerBoundaryIs></Polygon></Placemark>
+<Placemark>
+<name>Surely known but unmarked barrow at the southern end of White Sheet Downs Neolithic Causewayed Camp - List Entry: 1005640 Lat/Long  51.1146  -2.2842</name><ExtendedData>
+  <Data name="image"><value>null</value></Data></ExtendedData>
+  <Point><coordinates>-2.284293,51.114609</coordinates></Point></Placemark>
+<Placemark>
+<name>Feature evident in Lidar adjacent to List Entry: 1012639
+
+Description: Bowl barrow 240m south of Trinity House
+
+Link to NHLE entry
+
+Easting/Northing: 465259, 137787
+
+National Grid Reference: SU 65259 37787 Lat/Long  51.1354  -1.0710 </name><ExtendedData>
+  <Data name="image"><value>null</value></Data></ExtendedData>
+  <Polygon>
+<outerBoundaryIs>
+  <LinearRing><coordinates>-1.070899,51.135302
+-1.070652,51.135295
+-1.070545,51.135194
+-1.070491,51.135039
+-1.070663,51.134912
+-1.070931,51.134905
+-1.071124,51.135066
+-1.071113,51.135221
+-1.070899,51.135302</coordinates></LinearRing></outerBoundaryIs></Polygon></Placemark>
+<Placemark>
+<name>Feature evident in Lidar adjacent to List Entry: 1012639
+
+Description: Bowl barrow 240m south of Trinity House
+
+Link to NHLE entry
+
+Easting/Northing: 465259, 137787
+
+National Grid Reference: SU 65259 37787 Lat/Long  51.1354  -1.0710</name><ExtendedData>
+  <Data name="image"><value>null</value></Data></ExtendedData>
+  <Point><coordinates>-1.070834,51.135464</coordinates></Point></Placemark>
+<Placemark>
+<ExtendedData>
+  <Data name="image"><value>null</value></Data></ExtendedData>
+  <Polygon>
+<outerBoundaryIs>
+  <LinearRing><coordinates>-1.832732,51.139381
+-1.832464,51.139294
+-1.83226,51.139126
+-1.832099,51.13889
+-1.832056,51.138621
+-1.832131,51.138385
+-1.832249,51.13817
+-1.832474,51.138028
+-1.832743,51.137927
+-1.83315,51.137887
+-1.833708,51.138062
+-1.833955,51.138372
+-1.834041,51.138688
+-1.833977,51.138984
+-1.833783,51.1392
+-1.833494,51.139341
+-1.833193,51.139402
+-1.832732,51.139381</coordinates></LinearRing></outerBoundaryIs></Polygon></Placemark>
+<Placemark>
+<ExtendedData>
+  <Data name="image"><value>null</value></Data></ExtendedData>
+  <Polygon>
+<outerBoundaryIs>
+  <LinearRing><coordinates>-1.839159,51.139859
+-1.838896,51.139779
+-1.838681,51.139691
+-1.838627,51.13959
+-1.83874,51.139274
+-1.838831,51.139092
+-1.838955,51.138978
+-1.839239,51.138883
+-1.839577,51.138816
+-1.839995,51.138803
+-1.840328,51.138796
+-1.840446,51.139038
+-1.840725,51.138873
+-1.840934,51.138988
+-1.841009,51.139139
+-1.841009,51.139297
+-1.840843,51.139469
+-1.840596,51.139641
+-1.84029,51.139785
+-1.839765,51.139843
+-1.839421,51.139866
+-1.839159,51.139859</coordinates></LinearRing></outerBoundaryIs></Polygon></Placemark>
+<Placemark>
+<name>Cropmarks of 2 Large oval enclosures on Google and Esri Aerial imagery. Easternmost enclosure faintly visible on Lidar. Lat/Long 51.1399  -1.8371</name><ExtendedData>
+  <Data name="image"><value>null</value></Data></ExtendedData>
+  <Point><coordinates>-1.837227,51.1399</coordinates></Point></Placemark>
+<Placemark>
+<ExtendedData>
+  <Data name="image"><value>null</value></Data></ExtendedData>
+  <Polygon>
+<outerBoundaryIs>
+  <LinearRing><coordinates>-1.750882,51.18017
+-1.750678,51.180076
+-1.75071,51.179861
+-1.751,51.179787
+-1.751289,51.179901
+-1.751289,51.18013
+-1.751107,51.18019
+-1.750882,51.18017</coordinates></LinearRing></outerBoundaryIs></Polygon></Placemark>
+<Placemark>
+<ExtendedData>
+  <Data name="image"><value>null</value></Data></ExtendedData>
+  <Polygon>
+<outerBoundaryIs>
+  <LinearRing><coordinates>-1.744707,51.178647
+-1.744621,51.178519
+-1.74467,51.178374
+-1.744922,51.178294
+-1.74519,51.178348
+-1.745281,51.178465
+-1.745185,51.17866
+-1.744959,51.178694
+-1.74482,51.178684
+-1.744707,51.178647</coordinates></LinearRing></outerBoundaryIs></Polygon></Placemark>
+<Placemark>
+<ExtendedData>
+  <Data name="image"><value>null</value></Data></ExtendedData>
+  <Polygon>
+<outerBoundaryIs>
+  <LinearRing><coordinates>-1.740502,51.176683
+-1.740351,51.176622
+-1.740292,51.176484
+-1.740405,51.17636
+-1.740668,51.176306
+-1.740947,51.176373
+-1.741,51.176589
+-1.740818,51.176666
+-1.740662,51.176693
+-1.740502,51.176683</coordinates></LinearRing></outerBoundaryIs></Polygon></Placemark>
+<Placemark>
+<ExtendedData>
+  <Data name="image"><value>null</value></Data></ExtendedData>
+  <Polygon>
+<outerBoundaryIs>
+  <LinearRing><coordinates>-1.73805,51.175893
+-1.737964,51.175697
+-1.738168,51.17557
+-1.738511,51.175583
+-1.738608,51.175765
+-1.738415,51.175886
+-1.73805,51.175893</coordinates></LinearRing></outerBoundaryIs></Polygon></Placemark>
+<Placemark>
+<ExtendedData>
+  <Data name="image"><value>null</value></Data></ExtendedData>
+  <Polygon>
+<outerBoundaryIs>
+  <LinearRing><coordinates>-1.737835,51.174863
+-1.737986,51.174635
+-1.73835,51.174675
+-1.738329,51.174877
+-1.737835,51.174863</coordinates></LinearRing></outerBoundaryIs></Polygon></Placemark>
+<Placemark>
+<ExtendedData>
+  <Data name="image"><value>null</value></Data></ExtendedData>
+  <Polygon>
+<outerBoundaryIs>
+  <LinearRing><coordinates>-1.742181,51.172428
+-1.742052,51.172247
+-1.742202,51.172018
+-1.74261,51.171984
+-1.742803,51.1722
+-1.742706,51.172368
+-1.742481,51.172435
+-1.742181,51.172428</coordinates></LinearRing></outerBoundaryIs></Polygon></Placemark>
+<Placemark>
+<ExtendedData>
+  <Data name="image"><value>null</value></Data></ExtendedData>
+  <Polygon>
+<outerBoundaryIs>
+  <LinearRing><coordinates>-1.743103,51.172341
+-1.743264,51.17218
+-1.743608,51.17218
+-1.743747,51.172327
+-1.743661,51.172455
+-1.743457,51.172489
+-1.743232,51.172449
+-1.743103,51.172341</coordinates></LinearRing></outerBoundaryIs></Polygon></Placemark>
+<Placemark>
+<ExtendedData>
+  <Data name="image"><value>null</value></Data></ExtendedData>
+  <Polygon>
+<outerBoundaryIs>
+  <LinearRing><coordinates>-1.746011,51.172294
+-1.745893,51.172186
+-1.746022,51.172058
+-1.746204,51.172092
+-1.74629,51.172206
+-1.746193,51.172294
+-1.746011,51.172294</coordinates></LinearRing></outerBoundaryIs></Polygon></Placemark>
+<Placemark>
+<name>Multiple features surrounding List Entry: 1009560
+
+Description: Bell barrow 650m east of the Pennings, Earl's Farm Down
+
+Link to NHLE entry
+
+Easting/Northing: 418033, 141904
+
+National Grid Reference: SU 18033 41904. Evident on ESRI aerial clarity. Some evident on Lidar. Lat/Long  51.1764  -1.7418</name><ExtendedData>
+  <Data name="image"><value>null</value></Data></ExtendedData>
+  <Point><coordinates>-1.741934,51.176115</coordinates></Point></Placemark>
+<Placemark>
+<name>Fields with many visible features in Bing aerial imagery 2024 east of List Entry: 1010462
+
+Description: The Knoll: a bell barrow 300m west of Manor Farm
+
+Link to NHLE entry
+
+Easting/Northing: 391401, 141407
+
+National Grid Reference: ST 91401 41407  Lat/Long 51.1781  -2.1075</name><ExtendedData>
+  <Data name="image"><value>null</value></Data></ExtendedData>
+  <Polygon>
+<outerBoundaryIs>
+  <LinearRing><coordinates>-2.116799,51.171271
+-2.116048,51.171863
+-2.115297,51.172294
+-2.114375,51.172792
+-2.113366,51.173706
+-2.112422,51.174419
+-2.110684,51.17602
+-2.109332,51.177164
+-2.108302,51.177662
+-2.10665,51.178119
+-2.105384,51.178146
+-2.104461,51.177998
+-2.104032,51.17785
+-2.105684,51.175792
+-2.107186,51.173626
+-2.109632,51.171554
+-2.110898,51.170437
+-2.111585,51.169805
+-2.116799,51.171271</coordinates></LinearRing></outerBoundaryIs></Polygon></Placemark>
+<Placemark>
+<name>Fields with many visible features in Bing aerial imagery 2024 east of List Entry: 1010462
+
+Description: The Knoll: a bell barrow 300m west of Manor Farm
+
+Link to NHLE entry
+
+Easting/Northing: 391401, 141407
+
+National Grid Reference: ST 91401 41407  Lat/Long 51.1781  -2.1075</name><ExtendedData>
+  <Data name="image"><value>null</value></Data></ExtendedData>
+  <Point><coordinates>-2.106822,51.178348</coordinates></Point></Placemark>
+<Placemark>
+<ExtendedData>
+  <Data name="image"><value>null</value></Data></ExtendedData>
+  <Polygon>
+<outerBoundaryIs>
+  <LinearRing><coordinates>-1.753687,51.187393
+-1.753585,51.187332
+-1.753542,51.187225
+-1.753607,51.187114
+-1.753752,51.187053
+-1.753982,51.187067
+-1.754111,51.187171
+-1.754122,51.187309
+-1.75402,51.187383
+-1.753837,51.187406
+-1.753687,51.187393</coordinates></LinearRing></outerBoundaryIs></Polygon></Placemark>
+<Placemark>
+<ExtendedData>
+  <Data name="image"><value>null</value></Data></ExtendedData>
+  <Polygon>
+<outerBoundaryIs>
+  <LinearRing><coordinates>-1.753575,51.186912
+-1.753505,51.186828
+-1.75351,51.186724
+-1.753618,51.186643
+-1.753768,51.186613
+-1.753966,51.18665
+-1.754041,51.186771
+-1.754025,51.186885
+-1.753886,51.186942
+-1.753725,51.186953
+-1.753575,51.186912</coordinates></LinearRing></outerBoundaryIs></Polygon></Placemark>
+<Placemark>
+<ExtendedData>
+  <Data name="image"><value>null</value></Data></ExtendedData>
+  <Polygon>
+<outerBoundaryIs>
+  <LinearRing><coordinates>-1.752099,51.186868
+-1.752008,51.186758
+-1.751987,51.186613
+-1.752126,51.186458
+-1.752357,51.186398
+-1.752657,51.186404
+-1.75284,51.186509
+-1.75292,51.186663
+-1.752856,51.186858
+-1.752588,51.186949
+-1.752368,51.186953
+-1.752207,51.186926
+-1.752099,51.186868</coordinates></LinearRing></outerBoundaryIs></Polygon></Placemark>
+<Placemark>
+<ExtendedData>
+  <Data name="image"><value>null</value></Data></ExtendedData>
+  <Polygon>
+<outerBoundaryIs>
+  <LinearRing><coordinates>-1.753199,51.186515
+-1.753081,51.186448
+-1.753044,51.186273
+-1.753108,51.186203
+-1.75336,51.186142
+-1.753623,51.186206
+-1.753682,51.186401
+-1.753575,51.186505
+-1.75336,51.186536
+-1.753199,51.186515</coordinates></LinearRing></outerBoundaryIs></Polygon></Placemark>
+<Placemark>
+<ExtendedData>
+  <Data name="image"><value>null</value></Data></ExtendedData>
+  <Polygon>
+<outerBoundaryIs>
+  <LinearRing><coordinates>-1.757866,51.185093
+-1.757877,51.184996
+-1.757984,51.184925
+-1.758188,51.184938
+-1.758258,51.185026
+-1.758252,51.18511
+-1.758113,51.185164
+-1.757973,51.185154
+-1.757866,51.185093</coordinates></LinearRing></outerBoundaryIs></Polygon></Placemark>
+<Placemark>
+<ExtendedData>
+  <Data name="image"><value>null</value></Data></ExtendedData>
+  <Polygon>
+<outerBoundaryIs>
+  <LinearRing><coordinates>-1.753564,51.188637
+-1.753559,51.188492
+-1.753709,51.188388
+-1.753961,51.188388
+-1.754084,51.188503
+-1.754074,51.18864
+-1.753902,51.188708
+-1.753709,51.188708
+-1.753564,51.188637</coordinates></LinearRing></outerBoundaryIs></Polygon></Placemark>
+<Placemark>
+<name>Multiple features evident on ESRI Clarity and Google Imagery 2024 associated with List Entry: 1009602
+
+Description: Bowl barrow: one of a group of round barrows south of Bulford
+
+Link to NHLE entry
+
+Easting/Northing: 417247, 142924
+
+National Grid Reference: SU 17247 42924 Lat/Long  51.1862  -1.7556</name><ExtendedData>
+  <Data name="image"><value>null</value></Data></ExtendedData>
+  <Point><coordinates>-1.755624,51.186378</coordinates></Point></Placemark>
+<Placemark>
+<name>2 Circle features adjacent to
+List Entry: 1018625
+
+Description: Bowl barrow on the south east corner of Larkhill Race Course
+
+Link to NHLE entry
+
+Easting/Northing: 413321, 145958
+ 51.2135  -1.8106</name><ExtendedData>
+  <Data name="image"><value>null</value></Data></ExtendedData>
+  <Polygon>
+<outerBoundaryIs>
+  <LinearRing><coordinates>-1.810435,51.213391
+-1.810405,51.213327
+-1.810416,51.213272
+-1.810494,51.213227
+-1.810633,51.21322
+-1.810722,51.213265
+-1.810746,51.213351
+-1.810703,51.213396
+-1.810614,51.213416
+-1.810523,51.213418
+-1.810435,51.213391</coordinates></LinearRing></outerBoundaryIs></Polygon></Placemark>
+<Placemark>
+<name>2 Circle features adjacent to
+List Entry: 1018625
+
+Description: Bowl barrow on the south east corner of Larkhill Race Course
+
+Link to NHLE entry
+
+Easting/Northing: 413321, 145958
+ 51.2135  -1.8106</name><ExtendedData>
+  <Data name="image"><value>null</value></Data></ExtendedData>
+  <Polygon>
+<outerBoundaryIs>
+  <LinearRing><coordinates>-1.810448,51.213057
+-1.810427,51.212996
+-1.810467,51.212938
+-1.810558,51.212899
+-1.810732,51.212912
+-1.810781,51.21298
+-1.810773,51.213047
+-1.810692,51.213082
+-1.810593,51.213096
+-1.810504,51.213094
+-1.810448,51.213057</coordinates></LinearRing></outerBoundaryIs></Polygon></Placemark>
+<Placemark>
+<name>2 Circle features adjacent to
+List Entry: 1018625
+
+Description: Bowl barrow on the south east corner of Larkhill Race Course
+
+Link to NHLE entry
+
+Easting/Northing: 413321, 145958
+ 51.2135  -1.8106</name><ExtendedData>
+  <Data name="image"><value>null</value></Data></ExtendedData>
+  <Point><coordinates>-1.810604,51.213462</coordinates></Point></Placemark>
+<Placemark>
+<name>Multiple features evident on Bing Aerial 2024 and vaguely evident on Lidar east of List Entry: 1009522
+
+Description: Round barrow east-north-east of Wood's Butt
+
+Link to NHLE entry
+
+Easting/Northing: 411477, 146522
+
+National Grid Reference: SU 11477 46522 Lat/Long  51.2192  -1.8200</name><ExtendedData>
+  <Data name="image"><value>null</value></Data></ExtendedData>
+  <Polygon>
+<outerBoundaryIs>
+  <LinearRing><coordinates>-1.820077,51.219135
+-1.819922,51.219105
+-1.819852,51.219001
+-1.819868,51.21887
+-1.819943,51.218789
+-1.819965,51.218668
+-1.819847,51.218386
+-1.819573,51.218356
+-1.819353,51.218339
+-1.81924,51.218245
+-1.81924,51.218164
+-1.819305,51.218114
+-1.819391,51.218067
+-1.819487,51.218047
+-1.819535,51.217956
+-1.819648,51.217929
+-1.819605,51.217835
+-1.819632,51.217744
+-1.819772,51.217697
+-1.820013,51.217707
+-1.820093,51.217791
+-1.82027,51.217761
+-1.820506,51.217771
+-1.820619,51.217869
+-1.820598,51.217996
+-1.820453,51.21804
+-1.820158,51.21806
+-1.820034,51.218077
+-1.820093,51.218275
+-1.820093,51.218275
+-1.820201,51.21862
+-1.820257,51.21861
+-1.820378,51.21867
+-1.820466,51.218858
+-1.820423,51.219004
+-1.820321,51.21909
+-1.820228,51.219122
+-1.820077,51.219135</coordinates></LinearRing></outerBoundaryIs></Polygon></Placemark>
+<Placemark>
+<name>Multiple features evident on Bing Aerial 2024 and vaguely evident on Lidar east of List Entry: 1009522
+
+Description: Round barrow east-north-east of Wood's Butt
+
+Link to NHLE entry
+
+Easting/Northing: 411477, 146522
+
+National Grid Reference: SU 11477 46522 Lat/Long  51.2192  -1.820</name><ExtendedData>
+  <Data name="image"><value>null</value></Data></ExtendedData>
+  <Point><coordinates>-1.820147,51.21923</coordinates></Point></Placemark>
+<Placemark>
+<name>Single Circular feature just south of Roundway Hill Farm round barrows - Visible on ESRI Clarity Aerial Imagery and faintly visible on lidar. Nearest Entry 1004773 -  Easting/Northing: 401495, 164838 - Lat/Long  51.3752  -1.9765</name><ExtendedData>
+  <Data name="image"><value>null</value></Data></ExtendedData>
+  <Polygon>
+<outerBoundaryIs>
+  <LinearRing><coordinates>-1.976144,51.375142
+-1.976037,51.374995
+-1.976091,51.374821
+-1.976391,51.374694
+-1.976691,51.374794
+-1.976799,51.375009
+-1.976627,51.375149
+-1.97637,51.375176
+-1.976144,51.375142</coordinates></LinearRing></outerBoundaryIs></Polygon></Placemark>
+<Placemark>
+<name>Single Circular feature just south of Roundway Hill Farm round barrows - Visible on ESRI Clarity Aerial Imagery and faintly visible on lidar. Nearest Entry 1004773 -  Easting/Northing: 401495, 164838 - Lat/Long  51.3752  -1.9765</name><ExtendedData>
+  <Data name="image"><value>null</value></Data></ExtendedData>
+  <Point><coordinates>-1.976455,51.37525</coordinates></Point></Placemark>
+<Placemark>
+<name>Feature visible in aerial imagery west of List Entry: 1005697
+
+Description: Group of barrows on Draycott Hill
+
+Link to NHLE entry
+
+Easting/Northing: 413971, 163942
+
+National Grid Reference: SU 13971 63942  51.3745  -1.8036</name><ExtendedData>
+  <Data name="image"><value>null</value></Data></ExtendedData>
+  <Polygon>
+<outerBoundaryIs>
+  <LinearRing><coordinates>-1.803477,51.374466
+-1.803413,51.374417
+-1.803421,51.374367
+-1.803469,51.374322
+-1.803552,51.374299
+-1.803654,51.374315
+-1.803724,51.374367
+-1.803732,51.374419
+-1.803684,51.374459
+-1.803587,51.374473
+-1.803477,51.374466</coordinates></LinearRing></outerBoundaryIs></Polygon></Placemark>
+<Placemark id="39">
+<name>Feature visible in aerial imagery west of List Entry: 1005697
+
+Description: Group of barrows on Draycott Hill
+
+Link to NHLE entry
+
+Easting/Northing: 413971, 163942
+
+National Grid Reference: SU 13971 63942  51.3745  -1.8036</name><ExtendedData>
+  <Data name="image"><value>null</value></Data></ExtendedData>
+  <Point><coordinates>-1.80356,51.37452</coordinates></Point></Placemark>
+<Placemark>
+<name>Collection of circular features apparent on ESRI Aerial imagery just west of List Entry: 1004773
+
+Description: Roundway Hill Farm round barrows
+
+Link to NHLE entry
+
+Easting/Northing: 401495, 164838
+
+National Grid Reference: SU 01495 64838, SU 01691 64684, SU 02133 64601, SU 01823 64421, SU 01942 64335, SU 02508 64734 Lat/Long 51.3793  -1.9759</name><ExtendedData>
+  <Data name="image"><value>null</value></Data></ExtendedData>
+  <Polygon>
+<outerBoundaryIs>
+  <LinearRing><coordinates>-1.97579,51.379234
+-1.975619,51.379154
+-1.975361,51.379147
+-1.975361,51.378919
+-1.975543,51.378853
+-1.975608,51.378652
+-1.975383,51.378625
+-1.975232,51.378424
+-1.975168,51.37819
+-1.97535,51.378082
+-1.975254,51.377935
+-1.976552,51.377573
+-1.976724,51.377774
+-1.976573,51.377922
+-1.97638,51.378196
+-1.976498,51.378417
+-1.976445,51.378745
+-1.976348,51.378973
+-1.976413,51.379161
+-1.97623,51.379295
+-1.97579,51.379234</coordinates></LinearRing></outerBoundaryIs></Polygon></Placemark>
+<Placemark id="41">
+<name>Collection of circular features apparent on ESRI Aerial imagery just west of List Entry: 1004773
+
+Description: Roundway Hill Farm round barrows
+
+Link to NHLE entry
+
+Easting/Northing: 401495, 164838
+
+National Grid Reference: SU 01495 64838, SU 01691 64684, SU 02133 64601, SU 01823 64421, SU 01942 64335, SU 02508 64734 Lat/Long 51.3793  -1.9759</name><ExtendedData>
+  <Data name="image"><value>null</value></Data></ExtendedData>
+  <Point><coordinates>-1.975908,51.379348</coordinates></Point></Placemark>
+<Placemark>
+<name>Multiple circular features evident in various aerial imagery east and south of List Entry: 1012812
+
+Description: Round barrow cemetery on Cock Marsh
+
+Link to NHLE entry
+
+Easting/Northing: 488675, 187019
+
+National Grid Reference: SU 88675 87019 Lat/Long  51.5755  -0.7186</name><ExtendedData>
+  <Data name="image"><value>null</value></Data></ExtendedData>
+  <Polygon>
+<outerBoundaryIs>
+  <LinearRing><coordinates>-0.720645,51.574476
+-0.720388,51.575083
+-0.719143,51.575343
+-0.717545,51.575476
+-0.716558,51.575436
+-0.715806,51.575096
+-0.715442,51.574529
+-0.716139,51.573322
+-0.716633,51.572289
+-0.716804,51.572109
+-0.716654,51.571582
+-0.717255,51.571475
+-0.717705,51.571662
+-0.719122,51.572055
+-0.720946,51.572609
+-0.721943,51.573035
+-0.721986,51.573616
+-0.721804,51.573889
+-0.720634,51.573962
+-0.720613,51.574236
+-0.720645,51.574476</coordinates></LinearRing></outerBoundaryIs></Polygon></Placemark>
+<Placemark>
+<name>Multiple circular features evident in various aerial imagery east and south of List Entry: 1012812
+
+Description: Round barrow cemetery on Cock Marsh
+
+Link to NHLE entry
+
+Easting/Northing: 488675, 187019
+
+National Grid Reference: SU 88675 87019 Lat/Long  51.5755  -0.7186</name><ExtendedData>
+  <Data name="image"><value>null</value></Data></ExtendedData>
+  <Point><coordinates>-0.718768,51.575529</coordinates></Point></Placemark>
+<Placemark>
+<ExtendedData>
+  <Data name="image"><value>null</value></Data></ExtendedData>
+  <Polygon>
+<outerBoundaryIs>
+  <LinearRing><coordinates>-1.746386,51.185671
+-1.74644,51.185587
+-1.746601,51.185581
+-1.746681,51.185634
+-1.746687,51.185722
+-1.746558,51.185752
+-1.746445,51.185735
+-1.746386,51.185671</coordinates></LinearRing></outerBoundaryIs></Polygon></Placemark>
+<Placemark>
+<ExtendedData>
+  <Data name="image"><value>null</value></Data></ExtendedData>
+  <Polygon>
+<outerBoundaryIs>
+  <LinearRing><coordinates>-1.744884,51.185117
+-1.744788,51.185039
+-1.744815,51.184949
+-1.74489,51.184905
+-1.745029,51.184935
+-1.745088,51.185019
+-1.745077,51.185083
+-1.745002,51.185107
+-1.744884,51.185117</coordinates></LinearRing></outerBoundaryIs></Polygon></Placemark>
+<Placemark>
+<ExtendedData>
+  <Data name="image"><value>null</value></Data></ExtendedData>
+  <Polygon>
+<outerBoundaryIs>
+  <LinearRing><coordinates>-1.744627,51.184777
+-1.744557,51.184713
+-1.744595,51.184659
+-1.744568,51.184626
+-1.744444,51.184602
+-1.744369,51.184515
+-1.744439,51.184434
+-1.744595,51.184417
+-1.744691,51.184451
+-1.744718,51.184532
+-1.744691,51.184595
+-1.74482,51.184585
+-1.7449,51.184656
+-1.744895,51.184727
+-1.744831,51.184784
+-1.744734,51.184791
+-1.744627,51.184777</coordinates></LinearRing></outerBoundaryIs></Polygon></Placemark>
+<Placemark>
+<name>Multiple features evident on Bing Aerial Imagery 2024 and Lidar east of List Entry: 1009969
+
+Description: Bowl barrow: one of a group of round barrows south of Bulford
+
+Link to NHLE entry
+
+Easting/Northing: 417557, 143001
+
+National Grid Reference: SU 17557 43001 Lat/Long  51.1852  -1.7458</name><ExtendedData>
+  <Data name="image"><value>null</value></Data></ExtendedData>
+  <Point><coordinates>-1.745989,51.185221</coordinates></Point></Placemark></Document></kml>
