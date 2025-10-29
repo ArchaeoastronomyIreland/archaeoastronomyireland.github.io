@@ -1,0 +1,1253 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Dowth and the Lunar Extremes</title>
+      <!-- Load Tailwind CSS from CDN -->
+      <script src="https://cdn.tailwindcss.com"></script>
+      <!-- Load Font Awesome for icons -->
+      <link
+         rel="stylesheet"
+         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      />
+      <!-- Load Montserrat and Lora fonts -->
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link
+         href="https://fonts.googleapis.com/css2?family=Lora:ital@0;1&family=Montserrat:wght@300;400;700&display=swap"
+         rel="stylesheet"
+      />
+      <!-- Load Leaflet CSS from CDN for the map -->
+      <link
+         rel="stylesheet"
+         href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      />
+
+      <style>
+                  /* Custom font families for different elements */
+                  body {
+                     font-family: "Montserrat", sans-serif;
+                     background-color: #f0f4f8;
+                     color: #333;
+
+
+         }
+                  }
+                  .serif {
+                     font-family: "Lora", serif;
+                  }
+                  .sans-serif {
+                     font-family: "Montserrat", sans-serif;
+                  }
+                  /* Custom styles for inline formatting */
+                  del {
+                     text-decoration: line-through;
+                  }
+                  .code {
+                     font-family: monospace;
+                     background-color: #e2e8f0;
+                     padding: 0.1rem 0.3rem;
+                  }
+                  /* Fix for code block overflow and word wrapping */
+                  .code-block {
+                     white-space: pre-wrap;
+                     word-break: break-all;
+                  }
+                  /* Ensure the map container fills the space and avoids rounded corners */
+                  #map-container {
+                     position: relative;
+         			width: 100%;
+                     /* Use a height class like h-96 to make it responsive */
+                  }
+                  /* Set the map's height to 100% of its parent container */
+                  #map {
+                     height: 100%;
+                     width: 100%;
+                  }
+      </style>
+   </head>
+   <body class="bg-gray-100">
+      <!-- The fixed header for the webpage -->
+      <div
+         style="background-color: #023020"
+         class="fixed top-0 w-full z-[1050] shadow-lg"
+      >
+         <div class="container mx-auto px-4 py-2 flex items-center">
+            <!-- The outlined dot circle icon on the left -->
+            <i
+               class="fa-regular fa-circle-dot text-2xl mr-2"
+               style="color: #ffa500"
+            ></i>
+
+            <!-- The text moved next to the icon with a light font weight -->
+            <h1 class="text-white text-base md:text-xl font-light sans-serif">
+               Archaeoastronomy Ireland
+            </h1>
+
+            <!-- Home and GitHub Icons -->
+            <div class="flex-grow"></div>
+            <a
+               href="#"
+               class="w-8 h-8 rounded-lg border border-[#2487CE] flex items-center justify-center mr-2"
+               style="color: #2487ce"
+            >
+               <i class="fa-solid fa-home"></i>
+            </a>
+            <a
+               href="#"
+               class="w-8 h-8 rounded-lg border border-[#2487CE] flex items-center justify-center"
+               style="color: #2487ce"
+            >
+               <i class="fa-brands fa-github"></i>
+            </a>
+         </div>
+      </div>
+
+      <!-- Main content container -->
+      <div class="p-4 md:p-8 pt-16">
+         <div class="max-w-4xl mx-auto bg-white p-6 md:p-10 shadow-lg">
+            <!-- Your new document content goes here -->
+
+            <!-- Document Header -->
+            <div
+               class="flex justify-between items-center text-xs text-gray-500 mb-4 serif italic"
+            >
+               <div class="text-left">Dowth and the Lunar Extremes</div>
+               <div class="text-right">Brian Doyle | September, 2025</div>
+            </div>
+
+            <!-- Single image with caption -->
+            <div class="my-6 text-center border border-gray-300 p-2">
+               <img
+                  src="./images/GabrielBerangerTheMoatorBarrowatDowth.png"
+                  alt="Diagram of an ancient megalith."
+                  class="w-full h-auto mb-2"
+               />
+               <figcaption class="text-sm text-gray-500 serif italic">
+                  Figure 1. The Moat or Barrow at Dowth. (Gabriel Beranger 1775)
+               </figcaption>
+            </div>
+
+            <!-- Article Title and Author Info -->
+            <div class="text-center mb-10">
+               <h2
+                  class="text-3xl md:text-4xl font-bold text-gray-800 mb-2 sans-serif"
+               >
+                  Dowth and the Lunar Extremes
+               </h2>
+               <p class="text-gray-600 italic sans-serif">
+                  By Brian Doyle - Archaeoastronomy Ireland.
+               </p>
+            </div>
+
+            <h3 class="text-xl font-bold text-gray-700 mb-2 sans-serif">
+               Abstract
+            </h3>
+
+            <!-- Blockquote Section -->
+            <div
+               class="relative md:w-2/3 mx-auto pl-6 border-l-4 border-gray-400"
+            >
+               <p class="text-gray-600 leading-relaxed text-sm serif italic">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+               </p>
+            </div>
+
+            <div class="mb-12">
+               <!-- This div was empty, so it has been preserved without content. -->
+            </div>
+
+            <!-- In-Page Index (Table of Contents) -->
+            <div class="mb-12">
+               <h3 class="text-xl font-bold text-gray-700 mb-4 sans-serif">
+                  Table of Contents
+               </h3>
+               <ul
+                  class="text-xs text-gray-600 leading-relaxed sans-serif pl-4"
+               >
+                  <li>
+                     <a href="#introduction" class="hover:underline"
+                        >1. Introduction</a
+                     >
+                  </li>
+                  <li>
+                     <a href="#materials-and-methods" class="hover:underline"
+                        >2. Materials and Methods</a
+                     >
+                     <ul class="list-disc list-inside pl-6">
+                        <li>
+                           <a href="#fieldwork" class="hover:underline"
+                              >2.1 Fieldwork</a
+                           >
+                        </li>
+                        <li>
+                           <a href="#data-analysis" class="hover:underline"
+                              >2.2 Data Analysis</a
+                           >
+                        </li>
+                        <li>
+                           <a
+                              href="#typographical-examples"
+                              class="hover:underline"
+                              >2.3 Typographical Examples</a
+                           >
+                        </li>
+                        <li>
+                           <a
+                              href="#lists-and-enumeration"
+                              class="hover:underline"
+                              >2.4 Lists and Enumeration</a
+                           >
+                        </li>
+                        <li>
+                           <a href="#table-examples" class="hover:underline"
+                              >2.5 Table Examples</a
+                           >
+                        </li>
+                        <li>
+                           <a href="#images-and-figures" class="hover:underline"
+                              >2.6 Images and Figures</a
+                           >
+                        </li>
+                     </ul>
+                  </li>
+                  <li>
+                     <a href="#conclusion" class="hover:underline"
+                        >3. Conclusion</a
+                     >
+                  </li>
+                  <li>
+                     <a href="#references" class="hover:underline"
+                        >4. References</a
+                     >
+                  </li>
+                  <li><a href="#map" class="hover:underline">4.1 Map</a></li>
+                  <li>
+                     <a href="#components" class="hover:underline"
+                        >5. Document Components</a
+                     >
+                  </li>
+               </ul>
+            </div>
+
+            <!-- Introduction Section -->
+            <div id="introduction" class="mb-12">
+               <h3
+                  class="text-xl font-bold text-gray-700 sans-serif whitespace-nowrap border-b border-gray-400 pb-1 mb-6"
+                  style="border-bottom-width: 3px"
+               >
+                  1. Introduction
+               </h3>
+               <h4
+                  id="bru-na-boinne"
+                  class="text-lg font-bold text-gray-700 mt-6 mb-2 sans-serif"
+               >
+                  1.1 Brú na Bóinne
+               </h4>
+               <p class="text-gray-600 leading-relaxed sans-serif mb-4">
+                  Brú na Bóinne, inscribed as a UNESCO World Heritage Site in
+                  1993, is one of the most significant prehistoric landscapes in
+                  Europe. Located in a bend of the River Boyne in County Meath,
+                  Ireland, it encompasses a remarkable collection of Neolithic
+                  monuments, including passage tombs, burial mounds, henges, and
+                  other prehistoric enclosures. The most prominent features are
+                  the three great passage tombs of Newgrange, Knowth, and Dowth,
+                  all constructed around 3200 BC during the Late Stone Age.
+               </p>
+               <!-- Map Integration -->
+               <div id="map-container" class="my-12 h-96">
+                  <div id="map" class="h-full w-full"></div>
+               </div>
+
+               <div class="mb-12">
+                  <p class="text-gray-600 leading-relaxed sans-serif mb-4">
+                     The archaeological landscape is a testament to the
+                     sophistication and communal effort of the Neolithic people
+                     who inhabited the area. The site is a complex funerary and
+                     ceremonial center, with evidence of use and modification
+                     through the Bronze Age, Iron Age, and into the medieval
+                     period. The sheer scale of the monuments, particularly the
+                     main passage tombs, suggests a society capable of
+                     organizing large-scale projects, mobilizing hundreds of
+                     people to collect and move massive quantities of stone and
+                     earth. The area's concentration of megalithic art, the
+                     largest in Western Europe, is a key reason for its UNESCO
+                     designation. The art features recurring motifs such as
+                     spirals, chevrons, circles, and serpentine forms, which are
+                     found on hundreds of stones throughout the complex.
+                  </p>
+               </div>
+               <p class="text-gray-600 leading-relaxed sans-serif mb-4">
+                  The site's importance is further underscored by its
+                  archaeoastronomical alignments. The preeminent tomb,
+                  Newgrange, is famously aligned to the rising sun at the winter
+                  solstice. The alignments of the other sites, including Dowth,
+                  are less known and less certain.
+               </p>
+               <h4
+                  id="dowth-overview"
+                  class="text-lg font-bold text-gray-700 mt-6 mb-2 sans-serif"
+               >
+                  1.2 Dowth: Overview and Place within the Complex
+               </h4>
+               <p class="text-gray-600 leading-relaxed sans-serif mb-4">
+                  Dowth (Irish: Dubhadh, "darkness") is one of the three
+                  principal passage tombs of Brú na Bóinne. While it is
+                  comparable in size to Newgrange and Knowth, it is the least
+                  explored and, until recently, the least known of the trio. The
+                  mound measures approximately 90 meters (280 ft) in diameter
+                  and 15 meters (50 ft) in height. It occupies the highest point
+                  on the ridge, an elevation of 87 meters above sea level,
+                  giving it commanding views over the surrounding landscape and
+                  the River Boyne. It is surrounded by a kerb of large stones,
+                  some of which are decorated with megalithic art, notably
+                  Kerbstone 51, an enigmatic kerb known as the "Stone of the
+                  Seven Suns".
+               </p>
+               <p class="text-gray-600 leading-relaxed sans-serif mb-4">
+                  Unlike Newgrange, which has a single passage, Dowth and Knowth
+                  each contain two main passages within their primary mounds.
+                  Additionally, all three major sites-Newgrange, Knowth, and
+                  Dowth-are surrounded by smaller, satellite passage tombs.
+                  Dowth contains two distinct passages, Dowth North and Dowth
+                  South, which are entered via entrances on its western side.
+                  While Martin Brennan first observed that sunlight can
+                  penetrate the Dowth South passage on the winter solstice
+                  sunset, one purpose of this document is to maintain that this
+                  is not the passage's primary alignment. This duality of
+                  alignments—sunrise at Newgrange and sunset at Dowth—highlights
+                  a possible complementary relationship between the sites,
+                  suggesting a greater, integrated ceremonial and ritual
+                  landscape.
+               </p>
+               <p class="text-gray-600 leading-relaxed sans-serif mb-4">
+                  Dowth's position within the complex is distinct. It has not
+                  undergone the same level of modern archaeological excavation
+                  and reconstruction as Newgrange and Knowth. The damage it
+                  sustained from earlier, amateur excavations gives it a
+                  different, more rugged character. This has contributed to its
+                  being less of a tourist attraction, but for some, it provides
+                  a more authentic and less-managed experience of the ancient
+                  landscape.
+               </p>
+               <h4
+                  id="history-mythology"
+                  class="text-lg font-bold text-gray-700 mt-6 mb-2 sans-serif"
+               >
+                  1.3 History and Mythology
+               </h4>
+               <p class="text-gray-600 leading-relaxed sans-serif mb-4">
+                  The origins of Dowth are firmly rooted in the Neolithic
+                  period, with its construction dating to approximately 3200 BC.
+                  However, its history extends far beyond its initial use as a
+                  burial site. The mound was re-used in the Bronze and Iron Ages
+                  and became a royal site during the early medieval period.
+                  Later, a church and a castle were built in its vicinity,
+                  demonstrating a continuous human presence and cultural
+                  significance. The Annals of Ulster and the Annals of the Four
+                  Masters record a plundering of the "cave" of Dowth by Norsemen
+                  in 862 AD, a reference that may be to the souterrain found
+                  within the mound.
+               </p>
+               <p class="text-gray-600 leading-relaxed sans-serif mb-4">
+                  In Irish mythology, Dowth is known as Dubhadh, or "darkness."
+                  One of the most famous myths associated with the mound is from
+                  the Metrical Dindshenchas (the "lore of places"). It tells of
+                  a king named Bressal Bó-Dibad who gathered all the men of
+                  Ireland to build a tower to reach heaven, a tale with clear
+                  parallels to the biblical Tower of Babel. His sister, a
+                  powerful druidess, cast a spell to keep the sun from setting,
+                  ensuring an endless day for the construction. However, when
+                  the king committed incest with his sister, the spell was
+                  broken, and darkness fell upon the land. The men abandoned
+                  their work, and the place was named Dubhadh, meaning
+                  "darkness," to commemorate the event. This myth's association
+                  with a sudden, all-encompassing darkness is an evocative
+                  origin story for a monument.
+               </p>
+               <p class="text-gray-600 leading-relaxed sans-serif mb-4">
+                  Dowth is also mentioned in the Ulster Cycle of mythology, with
+                  the hero Cú Chulainn's conception linked to Newgrange and his
+                  first feats of heroism to Dowth, where he slayed three giants.
+                  This interconnectedness of the sites in myth suggests that
+                  their ritual and ceremonial importance was understood and
+                  maintained over thousands of years, even as the specific
+                  beliefs and practices of the people changed.
+               </p>
+               <h4
+                  id="excavation-reports"
+                  class="text-lg font-bold text-gray-700 mt-6 mb-2 sans-serif"
+               >
+                  1.4 Brief History of Excavation and Reports
+               </h4>
+               <!-- Single image with paragraph to the left -->
+               <div
+                  class="my-6 flex flex-col md:flex-row-reverse md:gap-4 items-start"
+               >
+                  <div
+                     class="w-full md:w-1/2 mb-4 md:mb-0 text-center flex-shrink-0 border border-gray-300 p-2"
+                  >
+                     <img
+                        src="./images/crater.jpg"
+                        alt="A crater on the top of the mound, a result of early excavations."
+                        class="w-full h-auto mb-2"
+                     />
+                     <figcaption class="text-sm text-gray-500 serif italic">
+                        Figure 9. A close-up of a newly excavated artifact in
+                        the ground. (Suggested size: 300x400 pixels)
+                     </figcaption>
+                  </div>
+                  <p
+                     class="w-full md:w-1/2 text-gray-600 leading-relaxed sans-serif"
+                  >
+                     The history of excavation at Dowth is defined by a series
+                     of events rather than a single continuous process. The
+                     first significant intervention was the Royal Irish
+                     Academy's excavation in 1847-1848, led by R.H. Frith. This
+                     was a destructive, unsystematic dig driven by the hope of
+                     finding a central chamber similar to Newgrange's. It
+                     resulted in the large, unrepaired crater on the mound's
+                     summit and a significant loss of archaeological context.
+                     Following this, the monument was taken into State Care in
+                     1882. While this provided some protection, it did not lead
+                     to immediate, large-scale archaeological work.
+                  </p>
+               </div>
+
+               <p class="text-gray-600 leading-relaxed sans-serif mb-4">
+                  However, in the 1960s-1970s, a more methodical study of the
+                  site took place. Professor Michael J. O'Kelly and his wife,
+                  Claire O'Kelly, planned and surveyed the known passages and
+                  chambers. Their published work, particularly M.J. O'Kelly's
+                  book Newgrange: Archaeology, Art and Legend, provided the
+                  first modern, scientific description of Dowth, its passages,
+                  and its megalithic art, even though their primary focus was
+                  Newgrange.
+               </p>
+
+               <p class="text-gray-600 leading-relaxed sans-serif mb-4">
+                  More recent archaeological attention has shifted to the
+                  broader landscape around Dowth. The 2018 discovery and
+                  subsequent excavation of a large, previously unknown passage
+                  tomb complex under the grounds of Dowth Hall was a significant
+                  development. This work, along with ongoing geophysical
+                  surveys, continues to reveal the immense archaeological
+                  potential of the wider area and provides new context for the
+                  main mound. These more recent discoveries highlight that Dowth
+                  is not a solitary monument but part of a much wider,
+                  integrated ceremonial and social landscape that is still being
+                  understood.
+               </p>
+               <h4
+                  id="site-description"
+                  class="text-lg font-bold text-gray-700 mt-6 mb-2 sans-serif"
+               >
+                  1.5 Site Description
+               </h4>
+               <p class="text-gray-600 leading-relaxed sans-serif mb-4">
+                  The Dowth mound is a large, circular cairn, its base
+                  surrounded by a ring of 115 kerbstones. Unlike Newgrange's
+                  pristine, reconstructed façade, Dowth's kerb is often
+                  partially buried or obscured. The mound itself is composed of
+                  small stones, a mix of materials gathered from the surrounding
+                  land and rivers. The large, visible crater in the center is a
+                  direct result of the 1847 excavation and has never been
+                  repaired, giving the monument a distinctly different
+                  appearance from its more manicured counterparts. The two main
+                  passages, Dowth North and Dowth South, are both located on the
+                  western side of the mound.
+               </p>
+               <!-- Two images side-by-side -->
+               <div class="my-6 flex flex-col md:flex-row md:space-x-4">
+                  <div
+                     class="w-full md:w-1/2 text-center mb-4 md:mb-0 border border-gray-300 p-2"
+                  >
+                     <img
+                        src="./images/North_Passage.jpg"
+                        alt="View of a passage entrance."
+                        class="w-full h-auto mb-2"
+                     />
+                     <figcaption class="text-sm text-gray-500 serif italic">
+                        Figure 2. A view of a stone circle at sunset. (Suggested
+                        size: 400x300 pixels)
+                     </figcaption>
+                  </div>
+                  <div
+                     class="w-full md:w-1/2 text-center border border-gray-300 p-2"
+                  >
+                     <img
+                        src="./images/South_Passage.jpg"
+                        alt="View of a different passage entrance."
+                        class="w-full h-auto mb-2"
+                     />
+                     <figcaption class="text-sm text-gray-500 serif italic">
+                        Figure 3. A different stone circle with a prominent
+                        standing stone. (Suggested size: 400x300 pixels)
+                     </figcaption>
+                  </div>
+               </div>
+               <p class="text-gray-600 leading-relaxed sans-serif mb-4">
+                  Dowth North: This is the larger and more complex of the two.
+                  The passage is approximately 14 meters long and is divided by
+                  three sill-stones. It leads into a cruciform chamber, similar
+                  in plan to Newgrange, with a central area and three recesses.
+                  A large stone basin lies on the floor of the central chamber.
+                  The roof is not corbelled like Newgrange but is lintelled with
+                  large flat stones. The right-hand recess leads into a further,
+                  long rectangular chamber with an L-shaped extension, an
+                  unusual feature known as the "annex." The passage and chamber
+                  stones are decorated with megalithic art, including spirals,
+                  chevrons, and rayed circles.
+               </p>
+               <p class="text-gray-600 leading-relaxed sans-serif mb-4">
+                  Dowth South: This is a smaller, simpler tomb. Its passage is
+                  only 3.5 meters long and leads to a roughly octagonal chamber
+                  with a single recess on the right. The original roof of this
+                  chamber collapsed long ago and has been replaced with a modern
+                  concrete one. While not as richly decorated as Dowth North, it
+                  does contain some carved stones. The passage is notable for
+                  its alignment with the winter solstice sunset.
+               </p>
+               <p class="text-gray-600 leading-relaxed sans-serif mb-4">
+                  In addition to the two passage tombs, an early Christian
+                  souterrain was constructed into the mound, leading into the
+                  passage of Dowth North. This souterrain, dating to the 10th or
+                  11th century, is a testament to the continued use and
+                  adaptation of the site in later periods.
+               </p>
+               <p class="text-gray-600 leading-relaxed sans-serif mb-4">
+                  The physical landscape surrounding the mound includes other
+                  monuments, such as a massive Neolithic henge (Site Q) located
+                  nearby. This henge, measuring 165 by 175 meters, is one of the
+                  largest in Ireland and features a massive earthen bank. Dowth
+                  is not a solitary monument but part of a much wider,
+                  integrated ceremonial and social landscape that is still being
+                  understood. The site is a layered palimpsest of human
+                  activity, from the Neolithic builders to the medieval monks
+                  and later residents of Dowth Hall, all of whom left their mark
+                  on this ancient place. Our focus, however, will be on the
+                  neolithic, on astronomy and landscape.
+               </p>
+            </div>
+
+            <div id="astronomy" class="mb-12">
+               <h3
+                  class="text-xl font-bold text-gray-700 sans-serif whitespace-nowrap border-b border-gray-400 pb-1 mb-6"
+                  style="border-bottom-width: 3px"
+               >
+                  2. Astronomy
+               </h3>
+               <h4
+                  id="astronomical-intent"
+                  class="text-lg font-bold text-gray-700 mt-6 mb-2 sans-serif"
+               >
+                  2.1 Astronomical Intent?
+               </h4>
+               <p class="text-gray-600 leading-relaxed sans-serif mb-4">
+                  The clear and obvious astronomical intent of Newgrange is
+                  evidenced by its extraordinary design. Its long passage and
+                  specialized roofbox were precisely engineered to allow the
+                  light of the rising sun to penetrate deep into the chamber for
+                  a matter of minutes on the winter solstice sunrise. This
+                  monumental feat of engineering leaves little doubt as to a
+                  specific purpose of deliberate intent. However, the
+                  interpretation of other monuments with shorter passages, such
+                  as those at Dowth, becomes more complex, as light can
+                  potentially illuminate their chambers for much longer periods,
+                  making a single, specific alignment less certain.
+               </p>
+               <h4
+                  id="accuracy"
+                  class="text-lg font-bold text-gray-700 mt-6 mb-2 sans-serif"
+               >
+                  2.2 Accuracy
+               </h4>
+               <p class="text-gray-600 leading-relaxed sans-serif mb-4">
+                  To make any definitive observations or claims in the field of
+                  archaeoastronomy, one is reliant on accurate and precise data.
+                  Central to this is the correct measurement of a feature's
+                  orientation or azimuth. For the Newgrange and Dowth monuments
+                  of Brú na Bóinne, a foundational body of data comes from the
+                  work of M.J. O'Kelly and his team. However, even these
+                  pioneering plans have been found to contain subtle
+                  inaccuracies. A notable example is the plan for Newgrange,
+                  which O'Kelly himself is said to have acknowledged as being
+                  flawed in its orientation. A literal reading of this incorrect
+                  plan might lead a researcher to erroneously conclude that the
+                  passage was intended to align with the Southmost Major Lunar
+                  Standstill Rise. This potential for misinterpretation
+                  highlights the critical difference between relying on a
+                  drawing and the actual physical, celestial event that the
+                  structure was built to observe, as real-world observation
+                  confirms Newgrange's true orientation on the Winter Solstice
+                  Sunrise.
+               </p>
+               <!-- Two images side-by-side -->
+               <div class="my-6 flex flex-col md:flex-row md:space-x-4">
+                  <div
+                     class="w-full md:w-1/2 text-center mb-4 md:mb-0 border border-gray-300 p-2"
+                  >
+                     <img
+                        src="./images/mound-plan.png"
+                        alt="A plan of the mound before correction."
+                        class="w-full h-auto mb-2"
+                     />
+                     <figcaption class="text-sm text-gray-500 serif italic">
+                        Figure 2. A view of a stone circle at sunset. (Suggested
+                        size: 400x300 pixels)
+                     </figcaption>
+                  </div>
+                  <div
+                     class="w-full md:w-1/2 text-center border border-gray-300 p-2"
+                  >
+                     <img
+                        src="./images/mound-plan-corrected.png"
+                        alt="A plan of the mound after correction."
+                        class="w-full h-auto mb-2"
+                     />
+                     <figcaption class="text-sm text-gray-500 serif italic">
+                        Figure 3. A different stone circle with a prominent
+                        standing stone. (Suggested size: 400x300 pixels)
+                     </figcaption>
+                  </div>
+               </div>
+
+               <p class="text-gray-600 leading-relaxed sans-serif mb-4">
+                  The very same discrepancies found in the foundational
+                  Newgrange plans however, are also evident and demonstrable in
+                  the plans for Dowth. The errors are likely attributable to the
+                  simple difference between magnetic north and true north not
+                  being indicated. This perhaps unadjusted discrepancy is
+                  potentially further compounded by slight orientation errors
+                  introduced as part of the printing process. Where these plans
+                  are perfectly suitable for understanding the physical layout
+                  and form of the tomb, these issues render the drawing totally
+                  unsuitable for an analysis of Dowth in terms of determining if
+                  there has been any specific intent to orient the passages on
+                  specific solar/lunar events.
+               </p>
+
+               <!-- Single image with paragraph to the right -->
+               <div class="my-6 flex flex-col md:flex-row md:gap-4 items-start">
+                  <div
+                     class="w-full md:w-1/2 mb-4 md:mb-0 text-center flex-shrink-0 border border-gray-300 p-2"
+                  >
+                     <img
+                        src="./images/dowthplan.png"
+                        alt="A topographical plan of the Dowth site."
+                        class="w-full h-auto mb-2"
+                     />
+                     <figcaption class="text-sm text-gray-500 serif italic">
+                        Figure 8. An aerial view of a dig site showing multiple
+                        features. (Suggested size: 300x400 pixels)
+                     </figcaption>
+                  </div>
+                  <p
+                     class="w-full md:w-1/2 text-gray-600 leading-relaxed sans-serif"
+                  >
+                     The author, and others, have previously noted and
+                     documented these orientation discrepancies within the plans
+                     and have suggested corrected astronomic alignments. For
+                     example, Anthony Murphy
+                     (https://mythicalireland.com/blogs/ancient-sites/dowth-dubad)
+                     has documented and, in my opinion, correctly identified the
+                     major orientation error in the Dowth plans to be directly
+                     related to the Magnetic North vs. True North scenario. In
+                     the following section, I will detail how the plans for the
+                     site may be corrected even in the absence of a new,
+                     large-scale survey. I will demonstrate the correct primary
+                     alignments for Dowth North and Dowth South while also
+                     revealing the links between Dowth, its nearby monuments,
+                     and the wider landscape.
+                  </p>
+               </div>
+            </div>
+
+            <div id="methodology" class="mb-12">
+               <h3
+                  class="text-xl font-bold text-gray-700 sans-serif whitespace-nowrap border-b border-gray-400 pb-1 mb-6"
+                  style="border-bottom-width: 3px"
+               >
+                  3. Methodology
+               </h3>
+               <h4
+                  id="consolidation"
+                  class="text-lg font-bold text-gray-700 mt-6 mb-2 sans-serif"
+               >
+                  3.1 Consolidation
+               </h4>
+               <p class="text-gray-600 leading-relaxed sans-serif mb-4">
+                  The initial step in the process is the consolidation of the
+                  existing site plans into a single overhead view for the entire
+                  monument. The existing plans are scanned and converted into a
+                  vector graphics format, in this case the svg file format. The
+                  overhead scans for the highly detailed individual features of
+                  Dowth North and Dowth South are carefully positioned in place.
+               </p>
+
+               <!-- Two images side-by-side -->
+               <div class="my-6 flex flex-col md:flex-row md:space-x-4">
+                  <div
+                     class="w-full md:w-1/2 text-center mb-4 md:mb-0 border border-gray-300 p-2"
+                  >
+                     <img
+                        src="./images/dowthnorthplan.png"
+                        alt="Plan of Dowth North passage."
+                        class="w-full h-auto mb-2"
+                     />
+                     <figcaption class="text-sm text-gray-500 serif italic">
+                        Figure 2. A view of a stone circle at sunset. (Suggested
+                        size: 400x300 pixels)
+                     </figcaption>
+                  </div>
+                  <div
+                     class="w-full md:w-1/2 text-center border border-gray-300 p-2"
+                  >
+                     <img
+                        src="./images/dowthsouthplan.png"
+                        alt="Plan of Dowth South passage."
+                        class="w-full h-auto mb-2"
+                     />
+                     <figcaption class="text-sm text-gray-500 serif italic">
+                        Figure 3. A different stone circle with a prominent
+                        standing stone. (Suggested size: 400x300 pixels)
+                     </figcaption>
+                  </div>
+               </div>
+
+               <!-- Single image with paragraph to the left -->
+               <div
+                  class="my-6 flex flex-col md:flex-row-reverse md:gap-4 items-start"
+               >
+                  <div
+                     class="w-full md:w-1/2 mb-4 md:mb-0 text-center flex-shrink-0 border border-gray-300 p-2"
+                  >
+                     <img
+                        src="./images/TombWithPassagesConsolidatedUncorrected.png"
+                        alt="Consolidated uncorrected plan of the tomb."
+                        class="w-full h-auto mb-2"
+                     />
+                     <figcaption class="text-sm text-gray-500 serif italic">
+                        Figure 9. A close-up of a newly excavated artifact in
+                        the ground. (Suggested size: 300x400 pixels)
+                     </figcaption>
+                  </div>
+                  <p
+                     class="w-full md:w-1/2 text-gray-600 leading-relaxed sans-serif"
+                  >
+                     In this fashion we can complete a consolidated composited
+                     plan which retains all of the detail of the individual
+                     passages and chambers but where all this detail is shown
+                     relational to the outer kerb. As yet the plan remains
+                     uncorrected in terms of orientation.
+                  </p>
+               </div>
+
+               <h4
+                  id="vertical-aerial-imagery"
+                  class="text-lg font-bold text-gray-700 mt-6 mb-2 sans-serif"
+               >
+                  3.2 Vertical Aerial Imagery
+               </h4>
+               <p class="text-gray-600 leading-relaxed sans-serif mb-4">
+                  Vertical Aerial Imagery is a common resource available to the
+                  public in recent years. Mapping applications such as those
+                  from google, Bing etc provide excellent overview imagery
+                  facilitating a better understanding of an area of interest. In
+                  the case for Dowth however the resolution available from these
+                  providers is not sufficient to identify key external features
+                  of the tomb.
+               </p>
+
+               <div class="my-6 flex flex-col md:flex-row md:space-x-4">
+                  <div
+                     class="w-full md:w-1/2 text-center mb-4 md:mb-0 border border-gray-300 p-2"
+                  >
+                     <img
+                        src="./images/googleaerial.png"
+                        alt="Google aerial view of the site."
+                        class="w-full h-auto mb-2"
+                     />
+                     <figcaption class="text-sm text-gray-500 serif italic">
+                        Figure 2. A view of a stone circle at sunset. (Suggested
+                        size: 400x300 pixels)
+                     </figcaption>
+                  </div>
+                  <div
+                     class="w-full md:w-1/2 text-center border border-gray-300 p-2"
+                  >
+                     <img
+                        src="./images/droneimage.png"
+                        alt="Drone image of the site."
+                        class="w-full h-auto mb-2"
+                     />
+                     <figcaption class="text-sm text-gray-500 serif italic">
+                        Figure 3. A different stone circle with a prominent
+                        standing stone. (Suggested size: 400x300 pixels)
+                     </figcaption>
+                  </div>
+               </div>
+               <p class="text-gray-600 leading-relaxed sans-serif mb-4">
+                  Hi-resolution drone imagery however will provide significantly
+                  more detail and indicate key external features such as the
+                  kerbstones and passage entrances.
+               </p>
+               <!-- Four images side-by-side (responsive grid) -->
+               <div class="my-6 grid grid-cols-2 md:grid-cols-4 gap-4">
+                  <div class="text-center border border-gray-300 p-2">
+                     <img
+                        src="./images/dowth-passage-tomb-feature2.png"
+                        alt="A ceramic shard with markings."
+                        class="w-full h-auto mb-2"
+                     />
+                     <figcaption class="text-sm text-gray-500 serif italic">
+                        Figure 4. A ceramic shard with markings. (Suggested
+                        size: 200x200 pixels)
+                     </figcaption>
+                  </div>
+                  <div class="text-center border border-gray-300 p-2">
+                     <img
+                        src="./images/dowth-passage-tomb-feature3.png"
+                        alt="A carved piece of bone."
+                        class="w-full h-auto mb-2"
+                     />
+                     <figcaption class="text-sm text-gray-500 serif italic">
+                        Figure 5. A carved piece of bone. (Suggested size:
+                        200x200 pixels)
+                     </figcaption>
+                  </div>
+                  <div class="text-center border border-gray-300 p-2">
+                     <img
+                        src="./images/dowth-passage-tomb-feature5.png"
+                        alt="An engraved stone."
+                        class="w-full h-auto mb-2"
+                     />
+                     <figcaption class="text-sm text-gray-500 serif italic">
+                        Figure 6. An engraved stone. (Suggested size: 200x200
+                        pixels)
+                     </figcaption>
+                  </div>
+                  <div class="text-center border border-gray-300 p-2">
+                     <img
+                        src="./images/dowth-passage-tomb-feature.png"
+                        alt="An iron tool fragment."
+                        class="w-full h-auto mb-2"
+                     />
+                     <figcaption class="text-sm text-gray-500 serif italic">
+                        Figure 7. An iron tool fragment. (Suggested size:
+                        200x200 pixels)
+                     </figcaption>
+                  </div>
+               </div>
+               <!-- Single image with caption -->
+               <div class="my-6 text-center border border-gray-300 p-2">
+                  <img
+                     src="./images/droneaerialkeyed.png"
+                     alt="Diagram of an ancient megalith."
+                     class="w-full h-auto mb-2"
+                  />
+                  <figcaption class="text-sm text-gray-500 serif italic">
+                     Figure 1. A diagram illustrating the celestial alignment of
+                     a typical Irish megalithic monument. (Suggested size:
+                     600x400 pixels)
+                  </figcaption>
+               </div>
+               <p class="text-gray-600 leading-relaxed sans-serif mb-4">
+                  Using partial transparency the Hi-resolution Drone Vertical
+                  Aerial Imagery is rotated, scaled and keyed against the
+                  mapping aerial imagery.
+               </p>
+               <!-- Single image with caption -->
+               <div class="my-6 text-center border border-gray-300 p-2">
+                  <img
+                     src="./images/Mace-Dowth-Corrected.png"
+                     alt="Diagram showing corrected alignment of the mound."
+                     class="w-full h-auto mb-2"
+                  />
+                  <figcaption class="text-sm text-gray-500 serif italic">
+                     Figure 1. A diagram illustrating the celestial alignment of
+                     a typical Irish megalithic monument. (Suggested size:
+                     600x400 pixels)
+                  </figcaption>
+               </div>
+               <h4
+                  id="resolution"
+                  class="text-lg font-bold text-gray-700 mt-6 mb-2 sans-serif"
+               >
+                  3.3 Resolution
+               </h4>
+               <p class="text-gray-600 leading-relaxed sans-serif mb-4">
+                  Finally using the identifiable external features evident in
+                  the Hi-resolution drone image we can overlay the detailed
+                  vector image and rotate and scale to match. This svg image, is
+                  now resolved and correctly oriented.
+               </p>
+               <!-- Single image with caption -->
+               <div class="my-6 text-center border border-gray-300 p-2">
+                  <img
+                     src="./images/dowth-passage-tomb-final-corrected.svg"
+                     alt="Final corrected plan of the tomb."
+                     class="w-full h-auto mb-2"
+                  />
+                  <figcaption class="text-sm text-gray-500 serif italic">
+                     Figure 1. A diagram illustrating the celestial alignment of
+                     a typical Irish megalithic monument. (Suggested size:
+                     600x400 pixels)
+                  </figcaption>
+               </div>
+            </div>
+
+            <div id="analysis" class="mb-12">
+               <h3
+                  class="text-xl font-bold text-gray-700 sans-serif whitespace-nowrap border-b border-gray-400 pb-1 mb-6"
+                  style="border-bottom-width: 3px"
+               >
+                  4. Analysis
+               </h3>
+               <h4
+                  id="light-penetration"
+                  class="text-lg font-bold text-gray-700 mt-6 mb-2 sans-serif"
+               >
+                  4.1 Light Penetration
+               </h4>
+               <p class="text-gray-600 leading-relaxed sans-serif mb-4">
+                  Our first task in performing analysis for the Dowth North and
+                  Dowth South passages is to determine the local azimuths for
+                  what are considered the standard archaeoastronomic solar
+                  states of solstices, crossquarters, equinoxes and the lunar
+                  states of major and minor lunar standstills (The lunar
+                  extremes). These rise/set azimuths are calculated for the
+                  relevant time period (circa 3000bc) and are calculated
+                  specific to the location of Dowth and the local horizon.
+               </p>
+            </div>
+            <!-- Two images side-by-side -->
+            <!-- Single image with paragraph to the right -->
+            <div class="my-6 flex flex-col md:flex-row md:gap-4 items-start">
+               <div
+                  class="w-full md:w-1/2 mb-4 md:mb-0 text-center flex-shrink-0 border border-gray-300 p-2"
+               >
+                  <img
+                     src="./images/minorlunarset.png"
+                     alt="Archaeological site."
+                     class="w-full h-auto mb-2"
+                  />
+                  <figcaption class="text-sm text-gray-500 serif italic">
+                     Figure 8. An aerial view of a dig site showing multiple
+                     features. (Suggested size: 300x400 pixels)
+                  </figcaption>
+               </div>
+               <p
+                  class="w-full md:w-1/2 text-gray-600 leading-relaxed sans-serif"
+               >
+                  The Minor Lunar Standstill Set.<br /><br />
+                  Using a date of 3000bc the minor lunar standstill moon set
+                  azimuth (centered at horizon) has been resolved to a bearing
+                  of 236° @ elevation 0.11° evident @ lat/lon 53.655,-6.574.
+                  This azimuth precisely marks the centerline of the the Dowth
+                  North passage. At the minor lunar standstills, light could
+                  penetrate through orthostat C10, the back stone of the rear
+                  recess of the cruciform chamber.
+               </p>
+            </div>
+            <!-- Single image with paragraph to the left -->
+            <div
+               class="my-6 flex flex-col md:flex-row-reverse md:gap-4 items-start"
+            >
+               <div
+                  class="w-full md:w-1/2 mb-4 md:mb-0 text-center flex-shrink-0 border border-gray-300 p-2"
+               >
+                  <img
+                     src="./images/majorlunarset.png"
+                     alt="Artifact discovery."
+                     class="w-full h-auto mb-2"
+                  />
+                  <figcaption class="text-sm text-gray-500 serif italic">
+                     Figure 9. A close-up of a newly excavated artifact in the
+                     ground. (Suggested size: 300x400 pixels)
+                  </figcaption>
+               </div>
+               <p
+                  class="w-full md:w-1/2 text-gray-600 leading-relaxed sans-serif"
+               >
+                  The Major Lunar Standstill Set.<br /><br />
+                  Using a date of 3000bc the major lunar standstill moon set
+                  azimuth (centered at horizon) has been resolved to a bearing
+                  of 214° @ elevation 0.14° evident @ lat/lon 53.565,-6.607.
+                  This azimuth precisely marks the centerline of the the Dowth
+                  South passage. At the major lunar standstills, light could
+                  penetrate through to orthostat C7, the back stone of chamber.
+               </p>
+            </div>
+            <!-- Single image with paragraph to the right -->
+            <div class="my-6 flex flex-col md:flex-row md:gap-4 items-start">
+               <div
+                  class="w-full md:w-1/2 mb-4 md:mb-0 text-center flex-shrink-0 border border-gray-300 p-2"
+               >
+                  <img
+                     src="./images/C7.svg"
+                     alt="Archaeological site."
+                     class="w-full h-auto mb-2"
+                  />
+                  <figcaption class="text-sm text-gray-500 serif italic">
+                     Figure 8. An aerial view of a dig site showing multiple
+                     features. (Suggested size: 300x400 pixels)
+                  </figcaption>
+               </div>
+               <p
+                  class="w-full md:w-1/2 text-gray-600 leading-relaxed sans-serif"
+               >
+                  Dowth South C7.<br /><br />
+                  With C6 the ornament on this stone has been described by
+                  O'Kelly as at variance with the ornamentation found elsewhere
+                  at Dowth (though commonly found at Newgrange and Knowth). Deep
+                  bands are carved to form serpentine patterns. Artwork on other
+                  stones is typified by single line picking.
+               </p>
+            </div>
+            <p class="text-gray-600 leading-relaxed sans-serif mb-4">
+               Where we might describe the Dowth North and South passages as aligned primarily on the lunar extremes we must also acknowledge that these passages have also facilitated sunlight penetration over several months in any given year.
+			   Dowth North will have sunlight penetrating at the winter solstice as far as Orthostat L6. Sunlight at the southmost crossquarters may penetrate deep within the chamber reaching Orthostat C13. For Dowth South sunlight at
+			   the southmost crossquarters could penetrate as far as Orthostat R2 with sunlight on the winter solstice reaching deep within the chamber to Orthostat C8, a highly decorated stone of serpentine forms and spirals. This observable
+			   penetration of sunlight of the setting sun at the winter solstice has given rise to ascertion that Dowth South is aligned on the solstice, however it is only
+			   light from moon sets at the lunar extremes that can penetrate to the furthest recesses within the tombs.
+            </p>
+
+            <!-- Two images side-by-side -->
+            <div class="my-6 flex flex-col md:flex-row md:space-x-4">
+               <div
+                  class="w-full md:w-1/2 text-center mb-4 md:mb-0 border border-gray-300 p-2"
+               >
+                  <img
+                     src="./images/dowthnorthrange.png"
+                     alt="A view of a stone circle at sunset."
+                     class="w-full h-auto mb-2"
+                  />
+                  <figcaption class="text-sm text-gray-500 serif italic">
+                     Figure 2. A view of a stone circle at sunset. (Suggested
+                     size: 400x300 pixels)
+                  </figcaption>
+               </div>
+               <div
+                  class="w-full md:w-1/2 text-center border border-gray-300 p-2"
+               >
+                  <img
+                     src="./images/dowthsouthrange.png"
+                     alt="A different stone circle with a prominent standing stone."
+                     class="w-full h-auto mb-2"
+                  />
+                  <figcaption class="text-sm text-gray-500 serif italic">
+                     Figure 3. A different stone circle with a prominent
+                     standing stone. (Suggested size: 400x300 pixels)
+                  </figcaption>
+               </div>
+            </div>
+            <h4
+               id="inter-monument-relationships"
+               class="text-lg font-bold text-gray-700 mt-6 mb-2 sans-serif"
+            >
+               4.2 Inter Monument Relationships
+            </h4>
+            <p class="text-gray-600 leading-relaxed sans-serif mb-4">
+               Our first task in performing analysis for the Dowth North and
+               Dowth South passages is to determine the local azimuths for what
+               are considered the standard archaeoastronomic solar states of
+               solstices, crossquarters, equinoxes and the lunar states of major
+               and minor lunar standstills (The lunar extremes). These rise/set
+               azimuths are calculated for the relevant time period (circa
+               3000bc) and are calculated specific to the location of Dowth and
+               the local horizon.
+            </p>
+            <!-- Single image with paragraph to the right -->
+            <div class="my-6 flex flex-col md:flex-row md:gap-4 items-start">
+               <div
+                  class="w-full md:w-1/2 mb-4 md:mb-0 text-center flex-shrink-0 border border-gray-300 p-2"
+               >
+                  <img
+                     src="./images/northview.png"
+                     alt="Archaeological site."
+                     class="w-full h-auto mb-2"
+                  />
+                  <figcaption class="text-sm text-gray-500 serif italic">
+                     Figure 8. An aerial view of a dig site showing multiple
+                     features. (Suggested size: 300x400 pixels)
+                  </figcaption>
+               </div>
+               <p
+                  class="w-full md:w-1/2 text-gray-600 leading-relaxed sans-serif"
+               >
+                  The Minor Lunar Standstill Set.<br /><br />
+                  Integer posuere erat a ante venenatis dapibus posuere velit
+                  aliquet. Praesent justo dolor, lobortis quis, lobortis
+                  dignissim, pulvinar ac, lorem. Vestibulum sed ante. Donec
+                  sagittis euismod purus. Sed ut perspiciatis unde omnis iste
+                  natus error sit voluptatem. Lorem ipsum dolor sit amet,
+                  consectetur adipiscing elit. Sed do eiusmod tempor incididunt
+                  ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+               </p>
+            </div>
+            <!-- Single image with paragraph to the right -->
+            <div class="my-6 flex flex-col md:flex-row md:gap-4 items-start">
+               <div
+                  class="w-full md:w-1/2 mb-4 md:mb-0 text-center flex-shrink-0 border border-gray-300 p-2"
+               >
+                  <img
+                     src="./images/southview.png"
+                     alt="Archaeological site."
+                     class="w-full h-auto mb-2"
+                  />
+                  <figcaption class="text-sm text-gray-500 serif italic">
+                     Figure 8. An aerial view of a dig site showing multiple
+                     features. (Suggested size: 300x400 pixels)
+                  </figcaption>
+               </div>
+               <p
+                  class="w-full md:w-1/2 text-gray-600 leading-relaxed sans-serif"
+               >
+                  The Minor Lunar Standstill Set.<br /><br />
+                  Integer posuere erat a ante venenatis dapibus posuere velit
+                  aliquet. Praesent justo dolor, lobortis quis, lobortis
+                  dignissim, pulvinar ac, lorem. Vestibulum sed ante. Donec
+                  sagittis euismod purus. Sed ut perspiciatis unde omnis iste
+                  natus error sit voluptatem. Lorem ipsum dolor sit amet,
+                  consectetur adipiscing elit. Sed do eiusmod tempor incididunt
+                  ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+               </p>
+            </div>
+
+            <!-- Two images side-by-side -->
+            <div class="my-6 flex flex-col md:flex-row md:space-x-4">
+               <div
+                  class="w-full md:w-1/2 text-center mb-4 md:mb-0 border border-gray-300 p-2"
+               >
+                  <img
+                     src="./images/DowthMoundPTArt1"
+                     alt="Stone circle A."
+                     class="w-full h-auto mb-2"
+                  />
+                  <figcaption class="text-sm text-gray-500 serif italic">
+                     Figure 2. A view of a stone circle at sunset. (Suggested
+                     size: 400x300 pixels)
+                  </figcaption>
+               </div>
+               <div
+                  class="w-full md:w-1/2 text-center border border-gray-300 p-2"
+               >
+                  <img
+                     src="./images/DowthMoundPTArt2"
+                     alt="Stone circle B."
+                     class="w-full h-auto mb-2"
+                  />
+                  <figcaption class="text-sm text-gray-500 serif italic">
+                     Figure 3. A different stone circle with a prominent
+                     standing stone. (Suggested size: 400x300 pixels)
+                  </figcaption>
+               </div>
+            </div>
+            <!-- Single image with paragraph to the right -->
+            <div class="my-6 flex flex-col md:flex-row md:gap-4 items-start">
+               <div
+                  class="w-full md:w-1/2 mb-4 md:mb-0 text-center flex-shrink-0 border border-gray-300 p-2"
+               >
+                  <img
+                     src="./images/southviewhorizon.png"
+                     alt="Archaeological site."
+                     class="w-full h-auto mb-2"
+                  />
+                  <figcaption class="text-sm text-gray-500 serif italic">
+                     Figure 8. An aerial view of a dig site showing multiple
+                     features. (Suggested size: 300x400 pixels)
+                  </figcaption>
+               </div>
+               <p
+                  class="w-full md:w-1/2 text-gray-600 leading-relaxed sans-serif"
+               >
+                  The Minor Lunar Standstill Set.<br /><br />
+                  Integer posuere erat a ante venenatis dapibus posuere velit
+                  aliquet. Praesent justo dolor, lobortis quis, lobortis
+                  dignissim, pulvinar ac, lorem. Vestibulum sed ante. Donec
+                  sagittis euismod purus. Sed ut perspiciatis unde omnis iste
+                  natus error sit voluptatem. Lorem ipsum dolor sit amet,
+                  consectetur adipiscing elit. Sed do eiusmod tempor incididunt
+                  ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+               </p>
+            </div>
+            <p class="text-gray-600 leading-relaxed sans-serif mb-4">
+               Our first task in performing analysis for the Dowth North and
+               Dowth South passages is to determine the local azimuths for what
+               are considered the standard archaeoastronomic solar states of
+               solstices, crossquarters, equinoxes and the lunar states of major
+               and minor lunar standstills (The lunar extremes). These rise/set
+               azimuths are calculated for the relevant time period (circa
+               3000bc) and are calculated specific to the location of Dowth and
+               the local horizon.
+            </p>
+            <!-- Single image with caption -->
+            <div class="my-6 text-center border border-gray-300 p-2">
+               <img
+                  src="./images/NewgrangeLidar.png"
+                  alt="Diagram of an ancient megalith."
+                  class="w-full h-auto mb-2"
+               />
+               <figcaption class="text-sm text-gray-500 serif italic">
+                  Figure 1. A diagram illustrating the celestial alignment of a
+                  typical Irish megalithic monument. (Suggested size: 600x400
+                  pixels)
+               </figcaption>
+            </div>
+         </div>
+      </div>
+
+      <!-- JavaScript for the map -->
+      <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+      <script>
+         document.addEventListener("DOMContentLoaded", () => {
+            // Center the map on Newgrange
+            const center = [53.69473447, -6.47553879];
+            // Set the zoom level to 14
+            const map = L.map("map").setView(center, 14);
+
+            // Add the base layer tiles from OpenStreetMap
+            L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+               maxZoom: 19,
+               attribution:
+                  '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+            }).addTo(map);
+
+            // Define the locations with the updated coordinates
+            const locations = [
+               { name: "Newgrange", coords: [53.69473447, -6.47553879] },
+               { name: "Knowth", coords: [53.7012175, -6.49140427] },
+               { name: "Dowth", coords: [53.70384136, -6.45053577] },
+            ];
+
+            // Create a custom icon for the circle markers
+            const geojsonMarkerOptions = {
+               radius: 8,
+               // Change the marker color to pink
+               fillColor: "#FF69B4",
+               color: "#FFFFFF",
+               weight: 2,
+               opacity: 1,
+               fillOpacity: 0.8,
+            };
+
+            // Loop through locations and add a circle marker for each
+            locations.forEach((location) => {
+               const marker = L.circleMarker(
+                  location.coords,
+                  geojsonMarkerOptions,
+               )
+                  .addTo(map)
+                  .bindPopup(`<b>${location.name}</b>`, { autoClose: false })
+                  .openPopup();
+            });
+
+            // This is a common Leaflet pattern to ensure the map is correctly sized
+            // after its container has been resized or content has been loaded.
+            map.invalidateSize();
+         });
+      </script>
+   </body>
+</html>

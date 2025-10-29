@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brú na Bóinne Map</title>
+    <!-- Include Leaflet CSS from CDN -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <style>
+    /* Use box-sizing to ensure padding doesn't affect width calculations */
+    *, *:before, *:after {
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Inter', sans-serif;
+        margin: 0;
+        background-color: #f0f4f8;
+    }
+
+    /* Fixed header style */
+    #header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 5rem;
+        background-color: #4a5568;
+        color: white;
+        text-align: center;
+        /* Ensure the header is always on top */
+        z-index: 1000 !important;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        /* Flexbox for vertical centering */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 1rem;
+    }
+
+    #header h1 {
+        margin: 0;
+        font-size: 1.5rem;
+    }
+
+    /* Container for the main content to add side padding */
+    .content-container {
+        padding: 0 1rem;
+    }
+
+    /* The map container with a fixed height and a 100% width to fill its parent */
+    #map-container {
+        height: 800px;
+        width: 100%;
+        /* Correctly push the map down below the fixed header using transform */
+        transform: translateY(5rem);
+        margin-bottom: 5rem; /* Add margin to account for the transform */
+    }
+
+    #map {
+        height: 100%;
+        width: 100%;
+    }
+
+    /* Style for popups */
+    .info-card {
+        position: absolute;
+        top: 1rem;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1000;
+        background-color: white;
+        padding: 0.75rem 1.5rem;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        max-width: 90%;
+    }
+
+    .info-card h1 {
+        margin: 0;
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: #1a202c;
+    }
+
+    .info-card p {
+        margin: 0.25rem 0 0;
+        font-size: 0.875rem;
+        color: #4a5568;
+    }
+    </style>
+</head>
+<body>
+
+<!-- Dummy Fixed Header -->
+<div id="header">
+    <h1>Brú na Bóinne Monuments</h1>
+</div>
+
+<div class="content-container">
+    <!-- Map Container with a fixed height -->
+    <div id="map-container">
+        <div id="map"></div>
+    </div>
+
+    <!-- Dummy Content Below the Map -->
+    <div style="padding: 2rem 0;">
+        <p>
+            The Brú na Bóinne area, located in County Meath, Ireland, is a world-renowned archaeological landscape. This UNESCO World Heritage site is home to one of the most important prehistoric landscapes in the world, with a remarkable concentration of megalithic tombs, ceremonial sites, and standing stones. The map above pinpoints three of its most famous monuments: Newgrange, Knowth, and Dowth.
+        </p>
+        <p>
+            Newgrange is a magnificent passage tomb dating back to roughly 3200 BC, older than Stonehenge and the Great Pyramids of Giza. It is most famous for the spectacular illumination of its inner chamber by the winter solstice sunrise.
+        </p>
+        <p>
+            Knowth is a complex of over 18 tombs, including one very large passage tomb that has two separate passages. The site is a treasure trove of megalithic art, featuring more than a third of all known examples in Western Europe.
+        </p>
+        <p>
+            Dowth, the third major passage tomb in the complex, is similar in size to Newgrange and also aligns with the winter solstice, though in a slightly different manner, with the sunset illuminating its chamber.
+        </p>
+        <p>
+            These ancient sites are a testament to the astronomical and engineering skills of the people who built them, and they continue to fascinate archaeologists and visitors from around the globe.
+        </p>
+    </div>
+</div>
+
+<!-- JavaScript for the map -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Center the map on Newgrange
+        const center = [53.69473447, -6.47553879];
+        // Set the zoom level to 14
+        const map = L.map('map').setView(center, 14);
+
+        // Add the base layer tiles from OpenStreetMap
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+        }).addTo(map);
+
+        // Define the locations with the updated coordinates
+        const locations = [
+            { name: "Newgrange", coords: [53.69473447, -6.47553879] },
+            { name: "Knowth", coords: [53.7012175, -6.49140427] },
+            { name: "Dowth", coords: [53.70384136, -6.45053577] }
+        ];
+
+        // Create a custom icon for the circle markers
+        const geojsonMarkerOptions = {
+            radius: 8,
+            // Change the marker color to pink
+            fillColor: "#FF69B4",
+            color: "#FFFFFF",
+            weight: 2,
+            opacity: 1,
+            fillOpacity: 0.8
+        };
+
+        // Loop through locations and add a circle marker for each
+        locations.forEach(location => {
+            const marker = L.circleMarker(location.coords, geojsonMarkerOptions)
+                .addTo(map)
+                .bindPopup(`<b>${location.name}</b>`, {autoClose: false})
+                .openPopup();
+        });
+        
+        // This is a common Leaflet pattern to ensure the map is correctly sized
+        // after its container has been resized or content has been loaded.
+        map.invalidateSize();
+    });
+</script>
+</body>
+</html>

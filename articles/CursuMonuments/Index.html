@@ -1,0 +1,1135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Irish Cursus Monuments - An Astronomic Perspective</title>
+  <!-- Load Tailwind CSS from CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Load Font Awesome for the icon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Load Montserrat and Lora fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital@0;1&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    /* Custom font families for different elements */
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: #f0f4f8;
+      color: #333;
+    }
+    .serif {
+      font-family: 'Lora', serif;
+    }
+    .sans-serif {
+      font-family: 'Montserrat', sans-serif;
+    }
+    /* Custom styles for inline formatting */
+    del {
+      text-decoration: line-through;
+    }
+    .code {
+      font-family: monospace;
+      background-color: #e2e8f0;
+      padding: 0.1rem 0.3rem;
+      /* removed border-radius */
+    }
+    /* Fix for code block overflow and word wrapping */
+    .code-block {
+      white-space: pre-wrap;
+      word-break: break-all;
+    }
+    /* Enforce rectangular shadow treatment */
+    .shadow-lg {
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    }
+  </style>
+</head>
+<body class="bg-gray-100">
+  <!-- The fixed header for the webpage -->
+  <div style="background-color: #023020;" class="fixed top-0 w-full z-50 shadow-lg">
+    <div class="container mx-auto px-4 py-2 flex items-center">
+      <!-- The outlined dot circle icon on the left (Original icon colors preserved) -->
+      <i class="fa-regular fa-circle-dot text-2xl mr-2" style="color: #FFA500;"></i>
+      <!-- The text moved next to the icon with a light font weight -->
+      <h1 class="text-white text-base md:text-xl font-light sans-serif">Archaeoastronomy Ireland</h1>
+      <!-- Home and GitHub Icons - removed rounded-lg -->
+      <div class="flex-grow"></div>
+      <a href="#top" class="w-8 h-8 border border-[#2487CE] flex items-center justify-center mr-2" style="color: #2487CE;">
+        <i class="fa-solid fa-home"></i>
+      </a>
+      <a href="https://github.com/kerbstone52/irishcursusmonuments" target="_blank" class="w-8 h-8 border border-[#2487CE] flex items-center justify-center" style="color: #2487CE;">
+        <i class="fa-brands fa-github"></i>
+      </a>
+    </div>
+  </div>
+
+  <!-- Main content container - removed rounded-lg -->
+  <div class="p-4 md:p-8 pt-16" id="top">
+    <div class="max-w-4xl mx-auto bg-white p-6 md:p-10 shadow-lg">
+
+      <!-- Article Metadata -->
+      <div class="flex justify-between items-center text-xs text-gray-500 mb-4 serif italic">
+        <div class="text-left">Irish Cursus Monuments - An Astronomic Perspective</div>
+        <div class="text-right">Brian Doyle | 2021</div>
+      </div>
+
+      <!-- Article Title and Author Info -->
+      <div class="text-center mb-10">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-2 sans-serif">Irish Cursus Monuments</h2>
+        <p class="text-gray-600 italic sans-serif">A Geographic and Astronomic Perspective by Brian Doyle, 2021</p>
+      </div>
+
+      <!-- Abstract Section (Using the "The Premise" content as the Abstract) -->
+      <div class="mb-12" id="abstract">
+        <h3 class="text-xl font-bold text-gray-700 mb-2 sans-serif">Abstract: The Premise</h3>
+        <div class="relative pl-6 border-l-4 border-gray-400">
+          <p class="text-gray-600 leading-relaxed text-sm serif italic">
+            The ancient Irish afforded special significance to locations where they could observe, on divisional days within the solar and lunar cycles, the sun or moon rise from, or set into, what they regarded as sacred mountains.
+          </p>
+        </div>
+        <p class="text-gray-600 leading-relaxed sans-serif mt-4">
+          In this presentation, I describe and chart the inherent astronomic interrelationships, which in neolithic times, existed between locations and precincts which have an associated cursus monument.
+        </p>
+      </div>
+
+      <!-- In-Page Index (Table of Contents) -->
+      <div class="mb-12">
+        <h3 class="text-xl font-bold text-gray-700 mb-4 sans-serif">Table of Contents</h3>
+        <ul class="text-sm text-gray-600 leading-relaxed sans-serif pl-4 space-y-1">
+          <li><a href="#methodology" class="hover:underline">1. Methodology: Seeing Through Neolithic Eyes</a></li>
+          <li><a href="#intervisibility" class="hover:underline">2. Cursus Locations Intervisibility Network</a></li>
+          <li><a href="#astronomic-charting" class="hover:underline">3. Astronomic Charting Guide</a></li>
+          <li><a href="#locations" class="hover:underline">4. Cursus Locations and Alignments</a>
+            <ul class="list-disc list-inside pl-6 space-y-1">
+              <li><a href="#site-1">4.1 The Hill of Uisneach (1)</a></li>
+              <li><a href="#site-2">4.2 Keadeen Mountain (2)</a></li>
+              <li><a href="#site-3">4.3 Slievenamon Mountain (3)</a></li>
+              <li><a href="#site-4">4.4 Brewel Hill (4)</a></li>
+              <li><a href="#site-5">4.5 Blackrock (Lugnagun Mountain) (5)</a></li>
+              <li><a href="#site-seefingan">4.6 Seefingan Mountain (Non-Cursus Focal Point)</a></li>
+              <li><a href="#site-6">4.7 Woodtown (6)</a></li>
+              <li><a href="#site-7">4.8 Newgrange (7)</a></li>
+              <li><a href="#site-8">4.9 The Hill of Tara (8)</a></li>
+              <li><a href="#site-9">4.10 Ballyoskill (9)</a></li>
+              <li><a href="#site-10">4.11 Slievebawn Mountain (10)</a></li>
+              <li><a href="#site-11">4.12 Coolasnaghta (Mount Leinster) (11)</a></li>
+              <li><a href="#site-12">4.13 Newtown (12)</a></li>
+              <li><a href="#site-13">4.14 Knockainy West Site 1 (13) & Site 2 (14)</a></li>
+              <li><a href="#site-15">4.15 Annagh (15)</a></li>
+              <li><a href="#site-16">4.16 Loughcrew (16)</a></li>
+            </ul>
+          </li>
+          <li><a href="#summary-alignments" class="hover:underline">5. All Observed Alignments Summary</a></li>
+          <li><a href="#interpretation" class="hover:underline">6. Interpretation and Deliberation</a></li>
+          <li><a href="#further-info" class="hover:underline">7. Further Information (Spéire Project)</a></li>
+        </ul>
+      </div>
+
+      <!-- Map Placeholder for ALL Sites -->
+      <div id="all-sites-map" class="my-12">
+        <h3 class="text-xl font-bold text-gray-700 sans-serif whitespace-nowrap border-b border-gray-400 pb-1 mb-6" style="border-bottom-width: 3px;">All Cursus Locations Map</h3>
+        <p class="text-sm text-gray-600 leading-relaxed serif italic mb-4">This map placeholder shows the location and distribution of all 16 cursus sites examined in this study, along with their key cairns/focal points.</p>
+        <div class="bg-indigo-100 w-full h-96 flex items-center justify-center border-4 border-indigo-300 shadow-inner">
+          <p class="text-gray-500 sans-serif font-bold text-lg">Interactive Map Placeholder: All Sites Overview</p>
+        </div>
+        <p class="text-sm text-gray-600 leading-relaxed serif italic mt-4">The eastern and southeastern clustering of the monuments is evident in the geographic distribution shown above.</p>
+      </div>
+
+      <!-- Methodology Section -->
+      <div id="methodology" class="mb-12">
+        <h3 class="text-xl font-bold text-gray-700 sans-serif whitespace-nowrap border-b border-gray-400 pb-1 mb-6" style="border-bottom-width: 3px;">1. Methodology: Seeing Through Neolithic Eyes</h3>
+        <p class="text-gray-600 leading-relaxed sans-serif mb-4">
+          The observations described in this presentation have been determined using a combination of GIS (Geographic Information System) derived values, computer generated landscapes, and astronomy software.
+        </p>
+        <p class="text-gray-600 leading-relaxed sans-serif">
+          This enables us to get a view of the surrounding landscape for the sites of interest and accurately locate other sites of interest on the visible horizon. It allows us to recreate the state of the cosmos for the relevant time period, and most importantly in the context of this presentation, identify the positions on the horizon where the sun and moon could be observed to rise and set on divisional days within the solar and lunar cycles.
+        </p>
+      </div>
+
+      <!-- Intervisibility Section -->
+      <div id="intervisibility" class="mb-12">
+        <h3 class="text-xl font-bold text-gray-700 sans-serif whitespace-nowrap border-b border-gray-400 pb-1 mb-6" style="border-bottom-width: 3px;">2. Cursus Locations Intervisibility Network</h3>
+        <p class="text-gray-600 leading-relaxed sans-serif mb-4">
+          In this section, the cursus locations are plotted as an intervisibility network. Each location is represented by a node. Interconnecting lines are plotted between those nodes (sites) which are visible to each other. At each location, where a cairn (or other notable monument) is present, this is used as the focal point. Where no cairn is present the cursus itself is used as the focal point.
+        </p>
+        <p class="text-gray-600 leading-relaxed sans-serif mb-4">
+          We can observe a high degree of intervisibility for those cursus locations located in the east and southeast, and no intervisibility for cursus locations in the south and southwest. Most sites in the east and southeast exhibit a one-to-many visual relationship with other cursus locations and in many cases over considerable distances.
+        </p>
+        <!-- Intervisibility Network Placeholder -->
+        <div class="bg-green-100 w-full h-96 flex items-center justify-center border-4 border-green-300 shadow-inner my-6">
+          <p class="text-gray-500 sans-serif font-bold text-lg">Intervisibility Network Diagram Placeholder</p>
+        </div>
+      </div>
+
+      <!-- Charting Guide Section -->
+      <div id="astronomic-charting" class="mb-12">
+        <h3 class="text-xl font-bold text-gray-700 sans-serif whitespace-nowrap border-b border-gray-400 pb-1 mb-6" style="border-bottom-width: 3px;">3. Astronomic Charting Guide</h3>
+        <p class="text-gray-600 leading-relaxed sans-serif mb-4">
+          Observations described in this presentation are expressed and charted in the following format:
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm sans-serif">
+          <ul class="space-y-1 text-gray-700">
+            <li class="font-semibold text-blue-800">Northmost Major Lunar Standstill Rise: NthMajR</li>
+            <li class="font-semibold text-yellow-600">Summer Solstice Sunrise: SSSR</li>
+            <li class="font-semibold text-red-600">Northmost Minor Lunar Standstill Rise: NthMinR</li>
+            <li class="font-semibold text-green-600">Northmost Crossquarter Rise: NthCQR</li>
+            <li class="font-semibold text-yellow-500">Equinox Rise: ER</li>
+            <li class="font-semibold text-green-600">Southmost Crossquarter Rise: SthCQR</li>
+            <li class="font-semibold text-red-600">Southmost Minor Lunar Standstill Rise: SthMinR</li>
+            <li class="font-semibold text-yellow-600">Winter Solstice Sunrise: WSSR</li>
+            <li class="font-semibold text-blue-800">Southmost Major Lunar Standstill Rise: SthMajR</li>
+          </ul>
+          <ul class="space-y-1 text-gray-700">
+            <li class="font-semibold text-blue-800">Northmost Major Lunar Standstill Set: NthMajS</li>
+            <li class="font-semibold text-yellow-600">Summer Solstice Sunset: SSSS</li>
+            <li class="font-semibold text-red-600">Northmost Minor Lunar Standstill Set: NthMinS</li>
+            <li class="font-semibold text-green-600">Northmost Crossquarter Set: NthCQS</li>
+            <li class="font-semibold text-yellow-500">Equinox Set: ES</li>
+            <li class="font-semibold text-green-600">Southmost Crossquarter Set: SthCQS</li>
+            <li class="font-semibold text-red-600">Southmost Minor Lunar Standstill Set: SthMinS</li>
+            <li class="font-semibold text-yellow-600">Winter Solstice Sunset: WSSS</li>
+            <li class="font-semibold text-blue-800">Southmost Major Lunar Standstill Set: SthMajS</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Locations Section Wrapper (SECTION 4) -->
+      <div id="locations" class="mb-12">
+        <h3 class="text-xl font-bold text-gray-700 sans-serif whitespace-nowrap border-b border-gray-400 pb-1 mb-6" style="border-bottom-width: 3px;">4. Cursus Locations and Alignments</h3>
+
+        <!-- --- SITE 1: The Hill of Uisneach --- -->
+        <div id="site-1" class="mb-10">
+          <h4 class="text-xl font-bold text-gray-700 mt-2 mb-4 sans-serif">4.1 The Hill of Uisneach (1)</h4>
+          <p class="text-gray-600 leading-relaxed sans-serif mb-4">
+            The Hill of Uisneach is an ancient ceremonial site in County Westmeath. It consists of numerous monuments and earthworks, prehistoric and medieval, including a megalithic tomb, barrows, enclosures, standing stones, holy wells and an ancient road. In Irish mythology Uisneach is deemed to be the symbolic and sacred centre of the island. It was said to be the burial place of mythical figures such as the god Lugh, and a place of assembly associated with the druids and the festival of Bealtaine.
+          </p>
+          <p class="text-gray-600 leading-relaxed sans-serif mb-4">
+            The Hill of Uisneach does not have an associated cursus monument, however, the 'ancient road' is remarkably similar to the Hill of Tara linear earthwork known as 'Teach Midchuarta' - regarded by many as the remains of a cursus.
+          </p>
+
+          <h5 class="text-lg font-bold text-gray-700 mt-6 mb-2 sans-serif border-t pt-4">Astronomic Alignments & Modeling</h5>
+          
+          <p class="text-gray-600 leading-relaxed sans-serif italic mb-2">
+            **Alignment 1: Summer Solstice Sunrise (SSSR) on Loughcrew (16)**
+          </p>
+          <ul class="text-gray-600 leading-relaxed sans-serif text-sm list-disc list-inside pl-4 mb-4">
+            <li>**Premise:** Uisneach¹ SSSR &rarr; Loughcrew¹⁶. The sun at the Summer Solstice could be observed to rise from the Loughcrew Hills.</li>
+            <li>**GIS Observations:** Source: 'St Patricks Bed' - Megalithic Tomb (SMR: WM024-059----). Target: 'Cairn D' - Megalithic Tomb (SMR: ME015-003008-). Visible on the viewshed horizon at an azimuth of $44.90695^{\circ}$ and an elevation of $-0.05836^{\circ}$.</li>
+            <li>**Modeling:** Sun at Summer Solstice could be observed to rise from the Loughcrew Hills, with a first emergence from Carbane West at $45^{\circ}$ and becoming just fully visible over Carbane East.</li>
+          </ul>
+
+          <p class="text-gray-600 leading-relaxed sans-serif italic mb-2">
+            **Alignment 2: Winter Solstice Sunrise (WSSR) on Keadeen Mountain (2)**
+          </p>
+          <ul class="text-gray-600 leading-relaxed sans-serif text-sm list-disc list-inside pl-4 mb-4">
+            <li>**Premise:** Uisneach¹ WSSR &rarr; Keadeen². The sun at the Winter Solstice could be observed to rise from the summit of Keadeen Mountain.</li>
+            <li>**GIS Observations:** Source: 'St Patricks Bed' (SMR: WM024-059----). Target: 'Muckduff Upper' - Unclassified Cairn (SMR: WI027-044----). Visible on the viewshed horizon at an azimuth of $132.16184^{\circ}$ and an elevation of $-0.04168^{\circ}$.</li>
+            <li>**Modeling:** Sun at the Winter Solstice could be observed to rise from the summit of Keadeen Mountain.</li>
+          </ul>
+
+          <!-- Site 1 Map Placeholder - removed rounded-lg -->
+          <div class="my-6">
+            <p class="text-sm text-gray-600 leading-relaxed serif italic mb-2">Map Placeholder: The Hill of Uisneach Cursus (Ancient Road)</p>
+            <div class="bg-gray-200 w-full h-64 flex items-center justify-center border border-gray-300 shadow-sm">
+              <p class="text-gray-500 sans-serif">Site Map: Uisneach (1)</p>
+            </div>
+          </div>
+
+          <!-- Site 1 Image Carousel Placeholder - removed rounded-lg -->
+          <div class="my-6">
+            <p class="text-sm text-gray-600 leading-relaxed serif italic mb-2">Image Carousel: Uisneach Alignments</p>
+            <div class="relative w-full overflow-hidden shadow-xl border border-gray-300" style="height: 400px;">
+              <div id="slider-uisneach" class="flex transition-transform duration-500 ease-in-out h-full">
+                <div class="min-w-full h-full flex flex-col">
+                  <img src="https://placehold.co/600x360/3A506B/ffffff?text=Uisneach+SSSR+to+Loughcrew" alt="Uisneach to Loughcrew alignment model." class="w-full h-[360px] object-cover">
+                  <figcaption class="w-full text-center text-sm text-gray-600 bg-gray-50 border-t border-gray-300 p-2 h-[40px] flex items-center justify-center serif italic">
+                      Uisneach &rarr; Loughcrew: Summer Solstice Sunrise Model
+                  </figcaption>
+                </div>
+                <div class="min-w-full h-full flex flex-col">
+                  <img src="https://placehold.co/600x360/FF5A5F/ffffff?text=Uisneach+WSSR+to+Keadeen" alt="Uisneach to Keadeen alignment model." class="w-full h-[360px] object-cover">
+                  <figcaption class="w-full text-center text-sm text-gray-600 bg-gray-50 border-t border-gray-300 p-2 h-[40px] flex items-center justify-center serif italic">
+                      Uisneach &rarr; Keadeen: Winter Solstice Sunrise Model
+                  </figcaption>
+                </div>
+              </div>
+              <!-- removed rounded-full -->
+              <button onclick="moveSiteSlide('uisneach', -1)" class="absolute top-1/2 left-4 -translate-y-1/2 bg-gray-800 bg-opacity-50 text-white p-3 hover:bg-opacity-75 transition duration-200"><i class="fas fa-chevron-left"></i></button>
+              <button onclick="moveSiteSlide('uisneach', 1)" class="absolute top-1/2 right-4 -translate-y-1/2 bg-gray-800 bg-opacity-50 text-white p-3 hover:bg-opacity-75 transition duration-200"><i class="fas fa-chevron-right"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- --- SITE 2: Keadeen Mountain --- -->
+        <div id="site-2" class="mb-10">
+          <h4 class="text-xl font-bold text-gray-700 mt-2 mb-4 sans-serif">4.2 Keadeen Mountain (2)</h4>
+          <p class="text-gray-600 leading-relaxed sans-serif mb-4">
+            Positioned on the western slopes of Keadeen Mountain, this long rectangular enclosure (L c. 286m; Wth c. 34m) is defined by banks and is aligned in a generally E-W direction on a steep slope, with a cairn (WI027-044----) just outside the NE corner.
+          </p>
+          <p class="text-gray-600 leading-relaxed sans-serif mb-4">
+            The banks (avg. Wth 5m; H 0.3-0.6m) which are probably constructed from the mountainside scree, are almost entirely covered in heather and sod, but in one place the stone fabric of the bank is fully exposed. The lower end of the monument terminates with a bank while the upper end appears to be open. Keadeen Cairn is considered highly likely to contain a passage tomb.
+          </p>
+
+          <h5 class="text-lg font-bold text-gray-700 mt-6 mb-2 sans-serif border-t pt-4">Astronomic Alignments & Modeling</h5>
+
+          <p class="text-gray-600 leading-relaxed sans-serif italic mb-2">
+            **Alignment 1: Winter Solstice Sunset (WSSS) on Slievenamon Mountain (3)**
+          </p>
+          <ul class="text-gray-600 leading-relaxed sans-serif text-sm list-disc list-inside pl-4 mb-4">
+            <li>**Premise:** Keadeen² WSSS &rarr; Slievenamon³. The sun at the Winter Solstice could be observed to set into Slievenamon Mountain.</li>
+            <li>**GIS Observations:** Source: 'Muckduff Cairn' (SMR: WI027-044----). Target: 'Ballypatrick Cairn' (SMR: TS078-001----). Visible on the viewshed horizon at an azimuth of $228.99892^{\circ}$ and an elevation of $-0.29686^{\circ}$.</li>
+            <li>**Modeling:** Sun at the Winter Solstice could be observed to set into Slievenamon Mountain.</li>
+          </ul>
+
+          <!-- Site 2 Map Placeholder - removed rounded-lg -->
+          <div class="my-6">
+            <p class="text-sm text-gray-600 leading-relaxed serif italic mb-2">Map Placeholder: Keadeen Mountain Cursus</p>
+            <div class="bg-gray-200 w-full h-64 flex items-center justify-center border border-gray-300 shadow-sm">
+              <p class="text-gray-500 sans-serif">Site Map: Keadeen Mountain (2)</p>
+            </div>
+          </div>
+
+          <!-- Site 2 Image Carousel Placeholder - removed rounded-lg -->
+          <div class="my-6">
+            <p class="text-sm text-gray-600 leading-relaxed serif italic mb-2">Image Carousel: Keadeen Alignments</p>
+            <div class="relative w-full overflow-hidden shadow-xl border border-gray-300" style="height: 400px;">
+              <div id="slider-keadeen" class="flex transition-transform duration-500 ease-in-out h-full">
+                <div class="min-w-full h-full flex flex-col">
+                  <img src="https://placehold.co/600x360/3A506B/ffffff?text=Keadeen+WSSS+to+Slievenamon" alt="Keadeen to Slievenamon alignment model." class="w-full h-[360px] object-cover">
+                  <figcaption class="w-full text-center text-sm text-gray-600 bg-gray-50 border-t border-gray-300 p-2 h-[40px] flex items-center justify-center serif italic">
+                      Keadeen &rarr; Slievenamon: Winter Solstice Sunset Model
+                  </figcaption>
+                </div>
+                <div class="min-w-full h-full flex flex-col">
+                  <img src="https://placehold.co/600x360/FF5A5F/ffffff?text=Keadeen+Cursus+Aerial" alt="Aerial view of Keadeen Cursus." class="w-full h-[360px] object-cover">
+                  <figcaption class="w-full text-center text-sm text-gray-600 bg-gray-50 border-t border-gray-300 p-2 h-[40px] flex items-center justify-center serif italic">
+                      Keadeen Cursus and Cairn (WI027-044----)
+                  </figcaption>
+                </div>
+              </div>
+              <!-- removed rounded-full -->
+              <button onclick="moveSiteSlide('keadeen', -1)" class="absolute top-1/2 left-4 -translate-y-1/2 bg-gray-800 bg-opacity-50 text-white p-3 hover:bg-opacity-75 transition duration-200"><i class="fas fa-chevron-left"></i></button>
+              <button onclick="moveSiteSlide('keadeen', 1)" class="absolute top-1/2 right-4 -translate-y-1/2 bg-gray-800 bg-opacity-50 text-white p-3 hover:bg-opacity-75 transition duration-200"><i class="fas fa-chevron-right"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- --- SITE 3: Slievenamon Mountain --- -->
+        <div id="site-3" class="mb-10">
+          <h4 class="text-xl font-bold text-gray-700 mt-2 mb-4 sans-serif">4.3 Slievenamon Mountain (3)</h4>
+          <p class="text-gray-600 leading-relaxed sans-serif mb-4">
+            Slievenamon (Irish: *Sliabh na mBan* - "mountain of the women") is a mountain with a height of 721 metres in County Tipperary. The mountain is steeped in folklore and is associated with the mythical hero Fionn mac Cumhaill. On its summit are the remains of ancient burial cairns.
+          </p>
+          <p class="text-gray-600 leading-relaxed sans-serif mb-4">
+            The cursus is located on the E slope of Slievenamon. Cairn TS078-001---- is located 150m WNW of the cursus. Aligned roughly E-W, the monument, running downslope, consists of two roughly parallel stone banks overgrown with grass, moss and heather with an entire length of c. 360m. The banks are 90m apart, though they narrow to 75m at the upper western end. The upper end terminates with a bank on a relatively gentle slope, however, the ground level becomes increasingly steeper and both banks appear to terminate at the E end where the ground level becomes very steep.
+          </p>
+
+          <h5 class="text-lg font-bold text-gray-700 mt-6 mb-2 sans-serif border-t pt-4">Astronomic Alignments & Modeling</h5>
+          <p class="text-gray-600 leading-relaxed sans-serif italic mb-4">
+            (Slievenamon is a target for the Keadeen (2) alignment, but no alignments are sourced *from* the Slievenamon cursus in the scope of this study.)
+          </p>
+
+          <!-- Site 3 Map Placeholder - removed rounded-lg -->
+          <div class="my-6">
+            <p class="text-sm text-gray-600 leading-relaxed serif italic mb-2">Map Placeholder: Slievenamon Mountain Cursus</p>
+            <div class="bg-gray-200 w-full h-64 flex items-center justify-center border border-gray-300 shadow-sm">
+              <p class="text-gray-500 sans-serif">Site Map: Slievenamon Mountain (3)</p>
+            </div>
+          </div>
+
+          <!-- Site 3 Image Carousel Placeholder - removed rounded-lg -->
+          <div class="my-6">
+            <p class="text-sm text-gray-600 leading-relaxed serif italic mb-2">Image Carousel: Slievenamon Site Features</p>
+            <div class="relative w-full overflow-hidden shadow-xl border border-gray-300" style="height: 400px;">
+              <div id="slider-slievenamon" class="flex transition-transform duration-500 ease-in-out h-full">
+                <div class="min-w-full h-full flex flex-col">
+                  <img src="https://placehold.co/600x360/1de9b6/333333?text=Slievenamon+Cursus+View" alt="View of Slievenamon Cursus." class="w-full h-[360px] object-cover">
+                  <figcaption class="w-full text-center text-sm text-gray-600 bg-gray-50 border-t border-gray-300 p-2 h-[40px] flex items-center justify-center serif italic">
+                      Slievenamon Cursus and Cairn (TS078-001----)
+                  </figcaption>
+                </div>
+              </div>
+              <!-- removed rounded-full -->
+              <button onclick="moveSiteSlide('slievenamon', -1)" class="absolute top-1/2 left-4 -translate-y-1/2 bg-gray-800 bg-opacity-50 text-white p-3 hover:bg-opacity-75 transition duration-200"><i class="fas fa-chevron-left"></i></button>
+              <button onclick="moveSiteSlide('slievenamon', 1)" class="absolute top-1/2 right-4 -translate-y-1/2 bg-gray-800 bg-opacity-50 text-white p-3 hover:bg-opacity-75 transition duration-200"><i class="fas fa-chevron-right"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- --- SITE 4: Brewel Hill --- -->
+        <div id="site-4" class="mb-10">
+          <h4 class="text-xl font-bold text-gray-700 mt-2 mb-4 sans-serif">4.4 Brewel Hill (4)</h4>
+          <p class="text-gray-600 leading-relaxed sans-serif mb-4">
+            The Brewel Hill cursus is visible in aerial imagery as the cropmarks of two parallel fosses defining a long linear area. It is level at the SE end but rises gently towards the NW. A shallow linear hollow (D 0.3m; Wth 10m) while not particularly well-defined, is nonetheless traceable with an estimated length of circa 130m NW-SE, and terminates in a curved end at NW. From the NW, looking SE along its line, the cursus appears to be directed towards Keadeen Mountain.
+          </p>
+          <p class="text-gray-600 leading-relaxed sans-serif mb-4">
+            At the summit of Brewel Hill there is a Ceremonial Enclosure or Henge type monument which contains the remnants of a stone circle known as the 'pipers stones'. Two of the boulders are granite, one is a red conglomerate ‘puddingstone’ and one is of white quartz which is known locally as the ‘Piper’s Chair’.
+          </p>
+
+          <h5 class="text-lg font-bold text-gray-700 mt-6 mb-2 sans-serif border-t pt-4">Astronomic Alignments & Modeling</h5>
+
+          <p class="text-gray-600 leading-relaxed sans-serif italic mb-2">
+            **Alignment 1: Winter Solstice Sunrise (WSSR) on Keadeen Mountain (2)**
+          </p>
+          <ul class="text-gray-600 leading-relaxed sans-serif text-sm list-disc list-inside pl-4 mb-4">
+            <li>**Premise:** Brewel Hill⁴ WSSR &rarr; Keadeen². The sun at the Winter Solstice could be observed to rise from Keadeen Mountain.</li>
+            <li>**GIS Observations:** Source: 'Brewel West' - Ceremonial Enclosure (SMR: KD032-026001-). Target: 'Muckduff Upper' (SMR: WI027-044----). Visible at an azimuth of $134.4433^{\circ}$ and an elevation of $1.51728^{\circ}$.</li>
+            <li>**Modeling:** Sun at the Winter Solstice could be observed to rise out of Keadeen Mountain.</li>
+          </ul>
+
+          <p class="text-gray-600 leading-relaxed sans-serif italic mb-2">
+            **Alignment 2: Northmost Minor Lunar Standstill Rise (NthMinR) on Seefingan**
+          </p>
+          <ul class="text-gray-600 leading-relaxed sans-serif text-sm list-disc list-inside pl-4 mb-4">
+            <li>**Premise:** Brewel Hill⁴ NthMinR &rarr; Seefingan. The moon at the northmost Minor Lunar standstill could be observed to rise from Seefingan summit cairn.</li>
+            <li>**GIS Observations:** Source: 'Brewel West' (SMR: KD032-026001-). Target: 'Seefingan' - Unclassified Cairn (SMR: WI006-004----). Visible at an azimuth of $60.61294^{\circ}$ and an elevation of $1.80024^{\circ}$.</li>
+            <li>**Modeling:** Moon at the northmost Minor Lunar standstill could be observed to rise from Seefingan summit cairn.</li>
+          </ul>
+
+          <!-- Site 4 Map Placeholder - removed rounded-lg -->
+          <div class="my-6">
+            <p class="text-sm text-gray-600 leading-relaxed serif italic mb-2">Map Placeholder: Brewel Hill Cursus</p>
+            <div class="bg-gray-200 w-full h-64 flex items-center justify-center border border-gray-300 shadow-sm">
+              <p class="text-gray-500 sans-serif">Site Map: Brewel Hill (4)</p>
+            </div>
+          </div>
+
+          <!-- Site 4 Image Carousel Placeholder - removed rounded-lg -->
+          <div class="my-6">
+            <p class="text-sm text-gray-600 leading-relaxed serif italic mb-2">Image Carousel: Brewel Alignments</p>
+            <div class="relative w-full overflow-hidden shadow-xl border border-gray-300" style="height: 400px;">
+              <div id="slider-brewel" class="flex transition-transform duration-500 ease-in-out h-full">
+                <div class="min-w-full h-full flex flex-col">
+                  <img src="https://placehold.co/600x360/3A506B/ffffff?text=Brewel+WSSR+to+Keadeen+Model" alt="Brewel to Keadeen alignment model." class="w-full h-[360px] object-cover">
+                  <figcaption class="w-full text-center text-sm text-gray-600 bg-gray-50 border-t border-gray-300 p-2 h-[40px] flex items-center justify-center serif italic">
+                      Brewel &rarr; Keadeen: Winter Solstice Sunrise Model
+                  </figcaption>
+                </div>
+                <div class="min-w-full h-full flex flex-col">
+                  <img src="https://placehold.co/600x360/FF5A5F/ffffff?text=Brewel+NthMinR+to+Seefingan+Model" alt="Brewel to Seefingan alignment model." class="w-full h-[360px] object-cover">
+                  <figcaption class="w-full text-center text-sm text-gray-600 bg-gray-50 border-t border-gray-300 p-2 h-[40px] flex items-center justify-center serif italic">
+                      Brewel &rarr; Seefingan: Nth Minor Lunar Standstill Rise Model
+                  </figcaption>
+                </div>
+              </div>
+              <!-- removed rounded-full -->
+              <button onclick="moveSiteSlide('brewel', -1)" class="absolute top-1/2 left-4 -translate-y-1/2 bg-gray-800 bg-opacity-50 text-white p-3 hover:bg-opacity-75 transition duration-200"><i class="fas fa-chevron-left"></i></button>
+              <button onclick="moveSiteSlide('brewel', 1)" class="absolute top-1/2 right-4 -translate-y-1/2 bg-gray-800 bg-opacity-50 text-white p-3 hover:bg-opacity-75 transition duration-200"><i class="fas fa-chevron-right"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- --- SITE 5: Blackrock (Lugnagun Mountain) --- -->
+        <div id="site-5" class="mb-10">
+          <h4 class="text-xl font-bold text-gray-700 mt-2 mb-4 sans-serif">4.5 Blackrock (Lugnagun Mountain) (5)</h4>
+          <p class="text-gray-600 leading-relaxed sans-serif mb-4">
+            On the steep westernmost slope of Lugnagun ridge. A cairn (WI005-058---) is located on the summit of the ridge, at the eastern end of the monument.
+          </p>
+          <p class="text-gray-600 leading-relaxed sans-serif mb-4">
+            This cursus consists of two parallel earthen banks (Wth c. 4.5m; H c. 0.5m) which are 36-39m apart, aligned roughly E-W, and visible over a distance of over 600m. At the upper, eastern end the cursus has an open terminal, with the southern bank stopping some distance short of the cairn, though this bank appears to have been robbed out. The downslope portion of both banks has been largely levelled but is visible on aerial photographs and Lidar imaging.
+          </p>
+
+          <h5 class="text-lg font-bold text-gray-700 mt-6 mb-2 sans-serif border-t pt-4">Astronomic Alignments & Modeling</h5>
+
+          <p class="text-gray-600 leading-relaxed sans-serif italic mb-2">
+            **Alignment 1: Northmost Minor Lunar Standstill Rise (NthMinR) on Seefingan**
+          </p>
+          <ul class="text-gray-600 leading-relaxed sans-serif text-sm list-disc list-inside pl-4 mb-4">
+            <li>**Premise:** Blackrock⁵ NthMinR &rarr; Seefingan. The moon at the northmost Minor Lunar standstill could be observed to rise from Seefingan summit cairn.</li>
+            <li>**GIS Observations:** Source: 'Blackrock' - Unclassified Cairn (SMR: WI005-058----). Target: 'Seefingan' - Unclassified Cairn (SMR: WI006-004----). Visible at an azimuth of $60.61294^{\circ}$ and an elevation of $1.80024^{\circ}$.</li>
+            <li>**Modeling:** Moon at the northmost Minor Lunar standstill could be observed to rise from Seefingan summit cairn. The Seefingan summit cairn is generally regarded to be a passage tomb.</li>
+          </ul>
+
+          <!-- Site 5 Map Placeholder - removed rounded-lg -->
+          <div class="my-6">
+            <p class="text-sm text-gray-600 leading-relaxed serif italic mb-2">Map Placeholder: Blackrock (Lugnagun Mountain) Cursus</p>
+            <div class="bg-gray-200 w-full h-64 flex items-center justify-center border border-gray-300 shadow-sm">
+              <p class="text-gray-500 sans-serif">Site Map: Blackrock (5)</p>
+            </div>
+          </div>
+
+          <!-- Site 5 Image Carousel Placeholder - removed rounded-lg -->
+          <div class="my-6">
+            <p class="text-sm text-gray-600 leading-relaxed serif italic mb-2">Image Carousel: Blackrock Alignments</p>
+            <div class="relative w-full overflow-hidden shadow-xl border border-gray-300" style="height: 400px;">
+              <div id="slider-blackrock" class="flex transition-transform duration-500 ease-in-out h-full">
+                <div class="min-w-full h-full flex flex-col">
+                  <img src="https://placehold.co/600x360/1D3557/ffffff?text=Blackrock+NthMinR+to+Seefingan+Model" alt="Blackrock to Seefingan alignment model." class="w-full h-[360px] object-cover">
+                  <figcaption class="w-full text-center text-sm text-gray-600 bg-gray-50 border-t border-gray-300 p-2 h-[40px] flex items-center justify-center serif italic">
+                      Blackrock &rarr; Seefingan: Nth Minor Lunar Standstill Rise Model
+                  </figcaption>
+                </div>
+              </div>
+              <!-- removed rounded-full -->
+              <button onclick="moveSiteSlide('blackrock', -1)" class="absolute top-1/2 left-4 -translate-y-1/2 bg-gray-800 bg-opacity-50 text-white p-3 hover:bg-opacity-75 transition duration-200"><i class="fas fa-chevron-left"></i></button>
+              <button onclick="moveSiteSlide('blackrock', 1)" class="absolute top-1/2 right-4 -translate-y-1/2 bg-gray-800 bg-opacity-50 text-white p-3 hover:bg-opacity-75 transition duration-200"><i class="fas fa-chevron-right"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- --- SITE 17: Seefingan Mountain (Non-Cursus Focal Point) - NEW 4.6 --- -->
+        <div id="site-seefingan" class="mb-10">
+          <h4 class="text-xl font-bold text-gray-700 mt-2 mb-4 sans-serif">4.6 Seefingan Mountain (Non-Cursus Focal Point)</h4>
+          <p class="text-gray-600 leading-relaxed sans-serif mb-4 italic">
+            Seefingan is a critical non-cursus location serving as a key target (for Brewel and Blackrock) and source (for Ballyoskill) for lunar alignments. It features an unclassified cairn (SMR: WI006-004----) generally regarded as a passage tomb.
+          </p>
+
+          <h5 class="text-lg font-bold text-gray-700 mt-6 mb-2 sans-serif border-t pt-4">Astronomic Alignments & Modeling</h5>
+
+          <p class="text-gray-600 leading-relaxed sans-serif italic mb-2">
+            **Alignment 1: Southmost Minor Lunar Standstill Set (SthMinS) on Ballyoskill (9)**
+          </p>
+          <ul class="text-gray-600 leading-relaxed sans-serif text-sm list-disc list-inside pl-4 mb-4">
+            <li>**Premise:** Seefingan SthMinS &rarr; Ballyoskill⁹. The moon at the southmost Minor Lunar standstill could be observed to set into the cursus associated Ballyoskill cairn.</li>
+            <li>**Modeling:** An opposite observation is evident from the Seefingan cairn: the moon at the Southmost Minor Lunar Standstill could be observed to set into the Ballyoskill cairn.</li>
+          </ul>
+
+          <!-- Site 17 Map Placeholder - removed rounded-lg -->
+          <div class="my-6">
+            <p class="text-sm text-gray-600 leading-relaxed serif italic mb-2">Map Placeholder: Seefingan Mountain</p>
+            <div class="bg-gray-200 w-full h-64 flex items-center justify-center border border-gray-300 shadow-sm">
+              <p class="text-gray-500 sans-serif">Site Map: Seefingan Mountain</p>
+            </div>
+          </div>
+
+          <!-- Site 17 Image Carousel Placeholder - removed rounded-lg -->
+          <div class="my-6">
+            <p class="text-sm text-gray-600 leading-relaxed serif italic mb-2">Image Carousel: Seefingan Alignments</p>
+            <div class="relative w-full overflow-hidden shadow-xl border border-gray-300" style="height: 400px;">
+              <div id="slider-seefingan" class="flex transition-transform duration-500 ease-in-out h-full">
+                <div class="min-w-full h-full flex flex-col">
+                  <img src="https://placehold.co/600x360/CC0000/ffffff?text=Seefingan+SthMinS+to+Ballyoskill+Model" alt="Seefingan to Ballyoskill alignment model." class="w-full h-[360px] object-cover">
+                  <figcaption class="w-full text-center text-sm text-gray-600 bg-gray-50 border-t border-gray-300 p-2 h-[40px] flex items-center justify-center serif italic">
+                      Seefingan &rarr; Ballyoskill: Sth Minor Lunar Standstill Set Model
+                  </figcaption>
+                </div>
+              </div>
+              <!-- removed rounded-full -->
+              <button onclick="moveSiteSlide('seefingan', -1)" class="absolute top-1/2 left-4 -translate-y-1/2 bg-gray-800 bg-opacity-50 text-white p-3 hover:bg-opacity-75 transition duration-200"><i class="fas fa-chevron-left"></i></button>
+              <button onclick="moveSiteSlide('seefingan', 1)" class="absolute top-1/2 right-4 -translate-y-1/2 bg-gray-800 bg-opacity-50 text-white p-3 hover:bg-opacity-75 transition duration-200"><i class="fas fa-chevron-right"></i></button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- --- SITE 6: Woodtown - NEW 4.7 --- -->
+        <div id="site-6" class="mb-10">
+          <h4 class="text-xl font-bold text-gray-700 mt-2 mb-4 sans-serif">4.7 Woodtown (6)</h4>
+          <p class="text-gray-600 leading-relaxed sans-serif mb-4">
+            Situated on a gentle E facing slope in undulating pasture. A cursus consisting of a u-shaped earthwork is visible on an aerial photograph aligned approximately NW–SE; the curve of the U is at the SE. It is defined by a low bank and external fosse that encloses an area c. 125m by 45m. The precise nature of this earthwork is unknown and the possibility that it could be the remnants of a cursus-type monument cannot be excluded.
+          </p>
+
+          <h5 class="text-lg font-bold text-gray-700 mt-6 mb-2 sans-serif border-t pt-4">Astronomic Alignments & Modeling</h5>
+
+          <p class="text-gray-600 leading-relaxed sans-serif italic mb-2">
+            **Alignment 1: Summer Solstice Sunset (SSSS) on Loughcrew (16)**
+          </p>
+          <ul class="text-gray-600 leading-relaxed sans-serif text-sm list-disc list-inside pl-4 mb-4">
+            <li>**Premise:** Woodtown⁶ SSSS &rarr; Loughcrew¹⁶. The sun at the Summer Solstice could be observed to set into Carbane West, Loughcrew.</li>
+            <li>**GIS Observations:** Source: Woodtown Cursus (SMR: WX008-001----). Target: Cairn D - Unclassified Cairn (SMR: ME015-003008-). Visible on the viewshed horizon at an azimuth of $315.33671^{\circ}$ and an elevation of $-0.28672^{\circ}$.</li>
+            <li>**Modeling:** Sun at Summer Solstice could be observed to set into Carbane West, Loughcrew.</li>
+          </ul>
+
+          <!-- Site 6 Map Placeholder - removed rounded-lg -->
+          <div class="my-6">
+            <p class="text-sm text-gray-600 leading-relaxed serif italic mb-2">Map Placeholder: Woodtown Cursus</p>
+            <div class="bg-gray-200 w-full h-64 flex items-center justify-center border border-gray-300 shadow-sm">
+              <p class="text-gray-500 sans-serif">Site Map: Woodtown (6)</p>
+            </div>
+          </div>
+
+          <!-- Site 6 Image Carousel Placeholder - removed rounded-lg -->
+          <div class="my-6">
+            <p class="text-sm text-gray-600 leading-relaxed serif italic mb-2">Image Carousel: Woodtown Alignments</p>
+            <div class="relative w-full overflow-hidden shadow-xl border border-gray-300" style="height: 400px;">
+              <div id="slider-woodtown" class="flex transition-transform duration-500 ease-in-out h-full">
+                <div class="min-w-full h-full flex flex-col">
+                  <img src="https://placehold.co/600x360/FFA500/ffffff?text=Woodtown+SSSS+to+Loughcrew+Model" alt="Woodtown to Loughcrew alignment model." class="w-full h-[360px] object-cover">
+                  <figcaption class="w-full text-center text-sm text-gray-600 bg-gray-50 border-t border-gray-300 p-2 h-[40px] flex items-center justify-center serif italic">
+                      Woodtown &rarr; Loughcrew: Summer Solstice Sunset Model
+                  </figcaption>
+                </div>
+              </div>
+              <!-- removed rounded-full -->
+              <button onclick="moveSiteSlide('woodtown', -1)" class="absolute top-1/2 left-4 -translate-y-1/2 bg-gray-800 bg-opacity-50 text-white p-3 hover:bg-opacity-75 transition duration-200"><i class="fas fa-chevron-left"></i></button>
+              <button onclick="moveSiteSlide('woodtown', 1)" class="absolute top-1/2 right-4 -translate-y-1/2 bg-gray-800 bg-opacity-50 text-white p-3 hover:bg-opacity-75 transition duration-200"><i class="fas fa-chevron-right"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- --- SITE 7: Newgrange - NEW 4.8 --- -->
+        <div id="site-7" class="mb-10">
+          <h4 class="text-xl font-bold text-gray-700 mt-2 mb-4 sans-serif">4.8 Newgrange (7)</h4>
+          <p class="text-gray-600 leading-relaxed sans-serif mb-4">
+            Located within the *Brú na Bóinne* neolithic complex, this site comprises neolithic mounds, passage tombs, standing stones, henges and other prehistoric enclosures, some from as early as 35th century BC - 32nd century BC. The site thus predates the Egyptian pyramids and was built with sophistication and a knowledge of science and astronomy, which is most evident in the passage grave of Newgrange. The site is often referred to as the "Bend of the Boyne".
+          </p>
+          <p class="text-gray-600 leading-relaxed sans-serif mb-4">
+            The Newgrange cursus is located approx 130m east from the Newgrange passage tomb. The monument consists of a raised U-shaped area running N-S, defined by scarps (L c. 100m, W c. 20m). The monument is highly visible on aerial photographs and lidar. Possibly originating from a pond at its northern end, the southern end terminates at the summit of the ridge and has commanding views to the south.
+          </p>
+
+          <h5 class="text-lg font-bold text-gray-700 mt-6 mb-2 sans-serif border-t pt-4">Astronomic Alignments & Modeling</h5>
+
+          <p class="text-gray-600 leading-relaxed sans-serif italic mb-2">
+            **Alignment 1: Southmost Major Lunar Standstill Set (SthMajS) on Hill of Tara (8)**
+          </p>
+          <ul class="text-gray-600 leading-relaxed sans-serif text-sm list-disc list-inside pl-4 mb-4">
+            <li>**Premise:** Newgrange⁷ SthMajS &rarr; Hill of Tara⁸. The moon at the Southmost Major Lunar Standstill could be observed to set into the Hill of Tara.</li>
+            <li>**GIS Observations:** Source: Newgrange Passage Tomb (SMR: ME019-046001-). Target: Hill of Tara - Ceremonial Enclosure (SMR: ME031-033001-). Visible on the viewshed horizon at an azimuth of $213.70713^{\circ}$ and an elevation of $0.26735^{\circ}$.</li>
+            <li>**Modeling:** Moon at the Southmost Minor Lunar standstill could be observed to set into the southeastern area of the Hill of Tara, disappearing just below the horizon at the Ceremonial Enclosure.</li>
+          </ul>
+
+          <!-- Site 7 Map Placeholder - removed rounded-lg -->
+          <div class="my-6">
+            <p class="text-sm text-gray-600 leading-relaxed serif italic mb-2">Map Placeholder: Newgrange Cursus (Brú na Bóinne)</p>
+            <div class="bg-gray-200 w-full h-64 flex items-center justify-center border border-gray-300 shadow-sm">
+              <p class="text-gray-500 sans-serif">Site Map: Newgrange (7)</p>
+            </div>
+          </div>
+
+          <!-- Site 7 Image Carousel Placeholder - removed rounded-lg -->
+          <div class="my-6">
+            <p class="text-sm text-gray-600 leading-relaxed serif italic mb-2">Image Carousel: Newgrange Alignments</p>
+            <div class="relative w-full overflow-hidden shadow-xl border border-gray-300" style="height: 400px;">
+              <div id="slider-newgrange" class="flex transition-transform duration-500 ease-in-out h-full">
+                <div class="min-w-full h-full flex flex-col">
+                  <img src="https://placehold.co/600x360/0d47a1/ffffff?text=Newgrange+SthMajS+to+Tara+Model" alt="Newgrange to Hill of Tara alignment model." class="w-full h-[360px] object-cover">
+                  <figcaption class="w-full text-center text-sm text-gray-600 bg-gray-50 border-t border-gray-300 p-2 h-[40px] flex items-center justify-center serif italic">
+                      Newgrange &rarr; Hill of Tara: Sth Major Lunar Standstill Set Model
+                  </figcaption>
+                </div>
+              </div>
+              <!-- removed rounded-full -->
+              <button onclick="moveSiteSlide('newgrange', -1)" class="absolute top-1/2 left-4 -translate-y-1/2 bg-gray-800 bg-opacity-50 text-white p-3 hover:bg-opacity-75 transition duration-200"><i class="fas fa-chevron-left"></i></button>
+              <button onclick="moveSiteSlide('newgrange', 1)" class="absolute top-1/2 right-4 -translate-y-1/2 bg-gray-800 bg-opacity-50 text-white p-3 hover:bg-opacity-75 transition duration-200"><i class="fas fa-chevron-right"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- --- SITE 8: The Hill of Tara - NEW 4.9 --- -->
+        <div id="site-8" class="mb-10">
+          <h4 class="text-xl font-bold text-gray-700 mt-2 mb-4 sans-serif">4.9 The Hill of Tara (8)</h4>
+          <p class="text-gray-600 leading-relaxed sans-serif mb-4">
+            The Hill of Tara is an ancient ceremonial and burial site near Skryne in County Meath. According to tradition, it was the inauguration place and seat of the High Kings of Ireland, and it is also a significant site in Irish mythology. Tara consists of numerous monuments and earthworks — from the Neolithic to the Iron Age—including a passage tomb (the "Mound of the Hostages"), burial mounds, round enclosures, a standing stone (believed to be the *Lia Fáil* or "Stone of Destiny"), and a linear earthwork believed to be a ceremonial avenue or cursus.
+          </p>
+          <p class="text-gray-600 leading-relaxed sans-serif mb-4">
+            The linear earthwork is described as a sunken trackway running N-S, defined by large interrupted banks (W c. 10m, L c. 180m), connecting with less well-defined road system.
+          </p>
+
+          <h5 class="text-lg font-bold text-gray-700 mt-6 mb-2 sans-serif border-t pt-4">Astronomic Alignments & Modeling</h5>
+
+          <p class="text-gray-600 leading-relaxed sans-serif italic mb-2">
+            **Alignment 1: Northmost Crossquarter Set (NthCQS) on Loughcrew (16)**
+          </p>
+          <ul class="text-gray-600 leading-relaxed sans-serif text-sm list-disc list-inside pl-4 mb-4">
+            <li>**Premise:** Hill of Tara⁸ NthCQS &rarr; Loughcrew¹⁶. The sun at the northmost crossquarter could be observed to set into Patricktown Hill - Loughcrew.</li>
+            <li>**GIS Observations:** Source: 'Mound of the Hostages' - Passage Tomb (SMR: ME031-033007-). Target: 'Patrickstown' - Unclassified Cairn (SMR: ME009-073----). Visible on the viewshed horizon at an azimuth of $300.79238^{\circ}$ and an elevation of $0.03045^{\circ}$.</li>
+            <li>**Modeling:** The last rays of the setting sun at the northmost crossquarter could be observed to set into the cairn on Patricktown Hill - the easternmost of the hills which comprise the Loughcrew passage tomb complex.</li>
+          </ul>
+
+          <!-- Site 8 Map Placeholder - removed rounded-lg -->
+          <div class="my-6">
+            <p class="text-sm text-gray-600 leading-relaxed serif italic mb-2">Map Placeholder: Hill of Tara Linear Earthwork</p>
+            <div class="bg-gray-200 w-full h-64 flex items-center justify-center border border-gray-300 shadow-sm">
+              <p class="text-gray-500 sans-serif">Site Map: Hill of Tara (8)</p>
+            </div>
+          </div>
+
+          <!-- Site 8 Image Carousel Placeholder - removed rounded-lg -->
+          <div class="my-6">
+            <p class="text-sm text-gray-600 leading-relaxed serif italic mb-2">Image Carousel: Hill of Tara Alignments</p>
+            <div class="relative w-full overflow-hidden shadow-xl border border-gray-300" style="height: 400px;">
+              <div id="slider-tara" class="flex transition-transform duration-500 ease-in-out h-full">
+                <div class="min-w-full h-full flex flex-col">
+                  <img src="https://placehold.co/600x360/007E33/ffffff?text=Tara+NthCQS+to+Loughcrew+Model" alt="Hill of Tara to Loughcrew alignment model." class="w-full h-[360px] object-cover">
+                  <figcaption class="w-full text-center text-sm text-gray-600 bg-gray-50 border-t border-gray-300 p-2 h-[40px] flex items-center justify-center serif italic">
+                      Hill of Tara &rarr; Loughcrew: Northmost Crossquarter Set Model
+                  </figcaption>
+                </div>
+              </div>
+              <!-- removed rounded-full -->
+              <button onclick="moveSiteSlide('tara', -1)" class="absolute top-1/2 left-4 -translate-y-1/2 bg-gray-800 bg-opacity-50 text-white p-3 hover:bg-opacity-75 transition duration-200"><i class="fas fa-chevron-left"></i></button>
+              <button onclick="moveSiteSlide('tara', 1)" class="absolute top-1/2 right-4 -translate-y-1/2 bg-gray-800 bg-opacity-50 text-white p-3 hover:bg-opacity-75 transition duration-200"><i class="fas fa-chevron-right"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- --- SITE 9: Ballyoskill - NEW 4.10 --- -->
+        <div id="site-9" class="mb-10">
+          <h4 class="text-xl font-bold text-gray-700 mt-2 mb-4 sans-serif">4.10 Ballyoskill (9)</h4>
+          <p class="text-gray-600 leading-relaxed sans-serif mb-4">
+            This cursus is located on the steep W-facing slope of an N-S hill over a distance of c. 300m. The top of the monument is on the crest of the hill. It falls gently to W initially (for c. 11m), drops (H 0.35m) and flattens out slightly on a natural terrace (for c. 5m) before falling steeply down slope to the base of the hill. There are panoramic views S-W-N, with a very good view to the NE but only from the very top of the monument.
+          </p>
+          <p class="text-gray-600 leading-relaxed sans-serif mb-4">
+            The feature consists of two low earthen banks (L c. 310m), running roughly parallel downslope. The cursus terminates at the crest of the hill with a curving terminal bank (Wth 3.6m; overall Wth 8m; int. H 0.9m; ext. H 0.13m). The banks appear to have a high concentration of stone, possibly stone-walling overgrown with grass sod. The stone is a local shale. The interior of the cursus is lower than the exterior. The monument widens as it runs down the slope. Cairn KK005-003001- is located at the northern summit of the hill.
+          </p>
+
+          <h5 class="text-lg font-bold text-gray-700 mt-6 mb-2 sans-serif border-t pt-4">Astronomic Alignments & Modeling</h5>
+
+          <p class="text-gray-600 leading-relaxed sans-serif italic mb-2">
+            **Alignment 1: Southmost Minor Lunar Standstill Rise (SthMinR) on Slievebawn (10)**
+          </p>
+          <ul class="text-gray-600 leading-relaxed sans-serif text-sm list-disc list-inside pl-4 mb-4">
+            <li>**Premise:** Ballyoskill⁹ SthMinR &rarr; Slievebawn¹⁰. The moon at the southmost Minor Lunar standstill could be observed to rise over Slievebawn summit cairn.</li>
+            <li>**GIS Observations:** Source: 'Ballyoskill' - Unclassified Cairn (SMR: KK005-003001-). Target: 'Raheenkyle' - Unclassified Cairn (SMR: CW020-016----). Visible at an azimuth of $123.74206^{\circ}$ and an elevation of $0.17078^{\circ}$.</li>
+            <li>**Modeling:** Moon at the southmost Minor Lunar standstill could be observed to be centered directly over Slievebawn summit cairn.</li>
+          </ul>
+
+          <!-- Site 9 Map Placeholder - removed rounded-lg -->
+          <div class="my-6">
+            <p class="text-sm text-gray-600 leading-relaxed serif italic mb-2">Map Placeholder: Ballyoskill Cursus</p>
+            <div class="bg-gray-200 w-full h-64 flex items-center justify-center border border-gray-300 shadow-sm">
+              <p class="text-gray-500 sans-serif">Site Map: Ballyoskill (9)</p>
+            </div>
+          </div>
+
+          <!-- Site 9 Image Carousel Placeholder - removed rounded-lg -->
+          <div class="my-6">
+            <p class="text-sm text-gray-600 leading-relaxed serif italic mb-2">Image Carousel: Ballyoskill Alignments</p>
+            <div class="relative w-full overflow-hidden shadow-xl border border-gray-300" style="height: 400px;">
+              <div id="slider-ballyoskill" class="flex transition-transform duration-500 ease-in-out h-full">
+                <div class="min-w-full h-full flex flex-col">
+                  <img src="https://placehold.co/600x360/CC0000/ffffff?text=Ballyoskill+SthMinR+to+Slievebawn+Model" alt="Ballyoskill to Slievebawn alignment model." class="w-full h-[360px] object-cover">
+                  <figcaption class="w-full text-center text-sm text-gray-600 bg-gray-50 border-t border-gray-300 p-2 h-[40px] flex items-center justify-center serif italic">
+                      Ballyoskill &rarr; Slievebawn: Sth Minor Lunar Standstill Rise Model
+                  </figcaption>
+                </div>
+              </div>
+              <!-- removed rounded-full -->
+              <button onclick="moveSiteSlide('ballyoskill', -1)" class="absolute top-1/2 left-4 -translate-y-1/2 bg-gray-800 bg-opacity-50 text-white p-3 hover:bg-opacity-75 transition duration-200"><i class="fas fa-chevron-left"></i></button>
+              <button onclick="moveSiteSlide('ballyoskill', 1)" class="absolute top-1/2 right-4 -translate-y-1/2 bg-gray-800 bg-opacity-50 text-white p-3 hover:bg-opacity-75 transition duration-200"><i class="fas fa-chevron-right"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- --- SITE 10: Slievebawn Mountain - NEW 4.11 --- -->
+        <div id="site-10" class="mb-10">
+          <h4 class="text-xl font-bold text-gray-700 mt-2 mb-4 sans-serif">4.11 Slievebawn Mountain (10)</h4>
+          <p class="text-gray-600 leading-relaxed sans-serif mb-4">
+            This cursus is located on the the NW slope of Slievebawn. It consists of two parallel banks or grass/heather/turf-covered walls (Wth 2-2.6m; H 0.2-0.8m) composed of schist and quartz. The lower portion of the monument runs NW-SE for c. 160m and is 31m wide, while the upper portion changes direction slightly, running NNW-SSE for c. 113m and is slightly narrower, 22m wide.
+          </p>
+          <p class="text-gray-600 leading-relaxed sans-serif mb-4">
+            The lower portion of the cursus is aligned with a circular cairn (CW020-016----) on the summit of the mountain. This cairn is c. 135m SE of the SE end of the monument. The upper portion of the cursus is aligned with a cairn (CW023-007----/WX008-001----) 3km to the SE on the summit of Mount Leinster, on the Carlow-Wexford border.
+          </p>
+
+          <h5 class="text-lg font-bold text-gray-700 mt-6 mb-2 sans-serif border-t pt-4">Astronomic Alignments & Modeling</h5>
+          <p class="text-gray-600 leading-relaxed sans-serif italic mb-4">
+            (Slievebawn is a target for the Ballyoskill (9) alignment, but no alignments are sourced *from* this cursus in the scope of this study.)
+          </p>
+
+          <!-- Site 10 Map Placeholder - removed rounded-lg -->
+          <div class="my-6">
+            <p class="text-sm text-gray-600 leading-relaxed serif italic mb-2">Map Placeholder: Slievebawn Mountain Cursus</p>
+            <div class="bg-gray-200 w-full h-64 flex items-center justify-center border border-gray-300 shadow-sm">
+              <p class="text-gray-500 sans-serif">Site Map: Slievebawn Mountain (10)</p>
+            </div>
+          </div>
+
+          <!-- Site 10 Image Carousel Placeholder - removed rounded-lg -->
+          <div class="my-6">
+            <p class="text-sm text-gray-600 leading-relaxed serif italic mb-2">Image Carousel: Slievebawn Site Features</p>
+            <div class="relative w-full overflow-hidden shadow-xl border border-gray-300" style="height: 400px;">
+              <div id="slider-slievebawn" class="flex transition-transform duration-500 ease-in-out h-full">
+                <div class="min-w-full h-full flex flex-col">
+                  <img src="https://placehold.co/600x360/40C4FF/333333?text=Slievebawn+Cursus+Aerial" alt="Aerial view of Slievebawn Cursus." class="w-full h-[360px] object-cover">
+                  <figcaption class="w-full text-center text-sm text-gray-600 bg-gray-50 border-t border-gray-300 p-2 h-[40px] flex items-center justify-center serif italic">
+                      Slievebawn Cursus with two sections.
+                  </figcaption>
+                </div>
+              </div>
+              <!-- removed rounded-full -->
+              <button onclick="moveSiteSlide('slievebawn', -1)" class="absolute top-1/2 left-4 -translate-y-1/2 bg-gray-800 bg-opacity-50 text-white p-3 hover:bg-opacity-75 transition duration-200"><i class="fas fa-chevron-left"></i></button>
+              <button onclick="moveSiteSlide('slievebawn', 1)" class="absolute top-1/2 right-4 -translate-y-1/2 bg-gray-800 bg-opacity-50 text-white p-3 hover:bg-opacity-75 transition duration-200"><i class="fas fa-chevron-right"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- --- SITE 11: Coolasnaghta (Mount Leinster) - NEW 4.12 --- -->
+        <div id="site-11" class="mb-10">
+          <h4 class="text-xl font-bold text-gray-700 mt-2 mb-4 sans-serif">4.12 Coolasnaghta (Mount Leinster) (11)</h4>
+          <p class="text-gray-600 leading-relaxed sans-serif mb-4">
+            On a steep mountain slope on the northern spur of Mount Leinster. It consists of two parallel banks (Wth c. 2m; H c. 0.4m), 33m apart, aligned NNW-SSE, which is visible over 400m. The banks are obscured by blanket bog, but are likely to be constructed of stone. The monument, which appears to end short of the summit, is known locally as the Witches' Slide. The southern portion of the cursus appears to be aligned with a cairn (CW023-007----/WX008-001----) 2km to the SSE on the summit of Mount Leinster, on the Carlow-Wexford border.
+          </p>
+
+          <h5 class="text-lg font-bold text-gray-700 mt-6 mb-2 sans-serif border-t pt-4">Astronomic Alignments & Modeling</h5>
+
+          <p class="text-gray-600 leading-relaxed sans-serif italic mb-2">
+            **Alignment 1: Southmost Major Lunar Standstill Rise (SthMajR) on Mount Leinster**
+          </p>
+          <ul class="text-gray-600 leading-relaxed sans-serif text-sm list-disc list-inside pl-4 mb-4">
+            <li>**Premise:** Coolasnaghta¹¹ SthMajR &rarr; Mt. Leinster. The moon at the southmost Major Lunar standstill could be observed to rise from Mt. Leinster summit cairn.</li>
+            <li>**GIS Observations:** Source: Coolasnaghta Cursus Top. Target: 'Craan' - Unclassified Cairn (SMR: WX008-001----). Observed from the high point (where the summit becomes visible) at an azimuth of $169.868^{\circ}$ and an elevation of $6.23987^{\circ}$.</li>
+            <li>**Modeling:** Moon at the southmost Major Lunar standstill could be observed to rise from Mt. Leinster summit cairn. (*Note: There is no known cairn at the very top of the Coolasnaghta cursus)</li>
+          </ul>
+
+          <!-- Site 11 Map Placeholder - removed rounded-lg -->
+          <div class="my-6">
+            <p class="text-sm text-gray-600 leading-relaxed serif italic mb-2">Map Placeholder: Coolasnaghta (Mount Leinster) Cursus</p>
+            <div class="bg-gray-200 w-full h-64 flex items-center justify-center border border-gray-300 shadow-sm">
+              <p class="text-gray-500 sans-serif">Site Map: Coolasnaghta (11)</p>
+            </div>
+          </div>
+
+          <!-- Site 11 Image Carousel Placeholder - removed rounded-lg -->
+          <div class="my-6">
+            <p class="text-sm text-gray-600 leading-relaxed serif italic mb-2">Image Carousel: Coolasnaghta Alignments</p>
+            <div class="relative w-full overflow-hidden shadow-xl border border-gray-300" style="height: 400px;">
+              <div id="slider-coolasnaghta" class="flex transition-transform duration-500 ease-in-out h-full">
+                <div class="min-w-full h-full flex flex-col">
+                  <img src="https://placehold.co/600x360/0d47a1/ffffff?text=Coolasnaghta+SthMajR+to+MtLeinster+Model" alt="Coolasnaghta to Mount Leinster alignment model." class="w-full h-[360px] object-cover">
+                  <figcaption class="w-full text-center text-sm text-gray-600 bg-gray-50 border-t border-gray-300 p-2 h-[40px] flex items-center justify-center serif italic">
+                      Coolasnaghta &rarr; Mt. Leinster: Sth Major Lunar Standstill Rise Model
+                  </figcaption>
+                </div>
+              </div>
+              <!-- removed rounded-full -->
+              <button onclick="moveSiteSlide('coolasnaghta', -1)" class="absolute top-1/2 left-4 -translate-y-1/2 bg-gray-800 bg-opacity-50 text-white p-3 hover:bg-opacity-75 transition duration-200"><i class="fas fa-chevron-left"></i></button>
+              <button onclick="moveSiteSlide('coolasnaghta', 1)" class="absolute top-1/2 right-4 -translate-y-1/2 bg-gray-800 bg-opacity-50 text-white p-3 hover:bg-opacity-75 transition duration-200"><i class="fas fa-chevron-right"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- --- SITE 12: Newtown - NEW 4.13 --- -->
+        <div id="site-12" class="mb-10">
+          <h4 class="text-xl font-bold text-gray-700 mt-2 mb-4 sans-serif">4.13 Newtown (12)</h4>
+          <p class="text-gray-600 leading-relaxed sans-serif mb-4">
+            **No Data:** There is no published information for a cursus listed here in the National Monuments Database.
+          </p>
+
+          <h5 class="text-lg font-bold text-gray-700 mt-6 mb-2 sans-serif border-t pt-4">Astronomic Alignments & Modeling</h5>
+          <p class="text-gray-600 leading-relaxed sans-serif italic mb-4">
+            (No evident relationships for this site as no published data exists.)
+          </p>
+
+          <!-- Site 12 Map Placeholder - removed rounded-lg -->
+          <div class="my-6">
+            <p class="text-sm text-gray-600 leading-relaxed serif italic mb-2">Map Placeholder: Newtown Location</p>
+            <div class="bg-gray-200 w-full h-64 flex items-center justify-center border border-gray-300 shadow-sm">
+              <p class="text-gray-500 sans-serif">Site Map: Newtown (12)</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- --- SITE 13/14: Knockainy West Site 1 & 2 - NEW 4.14 --- -->
+        <div id="site-13" class="mb-10">
+          <h4 class="text-xl font-bold text-gray-700 mt-2 mb-4 sans-serif">4.14 Knockainy West Site 1 (13) & Site 2 (14)</h4>
+          <h5 class="text-base font-bold text-gray-700 mt-6 mb-2 sans-serif">Knockainy West Site 1 (13)</h5>
+          <p class="text-gray-600 leading-relaxed sans-serif mb-4">
+            Cursus monument on N side of Knockainy Hill. This cursus runs onto a group of five contiguous ring-barrows (LI032-139001-/004-) on the summit of Knockainy Hill. The cursus monument, stretching down the northern flank of the hill for a distance of approximately 750m, consists of two parallel banks, c. 9m in width and 0.5m in height, separated by a distance of 80m. There is no trace of a terminal at the south-west end of the cursus, where the bank fades out near the crest of the hill. This monument is likely to date from the Neolithic period and may be one of the earliest monuments on the hill. As one progresses up the cursus close to the summit of the hill, one looks directly to the south-west in the direction of the Paps of Anu.
+          </p>
+          <h5 class="text-base font-bold text-gray-700 mt-6 mb-2 sans-serif">Knockainy West Site 2 (14)</h5>
+          <p class="text-gray-600 leading-relaxed sans-serif mb-4">
+            This possible cursus is described as following; 'This 80m-long rectangular enclosure consists of two parallel banks, each 10m in width and averaging 1m in height, separated by a distance of 25m. A bank forms a terminal at its northern end, while the southern end 'vanishes' over a steep incline.'
+          </p>
+
+          <h5 class="text-lg font-bold text-gray-700 mt-6 mb-2 sans-serif border-t pt-4">Astronomic Alignments & Modeling</h5>
+          <p class="text-gray-600 leading-relaxed sans-serif italic mb-4">
+            **No Relationships Evident:** In the neolithic, when observed from the presumed focal points at Knockainy (Dunainy Mound LI032-139005- and Dun Cliach Ringfort LI032-131), there are no obvious rise/set relationships with notable neolithic sites. There is what can be described as a southmost crossquarter rise relationship with the highest peak in the Galtee Mountains where there are numerous cairns. For the purposes of this exercise, these sites are recorded as having no evident relationships with other cursus sites.
+          </p>
+
+          <!-- Site 13 Map Placeholder - removed rounded-lg -->
+          <div class="my-6">
+            <p class="text-sm text-gray-600 leading-relaxed serif italic mb-2">Map Placeholder: Knockainy West Sites (13 & 14)</p>
+            <div class="bg-gray-200 w-full h-64 flex items-center justify-center border border-gray-300 shadow-sm">
+              <p class="text-gray-500 sans-serif">Site Map: Knockainy West (13/14)</p>
+            </div>
+          </div>
+
+          <!-- Site 13/14 Image Carousel Placeholder - removed rounded-lg -->
+          <div class="my-6">
+            <p class="text-sm text-gray-600 leading-relaxed serif italic mb-2">Image Carousel: Knockainy Site Features</p>
+            <div class="relative w-full overflow-hidden shadow-xl border border-gray-300" style="height: 400px;">
+              <div id="slider-knockainy" class="flex transition-transform duration-500 ease-in-out h-full">
+                <div class="min-w-full h-full flex flex-col">
+                  <img src="https://placehold.co/600x360/FF5A5F/ffffff?text=Knockainy+Cursus+Aerial" alt="Aerial view of Knockainy Cursus." class="w-full h-[360px] object-cover">
+                  <figcaption class="w-full text-center text-sm text-gray-600 bg-gray-50 border-t border-gray-300 p-2 h-[40px] flex items-center justify-center serif italic">
+                      Knockainy West Cursus (750m long).
+                  </figcaption>
+                </div>
+              </div>
+              <!-- removed rounded-full -->
+              <button onclick="moveSiteSlide('knockainy', -1)" class="absolute top-1/2 left-4 -translate-y-1/2 bg-gray-800 bg-opacity-50 text-white p-3 hover:bg-opacity-75 transition duration-200"><i class="fas fa-chevron-left"></i></button>
+              <button onclick="moveSiteSlide('knockainy', 1)" class="absolute top-1/2 right-4 -translate-y-1/2 bg-gray-800 bg-opacity-50 text-white p-3 hover:bg-opacity-75 transition duration-200"><i class="fas fa-chevron-right"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- --- SITE 15: Annagh - NEW 4.15 --- -->
+        <div id="site-15" class="mb-10">
+          <h4 class="text-xl font-bold text-gray-700 mt-2 mb-4 sans-serif">4.15 Annagh (15)</h4>
+          <p class="text-gray-600 leading-relaxed sans-serif mb-4">
+            This possible cursus comprises two parallel banks running in a roughly north/south direction from the sea at Tralee Bay to the barrow complex [KE038-137----, KE038-138----, KE038-139----, KE038-140----]. This has an approx maximum length of 200m, the banks being c.20m apart. Average height of the banks is 0.6m, the average width being 5m.
+          </p>
+
+          <h5 class="text-lg font-bold text-gray-700 mt-6 mb-2 sans-serif border-t pt-4">Astronomic Alignments & Modeling</h5>
+          <p class="text-gray-600 leading-relaxed sans-serif italic mb-4">
+            **No Relationships Evident:** In the neolithic, when observed from the barrows at the eastern end of this possible cursus, there are no obvious rise/set relationships with any cairns or notable neolithic sites. The site has a very distinctive view southward to the Slieve Mish Mountains.
+          </p>
+
+          <!-- Site 15 Map Placeholder - removed rounded-lg -->
+          <div class="my-6">
+            <p class="text-sm text-gray-600 leading-relaxed serif italic mb-2">Map Placeholder: Annagh Cursus</p>
+            <div class="bg-gray-200 w-full h-64 flex items-center justify-center border border-gray-300 shadow-sm">
+              <p class="text-gray-500 sans-serif">Site Map: Annagh (15)</p>
+            </div>
+          </div>
+
+          <!-- Site 15 Image Carousel Placeholder - removed rounded-lg -->
+          <div class="my-6">
+            <p class="text-sm text-gray-600 leading-relaxed serif italic mb-2">Image Carousel: Annagh Site Features</p>
+            <div class="relative w-full overflow-hidden shadow-xl border border-gray-300" style="height: 400px;">
+              <div id="slider-annagh" class="flex transition-transform duration-500 ease-in-out h-full">
+                <div class="min-w-full h-full flex flex-col">
+                  <img src="https://placehold.co/600x360/3A506B/ffffff?text=Annagh+Cursus+Aerial" alt="Aerial view of Annagh Cursus." class="w-full h-[360px] object-cover">
+                  <figcaption class="w-full text-center text-sm text-gray-600 bg-gray-50 border-t border-gray-300 p-2 h-[40px] flex items-center justify-center serif italic">
+                      Annagh Cursus from Tralee Bay.
+                  </figcaption>
+                </div>
+              </div>
+              <!-- removed rounded-full -->
+              <button onclick="moveSiteSlide('annagh', -1)" class="absolute top-1/2 left-4 -translate-y-1/2 bg-gray-800 bg-opacity-50 text-white p-3 hover:bg-opacity-75 transition duration-200"><i class="fas fa-chevron-left"></i></button>
+              <button onclick="moveSiteSlide('annagh', 1)" class="absolute top-1/2 right-4 -translate-y-1/2 bg-gray-800 bg-opacity-50 text-white p-3 hover:bg-opacity-75 transition duration-200"><i class="fas fa-chevron-right"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- --- SITE 16: Loughcrew - NEW 4.16 --- -->
+        <div id="site-16" class="mb-10">
+          <h4 class="text-xl font-bold text-gray-700 mt-2 mb-4 sans-serif">4.16 Loughcrew (16)</h4>
+          <p class="text-gray-600 leading-relaxed sans-serif mb-4">
+            Located on an undulating landscape N of the *Slieve na Calliagh* passage tomb complex. Comprising two very low parallel banks, 15m apart, with internal fosses extending N-S (L 300m approx). A standing stone, lying prone at the point where it meets a wide NE-SW field wall, may mark its NW end. From its SE end another section extends approx 290m), with a second standing stone (ME009-097001-) close to the turn. Latest aerial imagery appears to indicate another turn at this point with a spur of 100m approx.
+          </p>
+
+          <h5 class="text-lg font-bold text-gray-700 mt-6 mb-2 sans-serif border-t pt-4">Astronomic Alignments & Modeling</h5>
+
+          <p class="text-gray-600 leading-relaxed sans-serif italic mb-2">
+            **Alignment 1: Southmost Crossquarter Rise (SthCQR) on Hill of Tara (8)**
+          </p>
+          <ul class="text-gray-600 leading-relaxed sans-serif text-sm list-disc list-inside pl-4 mb-4">
+            <li>**Premise:** Loughcrew¹⁶ SthCQR &rarr; Hill of Tara⁸. The sun at the southmost crossquarter could be observed to rise from the Hill of Tara.</li>
+            <li>**GIS Observations:** Source: 'Cairn D' - Unclassified Cairn (SMR: ME015-003007). Target: 'Lia Fail' - Standing Stone (SMR: ME031-033014-). Visible on the viewshed horizon at an azimuth of $117.60213^{\circ}$ and an elevation of $-0.29769^{\circ}$.</li>
+            <li>**Modeling:** Sun at the southmost crossquarter could be observed to rise from the Hill of Tara, with a first emergence from the location of the 'Lia Fáil'.</li>
+          </ul>
+
+          <!-- Site 16 Map Placeholder - removed rounded-lg -->
+          <div class="my-6">
+            <p class="text-sm text-gray-600 leading-relaxed serif italic mb-2">Map Placeholder: Loughcrew Cursus</p>
+            <div class="bg-gray-200 w-full h-64 flex items-center justify-center border border-gray-300 shadow-sm">
+              <p class="text-gray-500 sans-serif">Site Map: Loughcrew (16)</p>
+            </div>
+          </div>
+
+          <!-- Site 16 Image Carousel Placeholder - removed rounded-lg -->
+          <div class="my-6">
+            <p class="text-sm text-gray-600 leading-relaxed serif italic mb-2">Image Carousel: Loughcrew Alignments</p>
+            <div class="relative w-full overflow-hidden shadow-xl border border-gray-300" style="height: 400px;">
+              <div id="slider-loughcrew" class="flex transition-transform duration-500 ease-in-out h-full">
+                <div class="min-w-full h-full flex flex-col">
+                  <img src="https://placehold.co/600x360/007E33/ffffff?text=Loughcrew+SthCQR+to+Tara+Model" alt="Loughcrew to Hill of Tara alignment model." class="w-full h-[360px] object-cover">
+                  <figcaption class="w-full text-center text-sm text-gray-600 bg-gray-50 border-t border-gray-300 p-2 h-[40px] flex items-center justify-center serif italic">
+                      Loughcrew &rarr; Hill of Tara: Sth Crossquarter Rise Model
+                  </figcaption>
+                </div>
+              </div>
+              <!-- removed rounded-full -->
+              <button onclick="moveSiteSlide('loughcrew', -1)" class="absolute top-1/2 left-4 -translate-y-1/2 bg-gray-800 bg-opacity-50 text-white p-3 hover:bg-opacity-75 transition duration-200"><i class="fas fa-chevron-left"></i></button>
+              <button onclick="moveSiteSlide('loughcrew', 1)" class="absolute top-1/2 right-4 -translate-y-1/2 bg-gray-800 bg-opacity-50 text-white p-3 hover:bg-opacity-75 transition duration-200"><i class="fas fa-chevron-right"></i></button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <!-- END Locations Section Wrapper (SECTION 4) -->
+
+      <!-- Summary of Observed Alignments Section (SECTION 5) -->
+      <div id="summary-alignments" class="mb-12">
+        <h3 class="text-xl font-bold text-gray-700 sans-serif whitespace-nowrap border-b border-gray-400 pb-1 mb-6" style="border-bottom-width: 3px;">5. All Observed Alignments Summary</h3>
+        <p class="text-gray-600 leading-relaxed sans-serif mb-4">
+          The table below consolidates all the astronomic interrelationships observed between the cursus sites:
+        </p>
+        <ul class="text-gray-600 leading-relaxed sans-serif pl-4 list-disc list-inside">
+          <li>Hill of Uisneach¹ - SSSR → Loughcrew¹⁶ (Solar)</li>
+          <li>Hill of Uisneach¹ - WSSR → Keadeen Mountain² (Solar)</li>
+          <li>Keadeen Mountain² - WSSS → Slievenamon Mountain³ (Solar)</li>
+          <li>Brewel Hill⁴ - WSSR → Keadeen Mountain² (Solar)</li>
+          <li>Brewel Hill⁴ - NthMinR → Seefingan (Lunar, Minor)</li>
+          <li>Blackrock⁵ - NthMinR → Seefingan (Lunar, Minor)</li>
+          <li>Seefingan - SthMinS → Ballyoskill⁹ (Lunar, Minor)</li>
+          <li>Ballyoskill⁹ - SthMinR → Slievebawn¹⁰ (Lunar, Minor)</li>
+          <li>Coolasnaghta¹¹ - SthMinS → Mt. Leinster (Lunar, Major)</li>
+          <li>Woodtown⁶ - SSSS → Loughcrew¹⁶ (Solar)</li>
+          <li>Newgrange⁷ - SthMajS → Hill of Tara⁸ (Lunar, Major)</li>
+          <li>Hill of Tara⁸ - NthCQS → Loughcrew¹⁶ (Solar/Cross-quarter)</li>
+          <li>Loughcrew¹⁶ - SthCQR → Hill of Tara⁸ (Solar/Cross-quarter)</li>
+        </ul>
+        <div class="bg-blue-100 w-full h-96 flex items-center justify-center border-4 border-blue-300 shadow-inner my-6">
+          <p class="text-gray-500 sans-serif font-bold text-lg">Interactive Map Placeholder: All Alignment Lines</p>
+        </div>
+      </div>
+      <!-- END Summary of Observed Alignments Section (SECTION 5) -->
+
+
+      <!-- Interpretation Section (SECTION 6) -->
+      <div id="interpretation" class="mb-12">
+        <h3 class="text-xl font-bold text-gray-700 sans-serif whitespace-nowrap border-b border-gray-400 pb-1 mb-6" style="border-bottom-width: 3px;">6. Interpretation and Deliberation</h3>
+
+        <h4 class="text-lg font-bold text-gray-700 mt-6 mb-2 sans-serif">Deliberation</h4>
+        <p class="text-gray-600 leading-relaxed sans-serif mb-4">
+          Using our cursus locations intervisibility network we demonstrate a high degree of intervisibilty for the eastern and southeastern cursus locations. I suggest and expect that neolithic peoples have been generally spatially aware of prominent locations on their skyline. Using computer modeling and astronomy calculations we demonstrate that many of these same intervisible cursus locations can be described as astronomically interrelational. That neolithic peoples were cognizant of the passing of time and placing specific importance on days such as the solstices is well understood and accepted. It is my contention that the number of demonstrable astronomic interrelationships evident between sites which have a cursus monument present must have been deliberately observed.
+        </p>
+
+        <h4 id="spatial-awareness" class="text-lg font-bold text-gray-700 mt-6 mb-2 sans-serif">Spatial Contextual Awareness</h4>
+        <p class="text-gray-600 leading-relaxed sans-serif mb-4">
+          In modern geographic parlance the concept I am seeking to demonstrate and support is termed spatial contextual awareness.
+        </p>
+        <p class="text-gray-600 leading-relaxed sans-serif mb-4">
+          This hypothesis of spatial contextual awareness as it pertains to the ancient Irish might be described as follows:
+        </p>
+        <div class="relative pl-6 border-l-4 border-yellow-500">
+          <p class="text-gray-600 leading-relaxed sans-serif italic">
+            The ancient Irish have been aware that by being present at particular locations at specific times, they will have observable and repeatable astronomic events (phenomena) visible at other prominent locations on the skyline. That the ancient Irish afforded special significance to these locations where they could observe, on divisional days within the solar and lunar cycles, the sun or moon rise from, or set into, what they regarded as sacred mountains or sacred spaces.
+          </p>
+        </div>
+        <p class="text-gray-600 leading-relaxed sans-serif mt-4">
+          This concept will be further explored and demonstrated.
+        </p>
+      </div>
+
+      <!-- Further Information Section (SECTION 7) -->
+      <div id="further-info" class="mb-12">
+        <h3 class="text-xl font-bold text-gray-700 sans-serif whitespace-nowrap border-b border-gray-400 pb-1 mb-6" style="border-bottom-width: 3px;">7. Further Information</h3>
+
+        <h4 class="text-lg font-bold text-gray-700 mt-6 mb-2 sans-serif">The Spéire Project (About the Presentation)</h4>
+        <p class="text-gray-600 leading-relaxed sans-serif mb-4">
+          The observations detailed in this presentation are extracted from a comprehensive examination of hundreds of Irish prehistoric archaeological sites, and locations of significance in Irish mythology. The purpose of this work seeks to explore, demonstrate and understand the geographic and astronomic interrelationships evident for many of these sites. I call this work the **Spéire project**.
+        </p>
+        <p class="text-gray-600 leading-relaxed sans-serif mb-4 italic">
+          Example shown: The Shrough passage tomb has a passage which directs at the summit of the cursus associated Slievenamon mountain. Using computer modeling we can show that the Shrough passage tomb is also aligned on the equinox sunrise. i.e. At the equinoxes the sun observed from this location can be observed to rise from the Slievenamon summit cairn and a shaft of light penetrates the Shrough passage tomb.
+        </p>
+
+        <h4 class="text-lg font-bold text-gray-700 mt-6 mb-2 sans-serif">Acknowledgements</h4>
+        <p class="text-gray-600 leading-relaxed sans-serif mb-2">
+          The author extends thanks to the following contributors for making resources, tools, and software freely available:
+        </p>
+        <ul class="text-gray-600 leading-relaxed sans-serif text-sm list-disc list-inside pl-4 mb-4">
+          <li>Victor Reijs - [www.archaeocosmology.org]</li>
+          <li>Chris Veness - [www.movable-type.co.uk]</li>
+          <li>Vladimir Agafonkin - [agafonkin.com]</li>
+          <li>Michael Kosowsky - [www.heywhatsthat.com]</li>
+          <li>Georg Zotti - Stellarium</li>
+          <li>David Hoyle - Panorama</li>
+          <li>Andrew Smith - Horizon</li>
+        </ul>
+        <p class="text-gray-600 leading-relaxed sans-serif text-sm italic">
+          Should any of the ideas presented here prove to be correct, this has been made possible through the resources, tools and software that have been made freely available by others, and most particularly those listed above. Any misconceptions or errors are entirely my own.
+        </p>
+
+        <h4 class="text-lg font-bold text-gray-700 mt-6 mb-2 sans-serif">Folklore References</h4>
+        <ul class="text-gray-600 leading-relaxed sans-serif text-sm list-disc list-inside pl-4 mb-4">
+          <li><a href="https://www.duchas.ie/en/cbes/5044724/5034673/" target="_blank" class="text-blue-600 hover:underline">Keadeen Mountain Related</a></li>
+          <li><a href="http://www.duchas.ie/en/cbes/4922223/4862196/5020502" target="_blank" class="text-blue-600 hover:underline">Slievenamon Mountain Related (1)</a></li>
+          <li><a href="http://www.duchas.ie/en/cbes/5162114/5155409/5195755" target="_blank" class="text-blue-600 hover:underline">Slievenamon Mountain Related (2)</a></li>
+          <li>Mount Leinster Related:
+            <ul class="list-circle list-inside pl-4">
+              <li><a href="https://www.duchas.ie/en/cbes/5044672/5030946/5145079" target="_blank" class="text-blue-600 hover:underline">Reference 1</a></li>
+              <li><a href="https://www.duchas.ie/en/cbes/5044670/5030844/5144818" target="_blank" class="text-blue-600 hover:underline">Reference 2</a></li>
+              <li><a href="https://www.duchas.ie/en/cbes/5044674/5031037/5144813" target="_blank" class="text-blue-600 hover:underline">Reference 3</a></li>
+            </ul>
+          </li>
+        </ul>
+
+        <h4 class="text-lg font-bold text-gray-700 mt-6 mb-2 sans-serif">License and Contact</h4>
+        <p class="text-gray-600 leading-relaxed sans-serif mb-2">
+          This presentation is issued with an MIT license. All materials are available on:
+        </p>
+        <p class="text-gray-600 leading-relaxed sans-serif mb-2">
+          <a href="https://github.com/kerbstone52/irishcursusmonuments" class="text-blue-600 hover:underline font-semibold" target="_blank">
+            <i class="fa-brands fa-github mr-1"></i> Irish Cursus Monuments (GitHub)
+          </a>
+        </p>
+        <p class="text-gray-600 leading-relaxed sans-serif">
+          Contact: <a href="mailto:briandoyle.kerbstone52@gmail.com" class="text-blue-600 hover:underline" target="_blank">briandoyle.kerbstone52@gmail.com</a>
+        </p>
+      </div>
+
+      <!-- Document Footer -->
+      <div class="text-center mt-10 text-xs text-gray-500 serif italic">
+        <p class="border-t border-gray-400 pt-2">&copy; 2025. Content adapted from Brian Doyle (2021). All Rights Reserved.</p>
+      </div>
+
+    </div>
+  </div>
+
+<script>
+  // Slider Management Script (Modified from template for multiple sliders)
+  const sliders = {}; // Global object to hold current slide index for each slider
+
+  function initializeSliders() {
+    const sliderTracks = document.querySelectorAll('[id^="slider-"]');
+    sliderTracks.forEach(track => {
+      const id = track.id.replace('slider-', '');
+      sliders[id] = 0; // Initialize current slide to 0
+      
+      // Also ensure the track's transformation is correctly initialized
+      const totalSlides = track.children.length;
+      if (totalSlides > 0) {
+        track.style.transform = `translateX(0%)`;
+      }
+    });
+  }
+
+  function moveSiteSlide(id, direction) {
+    if (!sliders.hasOwnProperty(id)) return;
+
+    const sliderTrack = document.getElementById(`slider-${id}`);
+    if (!sliderTrack) return;
+
+    const slides = sliderTrack.children;
+    const totalSlides = slides.length;
+
+    if (totalSlides <= 1) return; // No need to slide
+
+    let currentSlide = sliders[id];
+    currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+    sliders[id] = currentSlide;
+
+    const offset = -currentSlide * 100;
+    sliderTrack.style.transform = `translateX(${offset}%)`;
+  }
+
+  // Copy functionality from the original template (simplified, but kept for future component section)
+  document.addEventListener('DOMContentLoaded', () => {
+    initializeSliders(); // Initialize the new site sliders
+
+    const copyButtons = document.querySelectorAll('.copy-button');
+
+    copyButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const codeBlock = button.previousElementSibling.querySelector('code');
+        let codeToCopy = codeBlock.textContent;
+
+        // Replace HTML entities with their character equivalents
+        codeToCopy = codeToCopy.replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"').replace(/&amp;/g, '&');
+
+        // Use the execCommand method for clipboard functionality
+        const el = document.createElement('textarea');
+        el.value = codeToCopy;
+        document.body.appendChild(el);
+        el.select();
+        document.execCommand('copy');
+        document.body.removeChild(el);
+
+        // Provide user feedback
+        button.textContent = 'Copied!';
+        setTimeout(() => {
+          button.textContent = 'Copy';
+        }, 2000);
+      });
+    });
+  });
+
+  // Expose the function globally for onclick attributes in the HTML
+  window.moveSiteSlide = moveSiteSlide;
+</script>
+</body>
+</html>

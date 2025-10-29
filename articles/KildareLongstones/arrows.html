@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaflet Arrow Decorator</title>
+    <!-- Load Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles for Leaflet map and overall layout */
+        :root {
+            --primary-color: #4f46e5;
+        }
+
+        #map-container {
+            /* ENSURE map has height before initializing */
+            height: 60vh; 
+            width: 100%;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 1.5rem;
+        }
+
+        .leaflet-container {
+            font: 12px/1.5 "Inter", "Helvetica Neue", Arial, Helvetica, sans-serif;
+        }
+
+        /* Styling for buttons */
+        .btn-primary {
+            transition: all 0.15s ease-in-out;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+        }
+
+        .btn-primary:hover {
+            background-color: #4338ca;
+        }
+
+        .btn-primary:active {
+            transform: scale(0.98);
+        }
+
+        .btn-secondary {
+            transition: all 0.15s ease-in-out;
+            background-color: #e5e7eb; /* Gray-200 */
+            color: #1f2937; /* Gray-800 */
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            font-weight: 500;
+        }
+        .btn-secondary:hover {
+            background-color: #d1d5db; /* Gray-300 */
+        }
+
+        /* Style for the code block */
+        #codeOutput {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            font-family: monospace;
+            padding: 1rem;
+            background-color: #1f2937; /* Dark Gray/Almost Black */
+            color: #d1d5db; /* Light Gray */
+            border-radius: 0.5rem;
+            overflow-x: auto;
+            max-height: 250px;
+        }
+    </style>
+    <!-- Load Leaflet CSS (Integrity check removed) -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+</head>
+<body class="bg-gray-50 min-h-screen p-4 sm:p-8 font-[Inter]">
+
+    <div class="max-w-6xl mx-auto">
+        <h1 class="text-3xl font-extrabold text-gray-800 mb-2">Directed Route Visualizer</h1>
+        <p class="text-gray-500 mb-6">Input coordinates to draw a dashed, single-arrow path on the map.</p>
+
+        <!-- Input and Control Panel -->
+        <div class="bg-white p-6 rounded-xl shadow-lg mb-6 border border-gray-200">
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
+                
+                <!-- Point A Inputs -->
+                <div class="col-span-1 md:col-span-2 grid grid-cols-2 gap-4">
+                    <label class="block">
+                        <span class="text-sm font-medium text-gray-700">A Lat (Start)</span>
+                        <input type="number" step="any" id="latA" value="34.0522" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 p-2 border" placeholder="Latitude"/>
+                    </label>
+                    <label class="block">
+                        <span class="text-sm font-medium text-gray-700">A Lon (Start)</span>
+                        <input type="number" step="any" id="lonA" value="-118.2437" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 p-2 border" placeholder="Longitude"/>
+                    </label>
+                </div>
+                
+                <!-- Point B Inputs -->
+                <div class="col-span-1 md:col-span-2 grid grid-cols-2 gap-4">
+                    <label class="block">
+                        <span class="text-sm font-medium text-gray-700">B Lat (End)</span>
+                        <input type="number" step="any" id="latB" value="34.0673" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 p-2 border" placeholder="Latitude"/>
+                    </label>
+                    <label class="block">
+                        <span class="text-sm font-medium text-gray-700">B Lon (End)</span>
+                        <input type="number" step="any" id="lonB" value="-118.3000" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 p-2 border" placeholder="Longitude"/>
+                    </label>
+                </div>
+                
+                <!-- Color Dropdown -->
+                <div class="col-span-1">
+                    <label class="block">
+                        <span class="text-sm font-medium text-gray-700">Color</span>
+                        <select id="colorSelect" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 p-2 border bg-white">
+                            <option value="#ef4444">Red</option>
+                            <option value="#f97316">Orange</option>
+                            <option value="#facc15">Yellow</option>
+                            <option value="#3b82f6" selected>Blue</option>
+                            <option value="#a855f7">Purple</option>
+                            <option value="#10b981">Green</option>
+                        </select>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Action and Message Area -->
+            <div class="flex flex-col sm:flex-row justify-between items-center mt-6 gap-4">
+                <button id="drawButton" type="button" class="btn-primary w-full sm:w-auto">
+                    Draw Dashed Arrow
+                </button>
+                <div id="messageBox" class="text-sm font-medium hidden text-red-600"></div>
+            </div>
+        </div>
+
+        <!-- Map Container -->
+        <div id="map-container"></div>
+
+        <!-- Generated Code Block Section -->
+        <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-200">
+            <h2 class="text-xl font-bold text-gray-800 mb-3">Generated Code Block (JS Snippet)</h2>
+            <div class="flex justify-between items-start mb-3">
+                 <p class="text-sm text-gray-600">Copy this JavaScript code to replicate the path and arrow.</p>
+                 <button id="copyCodeButton" type="button" class="btn-secondary flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v2M5 10v6a2 2 0 002 2h8a2 2 0 002-2v-6a2 2 0 00-2-2H7a2 2 0 00-2 2z" />
+                    </svg>
+                    Copy Code
+                 </button>
+            </div>
+            <pre id="codeOutput" class="text-sm"></pre>
+        </div>
+    </div>
+    
+    <!-- Load Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <!-- Load Leaflet.PolylineDecorator JS (Reverted to stable 1.6.0) -->
+    <script src="https://unpkg.com/leaflet-polylinedecorator@1.6.0/dist/leaflet.polylineDecorator.min.js"></script>
+    
+    <script>
+        // Global variables to store the map instance and layers
+        let map;
+        let drawnLayers; 
+
+        // Map initialization function - ONLY draws the base map
+        function initializeMap() {
+            if (map) return; // Prevent double initialization
+            
+            // Initialize drawnLayers and map
+            drawnLayers = L.layerGroup(); 
+            
+            const defaultCenter = [34.0522, -118.2437]; 
+            map = L.map('map-container').setView(defaultCenter, 13);
+
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);
+
+            drawnLayers.addTo(map);
+
+            // CRITICAL FIX: Ensure the map calculates its correct size and draws tiles.
+            setTimeout(() => {
+                if (map) {
+                    map.invalidateSize();
+                }
+            }, 50); 
+        }
+
+        // Function to update the code block area
+        function updateCodeBlock(latA, lonA, latB, lonB, color) {
+            const codeOutput = document.getElementById('codeOutput');
+            
+            // NOTE: This code block assumes successful loading of the decorator plugin.
+            const code = `
+// NOTE: Ensure leaflet-polylinedecorator.js is loaded before this script.
+
+// 1. Define the coordinates
+const pathCoordinates = [
+    [${latA}, ${lonA}], // Point A (Start)
+    [${latB}, ${lonB}]  // Point B (End)
+];
+
+// 2. Create the dashed polyline (assuming 'map' is initialized)
+const polyline = L.polyline(pathCoordinates, {
+    color: '${color}',
+    weight: 5,
+    opacity: 0.8,
+    dashArray: '10, 10' 
+}).addTo(map);
+
+// 3. Apply the single arrow decorator at the end (Point B)
+// This step requires the Leaflet.PolylineDecorator plugin.
+L.polylineDecorator(polyline, {
+    patterns: [
+        {
+            offset: '100%', 
+            repeat: 0, 
+            symbol: L.Symbol.arrowHead({
+                pixelSize: 15,
+                pathOptions: {
+                    fillOpacity: 1,
+                    weight: 0,
+                    color: '${color}',
+                    fill: true,
+                    opacity: 1
+                }
+            })
+        }
+    ]
+}).addTo(map);
+`;
+            codeOutput.textContent = code.trim();
+        }
+
+        // Function to handle the drawing of the arrow
+        function drawArrow() {
+            // 1. Get and validate inputs
+            const latA = parseFloat(document.getElementById('latA').value);
+            const lonA = parseFloat(document.getElementById('lonA').value);
+            const latB = parseFloat(document.getElementById('latB').value);
+            const lonB = parseFloat(document.getElementById('lonB').value);
+            const colorSelect = document.getElementById('colorSelect');
+            const selectedColor = colorSelect.value;
+            const messageBox = document.getElementById('messageBox');
+            
+            // Basic validation
+            if (isNaN(latA) || isNaN(lonA) || isNaN(latB) || isNaN(lonB)) {
+                messageBox.textContent = "Please enter valid numbers for all coordinates.";
+                messageBox.classList.remove('hidden');
+                return;
+            }
+
+            // Clear previous message and reset color
+            messageBox.classList.add('hidden');
+            messageBox.classList.remove('text-green-600');
+            messageBox.classList.add('text-red-600');
+            
+            // Define the coordinates array
+            const pathCoordinates = [[latA, lonA], [latB, lonB]];
+
+            // 2. Clear previous layers
+            if (drawnLayers) {
+                drawnLayers.clearLayers();
+            } else {
+                console.error("Drawn layers not initialized. This should not happen if map initialized.");
+                return; 
+            }
+            
+            // --- FIX: DRAW THE DASHED POLYLINE FIRST (Standard Leaflet, will always work) ---
+            const polyline = L.polyline(pathCoordinates, {
+                color: selectedColor,
+                weight: 5,
+                opacity: 0.8,
+                dashArray: '10, 10' // This creates the dashed line
+            }).addTo(drawnLayers);
+
+            // 3. ATTEMPT TO DRAW THE ARROW (Requires Plugin)
+            let isArrowDrawn = false;
+            // CRITICAL CHECK: Only attempt to draw the arrow if L.Symbol is fully loaded
+            if (typeof L.Symbol !== 'undefined' && typeof L.Symbol.arrowHead !== 'undefined') {
+                 
+                L.polylineDecorator(polyline, {
+                    patterns: [
+                        {
+                            offset: '100%', // Position the arrow at the end of the line (Point B)
+                            repeat: 0, // Ensure only one arrow is drawn
+                            symbol: L.Symbol.arrowHead({
+                                pixelSize: 15,
+                                pathOptions: {
+                                    fillOpacity: 1,
+                                    weight: 0, 
+                                    color: selectedColor,
+                                    fill: true,
+                                    opacity: 1
+                                }
+                            })
+                        }
+                    ]
+                }).addTo(drawnLayers);
+                isArrowDrawn = true;
+                
+            } else {
+                 // Fallback message if the plugin fails to load for the arrow
+                 messageBox.textContent = "Dashed line drawn. Arrow decorator plugin failed to load.";
+                 messageBox.classList.remove('hidden', 'text-green-600');
+                 messageBox.classList.add('text-red-600');
+                 console.error("L.Symbol or L.Symbol.arrowHead is undefined. Dependency attachment failure for Arrow.");
+            }
+
+            // 4. Fit the map bounds to the new line
+            if (map) {
+                map.fitBounds(polyline.getBounds(), { padding: [50, 50] });
+            }
+
+            // 5. Add markers for clarity and update code block
+            L.circleMarker([latA, lonA], { radius: 6, color: selectedColor, fill: true, fillColor: selectedColor, fillOpacity: 1 }).addTo(drawnLayers).bindTooltip('Point A (Start)', { permanent: true, direction: 'right' });
+            L.circleMarker([latB, lonB], { radius: 6, color: selectedColor, fill: true, fillColor: selectedColor, fillOpacity: 1 }).addTo(drawnLayers).bindTooltip('Point B (End)', { permanent: true, direction: 'right' });
+            
+            // 6. Update the code block 
+            updateCodeBlock(latA, lonA, latB, lonB, selectedColor);
+        }
+
+        // Function to copy the code block
+        function copyCode() {
+             const codeToCopy = document.getElementById('codeOutput').textContent;
+             
+             try {
+                const tempTextArea = document.createElement('textarea');
+                tempTextArea.value = codeToCopy;
+                document.body.appendChild(tempTextArea);
+                tempTextArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(tempTextArea);
+                
+                // Show success message
+                const messageBox = document.getElementById('messageBox');
+                messageBox.textContent = "Code copied to clipboard!";
+                messageBox.classList.remove('hidden', 'text-red-600');
+                messageBox.classList.add('text-green-600');
+                
+                setTimeout(() => {
+                    messageBox.classList.add('hidden');
+                }, 2000);
+
+             } catch (err) {
+                 console.error('Could not copy text: ', err);
+                 const messageBox = document.getElementById('messageBox');
+                 messageBox.textContent = "Failed to copy code. Please copy manually.";
+                 messageBox.classList.remove('hidden');
+             }
+         }
+        
+        // Polling function for the very first draw only
+        function initialDrawWithPoll(attempt = 0) {
+            const maxAttempts = 100; // 10 seconds total wait
+            
+            // Check if the critical plugin component is available
+            if (typeof L.Symbol !== 'undefined' && typeof L.Symbol.arrowHead !== 'undefined') {
+                // Success: Plugin is ready, execute the initial draw
+                drawArrow();
+            } else if (attempt < maxAttempts) {
+                // Fail: Plugin not ready, try again
+                setTimeout(() => initialDrawWithPoll(attempt + 1), 100);
+            } else {
+                // Timeout: Execute drawArrow, which will now draw the line but log the arrow failure.
+                console.warn("Leaflet Polyline Decorator plugin failed to fully initialize within 10 seconds.");
+                drawArrow(); 
+            }
+        }
+         
+        document.addEventListener('DOMContentLoaded', function() {
+             // 1. Initialize the map immediately (guarantees map is drawn)
+            if (typeof L !== 'undefined' && document.getElementById('map-container')) {
+                initializeMap();
+            } else {
+                console.error("Leaflet core is not defined, cannot initialize map.");
+                return;
+            }
+            
+            // 2. Attach listeners immediately 
+            document.getElementById('drawButton').addEventListener('click', drawArrow);
+            document.getElementById('copyCodeButton').addEventListener('click', copyCode);
+
+            // 3. Start the polled initial draw to ensure the plugin features are ready.
+            initialDrawWithPoll();
+        });
+    </script>
+</body>
+</html>

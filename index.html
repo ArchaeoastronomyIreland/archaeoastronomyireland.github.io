@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Archaeoastronomy Ireland - New Design</title>
+  <!-- Load Tailwind CSS from CDN --><script src="https://cdn.tailwindcss.com"></script>
+  <!-- Load Font Awesome for the icon --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Load Montserrat, Lora, and Caveat fonts --><link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Lora:ital@0;1&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    /* Custom font families for different elements (inherited from original stylesheet) */
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: #f0f4f8; /* Light gray body background */
+      color: #333;
+      scroll-behavior: smooth;
+    }
+    .serif {
+      font-family: 'Lora', serif;
+    }
+    .sans-serif {
+      font-family: 'Montserrat', sans-serif;
+    }
+    .caveat { /* Added new font class for Caveat */
+      font-family: 'Caveat', cursive;
+    }
+
+    /* Custom style for the Neolithic pattern (very light gray repeating design) */
+    .neolithic-pattern {
+      background-color: #ffffff;
+      /* Subtle geometric pattern based on simple neolithic carvings */
+      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23f5f5f5' fill-opacity='1'%3E%3Cpath d='M36 34L28 26h-4l8 8h-4zm-6 6L22 42v-4l8-8v4zm-12-6L8 38v-4l8-8v4zm30 14l-8-8v4l8 8v-4zM24 8l-8 8V12l8-8v4zm-6 8l-8 8v-4l8-8v4zm-4-4L0 16v-4l8-8v4zm30 14l-8-8v4l8 8v-4z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    /* Styles for the mobile menu drawer */
+    #mobile-menu {
+      /* Full viewport height minus the header height (approx 60px) */
+      height: calc(100vh - 60px); 
+    }
+
+    /* Add offset for fixed header */
+    html {
+      scroll-padding-top: 60px; /* Adjust this value if header height changes */
+    }
+  </style>
+</head>
+<body class="bg-gray-100">
+
+  <!-- Fixed Header (Original Style - Orange line and rounded corners removed) --><div style="background-color: #023020;" class="fixed top-0 w-full z-50 shadow-xl">
+    <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+      <!-- Logo and Site Title --><a href="#home" class="flex items-center flex-shrink-0">
+        <i class="fa-regular fa-circle-dot text-2xl mr-3" style="color: #FFA500;"></i>
+        <h1 class="text-white text-lg md:text-xl font-light sans-serif tracking-wide">Archaeoastronomy Ireland</h1>
+      </a>
+
+      <!-- Desktop Navigation Links (Visible on md and up) --><nav class="hidden md:flex space-x-6">
+        <!-- Reduced size to text-sm and simplified classes --><a href="#home" class="text-white text-sm hover:text-[#FFA500] transition duration-200 sans-serif font-medium whitespace-nowrap">Home</a>
+        <a href="#about" class="text-white text-sm hover:text-[#FFA500] transition duration-200 sans-serif font-medium whitespace-nowrap">About</a>
+        <a href="#articles" class="text-white text-sm hover:text-[#FFA500] transition duration-200 sans-serif font-medium whitespace-nowrap">Articles</a>
+        <a href="#tools" class="text-white text-sm hover:text-[#FFA500] transition duration-200 sans-serif font-medium whitespace-nowrap">Tools</a>
+        <a href="#assets" class="text-white text-sm hover:text-[#FFA500] transition duration-200 sans-serif font-medium whitespace-nowrap">Assets</a>
+        <a href="#links" class="text-white text-sm hover:text-[#FFA500] transition duration-200 sans-serif font-medium whitespace-nowrap">Links</a>
+        <a href="#contact" class="text-white text-sm hover:text-[#FFA500] transition duration-200 sans-serif font-medium whitespace-nowrap">Contact</a>
+      </nav>
+      
+      <!-- Mobile Menu Button (Visible below md) --><button id="nav-toggle" aria-label="Toggle navigation menu" class="md:hidden text-white text-2xl p-2 focus:outline-none">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu Drawer (Hidden by default, slides out from right) --><div id="mobile-menu" class="fixed top-[60px] right-0 w-64 bg-[#023020] z-40 transform translate-x-full transition-transform duration-300 md:hidden shadow-lg">
+    <nav class="flex flex-col p-4 space-y-2">
+      <a href="#home" class="text-white text-lg hover:text-[#FFA500] p-2 sans-serif font-medium" onclick="toggleMenu()">Home</a>
+      <a href="#about" class="text-white text-lg hover:text-[#FFA500] p-2 sans-serif font-medium" onclick="toggleMenu()">About</a>
+      <a href="#articles" class="text-white text-lg hover:text-[#FFA500] p-2 sans-serif font-medium" onclick="toggleMenu()">Articles</a>
+      <a href="#tools" class="text-white text-lg hover:text-[#FFA500] p-2 sans-serif font-medium" onclick="toggleMenu()">Tools</a>
+      <a href="#assets" class="text-white text-lg hover:text-[#FFA500] p-2 sans-serif font-medium" onclick="toggleMenu()">Assets</a>
+      <a href="#links" class="text-white text-lg hover:text-[#FFA500] p-2 sans-serif font-medium" onclick="toggleMenu()">Links</a>
+      <a href="#contact" class="text-white text-lg hover:text-[#FFA500] p-2 sans-serif font-medium" onclick="toggleMenu()">Contact</a>
+    </nav>
+  </div>
+
+  <!-- Main Content Area --><div class="w-full"> 
+
+    <!-- 1. Jumbotron/Hero Section (Home) - Full-width image with only the action button overlaid, now centered. --><section id="home" class="relative w-full mb-0 main-page-section">
+        <!-- Image element is used, ensuring it takes full width and its natural height. --><img 
+            src="images/Seefin.png" 
+            alt="Seefin Passage Tomb panoramic view" 
+            class="w-full h-auto object-cover block"
+            onerror="this.onerror=null;this.src='https://placehold.co/1248x832/023020/ffffff?text=JUMBOTRON+IMAGE+PLACEHOLDER'"
+        >
+
+        <!-- Button Overlay: Centered both horizontally and vertically using flexbox on the parent div. --><div class="absolute inset-0 flex items-center justify-center">
+            <a href="#articles" class="inline-block bg-[#1F2937] text-white font-bold py-3 px-8 shadow-lg border-2 border-white rounded-lg hover:bg-opacity-90 transition duration-300 transform hover:scale-[1.03]">
+              Explore Latest Research
+            </a>
+        </div>
+    </section>
+
+    <!-- Content Sections Container - Now w-full with internal padding on sections --><div class="w-full mx-auto">
+
+      <!-- 2. About Section (Black Background, White Text, Vertical Dividers) - Full Width --><section id="about" class="bg-black text-white p-8 md:p-12 lg:p-16 shadow-xl mb-0 main-page-section">
+        <div class="max-w-6xl mx-auto">
+          <!-- Heading with Caveat font and #ffd49f color --><h3 class="text-3xl md:text-4xl text-center serif mb-12" style="color: #ffd49f;">
+            About Archaeoastronomy Ireland
+          </h3>
+          
+          <!-- FLEX CONTAINER: Ensures columns are side-by-side on md+ and stretch to equal height. --><div class="flex flex-col md:flex-row md:space-x-4">
+            
+            <!-- Left Paragraph Block (Column 1) --><div class="md:w-1/2 md:pr-2 lg:pr-4"> 
+              <!-- Inner DIV applies borders and takes the full height (equal length lines). Outer Left and Center Left border. --><div class="h-full border-l border-r border-gray-700 py-4 px-6">
+                <p class="serif leading-relaxed text-gray-200 mb-4">
+                  Our initiative is dedicated to the study of archaeoastronomy across the Irish landscape. We utilize modern surveying techniques, digital modeling, and historical records to decode the astronomical significance of passage tombs, stone circles, and standing stones dating back to the Neolithic period. This field combines archaeology with celestial mechanics, revealing sophisticated knowledge of the cosmos held by Ireland's earliest inhabitants.
+                </p>
+                <p class="serif leading-relaxed text-gray-200">
+                  The precision of alignments—particularly those marking the winter solstice at sites like **Newgrange** and the equinoxes at **Knowth**—suggests a deeply ingrained cultural and ritualistic connection to the cycle of the seasons and the movement of the sun, moon, and stars. We aim to document, preserve, and communicate these findings to both the scientific community and the general public.
+                </p>
+              </div>
+            </div>
+
+            <!-- Right Paragraph Block (Column 2) --><div class="md:w-1/2 md:pl-2 lg:pl-4 md:mt-0 mt-8">
+              <!-- Inner DIV applies borders and takes the full height (equal length lines). Center Right and Outer Right border. --><div class="h-full border-l border-r border-gray-700 py-4 px-6">
+                <p class="serif leading-relaxed text-gray-200 mb-4">
+                  The project is inherently multidisciplinary, pulling expertise from archaeology, anthropology, engineering, and astronomy. By generating high-resolution digital models, we can test and confirm proposed alignments with unprecedented accuracy, minimizing human error and providing objective data. Our focus extends beyond the most famous sites to include lesser-known megalithic structures, ensuring a comprehensive regional understanding.
+                </p>
+                
+                <!-- NEW SIGNATURE BLOCK (Left-aligned, no horizontal rule) --><div class="mt-8">
+                  <img src="images/signature.svg" alt="Signature Placeholder" class="w-1/2 h-auto mt-1"/>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- NEW Search Section --><section id="search-section" class="neolithic-pattern p-8 md:p-12 shadow-xl mb-0 border-t border-b border-gray-200 main-page-section">
+        <div class="max-w-6xl mx-auto">
+          <h3 class="text-3xl md:text-4xl font-normal text-left serif text-[#1F2937] mb-8 border-b-2 border-gray-700 pb-2">
+            Search Site Content
+          </h3>
+          <div class="flex max-w-xl">
+            <input type="search" id="search-input" placeholder="Search articles, tools, assets..." class="w-full p-3 border border-gray-300 sans-serif focus:ring-[#FFA500] focus:border-[#FFA500]">
+            <button id="search-button" class="bg-[#1F2937] text-white font-bold py-3 px-6 hover:bg-opacity-90 transition duration-300 sans-serif ml-2">Search</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. Articles Section (White Patterned Background) - Full Width --><section id="articles" class="neolithic-pattern p-8 md:p-12 shadow-xl mb-0 border-t border-b border-gray-200 main-page-section">
+        <div class="max-w-6xl mx-auto">
+          <!-- Section Header with View All link --><div class="flex justify-between items-end mb-8 border-b-2 border-gray-700 pb-2">
+            <h3 class="text-3xl md:text-4xl font-normal text-left serif text-[#1F2937]">
+              Featured Articles
+            </h3>
+            <a href="#" onclick="event.preventDefault(); showView('all-articles-view')" class="text-sm font-medium text-[#2487CE] hover:text-[#FFA500] whitespace-nowrap pb-1">View All &rarr;</a>
+          </div>
+          <p class="text-center text-gray-600 serif italic mb-8">
+            In-depth reports on our latest fieldwork and theoretical analyses.
+          </p>
+
+          <!-- Article Card Grid --><div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Card 1 --><div class="bg-white overflow-hidden shadow-lg hover:shadow-2xl transition duration-300">
+              <img src="images/knowth.png" alt="Knowth Passage Tomb." class="w-full h-auto object-coknowth.pngver">
+              <div class="p-4">
+                <h4 class="text-xl font-bold sans-serif mb-2">I see you - The relationship between Knowth and Dowth</h4>
+                <p class="text-sm text-gray-600 serif mb-3">Analysis of the eastern and western passage alignments and their relationship to solar cycles.</p>
+                <a href="#" class="text-[#2487CE] hover:text-[#FFA500] font-medium text-sm">Read More &rarr;</a>
+              </div>
+            </div>
+            <!-- Card 2 --><div class="bg-white overflow-hidden shadow-lg hover:shadow-2xl transition duration-300">
+              <img src="images/dowth.png" alt="Standing Stone Site." class="w-full h-auto object-cover">
+              <div class="p-4">
+                <h4 class="text-xl font-bold sans-serif mb-2">Dowth and the Lunar Extremes</h4>
+                <p class="text-sm text-gray-600 serif mb-3">A geospatial study of alignments in County Cork's stone rows and their stellar targets.</p>
+                <a href="#" class="text-[#2487CE] hover:text-[#FFA500] font-medium text-sm">Read More &rarr;</a>
+              </div>
+            </div>
+            <!-- Card 3 --><div class="bg-white overflow-hidden shadow-lg hover:shadow-2xl transition duration-300">
+              <img src="images/kildare.png" alt="Digital Model of Site." class="w-full h-auto object-cover">
+              <div class="p-4">
+                <h4 class="text-xl font-bold sans-serif mb-2">The Kildare Longstones</h4>
+                <p class="text-sm text-gray-600 serif mb-3">Methodology for using 3D modeling to simulate prehistoric sky views from key monuments.</p>
+                <a href="#" class="text-[#2487CE] hover:text-[#FFA500] font-medium text-sm">Read More &rarr;</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3b. HIDDEN All Articles View --><section id="all-articles-view" class="hidden neolithic-pattern p-8 md:p-12 shadow-xl mb-0 border-t border-b border-gray-200" style="min-height: 80vh;">
+        <!-- THIS IS THE NEW SPACER DIV -->
+        <div class="h-24"></div>
+        <div class="max-w-6xl mx-auto">
+          <!-- Section Header with Back link --><div class="flex justify-between items-end mb-8 border-b-2 border-gray-700 pb-2">
+            <h3 class="text-3xl md:text-4xl font-normal text-left serif text-[#1F2937]">
+              All Articles
+            </h3>
+            <a href="#" onclick="event.preventDefault(); showMainContent('articles')" class="text-sm font-medium text-[#2487CE] hover:text-[#FFA500] whitespace-nowrap pb-1">&larr; Back to Main</a>
+          </div>
+          <!-- List-based content for all articles --><ul class="list-disc list-inside space-y-4 serif">
+            <li>
+              <a href="#" class="text-lg text-[#2487CE] hover:text-[#FFA500]">The Equinox Enigma at Knowth</a>
+              <p class="text-sm text-gray-700 ml-6">Analysis of the eastern and western passage alignments and their relationship to solar cycles.</p>
+            </li>
+            <li>
+              <a href="#" class="text-lg text-[#2487CE] hover:text-[#FFA500]">Mapping Lesser-Known Stone Circles</a>
+              <p class="text-sm text-gray-700 ml-6">A geospatial study of alignments in County Cork's stone rows and their stellar targets.</p>
+            </li>
+            <li>
+              <a href="#" class="text-lg text-[#2487CE] hover:text-[#FFA500]">Digital Reconstructions of the Neolithic Sky</a>
+              <p class="text-sm text-gray-700 ml-6">Methodology for using 3D modeling to simulate prehistoric sky views from key monuments.</p>
+            </li>
+            <li>
+              <a href="#" class="text-lg text-[#2487CE] hover:text-[#FFA500]">Newgrange: Beyond the Solstice</a>
+              <p class="text-sm text-gray-700 ml-6">Investigating lunar alignments within the main chamber.</p>
+            </li>
+            <li>
+              <a href="#" class="text-lg text-[#2487CE] hover:text-[#FFA500]">The Geometry of Carrowkeel</a>
+              <p class="text-sm text-gray-700 ml-6">A topographical survey of the Bricklieve Mountain complex.</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- 4. Tools Section (White Patterned Background) - Full Width --><section id="tools" class="neolithic-pattern p-8 md:p-12 shadow-xl mb-0 border-t border-b border-gray-200 main-page-section">
+        <div class="max-w-6xl mx-auto">
+          <!-- Section Header with View All link --><div class="flex justify-between items-end mb-8 border-b-2 border-gray-700 pb-2">
+            <h3 class="text-3xl md:text-4xl font-normal text-left serif text-[#1F2937]">
+              Research Tools
+            </h3>
+            <a href="#" onclick="event.preventDefault(); showView('all-tools-view')" class="text-sm font-medium text-[#2487CE] hover:text-[#FFA500] whitespace-nowrap pb-1">View All &rarr;</a>
+          </div>
+          <!-- Tools Card Grid (using same format as articles) --><div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Tool Card 1 --><div class="bg-white overflow-hidden shadow-lg hover:shadow-2xl transition duration-300">
+              <img src="images/mace.png" alt="Alignment Calculator Tool." class="w-full h-auto object-cover">
+              <div class="p-4">
+                <h4 class="text-xl font-bold sans-serif mb-2">Alignment Calculator</h4>
+                <p class="text-sm text-gray-600 serif mb-3">Calculate the azimuth and altitude of various celestial bodies for any given latitude and longitude in Ireland for the year 3200 BC.</p>
+                <a href="#" class="text-[#2487CE] hover:text-[#FFA500] font-medium text-sm">Learn More &rarr;</a>
+              </div>
+            </div>
+            <!-- Tool Card 2 --><div class="bg-white overflow-hidden shadow-lg hover:shadow-2xl transition duration-300">
+              <img src="images/panorama.jpg" alt="LiDAR Data Viewer." class="w-full h-auto object-cover">
+              <div class="p-4">
+                <h4 class="text-xl font-bold sans-serif mb-2">LiDAR Data Viewer</h4>
+                <p class="text-sm text-gray-600 serif mb-3">Access and visualize open-source LiDAR data overlaid with megalithic site markers across the Boyne Valley complex.</p>
+                <a href="#" class="text-[#2487CE] hover:text-[#FFA500] font-medium text-sm">Learn More &rarr;</a>
+              </div>
+            </div>
+            <!-- Tool Card 3 (NEW) --><div class="bg-white overflow-hidden shadow-lg hover:shadow-2xl transition duration-300">
+              <img src="images/stellarium.jpg" alt="More Tools Coming Soon." class="w-full h-auto object-cover">
+              <div class="p-4">
+                <h4 class="text-xl font-bold sans-serif mb-2">More Tools Coming Soon</h4>
+                <p class="text-sm text-gray-600 serif mb-3">Our team is developing new ways to explore archaeoastronomical data. Check back for updates.</p>
+                <a href="#" class="text-[#2487CE] hover:text-[#FFA500] font-medium text-sm">Learn More &rarr;</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4b. HIDDEN All Tools View --><section id="all-tools-view" class="hidden neolithic-pattern p-8 md:p-12 shadow-xl mb-0 border-t border-b border-gray-200" style="min-height: 80vh;">
+        <!-- THIS IS THE NEW SPACER DIV -->
+        <div class="h-24"></div>
+        <div class="max-w-6xl mx-auto">
+          <!-- Section Header with Back link --><div class="flex justify-between items-end mb-8 border-b-2 border-gray-700 pb-2">
+            <h3 class="text-3xl md:text-4xl font-normal text-left serif text-[#1F2937]">
+              All Tools
+            </h3>
+            <a href="#" onclick="event.preventDefault(); showMainContent('tools')" class="text-sm font-medium text-[#2487CE] hover:text-[#FFA500] whitespace-nowrap pb-1">&larr; Back to Main</a>
+          </div>
+          <!-- List-based content for all tools --><ul class="list-disc list-inside space-y-4 serif">
+            <li>
+              <a href="#" class="text-lg text-[#2487CE] hover:text-[#FFA500]">Alignment Calculator</a>
+              <p class="text-sm text-gray-700 ml-6">Calculate the azimuth and altitude of various celestial bodies for any given latitude and longitude in Ireland for the year 3200 BC.</p>
+            </li>
+            <li>
+              <a href="#" class="text-lg text-[#2487CE] hover:text-[#FFA500]">LiDAR Data Viewer</a>
+              <p class="text-sm text-gray-700 ml-6">Access and visualize open-source LiDAR data overlaid with megalithic site markers across the Boyne Valley complex.</p>
+            </li>
+            <li>
+              <a href="#" class="text-lg text-gray-500">More Tools Coming Soon</a>
+              <p class="text-sm text-gray-700 ml-6">Our team is developing new ways to explore archaeoastronomical data. Check back for updates.</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- 5. Assets Section (White Patterned Background) - Full Width --><section id="assets" class="neolithic-pattern p-8 md:p-12 shadow-xl mb-0 border-t border-b border-gray-200 main-page-section">
+        <div class="max-w-6xl mx-auto">
+          <!-- Section Header with View All link --><div class="flex justify-between items-end mb-8 border-b-2 border-gray-700 pb-2">
+            <h3 class="text-3xl md:text-4xl font-normal text-left serif text-[#1F2937]">
+              Digital Assets & Data
+            </h3>
+            <a href="#" onclick="event.preventDefault(); showView('all-assets-view')" class="text-sm font-medium text-[#2487CE] hover:text-[#FFA500] whitespace-nowrap pb-1">View All &rarr;</a>
+          </div>
+
+          <!-- New Asset Category Grid - Changed to 3 cols for even 2x3 layout --><div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 text-center">
+            <a href="#" onclick="event.preventDefault(); showView('all-assets-view')" class="block bg-teal-700 text-white p-6 shadow-md hover:bg-teal-600 transition duration-300">
+              <i class="fas fa-camera text-3xl mb-3"></i>
+              <h4 class="text-xl font-bold sans-serif">Images</h4>
+            </a>
+            <a href="#" onclick="event.preventDefault(); showView('all-assets-view')" class="block bg-blue-800 text-white p-6 shadow-md hover:bg-blue-700 transition duration-300">
+              <i class="fas fa-map-marked-alt text-3xl mb-3"></i>
+              <h4 class="text-xl font-bold sans-serif">Site Plans</h4>
+            </a>
+            <a href="#" onclick="event.preventDefault(); showView('all-assets-view')" class="block bg-gray-700 text-white p-6 shadow-md hover:bg-gray-600 transition duration-300">
+              <i class="fas fa-globe-europe text-3xl mb-3"></i>
+              <h4 class="text-xl font-bold sans-serif">Geospatial Data</h4>
+            </a>
+            <a href="#" onclick="event.preventDefault(); showView('all-assets-view')" class="block bg-amber-600 text-white p-6 shadow-md hover:bg-amber-500 transition duration-300">
+              <i class="fas fa-images text-3xl mb-3"></i>
+              <h4 class="text-xl font-bold sans-serif">Panoramas</h4>
+            </a>
+            <a href="#" onclick="event.preventDefault(); showView('all-assets-view')" class="block bg-purple-700 text-white p-6 shadow-md hover:bg-purple-600 transition duration-300">
+              <i class="fas fa-file-alt text-3xl mb-3"></i>
+              <h4 class="text-xl font-bold sans-serif">Reports</h4>
+            </a>
+            <a href="#" onclick="event.preventDefault(); showView('all-assets-view')" class="block bg-red-700 text-white p-6 shadow-md hover:bg-red-600 transition duration-300">
+              <i class="fas fa-cubes text-3xl mb-3"></i>
+              <h4 class="text-xl font-bold sans-serif">Models</h4>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5b. HIDDEN All Assets View --><section id="all-assets-view" class="hidden neolithic-pattern p-8 md:p-12 shadow-xl mb-0 border-t border-b border-gray-200" style="min-height: 80vh;">
+        <!-- THIS IS THE NEW SPACER DIV -->
+        <div class="h-24"></div>
+        <div class="max-w-6xl mx-auto">
+          <!-- Section Header with Back link --><div class="flex justify-between items-end mb-8 border-b-2 border-gray-700 pb-2">
+            <h3 class="text-3xl md:text-4xl font-normal text-left serif text-[#1F2937]">
+              All Digital Assets
+            </h3>
+            <a href="#" onclick="event.preventDefault(); showMainContent('assets')" class="text-sm font-medium text-[#2487CE] hover:text-[#FFA500] whitespace-nowrap pb-1">&larr; Back to Main</a>
+          </div>
+          
+          <!-- List-based content for all assets, by type --><div class="space-y-8 serif">
+            
+            <!-- Images -->
+            <div>
+              <h4 class="text-2xl font-semibold serif text-gray-800 mb-3 border-b border-gray-400 pb-1">Images</h4>
+              <ul class="list-disc list-inside space-y-2">
+                <li><a href="#" class="text-lg text-[#2487CE] hover:text-[#FFA500]">Newgrange Solstice 2024 Gallery</a></li>
+                <li><a href="#" class="text-lg text-[#2487CE] hover:text-[#FFA500]">Knowth Kerbstone Carvings (High-Res)</a></li>
+                <li><a href="#" class="text-lg text-[#2487CE] hover:text-[#FFA500]">Loughcrew Cairns Aerial Shots</a></li>
+              </ul>
+            </div>
+      
+            <!-- Site Plans -->
+            <div>
+              <h4 class="text-2xl font-semibold serif text-gray-800 mb-3 border-b border-gray-400 pb-1">Site Plans</h4>
+              <ul class="list-disc list-inside space-y-2">
+                <li><a href="#" class="text-lg text-[#2487CE] hover:text-[#FFA500]">Dowth Main Chamber (AutoCAD .dwg)</a></li>
+                <li><a href="#" class="text-lg text-[#2487CE] hover:text-[#FFA500]">Fourknocks Site Layout (PDF)</a></li>
+              </ul>
+            </div>
+      
+            <!-- Geospatial Data -->
+            <div>
+              <h4 class="text-2xl font-semibold serif text-gray-800 mb-3 border-b border-gray-400 pb-1">Geospatial Data</h4>
+              <ul class="list-disc list-inside space-y-2">
+                <li><a href="#" class="text-lg text-[#2487CE] hover:text-[#FFA500]">Boyne Valley LiDAR Survey (CSV)</a></li>
+                <li><a href="#" class="text-lg text-[#2487CE] hover:text-[#FFA500]">Cork & Kerry Stone Circles (GeoJSON)</a></li>
+              </ul>
+            </div>
+      
+            <!-- Panoramas -->
+            <div>
+              <h4 class="text-2xl font-semibold serif text-gray-800 mb-3 border-b border-gray-400 pb-1">Panoramas</h4>
+              <ul class="list-disc list-inside space-y-2">
+                <li><a href="#" class="text-lg text-[#2487CE] hover:text-[#FFA500]">360° View from Seefin Summit</a></li>
+                <li><a href="#" class="text-lg text-[#2487CE] hover:text-[#FFA500]">Inside Newgrange Chamber (Interactive)</a></li>
+              </ul>
+            </div>
+      
+            <!-- Reports -->
+            <div>
+              <h4 class="text-2xl font-semibold serif text-gray-800 mb-3 border-b border-gray-400 pb-1">Reports</h4>
+              <ul class="list-disc list-inside space-y-2">
+                <li><a href="#" class="text-lg text-[#2487CE] hover:text-[#FFA500]">2023 Fieldwork Summary (PDF)</a></li>
+                <li><a href="#" class="text-lg text-[#2487CE] hover:text-[#FFA500]">Stellar Alignments at Drombeg (JSTOR)</a></li>
+              </ul>
+            </div>
+
+            <!-- Models (NEW) -->
+            <div>
+              <h4 class="text-2xl font-semibold serif text-gray-800 mb-3 border-b border-gray-400 pb-1">Models</h4>
+              <ul class="list-disc list-inside space-y-2">
+                <li><a href="#" class="text-lg text-[#2487CE] hover:text-[#FFA500]">Newgrange 3D Model (.obj)</a></li>
+                <li><a href="#" class="text-lg text-[#2487CE] hover:text-[#FFA500]">Knowth Kerbstone 15 (.ply)</a></li>
+                <li><a href="#" class="text-lg text-[#2487CE] hover:text-[#FFA500]">Dowth Site Photogrammetry Model (.fbx)</a></li>
+              </ul>
+            </div>
+      
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. Links Section (White Patterned Background) - Full Width --><section id="links" class="neolithic-pattern p-8 md:p-12 shadow-xl mb-0 border-t border-b border-gray-200 main-page-section">
+        <div class="max-w-6xl mx-auto">
+          <!-- Section Header with View All link --><div class="flex justify-between items-end mb-8 border-b-2 border-gray-700 pb-2">
+            <h3 class="text-3xl md:text-4xl font-normal text-left serif text-[#1F2937]">
+              Useful Links
+            </h3>
+            <a href="#" onclick="event.preventDefault(); showView('all-links-view')" class="text-sm font-medium text-[#2487CE] hover:text-[#FFA500] whitespace-nowrap pb-1">View All &rarr;</a>
+          </div>
+          <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 text-lg">
+            <li>
+              <a href="#" class="text-[#2487CE] hover:text-[#FFA500] serif font-medium hover:underline transition duration-200 flex items-center">
+                <i class="fas fa-link w-6 text-gray-500 mr-2"></i>
+                The National Museum of Ireland
+              </a>
+            </li>
+            <li>
+              <a href="#" class="text-[#2487CE] hover:text-[#FFA500] serif font-medium hover:underline transition duration-200 flex items-center">
+                <i class="fas fa-link w-6 text-gray-500 mr-2"></i>
+                The Royal Astronomical Society
+              </a>
+            </li>
+            <li>
+              <a href="#" class_models="text-[#2487CE] hover:text-[#FFA500] serif font-medium hover:underline transition duration-200 flex items-center">
+                <i class="fas fa-link w-6 text-gray-500 mr-2"></i>
+                Boyne Valley Tourism & Heritage
+              </a>
+            </li>
+            <li>
+              <a href="#" class="text-[#2487CE] hover:text-[#FFA500] serif font-medium hover:underline transition duration-200 flex items-center">
+                <i class="fas fa-link w-6 text-gray-500 mr-2"></i>
+                Discovery Programme Ireland
+              </a>
+            </li>
+            <li>
+              <a href="#" class="text-[#2487CE] hover:text-[#FFA500] serif font-medium hover:underline transition duration-200 flex items-center">
+                <i class="fas fa-link w-6 text-gray-500 mr-2"></i>
+                Megalithic Ireland
+              </a>
+            </li>
+            <li>
+              <a href="#" class="text-[#2487CE] hover:text-[#FFA500] serif font-medium hover:underline transition duration-200 flex items-center">
+                <i class="fas fa-link w-6 text-gray-500 mr-2"></i>
+                Stellarium Web
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- 6b. HIDDEN All Links View --><section id="all-links-view" class="hidden neolithic-pattern p-8 md:p-12 shadow-xl mb-0 border-t border-b border-gray-200" style="min-height: 80vh;">
+        <!-- THIS IS THE NEW SPACER DIV -->
+        <div class="h-24"></div>
+        <div class="max-w-6xl mx-auto">
+          <!-- Section Header with Back link --><div class="flex justify-between items-end mb-8 border-b-2 border-gray-700 pb-2">
+            <h3 class="text-3xl md:text-4xl font-normal text-left serif text-[#1F2937]">
+              All Useful Links
+            </h3>
+            <a href="#" onclick="event.preventDefault(); showMainContent('links')" class="text-sm font-medium text-[#2487CE] hover:text-[#FFA500] whitespace-nowrap pb-1">&larr; Back to Main</a>
+          </div>
+          <!-- List-based content for all links --><ul class="list-disc list-inside space-y-4 serif">
+            <li>
+              <a href="#" class="text-lg text-[#2487CE] hover:text-[#FFA500]">The National Museum of Ireland</a>
+              <p class="text-sm text-gray-700 ml-6">Archaeology and Natural History exhibits.</p>
+            </li>
+            <li>
+              <a href="#" class="text-lg text-[#2487CE] hover:text-[#FFA500]">The Royal Astronomical Society</a>
+              <p class="text-sm text-gray-700 ml-6">Encouraging and promoting the study of astronomy.</p>
+            </li>
+            <li>
+              <a href="#" class="text-lg text-[#2487CE] hover:text-[#FFA500]">Boyne Valley Tourism & Heritage</a>
+              <p class="text-sm text-gray-700 ml-6">Official tourist information for the region.</p>
+            </li>
+            <li>
+              <a href="#" class="text-lg text-[#2487CE] hover:text-[#FFA500]">Discovery Programme Ireland</a>
+              <p class="text-sm text-gray-700 ml-6">Centre for archaeology and innovation in Ireland.</p>
+            </li>
+            <li>
+              <a href="#" class="text-lg text-[#2487CE] hover:text-[#FFA500]">Megalithic Ireland</a>
+              <p class="text-sm text-gray-700 ml-6">A comprehensive photographic guide to Irish megalithic sites.</p>
+            </li>
+            <li>
+              <a href="#" class="text-lg text-[#2487CE] hover:text-[#FFA500]">Stellarium Web</a>
+              <p class="text-sm text-gray-700 ml-6">Online planetarium for checking historical sky views.</p>
+            </li>
+            <li>
+              <a href="#" class="text-lg text-[#2487CE] hover:text-[#FFA500]">Royal Irish Academy (RIA)</a>
+              <p class="text-sm text-gray-700 ml-6">Ireland's leading body of experts in the sciences and humanities.</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- NEW 7b. HIDDEN Search Results View --><section id="search-results-view" class="hidden neolithic-pattern p-8 md:p-12 shadow-xl mb-0 border-t border-b border-gray-200" style="min-height: 80vh;">
+        <!-- THIS IS THE NEW SPACER DIV -->
+        <div class="h-24"></div>
+        <div class="max-w-6xl mx-auto">
+          <!-- Section Header with Back link --><div class="flex justify-between items-end mb-8 border-b-2 border-gray-700 pb-2">
+            <h3 class="text-3xl md:text-4xl font-normal text-left serif text-[#1F2937]">
+              Search Results
+            </h3>
+            <a href="#" onclick="event.preventDefault(); showMainContent('search-section')" class="text-sm font-medium text-[#2487CE] hover:text-[#FFA500] whitespace-nowrap pb-1">&larr; Back to Main</a>
+          </div>
+          <!-- List-based content for search results --><div id="search-results-container" class="space-y-4 serif">
+            <!-- Search results will be dynamically inserted here -->
+          </div>
+        </div>
+      </section>
+
+      <!-- 7. Contact Section (White Patterned Background) - Full Width --><section id="contact" class="neolithic-pattern p-8 md:p-12 shadow-xl mb-0 border-t border-b border-gray-200 main-page-section">
+        <div class="max-w-6xl mx-auto">
+          <div class="flex justify-between items-end mb-8 border-b-2 border-gray-700 pb-2">
+            <h3 class="text-3xl md:text-4xl font-normal text-left serif text-[#1F2937]">
+              Contact Us
+            </h3>
+            <a href="mailto:archaeoastronomyireland@gmail.com" class="text-sm font-medium text-gray-700 hover:text-[#FFA500] whitespace-nowrap pb-1 flex items-center serif">
+              <i class="fas fa-envelope mr-2 text-gray-600"></i>
+              archaeoastronomyireland@gmail.com
+            </a>
+          </div>
+          <div class="max-w-xl mx-auto bg-white p-6 shadow-md">
+            <p class="text-gray-600 serif mb-4">
+              For research inquiries, information, or access to the archaeoastronomy ireland forum, please reach out here.
+            </p>
+            <!-- UPDATED Formspree Form -->
+            <form action="https://formspree.io/f/mblpdogw" method="POST" class="space-y-4">
+              <input type="text" name="name" placeholder="Your Name" required class="w-full p-3 border border-gray-300 sans-serif focus:ring-[#FFA500] focus:border-[#FFA500]">
+              <input type="email" name="email" placeholder="Your Email" required class="w-full p-3 border border-gray-300 sans-serif focus:ring-[#FFA500] focus:border-[#FFA500]">
+              <textarea name="message" placeholder="Your Message" rows="4" required class="w-full p-3 border border-gray-300 sans-serif focus:ring-[#FFA500] focus:border-[#FFA500]"></textarea>
+              <button type="submit" class="w-full bg-[#023020] text-white font-bold py-3 hover:bg-opacity-90 transition duration-300 sans-serif">
+                Send Message
+              </button>
+            </form>
+            <!-- END UPDATED Form -->
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </div>
+
+  <!-- Document Footer (New Expanded Style) --><footer class="bg-gray-800 text-white p-12">
+    <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between gap-12">
+      
+      <!-- Left Column: Logo, Text, Socials -->
+      <div class="md:w-1/3 lg:w-2/5 flex-shrink-0">
+        <!-- Logo (as per header) -->
+        <a href="#home" class="flex items-center flex-shrink-0 mb-4">
+          <i class="fa-regular fa-circle-dot text-2xl mr-3" style="color: #FFA500;"></i>
+          <h1 class="text-white text-lg md:text-xl font-light sans-serif tracking-wide">Archaeoastronomy Ireland</h1>
+        </a>
+        <!-- Dummy Text -->
+        <div class="font-light sans-serif text-sm text-gray-300 mb-6 space-y-1">
+          <p>Archaeoastronomy Ireland is a website dedicated to the study of</p>
+          <p>Archaeoastronomy, Skyscape Archaeology, Cultural Astronomy and</p>
+          <p>Landscape within an Irish context.</p>
+        </div>
+        <!-- Social Icons -->
+        <div class="flex space-x-3">
+          <a href="#" aria-label="Facebook" class="bg-gray-700 w-10 h-10 flex items-center justify-center rounded-md hover:bg-gray-600 transition-colors">
+            <i class="fab fa-facebook-f text-white text-xl"></i>
+          </a>
+          <a href="#" aria-label="YouTube" class="bg-gray-700 w-10 h-10 flex items-center justify-center rounded-md hover:bg-gray-600 transition-colors">
+            <i class="fab fa-youtube text-white text-xl"></i>
+          </a>
+          <a href="#" aria-label="GitHub" class="bg-gray-700 w-10 h-10 flex items-center justify-center rounded-md hover:bg-gray-600 transition-colors">
+            <i class="fab fa-github text-white text-xl"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Right Columns: Links -->
+      <div class="grid grid-cols-2 lg:grid-cols-3 gap-8 w-full">
+        <!-- Website Areas -->
+        <div>
+          <h4 class="font-bold sans-serif text-white mb-3 tracking-wide">Website Areas</h4>
+          <ul class="space-y-2 text-sm sans-serif">
+            <li><a href="#home" class="text-gray-300 hover:text-white">Home</a></li>
+            <li><a href="#about" class="text-gray-300 hover:text-white">About</a></li>
+            <li><a href="#articles" class="text-gray-300 hover:text-white">Articles</a></li>
+            <li><a href="#tools" class="text-gray-300 hover:text-white">Tools</a></li>
+            <li><a href="#assets" class="text-gray-300 hover:text-white">Assets</a></li>
+            <li><a href="#links" class="text-gray-300 hover:text-white">Links</a></li>
+            <li><a href="#contact" class="text-gray-300 hover:text-white">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Useful Links -->
+        <div>
+          <h4 class="font-bold sans-serif text-white mb-3 tracking-wide">Useful Links</h4>
+          <ul class="space-y-2 text-sm sans-serif">
+            <li><a href="#" class="text-gray-300 hover:text-white">National Museum</a></li>
+            <li><a href="#" class="text-gray-300 hover:text-white">Megalithic Ireland</a></li>
+            <li><a href="#" class,"text-gray-300 hover:text-white">Stellarium Web</a></li>
+            <li><a href="#" class="text-gray-300 hover:text-white">Discovery Programme</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Us -->
+        <div>
+          <h4 class="font-bold sans-serif text-white mb-3 tracking-wide">Contact Us</h4>
+          <ul class="space-y-2 text-sm sans-serif text-gray-300">
+            <li>
+              <a href="mailto:archaeoastronomyireland@gmail.com" class="hover:text-white">
+                <span>archaeoastronomyireland</span><br>
+                <span>@gmail.com</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Copyright divider -->
+    <div class="container mx-auto px-4 mt-10 pt-6 border-t border-gray-700">
+      <p class="sans-serif text-center text-sm text-gray-400">&copy; 2025 Archaeoastronomy Ireland Project. All Rights Reserved.</p>
+    </div>
+  </footer>
+  
+  <!-- Message Box HTML (Replaces alert()) --><div id="message-box" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-[100]">
+      <div classs="bg-white p-8 max-w-sm w-full shadow-2xl">
+        <h4 class="text-xl font-bold sans-serif mb-4">Notification</h4>
+        <p id="message-text" class="text-gray-700 serif mb-6"></p>
+        <button onclick="hideMessage()" class="w-full bg-[#023020] text-white py-2 font-medium hover:bg-opacity-90 transition duration-200">Close</button>
+      </div>
+  </div>
+
+  <script>
+    /* paste this line in verbatim */  window.formbutton=window.formbutton||function(){(formbutton.q=formbutton.q||[]).push(arguments)};
+    // --- Mobile Menu Logic ---
+    function toggleMenu() {
+      const menu = document.getElementById('mobile-menu');
+      menu.classList.toggle('translate-x-full'); // Toggles visibility by sliding
+    }
+
+    // Attach toggle function to the button
+    document.getElementById('nav-toggle').addEventListener('click', toggleMenu);
+    
+    // --- Custom Message Box Logic (Replaces alert()) ---
+    // This can be used for other notifications if needed
+    function showMessage(text) {
+        document.getElementById('message-text').textContent = text;
+        document.getElementById('message-box').classList.remove('hidden');
+        document.getElementById('message-box').classList.add('flex');
+    }
+
+    function hideMessage() {
+        document.getElementById('message-text').textContent = '';
+        document.getElementById('message-box').classList.add('hidden');
+        document.getElementById('message-box').classList.remove('flex');
+    }
+
+    // --- View Toggling Logic ---
+    const allArticlesView = document.getElementById('all-articles-view');
+    const allToolsView = document.getElementById('all-tools-view');
+    const allAssetsView = document.getElementById('all-assets-view');
+    const allLinksView = document.getElementById('all-links-view');
+    const searchResultsView = document.getElementById('search-results-view'); // NEW
+    const mainPageSections = document.querySelectorAll('.main-page-section');
+
+    function showView(viewId) {
+      // Hide all main sections
+      mainPageSections.forEach(section => {
+        section.classList.add('hidden');
+      });
+
+      // Hide ALL views
+      allArticlesView.classList.add('hidden');
+      allToolsView.classList.add('hidden');
+      allAssetsView.classList.add('hidden');
+      allLinksView.classList.add('hidden');
+      searchResultsView.classList.add('hidden'); // NEW
+
+      // Show the requested view
+      const viewToShow = document.getElementById(viewId);
+      if (viewToShow) {
+        viewToShow.classList.remove('hidden');
+      }
+      
+      // Scroll the new view into place
+      if (viewToShow) {
+        viewToShow.scrollIntoView();
+      }
+    }
+
+    function showMainContent(sectionId) {
+      // Hide the special list views
+      allArticlesView.classList.add('hidden');
+      allToolsView.classList.add('hidden');
+      allAssetsView.classList.add('hidden');
+      allLinksView.classList.add('hidden');
+      searchResultsView.classList.add('hidden'); // NEW
+
+      // Show all main sections
+      mainPageSections.forEach(section => {
+        section.classList.remove('hidden');
+      });
+
+      // Scroll to the section they came from
+      if (sectionId) {
+        // Use timeout to ensure content is visible before scrolling
+        setTimeout(() => {
+          document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+        }, 0);
+      }
+    }
+
+    // --- NEW Search Function ---
+    function performSearch() {
+      const query = document.getElementById('search-input').value.toLowerCase();
+      const resultsContainer = document.getElementById('search-results-container');
+      
+      // Clear previous results
+      resultsContainer.innerHTML = '';
+      
+      if (!query) {
+        resultsContainer.innerHTML = '<p class="serif">Please enter a search term.</p>';
+        showView('search-results-view');
+        return;
+      }
+
+      const searchableViews = ['all-articles-view', 'all-tools-view', 'all-assets-view', 'all-links-view'];
+      let resultsFound = 0;
+
+      searchableViews.forEach(viewId => {
+        const view = document.getElementById(viewId);
+        const items = view.querySelectorAll('li'); // Target list items
+
+        items.forEach(item => {
+          const itemText = item.textContent.toLowerCase();
+          if (itemText.includes(query)) {
+            // Create a new result item
+            const resultItem = document.createElement('div');
+            resultItem.className = 'mb-4 p-4 bg-white shadow-sm border-l-4 border-[#FFA500]';
+            
+            const link = item.querySelector('a');
+            const description = item.querySelector('p');
+
+            let html = '';
+            if (link) {
+              // Create a clickable link
+              html += `<a href="${link.getAttribute('href')}" onclick="event.preventDefault();" class="text-lg text-[#2487CE] hover:text-[#FFA500] font-semibold">${link.textContent}</a>`;
+            } else {
+              // Fallback for items without links
+              html += `<h4 class="text-lg font-semibold text-gray-800">${item.textContent.split('\n')[0]}</h4>`;
+            }
+
+            if (description) {
+               html += `<p class="text-sm text-gray-700 mt-1 ml-6">${description.textContent}</p>`;
+            } else if (link) {
+              // If no <p> tag, try to get other text, but not the link text itself
+              let descText = item.textContent.replace(link.textContent, '').trim();
+              if(descText) {
+                html += `<p class="text-sm text-gray-700 mt-1 ml-6">${descText}</p>`;
+              }
+            }
+            
+            resultItem.innerHTML = html;
+            resultsContainer.appendChild(resultItem);
+            resultsFound++;
+          }
+        });
+      });
+
+      if (resultsFound === 0) {
+        resultsContainer.innerHTML = '<p class="serif">No results found for your query.</p>';
+      }
+
+      // Show the results page
+      showView('search-results-view');
+    }
+
+    // Attach search listeners
+    document.getElementById('search-button').addEventListener('click', performSearch);
+    document.getElementById('search-input').addEventListener('keypress', function(e) { 
+      if (e.key === 'Enter') {
+        e.preventDefault(); // Prevent form submission
+        performSearch(); 
+      } 
+    });
+    
+    // Expose functions globally for onclick attributes
+    window.toggleMenu = toggleMenu;
+    window.showMessage = showMessage;
+    window.hideMessage = hideMessage;
+    window.showView = showView;
+    window.showMainContent = showMainContent;
+    window.performSearch = performSearch; // Expose for any inline calls (though we use listeners now)
+    
+  </script>
+
+</body>
+</html>

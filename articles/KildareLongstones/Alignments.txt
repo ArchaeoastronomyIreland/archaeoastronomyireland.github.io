@@ -1,0 +1,406 @@
+// Polyline: Punchestown Polyline 1
+const polylineLatLngs_Punchestown_Polyline_1 = [
+    [53.1918, -6.6285],
+    [53.1150, -6.7757]
+];
+
+const polyline_Punchestown_Polyline_1 = L.polyline(polylineLatLngs_Punchestown_Polyline_1, {
+    color: 'orange',
+    weight: 2,
+    opacity: 0.8, // Use polyline's opacity
+    dashArray: [10, 5]
+});
+
+const decorator_Punchestown_Polyline_1 = L.polylineDecorator(polyline_Punchestown_Polyline_1, {
+    patterns: [
+        {
+            offset: '100%',
+            repeat: 0,
+            symbol: L.Symbol.arrowHead({
+                pixelSize: 16,
+                polygon: false,
+                pathOptions: {
+                    stroke: true,
+                    color: 'orange',
+                    weight: 2,
+                    fillOpacity: 0.8, // Match polyline's opacity
+                    opacity: 0.8 // Match polyline's opacity
+                }
+            })
+        }
+    ]
+});
+
+// Add polyline and decorator directly to map
+polyline_Punchestown_Polyline_1.addTo(map);
+decorator_Punchestown_Polyline_1.addTo(map);
+
+// Polyline: Baltracey Polyline 2
+const polylineLatLngs_Baltracey_Polyline_2 = [
+    [53.2278, -6.5973],
+    [53.2293, -6.8640]
+];
+
+const polyline_Baltracey_Polyline_2 = L.polyline(polylineLatLngs_Baltracey_Polyline_2, {
+    color: 'yellow',
+    weight: 2,
+    opacity: 0.8, // Use polyline's opacity
+    dashArray: [10, 5]
+});
+
+const decorator_Baltracey_Polyline_2 = L.polylineDecorator(polyline_Baltracey_Polyline_2, {
+    patterns: [
+        {
+            offset: '100%',
+            repeat: 0,
+            symbol: L.Symbol.arrowHead({
+                pixelSize: 16,
+                polygon: false,
+                pathOptions: {
+                    stroke: true,
+                    color: 'yellow',
+                    weight: 2,
+                    fillOpacity: 0.8, // Match polyline's opacity
+                    opacity: 0.8 // Match polyline's opacity
+                }
+            })
+        }
+    ]
+});
+
+// Add polyline and decorator directly to map
+polyline_Baltracey_Polyline_2.addTo(map);
+decorator_Baltracey_Polyline_2.addTo(map);
+
+// Polyline: Forenaghts Polyline 3
+const polylineLatLngs_Forenaghts_Polyline_3 = [
+    [53.2278, -6.5973],
+    [53.2043, -6.5302]
+];
+
+const polyline_Forenaghts_Polyline_3 = L.polyline(polylineLatLngs_Forenaghts_Polyline_3, {
+    color: 'green',
+    weight: 2,
+    opacity: 0.8, // Use polyline's opacity
+    dashArray: [10, 5]
+});
+
+const decorator_Forenaghts_Polyline_3 = L.polylineDecorator(polyline_Forenaghts_Polyline_3, {
+    patterns: [
+        {
+            offset: '100%',
+            repeat: 0,
+            symbol: L.Symbol.arrowHead({
+                pixelSize: 16,
+                polygon: false,
+                pathOptions: {
+                    stroke: true,
+                    color: 'green',
+                    weight: 2,
+                    fillOpacity: 0.8, // Match polyline's opacity
+                    opacity: 0.8 // Match polyline's opacity
+                }
+            })
+        }
+    ]
+});
+
+// Add polyline and decorator directly to map
+polyline_Forenaghts_Polyline_3.addTo(map);
+decorator_Forenaghts_Polyline_3.addTo(map);
+
+// Polyline: Baltracey Polyline 4
+const polylineLatLngs_Baltracey_Polyline_4 = [
+    [53.2062, -6.6073],
+    [53.1150, -6.7757]
+];
+
+const polyline_Baltracey_Polyline_4 = L.polyline(polylineLatLngs_Baltracey_Polyline_4, {
+    color: 'orange',
+    weight: 2,
+    opacity: 0.8, // Use polyline's opacity
+    dashArray: [10, 5]
+});
+
+const decorator_Baltracey_Polyline_4 = L.polylineDecorator(polyline_Baltracey_Polyline_4, {
+    patterns: [
+        {
+            offset: '100%',
+            repeat: 0,
+            symbol: L.Symbol.arrowHead({
+                pixelSize: 16,
+                polygon: false,
+                pathOptions: {
+                    stroke: true,
+                    color: 'orange',
+                    weight: 2,
+                    fillOpacity: 0.8, // Match polyline's opacity
+                    opacity: 0.8 // Match polyline's opacity
+                }
+            })
+        }
+    ]
+});
+
+// Add polyline and decorator directly to map
+polyline_Baltracey_Polyline_4.addTo(map);
+decorator_Baltracey_Polyline_4.addTo(map);
+
+// Polyline: Baltracey Polyline 5
+const polylineLatLngs_Baltracey_Polyline_5 = [
+    [53.2062, -6.6073],
+    [53.2464, -6.4746]
+];
+
+const polyline_Baltracey_Polyline_5 = L.polyline(polylineLatLngs_Baltracey_Polyline_5, {
+    color: 'green',
+    weight: 2,
+    opacity: 0.8, // Use polyline's opacity
+    dashArray: [10, 5]
+});
+
+const decorator_Baltracey_Polyline_5 = L.polylineDecorator(polyline_Baltracey_Polyline_5, {
+    patterns: [
+        {
+            offset: '100%',
+            repeat: 0,
+            symbol: L.Symbol.arrowHead({
+                pixelSize: 16,
+                polygon: false,
+                pathOptions: {
+                    stroke: true,
+                    color: 'green',
+                    weight: 2,
+                    fillOpacity: 0.8, // Match polyline's opacity
+                    opacity: 0.8 // Match polyline's opacity
+                }
+            })
+        }
+    ]
+});
+
+// Add polyline and decorator directly to map
+polyline_Baltracey_Polyline_5.addTo(map);
+decorator_Baltracey_Polyline_5.addTo(map);
+
+// Polyline: Baltracey Polyline 6
+const polylineLatLngs_Baltracey_Polyline_6 = [
+    [53.2062, -6.6073],
+    [53.2043, -6.5302]
+];
+
+const polyline_Baltracey_Polyline_6 = L.polyline(polylineLatLngs_Baltracey_Polyline_6, {
+    color: 'yellow',
+    weight: 2,
+    opacity: 0.8, // Use polyline's opacity
+    dashArray: [10, 5]
+});
+
+const decorator_Baltracey_Polyline_6 = L.polylineDecorator(polyline_Baltracey_Polyline_6, {
+    patterns: [
+        {
+            offset: '100%',
+            repeat: 0,
+            symbol: L.Symbol.arrowHead({
+                pixelSize: 16,
+                polygon: false,
+                pathOptions: {
+                    stroke: true,
+                    color: 'yellow',
+                    weight: 2,
+                    fillOpacity: 0.8, // Match polyline's opacity
+                    opacity: 0.8 // Match polyline's opacity
+                }
+            })
+        }
+    ]
+});
+
+// Add polyline and decorator directly to map
+polyline_Baltracey_Polyline_6.addTo(map);
+decorator_Baltracey_Polyline_6.addTo(map);
+
+// Polyline: Craddockstown Polyline 7
+const polylineLatLngs_Craddockstown_Polyline_7 = [
+    [53.1895, -6.6369],
+    [53.1151, -6.7757]
+];
+
+const polyline_Craddockstown_Polyline_7 = L.polyline(polylineLatLngs_Craddockstown_Polyline_7, {
+    color: 'orange',
+    weight: 2,
+    opacity: 0.8, // Use polyline's opacity
+    dashArray: [10, 5]
+});
+
+const decorator_Craddockstown_Polyline_7 = L.polylineDecorator(polyline_Craddockstown_Polyline_7, {
+    patterns: [
+        {
+            offset: '100%',
+            repeat: 0,
+            symbol: L.Symbol.arrowHead({
+                pixelSize: 16,
+                polygon: false,
+                pathOptions: {
+                    stroke: true,
+                    color: 'orange',
+                    weight: 2,
+                    fillOpacity: 0.8, // Match polyline's opacity
+                    opacity: 0.8 // Match polyline's opacity
+                }
+            })
+        }
+    ]
+});
+
+// Add polyline and decorator directly to map
+polyline_Craddockstown_Polyline_7.addTo(map);
+decorator_Craddockstown_Polyline_7.addTo(map);
+
+// Polyline: Craddockstown Polyline 8
+const polylineLatLngs_Craddockstown_Polyline_8 = [
+    [53.1895, -6.6369],
+    [53.1862, -6.3948]
+];
+
+const polyline_Craddockstown_Polyline_8 = L.polyline(polylineLatLngs_Craddockstown_Polyline_8, {
+    color: 'yellow',
+    weight: 2,
+    opacity: 0.8, // Use polyline's opacity
+    dashArray: [10, 5]
+});
+
+const decorator_Craddockstown_Polyline_8 = L.polylineDecorator(polyline_Craddockstown_Polyline_8, {
+    patterns: [
+        {
+            offset: '100%',
+            repeat: 0,
+            symbol: L.Symbol.arrowHead({
+                pixelSize: 16,
+                polygon: false,
+                pathOptions: {
+                    stroke: true,
+                    color: 'yellow',
+                    weight: 2,
+                    fillOpacity: 0.8, // Match polyline's opacity
+                    opacity: 0.8 // Match polyline's opacity
+                }
+            })
+        }
+    ]
+});
+
+// Add polyline and decorator directly to map
+polyline_Craddockstown_Polyline_8.addTo(map);
+decorator_Craddockstown_Polyline_8.addTo(map);
+
+// Polyline: Mullaghmast Polyline 9
+const polylineLatLngs_Mullaghmast_Polyline_9 = [
+    [53.0066, -6.8492],
+    [53.0558, -6.7587]
+];
+
+const polyline_Mullaghmast_Polyline_9 = L.polyline(polylineLatLngs_Mullaghmast_Polyline_9, {
+    color: 'orange',
+    weight: 2,
+    opacity: 0.8, // Use polyline's opacity
+    dashArray: [10, 5]
+});
+
+const decorator_Mullaghmast_Polyline_9 = L.polylineDecorator(polyline_Mullaghmast_Polyline_9, {
+    patterns: [
+        {
+            offset: '100%',
+            repeat: 0,
+            symbol: L.Symbol.arrowHead({
+                pixelSize: 16,
+                polygon: false,
+                pathOptions: {
+                    stroke: true,
+                    color: 'orange',
+                    weight: 2,
+                    fillOpacity: 0.8, // Match polyline's opacity
+                    opacity: 0.8 // Match polyline's opacity
+                }
+            })
+        }
+    ]
+});
+
+// Add polyline and decorator directly to map
+polyline_Mullaghmast_Polyline_9.addTo(map);
+decorator_Mullaghmast_Polyline_9.addTo(map);
+
+// Polyline: Broadleas Polyline 10
+const polylineLatLngs_Broadleas_Polyline_10 = [
+    [53.1193, -6.6201],
+    [53.1927, -6.3783]
+];
+
+const polyline_Broadleas_Polyline_10 = L.polyline(polylineLatLngs_Broadleas_Polyline_10, {
+    color: 'green',
+    weight: 2,
+    opacity: 0.8, // Use polyline's opacity
+    dashArray: [10, 5]
+});
+
+const decorator_Broadleas_Polyline_10 = L.polylineDecorator(polyline_Broadleas_Polyline_10, {
+    patterns: [
+        {
+            offset: '100%',
+            repeat: 0,
+            symbol: L.Symbol.arrowHead({
+                pixelSize: 16,
+                polygon: false,
+                pathOptions: {
+                    stroke: true,
+                    color: 'green',
+                    weight: 2,
+                    fillOpacity: 0.8, // Match polyline's opacity
+                    opacity: 0.8 // Match polyline's opacity
+                }
+            })
+        }
+    ]
+});
+
+// Add polyline and decorator directly to map
+polyline_Broadleas_Polyline_10.addTo(map);
+decorator_Broadleas_Polyline_10.addTo(map);
+
+// Polyline: Kilgowan Polyline 11
+const polylineLatLngs_Kilgowan_Polyline_11 = [
+    [53.0779, -6.7636],
+    [53.2043, -6.5302]
+];
+
+const polyline_Kilgowan_Polyline_11 = L.polyline(polylineLatLngs_Kilgowan_Polyline_11, {
+    color: 'orange',
+    weight: 2,
+    opacity: 0.8, // Use polyline's opacity
+    dashArray: [10, 5]
+});
+
+const decorator_Kilgowan_Polyline_11 = L.polylineDecorator(polyline_Kilgowan_Polyline_11, {
+    patterns: [
+        {
+            offset: '100%',
+            repeat: 0,
+            symbol: L.Symbol.arrowHead({
+                pixelSize: 16,
+                polygon: false,
+                pathOptions: {
+                    stroke: true,
+                    color: 'orange',
+                    weight: 2,
+                    fillOpacity: 0.8, // Match polyline's opacity
+                    opacity: 0.8 // Match polyline's opacity
+                }
+            })
+        }
+    ]
+});
+
+// Add polyline and decorator directly to map
+polyline_Kilgowan_Polyline_11.addTo(map);
+decorator_Kilgowan_Polyline_11.addTo(map);

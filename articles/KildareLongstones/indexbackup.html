@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Kildare Longstones: An Archaeoastronomy Study</title>
+  <!-- Load Tailwind CSS from CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Load Font Awesome for the icon and carousel arrows -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Load Montserrat and Lora fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital@0;1&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    /* Custom font families for different elements */
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: #f0f4f8;
+      color: #333;
+    }
+    .serif {
+      font-family: 'Lora', serif;
+    }
+    .sans-serif {
+      font-family: 'Montserrat', sans-serif;
+    }
+    /* Custom styles for inline formatting */
+    del {
+      text-decoration: line-through;
+    }
+    .code {
+      font-family: monospace;
+      background-color: #e2e8f0;
+      padding: 0.1rem 0.3rem;
+    }
+    /* Fix for code block overflow and word wrapping */
+    .code-block {
+      white-space: pre-wrap;
+      word-break: break-all;
+    }
+  </style>
+</head>
+<body class="bg-gray-100">
+
+  <!-- The fixed header for the webpage (keeping original styles including rounded buttons) -->
+  <div style="background-color: #023020;" class="fixed top-0 w-full z-50 shadow-lg">
+    <div class="container mx-auto px-4 py-2 flex items-center">
+      <!-- The outlined dot circle icon on the left -->
+      <i class="fa-regular fa-circle-dot text-2xl mr-2" style="color: #FFA500;"></i>
+      
+      <!-- The text moved next to the icon with a light font weight -->
+      <h1 class="text-white text-base md:text-xl font-light sans-serif">Archaeoastronomy Ireland</h1>
+      
+      <!-- Home and GitHub Icons -->
+      <div class="flex-grow"></div>
+      <a href="#" class="w-8 h-8 rounded-lg border border-[#2487CE] flex items-center justify-center mr-2" style="color: #2487CE;">
+        <i class="fa-solid fa-home"></i>
+      </a>
+      <a href="#" class="w-8 h-8 rounded-lg border border-[#2487CE] flex items-center justify-center" style="color: #2487CE;">
+        <i class="fa-brands fa-github"></i>
+      </a>
+    </div>
+  </div>
+
+  <!-- Main content container - Removed rounded-lg -->
+  <div class="p-4 md:p-8 pt-16">
+    <div class="max-w-4xl mx-auto bg-white p-6 md:p-10 shadow-lg">
+
+      <div class="flex justify-between items-center text-xs text-gray-500 mb-4 serif italic">
+        <div class="text-left">The Kildare Longstones</div>
+        <div class="text-right">Brian Doyle | November 1, 2025</div>
+      </div>
+	  
+	  <!-- Single image with caption -->
+<div class="my-6 text-center border border-gray-300 p-2">
+  <img src="./images/furnessimage.png" alt="Diagram of an ancient megalith." class="w-full h-auto mb-2">
+  <figcaption class="text-sm text-gray-500 serif italic">Figure 1. A diagram illustrating the celestial alignment of a typical Irish megalithic monument. (Suggested size: 600x400 pixels)</figcaption>
+</div>
+      
+      <!-- Article Title and Author Info -->
+      <div class="text-center mb-10">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-2 sans-serif">The Kildare Longstones</h2>
+        <p class="text-gray-600 italic sans-serif">By Brian Doyle - Archaeoastronomy Ireland</p>
+      </div>
+
+      <!-- Abstract Section (Blockquote Style) -->
+      <div id="abstract" class="mb-12">
+        <h3 class="text-xl font-bold text-gray-700 mb-2 sans-serif">Abstract</h3>
+        <div class="relative md:w-2/3 mx-auto pl-6 border-l-4 border-gray-400">
+          <p class="text-gray-600 leading-relaxed text-sm serif italic">
+            This study provides an archaeoastronomic and cultural analysis of eight prominent standing stones (longstones/menhirs) in County Kildare, Ireland, including Punchestown and Forenaghts Great. We examine the multi-functional nature of these Bronze Age monuments, which likely served as calendrical markers, burial sites, and territorial boundaries. The document explores the influence of folklore and the subsequent Christian re-appropriation of the stones, demonstrating their enduring sacral significance in the Irish landscape from prehistory through to the medieval period.
+          </p>
+        </div>
+      </div>
+      
+      <!-- In-Page Index (Table of Contents) -->
+      <div class="mb-12">
+        <h3 class="text-xl font-bold text-gray-700 mb-4 sans-serif">Table of Contents</h3>
+        <ul class="text-xs text-gray-600 leading-relaxed sans-serif pl-4">
+          <li><a href="#introduction" class="hover:underline">1. Introduction</a></li>
+          <li><a href="#menhirs" class="hover:underline">2. Menhirs: Purpose and Debate</a></li>
+          <li><a href="#christian" class="hover:underline">3. The Christian Overlap</a></li>
+          <li><a href="#tapestry" class="hover:underline">4. A Broader Prehistoric Tapestry</a></li>
+          <li><a href="#folklore" class="hover:underline">5. Folklore and Mythology of Irish Standing Stones</a></li>
+          <li><a href="#kildare-sites" class="hover:underline">6. Kildare Specific Sites</a></li>
+          <li><a href="#methodology" class="hover:underline">7. Methodology</a></li>
+          <li><a href="#profiles" class="hover:underline">8. Individual Archaeological, Landscape and Astronomic Profiles</a>
+            <ul class="list-disc list-inside pl-6">
+              <li><a href="#punchestown" class="hover:underline">8.1 The Punchestown Longstone</a></li>
+              <li><a href="#forenaghts" class="hover:underline">8.2 The Forenaghts Great Stone</a></li>
+              <li><a href="#baltracey" class="hover:underline">8.3 The Baltracey Stone</a></li>
+              <li><a href="#craddockstown" class="hover:underline">8.4 The Craddockstown West Stone</a></li>
+              <li><a href="#kilgowen" class="hover:underline">8.5 The Kilgowen Standing Stone</a></li>
+              <li><a href="#mullaghmast" class="hover:underline">8.6 The Mullaghmast Standing Stone</a></li>
+              <li><a href="#great-connell" class="hover:underline">8.7 The Great Connell Standing Stone</a></li>
+              <li><a href="#broadleas" class="hover:underline">8.8 The Longstone (Broadleas Commons)</a></li>
+            </ul>
+          </li>
+          <li><a href="#conclusion" class="hover:underline">9. Conclusion</a></li>
+          <li><a href="#references" class="hover:underline">10. References</a></li>
+        </ul>
+      </div>
+
+      <!-- Introduction Section -->
+      <div id="introduction" class="mb-12">
+        <h3 class="text-xl font-bold text-gray-700 sans-serif whitespace-nowrap border-b border-gray-400 pb-1 mb-6" style="border-bottom-width: 3px;">1. Introduction</h3>
+        <p class="text-gray-600 leading-relaxed sans-serif mb-4">
+          This article provides an archaeoastronomic examination of eight standing stones in County Kildare, Ireland: Forenaghts Great, Baltracey, Punchestown, Craddockstown West, Great Connell, Kilgowen, Mullaghmast, and the Longstone (Broadleas Commons). The primary goal is to analyze the cultural and symbolic interpretations of these ancient monoliths in relation to celestial phenomena and landscape features.
+        </p>
+      </div>
+
+      <!-- Map Placeholder (as requested immediately after introduction) -->
+      <div id="map-introduction" class="my-12">
+        <h4 class="text-lg font-bold text-gray-700 mt-6 mb-2 sans-serif">Figure 1. Map of Kildare Longstones</h4>
+        <p class="text-sm text-gray-600 leading-relaxed serif italic mb-4">This map placeholder shows the relative locations of the eight menhirs discussed in this study within County Kildare.</p>
+        <div class="bg-blue-200 w-full h-96 flex items-center justify-center border border-blue-400 shadow-inner">
+          <p class="text-gray-500 sans-serif">**Map Placeholder: Geographical distribution of the Longstones**</p>
+        </div>
+        <p class="text-sm text-gray-600 leading-relaxed serif italic mt-4">The clustering of the monuments suggests a significant ceremonial landscape centered around the Liffey plain.</p>
+      </div>
+
+      <!-- Menhirs Section -->
+      <div id="menhirs" class="mb-12">
+        <h3 class="text-xl font-bold text-gray-700 sans-serif whitespace-nowrap border-b border-gray-400 pb-1 mb-6" style="border-bottom-width: 3px;">2. Menhirs: Purpose and Debate</h3>
+        <p class="text-gray-600 leading-relaxed sans-serif mb-4">
+          Standing stones, or **menhirs** (known as *galláns* in southern Ireland), are a common and enigmatic feature of the Irish archaeological landscape. These large, vertically oriented stones were erected in the prehistoric period. While menhirs are widely distributed across Western Europe, they are particularly numerous in Ireland, Great Britain, and Brittany. Despite their prevalence, their precise function is not well understood and remains a subject of ongoing investigation and debate among archaeologists. Most are believed to have been erected from the late Neolithic period to the end of the Iron Age, with a general dating to the Bronze Age or earlier.
+        </p>
+        <p class="text-gray-600 leading-relaxed sans-serif mb-4">
+          The exact purpose of standing stones remains a subject of considerable academic debate, as their intended function is not well understood. Scholars have proposed several theories, each with some supporting evidence. A key area of investigation is the field of **archaeoastronomy**, which examines the alignment and symbolism of ancient monuments in relation to celestial bodies. The theory that standing stones were erected for astronomical or calendrical purposes, aligned with the sun, moon, or stars, is relevant to the study of these longstones. Such alignments, which might have served a symbolic rather than purely predictive function, are seen at other prominent Irish megalithic sites, notably passage tombs. The theory that standing stones were used as **burial markers** is supported by the findings of burial cists and cremated human remains at the base of stones like Punchestown and Forenaghts Great. Another school of thought suggests they were **ceremonial or ritual sites**, as evidenced by the Forenaghts stone's location within a henge. Finally, it is argued that the stones functioned as **territorial markers** to denote tribal lands or important meeting points. The proximity of the Punchestown and Craddockstown stones, as well as the suggestion of a wider 5-kilometer circle, lends some credence to this idea. The multidisciplinary nature of the evidence, from archaeology to folklore, indicates that these monoliths may have served multiple, overlapping functions.
+        </p>
+
+        
+      </div>
+      
+      <!-- The Christian Overlap Section -->
+      <div id="christian" class="mb-12">
+        <h3 class="text-xl font-bold text-gray-700 sans-serif whitespace-nowrap border-b border-gray-400 pb-1 mb-6" style="border-bottom-width: 3px;">3. The Christian Overlap</h3>
+        <p class="text-gray-600 leading-relaxed sans-serif mb-4">
+          The study of Kildare's standing stones also reveals a fascinating process of **cultural continuity**. The Kilgowen stone's Christianized cross is a prime example of this. Rather than destroying the ancient pagan monuments, early Christians often re-appropriated them by carving Christian symbols onto them. This act served to neutralize the pre-Christian spiritual power of the stone while integrating it into the new religious framework. This demonstrates that the standing stones remained places of significance long after their initial erection. This reuse highlights the deep-seated sacrality of these locations, which continued to hold meaning and draw people for purposes of ritual, worship, or commemoration for centuries, even as the form and expression of that reverence changed. 	
+        </p>
+      </div>
+
+      <!-- A Broader Prehistoric Tapestry Section -->
+      <div id="tapestry" class="mb-12">
+        <h3 class="text-xl font-bold text-gray-700 sans-serif whitespace-nowrap border-b border-gray-400 pb-1 mb-6" style="border-bottom-width: 3px;">4. A Broader Prehistoric Tapestry</h3>
+        <p class="text-gray-600 leading-relaxed sans-serif mb-4">
+          The standing stones of Kildare are not isolated relics; they are embedded within a much wider **prehistoric tapestry**. The county's landscape features a variety of other ancient sites, including hillforts, henges, stone circles and barrows. Notably, the ceremonial site of **Dún Aillinne** (Knockaulin), located near Kilcullen, was an important ritual site and the royal seat of the kings of Leinster. This massive hengeform enclosure, larger than Navan Fort in County Armagh, was a site of assembly through the Iron Age and is thought to be where the kings of Leinster were inaugurated.
+        </p>
+      </div>
+
+      <!-- Folklore and Mythology Section -->
+      <div id="folklore" class="mb-12">
+        <h3 class="text-xl font-bold text-gray-700 sans-serif whitespace-nowrap border-b border-gray-400 pb-1 mb-6" style="border-bottom-width: 3px;">5. Folklore and Mythology of Irish Standing Stones</h3>
+        <p class="text-gray-600 leading-relaxed sans-serif mb-4">
+          The folklore surrounding Irish menhirs is deeply rooted in tales of **giants and heroes**. The most common motif is the stone-throwing contest, where the immense size and weight of these stones are explained by the superhuman strength of mythological figures. Another belief is that the stones are petrified beings, such as giants or warriors, turned to stone for some transgression. Menhirs were often seen as commemorative monuments, marking the burial places of great heroes or chieftains. Some were believed to possess magical powers. One of the most famous examples of a menhir with a specific myth is the **Lia Fáil** at the Hill of Tara, which was said to roar when touched by the rightful High King of Ireland.
+        </p>
+      </div>
+	  <!-- Two images side-by-side placeholder -->
+        <div id="images-menhirs" class="my-6 flex flex-col md:flex-row md:space-x-4">
+          <div class="w-full md:w-1/2 text-center mb-4 md:mb-0 border border-gray-300 p-2">
+            <img src="./images/cloghafarmor.jpg" alt="Archaeological Survey." class="w-full h-auto mb-2">
+            <figcaption class="text-sm text-gray-500 serif italic">Figure 2.1. Example of an alignment survey from a similar site. (Suggested size: 400x300 pixels)</figcaption>
+          </div>
+          <div class="w-full md:w-1/2 text-center border border-gray-300 p-2">
+            <img src="./images/liafail.jpg" alt="Burial cist cross section." class="w-full h-auto mb-2">
+            <figcaption class="text-sm text-gray-500 serif italic">Figure 2.2. Hypothetical cross-section of a burial cist found beneath a longstone. (Suggested size: 400x300 pixels)</figcaption>
+          </div>
+        </div>
+        <!-- End Two images side-by-side placeholder -->
+      
+      <!-- Kildare Specific Sites Section -->
+      <div id="kildare-sites" class="mb-12">
+        <h3 class="text-xl font-bold text-gray-700 sans-serif whitespace-nowrap border-b border-gray-400 pb-1 mb-6" style="border-bottom-width: 3px;">6. Kildare Specific Sites</h3>
+        <p class="text-gray-600 leading-relaxed sans-serif mb-4">
+          Kildare's menhirs have their own unique legends, particularly the Punchestown Standing Stone. According to a story told in the district, the hero **Fionn Mac Cumhaill** lived on the Hill of Allen and fought a giant for three days. As they could not defeat each other, they agreed to a stone-throwing contest. The giant threw the Craddockstown Stone, but Fionn threw the Punchestown stone further, winning the contest. The Kilgowen stone, meanwhile, has its own unique folklore, with locals believing it marks the grave of a "great man" and even that it "goes to the local stream to drink at night". A Christian cross is carved into the stone, a feature that local stories say was added to vanquish the pagan spirits associated with the monument. This tale illustrates a folkloric clash between old beliefs and new, told through the physical carving on the stone. Beyond these specific tales, the stones are connected to broader cultural beliefs. The 12th-century chronicler Gerald of Wales mentioned a "**Giants' Dance**" on the plains of Kildare, noting that local people believed giants had brought the stones from the "furthest parts of Africa". This ancient belief reflects the human wonder at how such massive stones could have been transported and erected by prehistoric peoples. These stories, while not archaeological fact, are essential to understanding the enduring cultural significance of the stones, which continue to inspire local imagination and are seen as living entities in the landscape.
+        </p>
+      </div>
+<!-- Single image with caption -->
+<div class="my-6 text-center border border-gray-300 p-2">
+  <img src="./images/fionn.png" alt="Diagram of an ancient megalith." class="w-full h-auto mb-2">
+  <figcaption class="text-sm text-gray-500 serif italic">Figure 1. A diagram illustrating the celestial alignment of a typical Irish megalithic monument. (Suggested size: 600x400 pixels)</figcaption>
+</div>
+      <!-- Methodology Section (SCA Content) -->
+      <div id="methodology" class="mb-12">
+        <h3 class="text-xl font-bold text-gray-700 sans-serif whitespace-nowrap border-b border-gray-400 pb-1 mb-6" style="border-bottom-width: 3px;">7. Methodology</h3>
+
+        <h4 class="text-lg font-bold text-gray-700 mt-6 mb-2 sans-serif">7.1 Spatial Contextual Awareness: A Simple Explanation</h4>
+        <p class="text-gray-600 leading-relaxed sans-serif mb-4">
+          Spatial Contextual Awareness (SCA) is a framework that explains how location, time, and activity intersect to transform a static location into actionable, meaningful information. It moves beyond simply knowing <em>where</em> you are (a point on a map) to understanding the web of relationships between that location and the people who interact with it.
+        </p>
+        <p class="text-gray-600 leading-relaxed sans-serif mb-4">
+          SCA is a synthesis of three core elements:
+        </p>
+        <ol class="list-decimal list-inside text-gray-600 leading-relaxed sans-serif pl-4 mb-6">
+          <li><strong>The Spatial Environment:</strong> The physical location (city, terrain, monument).</li>
+          <li><strong>The Cognitive Agent:</strong> The person or entity completing the task.</li>
+          <li><strong>Contextual Input:</strong> The time of day or the specific activity being performed.</li>
+        </ol>
+        
+        <h4 class="text-lg font-bold text-gray-700 mt-6 mb-2 sans-serif">7.2 SCA in a Geographic Context: The Train Station Example</h4>
+        <p class="text-gray-600 leading-relaxed sans-serif mb-4">
+          In modern geography, SCA is used to design efficient systems and provide dynamic, real-time guidance.
+        </p>
+        <p class="text-gray-600 leading-relaxed sans-serif mb-4">
+          <strong>Example:</strong> <strong>Person A</strong> travels to a train station knowing they will meet <strong>Person B</strong> arriving on a train.
+        </p>
+        <p class="text-gray-600 leading-relaxed sans-serif mb-4">
+          In this scenario:
+        </p>
+        <ul class="list-disc list-inside text-gray-600 leading-relaxed sans-serif pl-4 mb-6">
+          <li>The <strong>Spatial Environment</strong> is the physical train station and its network of platforms.</li>
+          <li>The <strong>Cognitive Agent</strong> is Person A, whose task is to intercept Person B.</li>
+          <li>The <strong>Contextual Input</strong> is the precise arrival <strong>time</strong> and the specific <strong>platform</strong> (the activity).</li>
+        </ul>
+        <p class="text-gray-600 leading-relaxed sans-serif mb-4">
+          Person A uses the contextual input (the time and platform number) to narrow the vast spatial environment of the station down to one single, critical location. They go to that specific place at that specific time knowing they will have an evident visual phenomenon (the arrival of the train), making the location meaningful for that moment. This is the essence of SCA.
+        </p>
+        
+        <hr class="my-6 border-gray-300">
+        
+        <h4 class="text-lg font-bold text-gray-700 mt-6 mb-2 sans-serif">7.3 SCA in Archaeoastronomy: The Sacred Landscape</h4>
+        <p class="text-gray-600 leading-relaxed sans-serif mb-4">
+          The same logical concept—choosing a specific location for a predictable, time-based event—is fundamental to landscape or horizon based archaeoastronomy. In this field, SCA is known as recognizing how ancient peoples used their understanding of the landscape's specific features and the celestial cycles to create meaningful relationships between earthly and cosmic phenomena.
+        </p>
+        <p class="text-gray-600 leading-relaxed sans-serif mb-4">
+          It involves viewing archaeological sites, like tombs or henges, not in isolation but as part of a broader system where their location and orientation were deliberately chosen to align with important astronomical events, such as the sunrise or sunset on specific dates <strong>observable from specific significant locations</strong>. This approach uses their knowledge of space to interpret how ancient cultures perceived their place in the universe through the sky's connection to their sacred geography.
+        </p>
+        <p class="text-gray-600 leading-relaxed sans-serif mb-4">
+          <strong>Example:</strong> <strong>Person A</strong> (The Ancient Community/Priest) goes to a specific place at a specific time knowing they will have an evident visual cosmic phenomenon, i.e., sun/moon rise/set out of a place or monument they regard as special.
+        </p>
+        <p class="text-gray-600 leading-relaxed sans-serif mb-4">
+          The concept of site-specific alignment linked to sacred geography is perfectly illustrated by the Inca in the Andes. Here, the spatial relationship was established between a viewing point and a distant, sacred natural feature.
+        </p>
+        <p class="text-gray-600 leading-relaxed sans-serif mb-4">
+          The Inca viewed their world through the lens of a <strong>Sacred Geography</strong>, where the landscape itself became the primary representational tool. This involved aligning structures not just with the sky, but with distant, culturally significant mountain peaks (the sacred space) to mark specific celestial events.
+        </p>
+        <p class="text-gray-600 leading-relaxed sans-serif mb-4">
+          For example, near the Inca village of Urubamba, certain structures were intentionally positioned such that when an observer stood at a specific granite boulder in the center of the Huayna Capac's palace, distant stone structures on the summit of <strong>Cerro Unoraqui</strong> precisely marked the position of the December solstice sunrise.
+        </p>
+        <p class="text-gray-600 leading-relaxed sans-serif mb-4">
+          In this scenario:
+        </p>
+        <ul class="list-disc list-inside text-gray-600 leading-relaxed sans-serif pl-4 mb-6">
+          <li>The <strong>Spatial Environment/Tool</strong> is the granite viewing boulder and the distant sacred mountain, Cerro Unoraqui.</li>
+          <li>The <strong>Cognitive Agent</strong> is the Inca observer, tasked with precise calendar keeping, often for agricultural cycles.</li>
+          <li>The <strong>Contextual Input</strong> is the specific <strong>time</strong> of the December Solstice sunrise (the celestial event).</li>
+        </ul>
+        <p class="text-gray-600 leading-relaxed sans-serif mb-4">
+          The observer goes to this specific place (the boulder) knowing that at that specific time (solstice morning), they will see the sun rise directly behind a pre-existing, special marker (the distant mountain structure), fulfilling the SCA requirement of an observable and repeatable cosmic phenomenon linked to a meaningful location.
+        </p>
+        
+        <h4 class="text-lg font-bold text-gray-700 mt-6 mb-2 sans-serif">7.4 SCA in Archaeoastronomy: The Sacred Landscape in an Irish Context</h4>
+        <p class="text-gray-600 leading-relaxed sans-serif mb-4">
+          The exploration of SCA in a prehistoric Irish context seeks to demonstrate that the ancient Irish have been aware that by being present at particular locations at specific times, they will have observable and repeatable astronomic events (phenomena) visible at other prominent locations on the skyline. That the ancient Irish afforded special significance to these locations where they could observe, on divisional days within the solar and lunar cycles, the sun or moon rise from, or set into, what they regarded as sacred mountains or sacred spaces.
+        </p>
+
+      </div>
+	  <!-- Two images side-by-side placeholder -->
+        <div id="images-menhirs" class="my-6 flex flex-col md:flex-row md:space-x-4">
+          <div class="w-full md:w-1/2 text-center mb-4 md:mb-0 border border-gray-300 p-2">
+            <img src="./images/HWT.png" alt="Archaeological Survey." class="w-full h-auto mb-2">
+            <figcaption class="text-sm text-gray-500 serif italic">Figure 2.1. Example of an alignment survey from a similar site. (Suggested size: 400x300 pixels)</figcaption>
+          </div>
+          <div class="w-full md:w-1/2 text-center border border-gray-300 p-2">
+            <img src="./images/MACEexample.png" alt="Burial cist cross section." class="w-full h-auto mb-2">
+            <figcaption class="text-sm text-gray-500 serif italic">Figure 2.2. Hypothetical cross-section of a burial cist found beneath a longstone. (Suggested size: 400x300 pixels)</figcaption>
+          </div>
+        </div>
+        <!-- End Two images side-by-side placeholder -->
+
+      <!-- Individual Profiles Section -->
+      <div id="profiles" class="mb-12">
+        <h3 class="text-xl font-bold text-gray-700 sans-serif whitespace-nowrap border-b border-gray-400 pb-1 mb-6" style="border-bottom-width: 3px;">8. Individual Archaeological, Landscape and Astronomic Profiles</h3>
+
+        <!-- Subsection 8.1: Punchestown Longstone -->
+        <h4 id="punchestown" class="text-lg font-bold text-gray-700 mt-6 mb-2 sans-serif">8.1 The Punchestown Longstone</h4>
+        <p class="text-gray-600 leading-relaxed sans-serif mb-4">
+          The **Punchestown Longstone** is the largest and arguably most striking standing stone in Ireland. Located in a field north of the famous Punchestown Racecourse, this tapering granite monolith was originally found to be nearly 7 meters long and weigh 9 tonnes when it toppled over in 1931. Its dramatic history is significant, as its fall was a catalyst for discovery. In 1934, the stone was re-erected to a slightly shorter, more stable height of almost 6 meters. This process led to the discovery of an empty **Bronze Age burial cist** at its base. The existence of this cist provides crucial, though inconclusive, evidence for the stone's original function as a burial marker. The stone's modern story, from its accidental fall to its deliberate re-erection, extends its narrative beyond prehistory into the 20th century and highlights how modern events can lead to important archaeological findings.
+        </p>
+
+        <!-- Single Image placeholder - Removed rounded-lg and rounded-md -->
+        <div id="image-punchestown" class="my-6 text-center border border-gray-300 p-2">
+          <img src="./images/Punchestown.png" alt="The Punchestown Longstone." class="w-full h-auto mb-2">
+          <figcaption class="text-sm text-gray-500 serif italic">Figure 8.1. The Punchestown Longstone, the largest standing stone in Ireland. (Suggested size: 600x400 pixels)</figcaption>
+        </div>
+		
+		<!-- Single Image placeholder - Removed rounded-lg and rounded-md -->
+        <div id="image-punchestown" class="my-6 text-center border border-gray-300 p-2">
+          <img src="./images/Punchestownplan.png" alt="The Punchestown Longstone." class="w-full h-auto mb-2">
+          <figcaption class="text-sm text-gray-500 serif italic">Figure 8.1. The Punchestown Longstone, the largest standing stone in Ireland. (Suggested size: 600x400 pixels)</figcaption>
+        </div>
+
+
+        
+
+                <!-- Responsive Image Slider Component -->
+<div class="relative w-full overflow-hidden shadow-xl border border-gray-300 image-slider-container" style="height: 400px;">
+  <!-- Slides Container -->
+  <div class="flex transition-transform duration-500 ease-in-out h-full slider-track">
+    
+    <!-- Slide 1 -->
+    <div class="min-w-full h-full flex flex-col">
+      <img src="./images/PunchestownWinterSolsticeSet.png" alt="Slide 1: Sunset over Newgrange." class="w-full h-[360px] object-cover">
+      <figcaption class="w-full text-center text-sm text-gray-600 bg-gray-50 border-t border-gray-300 p-2 h-[40px] flex items-center justify-center serif italic">
+          Figure Xa. Caption for the first slide (e.g., Summer Solstice).
+      </figcaption>
+    </div>
+
+    
+  </div>
+
+  <!-- Navigation Buttons -->
+  <button class="absolute top-1/2 left-4 -translate-y-1/2 bg-gray-800 bg-opacity-50 text-white p-3 rounded-full hover:bg-opacity-75 transition duration-200 slider-prev" data-direction="-1">
+    <i class="fas fa-chevron-left"></i>
+  </button>
+  <button class="absolute top-1/2 right-4 -translate-y-1/2 bg-gray-800 bg-opacity-50 text-white p-3 rounded-full hover:bg-opacity-75 transition duration-200 slider-next" data-direction="1">
+    <i class="fas fa-chevron-right"></i>
+  </button>
+  
+  <!-- Slider Logic (must be self-contained) -->
+  <script>
+    // Self-invoking function to isolate the script and prevent external communication errors
+    (function() {
+      // Use document.currentScript.closest to find the containing slider DIV relative to this script tag
+      // This ensures we only initialize the slider we are currently inside.
+      const currentScript = document.currentScript;
+
+      // Wait for the DOMContentLoaded event if the script isn't already run in the body
+      if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', initializeSlider);
+      } else {
+          initializeSlider();
+      }
+
+      function initializeSlider() {
+          const container = currentScript.closest('.image-slider-container');
+          
+          if (!container) return; // Exit if container isn't found (shouldn't happen with proper copy/paste)
+
+          const track = container.querySelector('.slider-track');
+          const prevButton = container.querySelector('.slider-prev');
+          const nextButton = container.querySelector('.slider-next');
+          const slides = track.children;
+          const totalSlides = slides.length;
+          let currentSlide = 0;
+
+          function moveSlide(direction) {
+            currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+            const offset = -currentSlide * 100;
+            // Using string concatenation for maximum compatibility
+            track.style.transform = 'translateX(' + offset + '%)';
+          }
+
+          if (prevButton) {
+            prevButton.addEventListener('click', function() { moveSlide(-1); });
+          }
+
+          if (nextButton) {
+            nextButton.addEventListener('click', function() { moveSlide(1); });
+          }
+      }
+    })();
+  </script>
+</div>
+
+        <!-- Subsection 8.2: Forenaghts Great Stone -->
+        <h4 id="forenaghts" class="text-lg font-bold text-gray-700 mt-6 mb-2 sans-serif">8.2 The Forenaghts Great Stone</h4>
+        <p class="text-gray-600 leading-relaxed sans-serif mb-4">
+          The **Forenaghts Great Stone** is another impressive monument, standing over 5 meters high and weighing approximately 13 tonnes. This monument is set within a circular banked enclosure with an external ditch, which is recognized not as a ringfort but as a ceremonial **henge**. Archaeological excavations in 1912 revealed a large rectangular stone cist containing the cremated remains of two adults, believed to be a male and a female. The excavation also found a layer of burnt soil, which led archaeologists to interpret the site as a potential location for deliberate ritual burning following its construction. The explicit evidence of a funerary and ritual context at Forenaghts Great, in contrast to the empty cist at Punchestown, provides strong support for the "burial marker" theory of standing stones. This concrete evidence also differentiates it from other prominent monuments in the county, reinforcing the point that the grouping is not uniform in its purpose or archaeological significance.
+        </p>
+
+        <!-- Single Image placeholder - Removed rounded-lg and rounded-md -->
+        <div id="image-forenaghts" class="my-6 text-center border border-gray-300 p-2">
+          <img src="./images/ForenaghtsEnclosure.png" alt="The Forenaghts Great Stone within its henge." class="w-full h-auto mb-2">
+          <figcaption class="text-sm text-gray-500 serif italic">Figure 8.2. The Forenaghts Great Stone, surrounded by the subtle remnants of its original henge enclosure. (Suggested size: 600x400 pixels)</figcaption>
+        </div>
+		
+		<!-- Subsection 8.1: Punchestown Longstone -->
+        
+        <p class="text-gray-600 leading-relaxed sans-serif mb-4">
+          The **Punchestown Longstone** is the largest and arguably most striking standing stone in Ireland. Located in a field north of the famous Punchestown Racecourse, this tapering granite monolith was originally found to be nearly 7 meters long and weigh 9 tonnes when it toppled over in 1931. Its dramatic history is significant, as its fall was a catalyst for discovery. In 1934, the stone was re-erected to a slightly shorter, more stable height of almost 6 meters. This process led to the discovery of an empty **Bronze Age burial cist** at its base. The existence of this cist provides crucial, though inconclusive, evidence for the stone's original function as a burial marker. The stone's modern story, from its accidental fall to its deliberate re-erection, extends its narrative beyond prehistory into the 20th century and highlights how modern events can lead to important archaeological findings.
+        </p>
+		<!-- 3D Model Embed (Full Width) -->
+<div class="my-6 text-center border border-gray-300 p-2 w-full">
+  <!-- The iframe wrapper controls the size and removes the default inline width/height -->
+  <div class="w-full" style="height: 400px;"> 
+    <iframe 
+      title=""The Longstone Rath" Standing Stone KD019-022001" 
+      class="w-full h-full" 
+      frameborder="0" 
+      allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" 
+      allow="autoplay; fullscreen; xr-spatial-tracking" 
+      xr-spatial-tracking 
+      execution-while-out-of-viewport 
+      execution-while-not-rendered 
+      web-share 
+      src="https://sketchfab.com/models/6ba65a8195dc49d5a80387f8ab65cc0a/embed">
+    </iframe> 
+  </div>
+  <figcaption class="text-sm text-gray-500 serif italic mt-2">
+    Figure Y. "The Longstone Rath" Standing Stone KD019-022001 via Sketchfab (Co. Kildare Heritage in 3D).
+  </figcaption>
+</div>
+
+        <!-- Side by side image placeholder - Removed rounded-lg and rounded-md -->
+        <div id="images-forenaghts" class="my-6 flex flex-col md:flex-row md:space-x-4">
+          <div class="w-full md:w-1/2 text-center mb-4 md:mb-0 border border-gray-300 p-2">
+            <img src="./images/forenaghtsplan.png" alt="Forenaghts Cremation." class="w-full h-auto mb-2">
+            <figcaption class="text-sm text-gray-500 serif italic">Figure 8.2a. Diagram showing the excavated cremation layer. (Suggested size: 400x300 pixels)</figcaption>
+          </div>
+          <div class="w-full md:w-1/2 text-center border border-gray-300 p-2">
+            <img src="./images/forenaghtscistplan.png" alt="Henge cross section." class="w-full h-auto mb-2">
+            <figcaption class="text-sm text-gray-500 serif italic">Figure 8.2b. Interpretation of the henge cross-section at Forenaghts. (Suggested size: 400x300 pixels)</figcaption>
+          </div>
+        </div>
+		        <!-- Responsive Image Slider Component -->
+<div class="relative w-full overflow-hidden shadow-xl border border-gray-300 image-slider-container" style="height: 400px;">
+  <!-- Slides Container -->
+  <div class="flex transition-transform duration-500 ease-in-out h-full slider-track">
+    
+    <!-- Slide 1 -->
+    <div class="min-w-full h-full flex flex-col">
+      <img src="./images/ForenaughtsEquinoxSet.png" alt="Slide 1: Sunset over Newgrange." class="w-full h-[360px] object-cover">
+      <figcaption class="w-full text-center text-sm text-gray-600 bg-gray-50 border-t border-gray-300 p-2 h-[40px] flex items-center justify-center serif italic">
+          Figure Xa. Caption for the first slide (e.g., Summer Solstice).
+      </figcaption>
+    </div>
+	<!-- Slide 2 -->
+    <div class="min-w-full h-full flex flex-col">
+      <img src="./images/ForenaughtsNorthmostCrossquarterRise.png" alt="Slide 2: Excavated artifacts." class="w-full h-[360px] object-cover">
+      <figcaption class="w-full text-center text-sm text-gray-600 bg-gray-50 border-t border-gray-300 p-2 h-[40px] flex items-center justify-center serif italic">
+          Figure Xb. Caption for the second slide (e.g., Archaeological findings).
+      </figcaption>
+    </div>
+
+    
+  </div>
+
+  <!-- Navigation Buttons -->
+  <button class="absolute top-1/2 left-4 -translate-y-1/2 bg-gray-800 bg-opacity-50 text-white p-3 rounded-full hover:bg-opacity-75 transition duration-200 slider-prev" data-direction="-1">
+    <i class="fas fa-chevron-left"></i>
+  </button>
+  <button class="absolute top-1/2 right-4 -translate-y-1/2 bg-gray-800 bg-opacity-50 text-white p-3 rounded-full hover:bg-opacity-75 transition duration-200 slider-next" data-direction="1">
+    <i class="fas fa-chevron-right"></i>
+  </button>
+  
+  <!-- Slider Logic (must be self-contained) -->
+  <script>
+    // Self-invoking function to isolate the script and prevent external communication errors
+    (function() {
+      // Use document.currentScript.closest to find the containing slider DIV relative to this script tag
+      // This ensures we only initialize the slider we are currently inside.
+      const currentScript = document.currentScript;
+
+      // Wait for the DOMContentLoaded event if the script isn't already run in the body
+      if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', initializeSlider);
+      } else {
+          initializeSlider();
+      }
+
+      function initializeSlider() {
+          const container = currentScript.closest('.image-slider-container');
+          
+          if (!container) return; // Exit if container isn't found (shouldn't happen with proper copy/paste)
+
+          const track = container.querySelector('.slider-track');
+          const prevButton = container.querySelector('.slider-prev');
+          const nextButton = container.querySelector('.slider-next');
+          const slides = track.children;
+          const totalSlides = slides.length;
+          let currentSlide = 0;
+
+          function moveSlide(direction) {
+            currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+            const offset = -currentSlide * 100;
+            // Using string concatenation for maximum compatibility
+            track.style.transform = 'translateX(' + offset + '%)';
+          }
+
+          if (prevButton) {
+            prevButton.addEventListener('click', function() { moveSlide(-1); });
+          }
+
+          if (nextButton) {
+            nextButton.addEventListener('click', function() { moveSlide(1); });
+          }
+      }
+    })();
+  </script>
+</div>
+
+        <!-- Subsection 8.3: The Baltracey Stone -->
+        <h4 id="baltracey" class="text-lg font-bold text-gray-700 mt-6 mb-2 sans-serif">8.3 The Baltracey Stone</h4>
+        <p class="text-gray-600 leading-relaxed sans-serif mb-4">
+          Situated approx halfway between the Forenaghts Great and Punchestown stones, the Baltracey menhir is a fine example of a standing stone, measuring some 3.5 meters high. Located at the eastern end of a low ridge, with long, gentle slopes falling away immediately to the North, East and South, and with level pasture running off to the West. A tall, granite pillar, the upper portion of which has been roughly worked into the shape of a rude cross. The stone appears to be a granite conglomerate, with some white quartz inclusions visible under the southern arm of the cross. The stone is roughly shaped, being a rounded-rectangular on a N-S axis at the base (Wth 0.95m; T 0.7m) before narrowing to an almost square section above (Wth 0.45m; T 0.4m), with stubby arms (Wth 0.6m) near the top. Several large, rough blocks at the base, not all of them earthfast, may have been an attempt at creating a rough plinth.
+        </p>
+
+        <!-- Single Image placeholder - Removed rounded-lg and rounded-md -->
+        <div id="image-baltracey" class="my-6 text-center border border-gray-300 p-2">
+          <img src="./images/BaltraceyTonyMulraney.jpg" alt="The Baltracey Standing Stone." class="w-full h-auto mb-2">
+          <figcaption class="text-sm text-gray-500 serif italic">Figure 8.3. The Baltracey Standing Stone, showing its distinctive upper portion.</figcaption>
+        </div>
+
+        
+
+        <!-- Responsive Image Slider Component -->
+<div class="relative w-full overflow-hidden shadow-xl border border-gray-300 image-slider-container" style="height: 400px;">
+  <!-- Slides Container -->
+  <div class="flex transition-transform duration-500 ease-in-out h-full slider-track">
+    
+    <!-- Slide 1 -->
+    <div class="min-w-full h-full flex flex-col">
+      <img src="./images/BaltraceyWinterSolsticeSet.png" alt="Slide 1: Sunset over Newgrange." class="w-full h-[360px] object-cover">
+      <figcaption class="w-full text-center text-sm text-gray-600 bg-gray-50 border-t border-gray-300 p-2 h-[40px] flex items-center justify-center serif italic">
+          Figure Xa. Caption for the first slide (e.g., Summer Solstice).
+      </figcaption>
+    </div>
+
+    <!-- Slide 2 -->
+    <div class="min-w-full h-full flex flex-col">
+      <img src="./images/BaltraceyNCQRise.png" alt="Slide 2: Excavated artifacts." class="w-full h-[360px] object-cover">
+      <figcaption class="w-full text-center text-sm text-gray-600 bg-gray-50 border-t border-gray-300 p-2 h-[40px] flex items-center justify-center serif italic">
+          Figure Xb. Caption for the second slide (e.g., Archaeological findings).
+      </figcaption>
+    </div>
+
+    <!-- Slide 3 -->
+    <div class="min-w-full h-full flex flex-col">
+      <img src="./images/BaltraceyEquinoxRise.png" alt="Slide 3: Celestial diagram." class="w-full h-[360px] object-cover">
+      <figcaption class="w-full text-center text-sm text-gray-600 bg-gray-50 border-t border-gray-300 p-2 h-[40px] flex items-center justify-center serif italic">
+          Figure Xc. Caption for the third slide (e.g., Historical diagram).
+      </figcaption>
+    </div>
+  </div>
+
+  <!-- Navigation Buttons -->
+  <button class="absolute top-1/2 left-4 -translate-y-1/2 bg-gray-800 bg-opacity-50 text-white p-3 rounded-full hover:bg-opacity-75 transition duration-200 slider-prev" data-direction="-1">
+    <i class="fas fa-chevron-left"></i>
+  </button>
+  <button class="absolute top-1/2 right-4 -translate-y-1/2 bg-gray-800 bg-opacity-50 text-white p-3 rounded-full hover:bg-opacity-75 transition duration-200 slider-next" data-direction="1">
+    <i class="fas fa-chevron-right"></i>
+  </button>
+  
+  <!-- Slider Logic (must be self-contained) -->
+  <script>
+    // Self-invoking function to isolate the script and prevent external communication errors
+    (function() {
+      // Use document.currentScript.closest to find the containing slider DIV relative to this script tag
+      // This ensures we only initialize the slider we are currently inside.
+      const currentScript = document.currentScript;
+
+      // Wait for the DOMContentLoaded event if the script isn't already run in the body
+      if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', initializeSlider);
+      } else {
+          initializeSlider();
+      }
+
+      function initializeSlider() {
+          const container = currentScript.closest('.image-slider-container');
+          
+          if (!container) return; // Exit if container isn't found (shouldn't happen with proper copy/paste)
+
+          const track = container.querySelector('.slider-track');
+          const prevButton = container.querySelector('.slider-prev');
+          const nextButton = container.querySelector('.slider-next');
+          const slides = track.children;
+          const totalSlides = slides.length;
+          let currentSlide = 0;
+
+          function moveSlide(direction) {
+            currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+            const offset = -currentSlide * 100;
+            // Using string concatenation for maximum compatibility
+            track.style.transform = 'translateX(' + offset + '%)';
+          }
+
+          if (prevButton) {
+            prevButton.addEventListener('click', function() { moveSlide(-1); });
+          }
+
+          if (nextButton) {
+            nextButton.addEventListener('click', function() { moveSlide(1); });
+          }
+      }
+    })();
+  </script>
+</div>
+        
+        <!-- Subsection 8.4: The Craddockstown West Stone -->
+        <h4 id="craddockstown" class="text-lg font-bold text-gray-700 mt-6 mb-2 sans-serif">8.4 The Craddockstown West Stone: A Companion to Punchestown</h4>
+        <p class="text-gray-600 leading-relaxed sans-serif mb-4">
+          The **Craddockstown West stone** is located just 800 meters southwest of the Punchestown monolith, near the entrance to the racecourse. Standing at 4.3 meters high, it is a significant monument in its own right. Its close proximity to Punchestown supports the theory that the stones in this vicinity form a larger, interconnected ceremonial landscape. Some sources suggest this group of stones forms a "rough circle of approximately five kilometres in diameter" , suggesting they functioned not as isolated markers but as components of a larger system, perhaps for territorial demarcation or communal ritual. The relationship between these two stones is an important element in understanding the spatial organization of the prehistoric landscape in this part of Kildare.
+        </p>
+
+        <!-- Single image with caption -->
+<div class="my-6 text-center border border-gray-300 p-2">
+  <img src="./images/craddocktown.png" alt="Diagram of an ancient megalith." class="w-full h-auto mb-2">
+  <figcaption class="text-sm text-gray-500 serif italic">Figure 1. A diagram illustrating the celestial alignment of a typical Irish megalithic monument. (Suggested size: 600x400 pixels)</figcaption>
+</div>
+
+        <!-- Responsive Image Slider Component -->
+<div class="relative w-full overflow-hidden shadow-xl border border-gray-300 image-slider-container" style="height: 400px;">
+  <!-- Slides Container -->
+  <div class="flex transition-transform duration-500 ease-in-out h-full slider-track">
+    
+    <!-- Slide 1 -->
+    <div class="min-w-full h-full flex flex-col">
+      <img src="./images/CraddockstownWinterSolsticeSet.png" alt="Slide 1: Sunset over Newgrange." class="w-full h-[360px] object-cover">
+      <figcaption class="w-full text-center text-sm text-gray-600 bg-gray-50 border-t border-gray-300 p-2 h-[40px] flex items-center justify-center serif italic">
+          Figure Xa. Caption for the first slide (e.g., Summer Solstice).
+      </figcaption>
+    </div>
+
+    <!-- Slide 2 -->
+    <div class="min-w-full h-full flex flex-col">
+      <img src="./images/CraddockstownEquinoxRise.png" alt="Slide 2: Excavated artifacts." class="w-full h-[360px] object-cover">
+      <figcaption class="w-full text-center text-sm text-gray-600 bg-gray-50 border-t border-gray-300 p-2 h-[40px] flex items-center justify-center serif italic">
+          Figure Xb. Caption for the second slide (e.g., Archaeological findings).
+      </figcaption>
+    </div>
+
+    <!-- Slide 3 -->
+    <div class="min-w-full h-full flex flex-col">
+      <img src="./images/BaltraceyEquinoxRise.png" alt="Slide 3: Celestial diagram." class="w-full h-[360px] object-cover">
+      <figcaption class="w-full text-center text-sm text-gray-600 bg-gray-50 border-t border-gray-300 p-2 h-[40px] flex items-center justify-center serif italic">
+          Figure Xc. Caption for the third slide (e.g., Historical diagram).
+      </figcaption>
+    </div>
+  </div>
+
+  <!-- Navigation Buttons -->
+  <button class="absolute top-1/2 left-4 -translate-y-1/2 bg-gray-800 bg-opacity-50 text-white p-3 rounded-full hover:bg-opacity-75 transition duration-200 slider-prev" data-direction="-1">
+    <i class="fas fa-chevron-left"></i>
+  </button>
+  <button class="absolute top-1/2 right-4 -translate-y-1/2 bg-gray-800 bg-opacity-50 text-white p-3 rounded-full hover:bg-opacity-75 transition duration-200 slider-next" data-direction="1">
+    <i class="fas fa-chevron-right"></i>
+  </button>
+  
+  <!-- Slider Logic (must be self-contained) -->
+  <script>
+    // Self-invoking function to isolate the script and prevent external communication errors
+    (function() {
+      // Use document.currentScript.closest to find the containing slider DIV relative to this script tag
+      // This ensures we only initialize the slider we are currently inside.
+      const currentScript = document.currentScript;
+
+      // Wait for the DOMContentLoaded event if the script isn't already run in the body
+      if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', initializeSlider);
+      } else {
+          initializeSlider();
+      }
+
+      function initializeSlider() {
+          const container = currentScript.closest('.image-slider-container');
+          
+          if (!container) return; // Exit if container isn't found (shouldn't happen with proper copy/paste)
+
+          const track = container.querySelector('.slider-track');
+          const prevButton = container.querySelector('.slider-prev');
+          const nextButton = container.querySelector('.slider-next');
+          const slides = track.children;
+          const totalSlides = slides.length;
+          let currentSlide = 0;
+
+          function moveSlide(direction) {
+            currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+            const offset = -currentSlide * 100;
+            // Using string concatenation for maximum compatibility
+            track.style.transform = 'translateX(' + offset + '%)';
+          }
+
+          if (prevButton) {
+            prevButton.addEventListener('click', function() { moveSlide(-1); });
+          }
+
+          if (nextButton) {
+            nextButton.addEventListener('click', function() { moveSlide(1); });
+          }
+      }
+    })();
+  </script>
+</div>
+
+        <!-- Subsection 8.5: The Kilgowen Standing Stone -->
+        <h4 id="kilgowen" class="text-lg font-bold text-gray-700 mt-6 mb-2 sans-serif">8.5 The Kilgowen Standing Stone</h4>
+        <p class="text-gray-600 leading-relaxed sans-serif mb-4">
+          The **Kilgowen Standing Stone** is located towards the north end of a low, partially quarried-away esker. It is a tall (H. 2.3m), thin tapering granite stone, with a base measuring 0.61m long by 0.46m wide, tapering towards the top (0.46m long by 0.3m wide). A later **cross is incised** on its southwest face. Local folklore further contributes to this sense of a living monument, with stories that it marks the grave of a "great man" and even that it "goes to the local stream to drink at night". While the cross may be associated with burials (KD032-012002-) discovered immediately to the north in 1987, historical sources indicate that the cross was incised by one of two local priests, Father Lawlor or Father Cummins, who lived near the crossroads 100 years or more before 1936. The stone is situated on what may be an artificial mound and is subject to a preservation order (PO no. 7/1973) made under the National Monuments Acts 1930 to 2014, reflecting its archaeological significance.. This **Christian overlay** provides physical evidence of syncretism, where pagan monuments were often re-appropriated for Christian use, indicating a continuity of sacrality for the site.
+        </p>
+
+        <!-- Single image with caption -->
+<div class="my-6 text-center border border-gray-300 p-2">
+  <img src="./images/kilgowan.png" alt="Diagram of an ancient megalith." class="w-full h-auto mb-2">
+  <figcaption class="text-sm text-gray-500 serif italic">Figure 1. A diagram illustrating the celestial alignment of a typical Irish megalithic monument. (Suggested size: 600x400 pixels)</figcaption>
+</div>
+
+        <!-- Image Carousel placeholder - Removed rounded-lg -->
+        <div id="carousel-kilgowen" class="my-12">
+          <p class="text-sm text-gray-600 leading-relaxed serif italic mb-4">This carousel placeholder is intended for close-up images of the incised cross and the stone's dimensions.</p>
+          <div class="bg-gray-300 w-full h-96 flex items-center justify-center border border-gray-400 shadow-inner">
+            <p class="text-gray-600 sans-serif">**Image Carousel Placeholder: Kilgowen**</p>
+          </div>
+        </div>
+
+        <!-- Subsection 8.6: The Mullaghmast Standing Stone -->
+        <h4 id="mullaghmast" class="text-lg font-bold text-gray-700 mt-6 mb-2 sans-serif">8.6 The Mullaghmast Standing Stone</h4>
+        <p class="text-gray-600 leading-relaxed sans-serif mb-4">
+          The **Mullaghmast Standing Stone** (KD036-017001-) is a distinct Bronze Age monolith that was moved from its original location on the opposite side of the road, approximately 10 meters, to the east side of a road on a low ridge. This slightly tapering pillar of granite stands 1.8 meters high with a sub-rectangular cross-section. It is notable for **three grooves descending from the top** (likely natural) that link it stylistically to other grooved standing stones found in Carlow and Wicklow. This prehistoric standing stone should not be confused with the later, iron age or early medieval ceremonial stone also associated with Mullaghmast Hill.
+        </p>
+
+        <!-- Single image with caption -->
+<div class="my-6 text-center border border-gray-300 p-2">
+  <img src="./images/mullaghmast1.png" alt="Diagram of an ancient megalith." class="w-full h-auto mb-2">
+  <figcaption class="text-sm text-gray-500 serif italic">Figure 1. A diagram illustrating the celestial alignment of a typical Irish megalithic monument. (Suggested size: 600x400 pixels)</figcaption>
+</div>
+
+        		        <!-- Responsive Image Slider Component -->
+<div class="relative w-full overflow-hidden shadow-xl border border-gray-300 image-slider-container" style="height: 400px;">
+  <!-- Slides Container -->
+  <div class="flex transition-transform duration-500 ease-in-out h-full slider-track">
+    
+    <!-- Slide 1 -->
+    <div class="min-w-full h-full flex flex-col">
+      <img src="./images/MullaghmastSummerSolsticeRise.png" alt="Slide 1: Sunset over Newgrange." class="w-full h-[360px] object-cover">
+      <figcaption class="w-full text-center text-sm text-gray-600 bg-gray-50 border-t border-gray-300 p-2 h-[40px] flex items-center justify-center serif italic">
+          Figure Xa. Caption for the first slide (e.g., Summer Solstice).
+      </figcaption>
+    </div>
+	
+
+    
+  </div>
+
+  <!-- Navigation Buttons -->
+  <button class="absolute top-1/2 left-4 -translate-y-1/2 bg-gray-800 bg-opacity-50 text-white p-3 rounded-full hover:bg-opacity-75 transition duration-200 slider-prev" data-direction="-1">
+    <i class="fas fa-chevron-left"></i>
+  </button>
+  <button class="absolute top-1/2 right-4 -translate-y-1/2 bg-gray-800 bg-opacity-50 text-white p-3 rounded-full hover:bg-opacity-75 transition duration-200 slider-next" data-direction="1">
+    <i class="fas fa-chevron-right"></i>
+  </button>
+  
+  <!-- Slider Logic (must be self-contained) -->
+  <script>
+    // Self-invoking function to isolate the script and prevent external communication errors
+    (function() {
+      // Use document.currentScript.closest to find the containing slider DIV relative to this script tag
+      // This ensures we only initialize the slider we are currently inside.
+      const currentScript = document.currentScript;
+
+      // Wait for the DOMContentLoaded event if the script isn't already run in the body
+      if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', initializeSlider);
+      } else {
+          initializeSlider();
+      }
+
+      function initializeSlider() {
+          const container = currentScript.closest('.image-slider-container');
+          
+          if (!container) return; // Exit if container isn't found (shouldn't happen with proper copy/paste)
+
+          const track = container.querySelector('.slider-track');
+          const prevButton = container.querySelector('.slider-prev');
+          const nextButton = container.querySelector('.slider-next');
+          const slides = track.children;
+          const totalSlides = slides.length;
+          let currentSlide = 0;
+
+          function moveSlide(direction) {
+            currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+            const offset = -currentSlide * 100;
+            // Using string concatenation for maximum compatibility
+            track.style.transform = 'translateX(' + offset + '%)';
+          }
+
+          if (prevButton) {
+            prevButton.addEventListener('click', function() { moveSlide(-1); });
+          }
+
+          if (nextButton) {
+            nextButton.addEventListener('click', function() { moveSlide(1); });
+          }
+      }
+    })();
+  </script>
+</div>
+
+        <!-- Subsection 8.7: The Great Connell Standing Stone -->
+        <h4 id="great-connell" class="text-lg font-bold text-gray-700 mt-6 mb-2 sans-serif">8.7 The Great Connell Standing Stone</h4>
+        <p class="text-gray-600 leading-relaxed sans-serif mb-4">
+          The **Great Connell Standing Stone** is a monolith located near the highest point of a gravel ridge. A tapering granite stone with a roughly rectangular cross-section (H. 1.9m; L 0.4m N-S; Wth 0.3m tapering to L 0.2m; Wth 0.14m at the top). There are two depressions (possibly mortices cut for cross arms) on opposing, originally N and S, faces. The stone was removed in 1979 and re-erected at Baroda stud in Greatconnell townland, but was moved again subsequently. Burials (KD023-071----) have been discovered in this general area since the late-1940’s.
+        </p>
+
+        <!-- Map placeholder - Removed rounded-lg -->
+        <div id="map-great-connell" class="my-12">
+          <p class="text-sm text-gray-600 leading-relaxed serif italic mb-4">This map placeholder illustrates the current location of the Great Connell Standing Stone.</p>
+          <div class="bg-blue-200 w-full h-96 flex items-center justify-center border border-blue-400 shadow-inner">
+            <p class="text-gray-500 sans-serif">**Map Placeholder: Great Connell Standing Stone**</p>
+          </div>
+        </div>
+
+        <!-- Image Carousel placeholder - Removed rounded-lg -->
+        <div id="carousel-great-connell" class="my-12">
+          <p class="text-sm text-gray-600 leading-relaxed serif italic mb-4">This carousel placeholder is intended for images of the Great Connell Stone, focusing on the depressions.</p>
+          <div class="bg-gray-300 w-full h-96 flex items-center justify-center border border-gray-400 shadow-inner">
+            <p class="text-gray-600 sans-serif">**Image Carousel Placeholder: Great Connell**</p>
+          </div>
+        </div>
+
+        <!-- Subsection 8.8: The Longstone (Broadleas Commons) -->
+        <h4 id="broadleas" class="text-lg font-bold text-gray-700 mt-6 mb-2 sans-serif">8.8 The Longstone (Broadleas Commons)</h4>
+        <p class="text-gray-600 leading-relaxed sans-serif mb-4">
+          The **Longstone (Broadleas Commons)** is located on a low glacial ridge. A long slender, rounded, granite pillar, currently lying **prostrate** (L 4.1m; Wth. 0.9m; T 0.65m). According to historical records from the 1839 Ordnance Survey Letters (OSL), the stone ‘stood in a small earthen moat, but now lies on the ground, having been thrown down about 2 or 3 years ago.’ Two small crosses on the upper surface were probably incised sometime after the stone was thrown down. A unique physical characteristic is that one quarter of the stone (L 1.6m) is unsupported and overhangs (H 0.4m) the ground below.
+        </p>
+
+        <!-- Single image with caption -->
+<div class="my-6 text-center border border-gray-300 p-2">
+  <img src="./images/longstone.png" alt="Diagram of an ancient megalith." class="w-full h-auto mb-2">
+  <figcaption class="text-sm text-gray-500 serif italic">Figure 1. A diagram illustrating the celestial alignment of a typical Irish megalithic monument. (Suggested size: 600x400 pixels)</figcaption>
+</div>
+
+        <!-- Responsive Image Slider Component -->
+<div class="relative w-full overflow-hidden shadow-xl border border-gray-300 image-slider-container" style="height: 400px;">
+  <!-- Slides Container -->
+  <div class="flex transition-transform duration-500 ease-in-out h-full slider-track">
+    
+    <!-- Slide 1 -->
+    <div class="min-w-full h-full flex flex-col">
+      <img src="./images/LongstoneNorthmostCrossquarterRise.png" alt="Slide 1: Sunset over Newgrange." class="w-full h-[360px] object-cover">
+      <figcaption class="w-full text-center text-sm text-gray-600 bg-gray-50 border-t border-gray-300 p-2 h-[40px] flex items-center justify-center serif italic">
+          Figure Xa. Caption for the first slide (e.g., Summer Solstice).
+      </figcaption>
+    </div>
+	
+
+    
+  </div>
+
+  <!-- Navigation Buttons -->
+  <button class="absolute top-1/2 left-4 -translate-y-1/2 bg-gray-800 bg-opacity-50 text-white p-3 rounded-full hover:bg-opacity-75 transition duration-200 slider-prev" data-direction="-1">
+    <i class="fas fa-chevron-left"></i>
+  </button>
+  <button class="absolute top-1/2 right-4 -translate-y-1/2 bg-gray-800 bg-opacity-50 text-white p-3 rounded-full hover:bg-opacity-75 transition duration-200 slider-next" data-direction="1">
+    <i class="fas fa-chevron-right"></i>
+  </button>
+  
+  <!-- Slider Logic (must be self-contained) -->
+  <script>
+    // Self-invoking function to isolate the script and prevent external communication errors
+    (function() {
+      // Use document.currentScript.closest to find the containing slider DIV relative to this script tag
+      // This ensures we only initialize the slider we are currently inside.
+      const currentScript = document.currentScript;
+
+      // Wait for the DOMContentLoaded event if the script isn't already run in the body
+      if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', initializeSlider);
+      } else {
+          initializeSlider();
+      }
+
+      function initializeSlider() {
+          const container = currentScript.closest('.image-slider-container');
+          
+          if (!container) return; // Exit if container isn't found (shouldn't happen with proper copy/paste)
+
+          const track = container.querySelector('.slider-track');
+          const prevButton = container.querySelector('.slider-prev');
+          const nextButton = container.querySelector('.slider-next');
+          const slides = track.children;
+          const totalSlides = slides.length;
+          let currentSlide = 0;
+
+          function moveSlide(direction) {
+            currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+            const offset = -currentSlide * 100;
+            // Using string concatenation for maximum compatibility
+            track.style.transform = 'translateX(' + offset + '%)';
+          }
+
+          if (prevButton) {
+            prevButton.addEventListener('click', function() { moveSlide(-1); });
+          }
+
+          if (nextButton) {
+            nextButton.addEventListener('click', function() { moveSlide(1); });
+          }
+      }
+    })();
+  </script>
+</div>
+
+      <!-- Conclusion Section (Blockquote Style) -->
+      <div id="conclusion" class="mb-12">
+        <h3 class="text-xl font-bold text-gray-700 sans-serif whitespace-nowrap border-b border-gray-400 pb-1 mb-6" style="border-bottom-width: 3px;">9. Conclusion</h3>
+        <div class="relative md:w-2/3 mx-auto pl-6 border-l-4 border-gray-400">
+          <p class="text-gray-600 leading-relaxed sans-serif italic">
+            The Kildare Longstones represent far more than isolated remnants of the past; they constitute an interconnected ceremonial and cultural landscape. From the winter solstice alignments suggested by archaeoastronomy to the Christian crosses carved onto their faces, these monoliths stand as tangible records of Irish belief systems and cultural transitions. Their survival, coupled with the rich layers of associated mythology and the concrete evidence of ritual use and burial, underscores their profound, multi-faceted importance to the ancient inhabitants of Leinster, demanding continued interdisciplinary study.
+          </p>
+        </div>
+      </div>
+
+      <!-- References Section (Placeholder) -->
+      <div id="references" class="mb-12">
+        <h3 class="text-xl font-bold text-gray-700 sans-serif whitespace-nowrap border-b border-gray-400 pb-1 mb-6" style="border-bottom-width: 3px;">10. References</h3>
+        <ul class="text-gray-600 leading-relaxed serif text-sm">
+          <li class="mb-1">**PLACE YOUR FIRST REFERENCE HERE** (Year). *Title of Work*. Publisher.</li>
+          <li class="mb-1">**PLACE YOUR SECOND REFERENCE HERE** (Year). *Title of Work*. Publisher.</li>
+          <li class="mb-1">**PLACE YOUR THIRD REFERENCE HERE** (Year). "Article Title." *Journal Name*, vol(issue), page range.</li>
+        </ul>
+      </div>
+
+      <!-- Document Footer -->
+      <div class="text-center mt-10 text-xs text-gray-500 serif italic">
+        <p class="border-t border-gray-400 pt-2">&copy; 2025. All Rights Reserved. | The Kildare Longstones</p>
+      </div>
+      
+    </div>
+  </div>
+</body>
+</html>

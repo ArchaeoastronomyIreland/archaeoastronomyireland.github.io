@@ -1,0 +1,1629 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>I see you - The relationship between Knowth and Dowth</title>
+      <!-- Load Tailwind CSS from CDN -->
+      <script src="https://cdn.tailwindcss.com"></script>
+      <!-- Load Font Awesome for icons -->
+      <link
+         rel="stylesheet"
+         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      />
+      <!-- Load Montserrat and Lora fonts -->
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link
+         href="https://fonts.googleapis.com/css2?family=Lora:ital@0;1&family=Montserrat:wght@300;400;700&display=swap"
+         rel="stylesheet"
+      />
+      <!-- Load Leaflet CSS from CDN for the map -->
+      <link
+         rel="stylesheet"
+         href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      />
+      <style>
+         /* Custom font families for different elements */
+         body {
+            font-family: "Montserrat", sans-serif;
+            background-color: #f0f4f8;
+            color: #333;
+         }
+         .serif {
+            font-family: "Lora", serif;
+         }
+         .sans-serif {
+            font-family: "Montserrat", sans-serif;
+         }
+         /* Custom styles for inline formatting */
+         del {
+            text-decoration: line-through;
+         }
+         .code {
+            font-family: monospace;
+            background-color: #e2e8f0;
+            padding: 0.1rem 0.3rem;
+         }
+         /* Fix for code block overflow and word wrapping */
+         .code-block {
+            white-space: pre-wrap;
+            word-break: break-all;
+         }
+         /* Ensure the map container fills the space and avoids rounded corners */
+         #map-container {
+            position: relative;
+            width: 100%;
+            /* Use a height class like h-96 to make it responsive */
+         }
+         /* Set the map's height to 100% of its parent container */
+         #map {
+            height: 100%;
+            width: 100%;
+         }
+      </style>
+   </head>
+   <body class="bg-gray-100">
+      <!-- The fixed header for the webpage -->
+      <div
+         style="background-color: #023020; z-index: 2000"
+         class="fixed top-0 w-full shadow-lg"
+      >
+         <div class="container mx-auto px-4 py-2 flex items-center">
+            <!-- The outlined dot circle icon on the left -->
+            <i
+               class="fa-regular fa-circle-dot text-2xl mr-2"
+               style="color: #ffa500"
+            ></i>
+            <!-- The text moved next to the icon with a light font weight -->
+            <h1 class="text-white text-base md:text-xl font-light sans-serif">
+               Archaeoastronomy Ireland
+            </h1>
+            <!-- Home and GitHub Icons -->
+            <div class="flex-grow"></div>
+            <a
+               href="#"
+               class="w-8 h-8 rounded-lg border border-[#2487CE] flex items-center justify-center mr-2"
+               style="color: #2487ce"
+            >
+               <i class="fa-solid fa-home"></i>
+            </a>
+            <a
+               href="#"
+               class="w-8 h-8 rounded-lg border border-[#2487CE] flex items-center justify-center"
+               style="color: #2487ce"
+            >
+               <i class="fa-brands fa-github"></i>
+            </a>
+         </div>
+      </div>
+      <!-- Main content container -->
+      <div class="p-4 md:p-8 pt-16">
+         <div class="max-w-4xl mx-auto bg-white p-6 md:p-10 shadow-lg">
+            <!-- Your new document content goes here -->
+            <!-- Document Header -->
+            <div
+               class="flex justify-between items-center text-xs text-gray-500 mb-4 serif italic"
+            >
+               <div class="text-left">
+                  I see you - The relationship between Knowth and Dowth
+               </div>
+               <div class="text-right">Brian Doyle | September, 2025</div>
+            </div>
+            <!-- Single image with caption -->
+            <div class="my-6 text-center border border-gray-300 p-2">
+               <img
+                  src="./images/watercolour.png"
+                  alt="Diagram of an ancient megalith."
+                  class="w-full h-auto mb-2"
+               />
+               <figcaption class="text-sm text-gray-500 serif italic">
+                  Figure 1. A diagram illustrating the celestial alignment of a
+                  typical Irish megalithic monument. (Suggested size: 600x400
+                  pixels)
+               </figcaption>
+            </div>
+            <!-- Article Title and Author Info -->
+            <div class="text-center mb-10">
+               <h2
+                  class="text-3xl md:text-4xl font-bold text-gray-800 mb-2 sans-serif"
+               >
+                  I see you - The relationship between Knowth and Dowth
+               </h2>
+               <p class="text-gray-600 italic sans-serif">
+                  By Brian Doyle - Archaeoastronomy Ireland.
+               </p>
+            </div>
+            <h3 class="text-xl font-bold text-gray-700 mb-2 sans-serif">
+               Abstract
+            </h3>
+            <!-- Blockquote Section -->
+            <div
+               class="relative md:w-2/3 mx-auto pl-6 border-l-4 border-gray-400"
+            >
+               <p class="text-gray-600 leading-relaxed text-sm serif italic">
+                  This article presents an analysis of the astronomical function
+                  of the Knowth passage tomb. Employing remote Geographic
+                  Information System (GIS) methodology the true orientation of
+                  the eastern passage has been determined with a high degree of
+                  accuracy. The analysis reveals a line of symmetry in the
+                  tomb's entrance stones that precisely aligns the eastern
+                  passage with the Dowth passage tomb. This alignment, achieved
+                  through a 40-meter passage, the longest in Western Europe,
+                  demonstrates a remarkable level of engineering sophistication.
+                  Unlike Newgrange's reliance on a separate lightbox, Knowth's
+                  eastern passage was engineered as a single, precise
+                  instrument. The findings conclude that the eastern passage of
+                  Knowth was specifically designed to capture the first rays of
+                  a celestial body rising from the Dowth mound on the horizon,
+                  establishing a deliberate and highly sophisticated
+                  astronomical relationship between the two monuments.
+               </p>
+            </div>
+            <div class="mb-12">
+               <!-- This div was empty, so it has been preserved without content. -->
+            </div>
+            <!-- In-Page Index (Table of Contents) -->
+            <div class="mb-12">
+               <!-- Table of Contents -->
+               <h3 class="text-xl font-bold text-gray-700 mb-4 sans-serif">
+                  Table of Contents
+               </h3>
+               <ul
+                  class="text-xs text-gray-600 leading-relaxed sans-serif pl-4"
+               >
+                  <li>
+                     <a href="#introduction" class="hover:underline"
+                        >I. Introduction: Knowth in the Context of Brú na
+                        Bóinne</a
+                     >
+                  </li>
+                  <ul class="list-disc list-inside pl-6">
+                     <li>
+                        <a href="#bru-na-boinne" class="hover:underline"
+                           >1.1. Brú na Bóinne: The Archaeological Ensemble of
+                           the Boyne Valley</a
+                        >
+                     </li>
+                     <li>
+                        <a href="#knowths-position" class="hover:underline"
+                           >1.2. Knowth's Preeminent Position within the
+                           Complex</a
+                        >
+                     </li>
+                  </ul>
+                  <li>
+                     <a href="#history-and-mythology" class="hover:underline"
+                        >II. History and Mythology of Knowth</a
+                     >
+                  </li>
+                  <ul class="list-disc list-inside pl-6">
+                     <li>
+                        <a href="#neolithic-foundation" class="hover:underline"
+                           >2.1. The Neolithic (c. 3200 BC)</a
+                        >
+                     </li>
+                     <li>
+                        <a
+                           href="#mythology-and-folklore"
+                           class="hover:underline"
+                           >2.2. Mythology and Folklore</a
+                        >
+                     </li>
+                     <li>
+                        <a
+                           href="#post-neolithic-continuum"
+                           class="hover:underline"
+                           >2.3. The Post-Neolithic</a
+                        >
+                     </li>
+                  </ul>
+                  <li>
+                     <a
+                        href="#archaeological-excavations"
+                        class="hover:underline"
+                        >III. Archaeological Excavations</a
+                     >
+                  </li>
+                  <ul class="list-disc list-inside pl-6">
+                     <li>
+                        <a href="#early-investigations" class="hover:underline"
+                           >3.1. Early Investigations</a
+                        >
+                     </li>
+                     <li>
+                        <a href="#eogan-excavations" class="hover:underline"
+                           >3.2. The Work of Professor George Eogan</a
+                        >
+                     </li>
+                  </ul>
+                  <li>
+                     <a href="#site-description" class="hover:underline"
+                        >IV. Site Description</a
+                     >
+                  </li>
+                  <ul class="list-disc list-inside pl-6">
+                     <li>
+                        <a href="#site-layout-and-scale" class="hover:underline"
+                           >4.1. The Overall Site Layout and Scale</a
+                        >
+                     </li>
+                     <li>
+                        <a href="#eastern-passage" class="hover:underline"
+                           >4.2. The Eastern Passage and Chamber</a
+                        >
+                     </li>
+                     <li>
+                        <a href="#western-passage" class="hover:underline"
+                           >4.3. The Western Passage and Chamber</a
+                        >
+                     </li>
+                     <li>
+                        <a href="#megalithic-art" class="hover:underline"
+                           >4.4. The Megalithic Art of Knowth</a
+                        >
+                     </li>
+                  </ul>
+                  <li>
+                     <a href="#celestial-observatory" class="hover:underline"
+                        >V. The Astronomical Debates of Knowth</a
+                     >
+                  </li>
+                  <ul class="list-disc list-inside pl-6">
+                     <li>
+                        <a href="#solar-vs-lunar" class="hover:underline"
+                           >5.1. Solar vs. Lunar Alignments: A Foundational
+                           Debate</a
+                        >
+                     </li>
+                     <li>
+                        <a href="#lunar-hypothesis" class="hover:underline"
+                           >5.2. The Lunar Hypothesis</a
+                        >
+                     </li>
+                  </ul>
+                  <li>
+                     <a href="#inaccuracy" class="hover:underline"
+                        >VI. Inaccuracy</a
+                     >
+                  </li>
+                  <li>
+                     <a href="#tomb-design-analysis" class="hover:underline"
+                        >VII. Tomb Design Analysis</a
+                     >
+                  </li>
+                  <ul class="list-disc list-inside pl-6">
+                     <li>
+                        <a
+                           href="#sophisticated-techniques"
+                           class="hover:underline"
+                           >7.1. Sophisticated Techniques</a
+                        >
+                     </li>
+                     <li>
+                        <a
+                           href="#newgrange-grooved-stones"
+                           class="hover:underline"
+                           >7.2. Newgrange Vertically Grooved Stones</a
+                        >
+                     </li>
+                     <li>
+                        <a href="#newgrange-symmetry" class="hover:underline"
+                           >7.3. Newgrange Symmetry and Orientation</a
+                        >
+                     </li>
+                     <li>
+                        <a href="#knowth-grooved-stones" class="hover:underline"
+                           >7.4. Knowth Vertically Grooved Stones</a
+                        >
+                     </li>
+                     <li>
+                        <a href="#knowth-symmetry" class="hover:underline"
+                           >7.5. Knowth Symmetry and Orientation</a
+                        >
+                     </li>
+                  </ul>
+                  <li>
+                     <a href="#horizon-analysis" class="hover:underline"
+                        >VIII. Horizon Analysis</a
+                     >
+                  </li>
+                  <ul class="list-disc list-inside pl-6">
+                     <li>
+                        <a href="#getting-a-view" class="hover:underline"
+                           >8.1. Getting a view</a
+                        >
+                     </li>
+                     <li>
+                        <a
+                           href="#geographic-information-systems"
+                           class="hover:underline"
+                           >8.2. Geographic Information Systems</a
+                        >
+                     </li>
+                  </ul>
+                  <li>
+                     <a href="#light-penetration" class="hover:underline"
+                        >IX. Light Penetration</a
+                     >
+                  </li>
+                  <ul class="list-disc list-inside pl-6">
+                     <li>
+                        <a href="#sideview" class="hover:underline"
+                           >9.1. Sideview</a
+                        >
+                     </li>
+                     <li>
+                        <a href="#topview" class="hover:underline"
+                           >9.2. Topview</a
+                        >
+                     </li>
+                  </ul>
+                  <li>
+                     <a href="#conclusion-section" class="hover:underline"
+                        >Conclusion</a
+                     >
+                  </li>
+               </ul>
+            </div>
+            <!-- Main Article Content -->
+            <div id="introduction" class="mb-12">
+               <h3
+                  class="text-xl font-bold text-gray-700 sans-serif whitespace-nowrap border-b border-gray-400 pb-1 mb-6"
+                  style="border-bottom-width: 3px"
+               >
+                  I. Introduction: Knowth in the Context of Brú na Bóinne
+               </h3>
+               <h4
+                  id="bru-na-boinne"
+                  class="text-lg font-bold text-gray-700 mt-6 mb-2 sans-serif"
+               >
+                  1.1. Brú na Bóinne: The Archaeological Ensemble of the Boyne
+                  Valley
+               </h4>
+               <p class="text-gray-600 leading-relaxed sans-serif mb-4">
+                  The UNESCO World Heritage Site of Brú na Bóinne, or the
+                  Archaeological Ensemble of the Bend of the Boyne, stands as
+                  Ireland’s richest archaeological landscape, situated in a
+                  meander of the River Boyne in County Meath. The site is
+                  globally renowned for its spectacular prehistoric passage
+                  tombs, which include the principal monuments of Newgrange,
+                  Dowth, and Knowth. Constructed around 3200 BC during the
+                  Neolithic period, these colossal structures are a testament to
+                  the sophistication of their builders, predating the main
+                  pyramids at Giza by approximately 400 years and the main
+                  trilithon phase of Stonehenge by 500 to 700 years. The
+                  monuments are not isolated features but are part of a larger
+                  necropolis or cemetery that also includes henges, burial
+                  mounds, and standing stones.
+               </p>
+               <!-- Map Integration -->
+               <div id="map-container" class="my-12 h-96">
+                  <div id="map" class="h-full w-full"></div>
+               </div>
+               <h4
+                  id="knowths-position"
+                  class="text-lg font-bold text-gray-700 mt-6 mb-2 sans-serif"
+               >
+                  1.2. Knowth's Position within the Complex
+               </h4>
+               <p class="text-gray-600 leading-relaxed sans-serif mb-4">
+                  While Newgrange often receives the most public attention,
+                  Knowth is, in many respects, the most significant monument
+                  within the Brú na Bóinne complex. It holds the distinction of
+                  being the largest passage tomb, with a massive main mound
+                  reaching about 12 meters in height and measuring between 67
+                  and 95 meters in diameter, covering roughly 1 hectare (2.5
+                  acres). Unlike Newgrange, which has a single passage, Knowth
+                  is uniquely characterized by its two independent passages,
+                  placed along an east-west line. A continuous ring of 127
+                  kerbstones, of which 124 remain, encircles the base of the
+                  great mound. The main mound is also surrounded by a series of
+                  17 or 18 smaller satellite tombs, several of which are as
+                  large as 20 meters in diameter and are believed to predate the
+                  central cairn. The site's most remarkable feature, however, is
+                  its unparalleled concentration of prehistoric art. Knowth is
+                  home to the largest assemblage of megalithic art in Europe,
+                  boasting over 400 engraved stones. This collection represents
+                  more than a third of the total known examples of such art in
+                  all of Western Europe, a fact that firmly establishes Knowth
+                  as a global center of Neolithic artistic expression.
+               </p>
+            </div>
+            <div id="history-and-mythology" class="mb-12">
+               <h3
+                  class="text-xl font-bold text-gray-700 sans-serif whitespace-nowrap border-b border-gray-400 pb-1 mb-6"
+                  style="border-bottom-width: 3px"
+               >
+                  II. History and Mythology of Knowth
+               </h3>
+               <h4
+                  id="neolithic-foundation"
+                  class="text-lg font-bold text-gray-700 mt-6 mb-2 sans-serif"
+               >
+                  2.1. The Neolithic Foundation (c. 3200 BC)
+               </h4>
+               <p class="text-gray-600 leading-relaxed sans-serif mb-4">
+                  Knowth was built during the Neolithic or New Stone Age by a
+                  wealthy farming community that thrived on the fertile lands of
+                  the Boyne Valley. The construction of the central mound and
+                  its surrounding satellite tombs demonstrates a high degree of
+                  social organization and technical skill. Builders transported
+                  local stones, or "pebbles," for the main cairn from nearby
+                  river terraces , while sourcing larger structural slabs and
+                  decorative stones from quarries as far as 50 kilometers away.
+                  This was an enormous expenditure of labor and resources,
+                  estimated to have taken at least 30 years to complete, which
+                  points to a powerful belief in the hereafter and a cohesive,
+                  purpose-driven society. The site’s initial function was that
+                  of a passage tomb, a place of burial and ritual. The cremated
+                  remains of the dead were placed on basin stones within the
+                  chambers. The relatively small number of individuals buried
+                  here suggests that the monument’s value was more ceremonial
+                  than strictly funerary, serving as an important cultural and
+                  spiritual center for the community. Evidence from radiocarbon
+                  dating indicates that the burial activity at Knowth may have
+                  been concentrated in a "short burst" between 3200 and 2900 BC,
+                  rather than serving as an ossuary for successive generations.
+                  Interestingly, archaeological findings reveal that some of the
+                  satellite mounds predate the colossal central cairn,
+                  indicating a multi-phase construction process over a period of
+                  at least three centuries.
+               </p>
+               <h4
+                  id="mythology-and-folklore"
+                  class="text-lg font-bold text-gray-700 mt-6 mb-2 sans-serif"
+               >
+                  2.2. Mythology and Folklore
+               </h4>
+               <p class="text-gray-600 leading-relaxed sans-serif mb-4">
+                  The landscape of Brú na Bóinne is deeply embedded in Irish
+                  mythology, and Knowth is no exception. In ancient Irish
+                  folklore, Knowth is known as Cnoc Buí, the Hill of Buí. Buí
+                  was the sovereignty goddess and consort of Lugh of the Long
+                  Arm, a prominent figure in the Irish pantheon. Mythological
+                  accounts state that she was buried within the great mound, and
+                  the pair of standing stones at the western entrance may
+                  symbolically represent Lugh and Buí.A prevailing mythological
+                  interpretation suggests that each of the three great mounds in
+                  the Boyne Valley holds a symbolic role in a life cycle:
+                  Newgrange represents Birth, Knowth represents Marriage, and
+                  Dowth represents Death. This symbolic journey from one mound
+                  to the next represents a ritualistic path into the underworld
+                  and a safe return, emphasizing the passage tombs as conduits
+                  between the living and the dead. Knowth’s dual passages may be
+                  a physical manifestation of this symbolic role, representing a
+                  union or coming together, akin to a marriage, a place of
+                  connection and convergence. Other traditions associate the
+                  "cave of Cnogba" with being an entrance to the Otherworld.
+               </p>
+               <h4
+                  id="post-neolithic-continuum"
+                  class="text-lg font-bold text-gray-700 mt-6 mb-2 sans-serif"
+               >
+                  2.3. The Post-Neolithic
+               </h4>
+               <p class="text-gray-600 leading-relaxed sans-serif mb-4">
+                  The history of Knowth extends far beyond its initial purpose
+                  as a Neolithic tomb, offering a rare glimpse into the
+                  continuous cultural re-appropriation of a single site over
+                  millennia. After its primary period of use, the mound
+                  gradually fell into disrepair, but the area remained a focal
+                  point for ritual activity during the Bronze Age, as evidenced
+                  by a grooved ware timber circle and a large number of votive
+                  offerings found near the eastern passage entrance.In the late
+                  Iron Age and early Christian period, around the time of
+                  Christ, the site was transformed into a hill fort and became a
+                  habitation site for the first time. Two large ditches were dug
+                  around the mound, and souterrains were added. It was at this
+                  time that the ancient passages seem to have been rediscovered,
+                  with early Christian graffiti and four names carved in ogham
+                  script on the stones of the eastern chamber, forging a direct
+                  physical link between the old and new inhabitants. Knowth rose
+                  to political prominence as the capital of the Kingdom of
+                  Northern Brega. Archaeological findings from this period are
+                  remarkably rich, with material from the tenth to thirteenth
+                  centuries comparable to what has been recovered from
+                  Viking-era Dublin, suggesting a vibrant period of trade and
+                  influence.The site’s strategic importance continued, albeit
+                  briefly, into the Norman period, when it was used as a motte
+                  in the twelfth century. Following the Norman invasion, the
+                  site passed into the hands of the Cistercian monks of
+                  Mellifont Abbey, who used it as a grange or farm, building
+                  stone walls and structures on top of the ancient mound. This
+                  agricultural use continued until 1939, when the site was
+                  acquired by the state, marking the beginning of its modern
+                  role as a national monument and a subject of scientific
+                  inquiry. The continuous occupation and transformation of the
+                  site from a sacred burial ground to a royal seat and then a
+                  farm illustrate its enduring cultural and strategic
+                  significance to successive generations.
+               </p>
+            </div>
+            <div id="archaeological-excavations" class="mb-12">
+               <h3
+                  class="text-xl font-bold text-gray-700 sans-serif whitespace-nowrap border-b border-gray-400 pb-1 mb-6"
+                  style="border-bottom-width: 3px"
+               >
+                  III. The Unearthing of a Monument
+               </h3>
+               <h4
+                  id="early-investigations"
+                  class="text-lg font-bold text-gray-700 mt-6 mb-2 sans-serif"
+               >
+                  3.1. Early Investigations
+               </h4>
+               <p class="text-gray-600 leading-relaxed sans-serif mb-4">
+                  The modern history of Knowth begins with its first scholarly
+                  mention by Sir Thomas Molyneux around 1713. However, the early
+                  approach to such sites was often driven by curiosity rather
+                  than rigorous methodology. This is exemplified by the
+                  "unprofessional excavation" at the nearby Dowth mound in 1847,
+                  which severely damaged the monument. A more systematic, but
+                  still limited, investigation was carried out by R. A. S.
+                  Macalister in 1941. He dug a trench in an attempt to find the
+                  entrance to the mound and, in the process, exposed 58
+                  kerbstones, 48 of which were engraved. Macallister’s work,
+                  while not a full-scale excavation, was the first to document
+                  the monument's extensive artistic legacy.
+               </p>
+               <h4
+                  id="eogan-excavations"
+                  class="text-lg font-bold text-gray-700 mt-6 mb-2 sans-serif"
+               >
+                  3.2. The Work of Professor George Eogan
+               </h4>
+               <p class="text-gray-600 leading-relaxed sans-serif mb-4">
+                  The systematic and thorough archaeological investigation of
+                  Knowth began in 1962, led by Professor George Eogan of
+                  University College Dublin. Eogan, who had previously worked on
+                  a passage tomb at Fourknocks, was tasked with investigating
+                  the potential of the Knowth site. His decades-long project,
+                  which lasted over 40 years, became a foundational model for
+                  modern archaeological inquiry, shifting the focus from
+                  spectacular finds to a comprehensive understanding of a site's
+                  entire history.The excavations yielded several dramatic
+                  breakthroughs. In 1967, Eogan’s team discovered a small hole
+                  on the western side of the mound that led to a chamber at the
+                  end of a 34-meter passage. A year later, on August 1, 1968, an
+                  even more significant discovery was made: the eastern passage
+                  and its chamber. Eogan himself recounted the excitement of
+                  crawling into the void with a flashlight, revealing the
+                  impressive, well-constructed chamber that was over 20 feet
+                  high. These discoveries revealed that Knowth was not only the
+                  largest passage tomb in the Brú na Bóinne complex but also
+                  uniquely contained two independent passages.Beyond the
+                  passages, Eogan’s team uncovered 18 smaller satellite tombs,
+                  revealing the full extent of the complex. The excavations also
+                  yielded a wealth of artifacts, including a beautifully
+                  engraved flint macehead found in the eastern tomb in 1982.
+                  This ceremonial object is considered one of the finest works
+                  of art to have survived from Neolithic Europe. Eogan's
+                  meticulous, multi-volume publications on the site have
+                  transformed our understanding of Knowth from a mere mound into
+                  a "multi-period and multi-cultural site" with a rich and
+                  complex chronological sequence.
+               </p>
+            </div>
+            <div id="site-description" class="mb-12">
+               <h3
+                  class="text-xl font-bold text-gray-700 sans-serif whitespace-nowrap border-b border-gray-400 pb-1 mb-6"
+                  style="border-bottom-width: 3px"
+               >
+                  IV. Site Description
+               </h3>
+               <h4
+                  id="site-layout-and-scale"
+                  class="text-lg font-bold text-gray-700 mt-6 mb-2 sans-serif"
+               >
+                  4.1. The Overall Site Layout and Scale
+               </h4>
+               <!-- Single image with paragraph to the left -->
+               <div
+                  class="my-6 flex flex-col md:flex-row-reverse md:gap-4 items-start"
+               >
+                  <div
+                     class="w-full md:w-1/2 mb-4 md:mb-0 text-center flex-shrink-0 border border-gray-300 p-2"
+                  >
+                     <img
+                        src="./images/Knowth_MarkieMcG.jpg"
+                        alt="Consolidated uncorrected plan of the tomb."
+                        class="w-full h-auto mb-2"
+                     />
+                     <figcaption class="text-sm text-gray-500 serif italic">
+                        Figure 2. A close-up of a newly excavated artifact in
+                        the ground. (Suggested size: 300x400 pixels)
+                     </figcaption>
+                  </div>
+                  <p class="text-gray-600 leading-relaxed sans-serif mb-4">
+                     The Knowth complex is an imposing and intricate
+                     archaeological landscape. The centerpiece is the great
+                     mound, a massive structure about 12 meters high and 67 to
+                     95 meters in diameter, which covers an acre of ground. The
+                     main cairn is surrounded by a ring of 17 or 18 smaller
+                     satellite mounds. Most of these smaller mounds are also
+                     passage tombs, and some are as large as 20 meters in
+                     diameter, with archaeological evidence suggesting they
+                     predate the main mound. A reconstruction of a grooved ware
+                     timber circle stands near the entrance to the eastern
+                     passage, providing a visual representation of the site’s
+                     later ritual use.
+                  </p>
+               </div>
+               <h4
+                  id="eastern-passage"
+                  class="text-lg font-bold text-gray-700 mt-6 mb-2 sans-serif"
+               >
+                  4.2. The Eastern Passage and Chamber
+               </h4>
+               <!-- Single image with caption -->
+               <div class="my-6 text-center border border-gray-300 p-2">
+                  <img
+                     src="./images/easternpassage.png"
+                     alt="Diagram of an ancient megalith."
+                     class="w-full h-auto mb-2"
+                  />
+                  <figcaption class="text-sm text-gray-500 serif italic">
+                     Figure 3. A diagram illustrating the celestial alignment of
+                     a typical Irish megalithic monument. (Suggested size:
+                     600x400 pixels)
+                  </figcaption>
+               </div>
+               <p class="text-gray-600 leading-relaxed sans-serif mb-4">
+                  The eastern passage is a marvel of Neolithic engineering and
+                  is the longest megalithic passage in Western Europe,
+                  stretching 40 meters. It culminates in a cruciform chamber, a
+                  layout similar to the chamber at Newgrange, with a central
+                  space and three side recesses. The chamber is topped by a
+                  corbelled roof, a series of overlapping stones that form a
+                  high, conical vault, which has remained intact for over 5,000
+                  years.This chamber yielded some of the most spectacular
+                  artifacts found at Knowth. A large basin stone, often referred
+                  to as the "Dagdas cauldron" was found in the right-hand
+                  recess. One of the most significant finds was a ceremonial
+                  macehead, recovered from beneath the chamber in 1982. Carved
+                  from a hard, creamy-grey flint, this small object is
+                  exquisitely decorated on each of its six sides with spirals,
+                  whorls, and diamond patterns. Some researchers suggest the
+                  designs and shape of the macehead are meant to represent a
+                  human face, with the shaft hole serving as the mouth. This
+                  object is considered one of the finest works of art from
+                  Neolithic Europe and is now displayed at the National Museum
+                  of Ireland.
+               </p>
+               <h4
+                  id="western-passage"
+                  class="text-lg font-bold text-gray-700 mt-6 mb-2 sans-serif"
+               >
+                  4.3. The Western Passage and Chamber
+               </h4>
+               <div class="my-6 text-center border border-gray-300 p-2">
+                  <img
+                     src="./images/westernpassage.png"
+                     alt="Diagram of an ancient megalith."
+                     class="w-full h-auto mb-2"
+                  />
+                  <figcaption class="text-sm text-gray-500 serif italic">
+                     Figure 4. A diagram illustrating the celestial alignment of
+                     a typical Irish megalithic monument. (Suggested size:
+                     600x400 pixels)
+                  </figcaption>
+               </div>
+               <p class="text-gray-600 leading-relaxed sans-serif mb-4">
+                  Located on the opposite side of the mound, the western passage
+                  is 34 meters in length. It leads to an "undifferentiated"
+                  chamber, meaning the passage simply widens to form the burial
+                  chamber, without the distinct cruciform shape of the eastern
+                  tomb. A basin stone was also present in this chamber, but at
+                  some point in the monument's later history, an attempt was
+                  made to remove it. The stone became stuck in the passage
+                  because it was wider than the space itself, where it remains
+                  to this day. The western passage also contained a small stone
+                  phallus, another artifact that provides a glimpse into the
+                  ritualistic life of the Neolithic builders.
+               </p>
+               <h4
+                  id="megalithic-art"
+                  class="text-lg font-bold text-gray-700 mt-6 mb-2 sans-serif"
+               >
+                  4.4. The Megalithic Art of Knowth
+               </h4>
+               <!-- Single image with paragraph to the right -->
+               <div class="my-6 flex flex-col md:flex-row md:gap-4 items-start">
+                  <div
+                     class="w-full md:w-1/2 mb-4 md:mb-0 text-center flex-shrink-0 border border-gray-300 p-2"
+                  >
+                     <img
+                        src="./images/kerbstone13.png"
+                        alt="Archaeological site."
+                        class="w-full h-auto mb-2"
+                     />
+                     <figcaption class="text-sm text-gray-500 serif italic">
+                        Figure 5. An aerial view of a dig site showing multiple
+                        features. (Suggested size: 300x400 pixels)
+                     </figcaption>
+                  </div>
+                  <p
+                     class="w-full md:w-1/2 text-gray-600 leading-relaxed sans-serif"
+                  >
+                     Knowth's most celebrated feature is its vast collection of
+                     megalithic art, which represents the largest assemblage of
+                     its kind in Western Europe. A total of 261 stones are
+                     decorated, accounting for approximately 45% of all engraved
+                     megalithic stones in Ireland. A continuous ring of 127
+                     kerbstones encircles the base of the mound, and of the 124
+                     that survive, a remarkable 90 are engraved with intricate
+                     patterns.The art is primarily abstract and geometrical,
+                     created using chisels and punch tools.
+                  </p>
+               </div>
+               <!-- Single image with paragraph to the left -->
+               <div
+                  class="my-6 flex flex-col md:flex-row-reverse md:gap-4 items-start"
+               >
+                  <div
+                     class="w-full md:w-1/2 mb-4 md:mb-0 text-center flex-shrink-0 border border-gray-300 p-2"
+                  >
+                     <img
+                        src="./images/basin.png"
+                        alt="Consolidated uncorrected plan of the tomb."
+                        class="w-full h-auto mb-2"
+                     />
+                     <figcaption class="text-sm text-gray-500 serif italic">
+                        Figure 6. A close-up of a newly excavated artifact in
+                        the ground. (Suggested size: 300x400 pixels)
+                     </figcaption>
+                  </div>
+                  <p
+                     class="w-full md:w-1/2 text-gray-600 leading-relaxed sans-serif"
+                  >
+                     Common motifs include spirals, lozenges, zigzags,
+                     concentric circles, and serpentine forms. However, Knowth’s
+                     art also includes unique images, such as crescent shapes
+                     and what is considered to be the oldest known illustration
+                     of the moon in history.A significant portion of this
+                     artwork is of a type known as "hidden art," where carvings
+                     were placed on the backs of stones that would be concealed
+                     within the mound.
+                  </p>
+               </div>
+               <p class="text-gray-600 leading-relaxed sans-serif mb-4">
+                  The intentional concealment of this art has led to several
+                  theories about its purpose. One hypothesis is that the art was
+                  not intended for public viewing but had a private or
+                  structural ritualistic purpose. An alternative theory suggests
+                  that the builders simply recycled stones from an older
+                  monument, reusing the uncarved side for the new construction.
+                  This practice of using stones sourced from distant quarries, a
+                  common feature of Brú na Bóinne monuments, supports the idea
+                  that material was carefully selected and perhaps even
+                  repurposed.The architectural differences and the distinct
+                  nature of the artifacts found in the two passages suggest that
+                  they may have served different functions. The elaborate,
+                  cruciform eastern chamber, with its spectacular macehead and
+                  basin, appears to have been the primary ceremonial space. The
+                  western passage, with its simpler design and the displaced
+                  basin stone, may have had a different, perhaps less revered,
+                  role. These nuances highlight the complexity of Knowth's
+                  design, suggesting that its purpose was not monolithic but
+                  rather a dynamic, multi-functional sacred space.
+               </p>
+            </div>
+            <div id="celestial-observatory" class="mb-12">
+               <h3
+                  class="text-xl font-bold text-gray-700 sans-serif whitespace-nowrap border-b border-gray-400 pb-1 mb-6"
+                  style="border-bottom-width: 3px"
+               >
+                  V. Celestial Observatory: The Astronomical Debates of Knowth
+               </h3>
+               <h4
+                  id="solar-vs-lunar"
+                  class="text-lg font-bold text-gray-700 mt-6 mb-2 sans-serif"
+               >
+                  5.1. Solar vs. Lunar: A Foundational Debate
+               </h4>
+               <!-- Single image with paragraph to the right -->
+               <div class="my-6 flex flex-col md:flex-row md:gap-4 items-start">
+                  <div
+                     class="w-full md:w-1/2 mb-4 md:mb-0 text-center flex-shrink-0 border border-gray-300 p-2"
+                  >
+                     <img
+                        src="./images/kerbstone15.png"
+                        alt="Archaeological site."
+                        class="w-full h-auto mb-2"
+                     />
+                     <figcaption class="text-sm text-gray-500 serif italic">
+                        Figure 7. An aerial view of a dig site showing multiple
+                        features. (Suggested size: 300x400 pixels)
+                     </figcaption>
+                  </div>
+                  <p
+                     class="w-full md:w-1/2 text-gray-600 leading-relaxed sans-serif"
+                  >
+                     Knowth's astronomical purpose has been a subject of intense
+                     academic debate, and its story stands in stark contrast to
+                     the well-known and widely accepted solar alignment of
+                     Newgrange. The long-held initial theory, popularized by
+                     researchers such as Martin Brennan and George Eogan,
+                     proposed that Knowth's two passages were aligned with the
+                     sunrise and sunset of the spring and autumn equinoxes.
+                  </p>
+               </div>
+               <p class="text-gray-600 leading-relaxed sans-serif mb-4">
+                  This theory was based on the east-west orientation of the
+                  passages and the symbolic importance of the equinoxes, which
+                  would have marked the beginning of the growing season and the
+                  time of harvest for the Neolithic farming community.However,
+                  this theory has been largely debunked by modern research. The
+                  entrances to the passages were altered by later settlers,
+                  making a precise alignment impossible to verify today.
+                  Furthermore, the passages themselves are not aligned to a
+                  precise east-west axis, but rather at an angle that would have
+                  captured light several days before or after the equinox.
+               </p>
+               <h4
+                  id="lunar-hypothesis"
+                  class="text-lg font-bold text-gray-700 mt-6 mb-2 sans-serif"
+               >
+                  5.2. The Lunar Hypothesis
+               </h4>
+               <!-- Single image with paragraph to the left -->
+               <div
+                  class="my-6 flex flex-col md:flex-row-reverse md:gap-4 items-start"
+               >
+                  <div
+                     class="w-full md:w-1/2 mb-4 md:mb-0 text-center flex-shrink-0 border border-gray-300 p-2"
+                  >
+                     <img
+                        src="./images/kerbstone52.png"
+                        alt="Consolidated uncorrected plan of the tomb."
+                        class="w-full h-auto mb-2"
+                     />
+                     <figcaption class="text-sm text-gray-500 serif italic">
+                        Figure 8. A close-up of a newly excavated artifact in
+                        the ground. (Suggested size: 300x400 pixels)
+                     </figcaption>
+                  </div>
+                  <p
+                     class="w-full md:w-1/2 text-gray-600 leading-relaxed sans-serif"
+                  >
+                     The prevailing hypothesis now suggests that Knowth’s
+                     primary astronomical function was lunar. The evidence
+                     supporting this theory is limited but compelling and
+                     suggests a more profound understanding of celestial
+                     mechanics than previously assumed. Lunar hypothesis are
+                     largely based on the kerbstone artwork. Supposed key pieces
+                     of evidence for the lunar theory include Orthostat 47, a
+                     carving on a vertical stone at the end of the eastern
+                     passage, has been 'identified' by planetary cartographer
+                     Philip J. Stooke as a map of the lunar maria, or "seas".
+                  </p>
+               </div>
+               <p class="text-gray-600 leading-relaxed sans-serif mb-4">
+                  This proposed detailed depiction of the moon's surface as seen
+                  with the naked eye and is considered the by some as the oldest
+                  known lunar map in history. The Kerbstones: The vast majority
+                  of the carved stones at Knowth are believed to bear lunar
+                  symbols and calculations. Kerbstone 5, for instance, has been
+                  interpreted as a depiction of the phases of a total solar
+                  eclipse, an event that is predictable only with a
+                  sophisticated understanding of the lunar cycle. Kerbstone 30
+                  features "Opposed Cs," which may represent the first and last
+                  days of the lunar month. The presence of 18 satellite mounds
+                  surrounding the main cairn has been linked to the 18.6-year
+                  lunar cycle, a complex celestial pattern that would have
+                  required meticulous, long-term observation to track. This
+                  shift in scholarly opinion from a simple solar alignment to a
+                  complex lunar hypothesis would require a profound intellectual
+                  sophistication of the Neolithic people. The solar cycle is a
+                  predictable, 365-day rhythm, but the lunar cycle is far more
+                  complex to track and requires a much higher level of
+                  astronomical knowledge to predict events like eclipses. The
+                  juxtaposition of a solar-aligned monument (Newgrange) with a
+                  potential lunar-focused one (Knowth) suggests that the Brú na
+                  Bóinne complex was not a series of similar tombs but a
+                  holistic astronomical observatory, a dual calendar system for
+                  tracking both the solar year and the lunar month and lunar
+                  cycles. These theories elevate the Neolithic builders from
+                  mere sun-worshippers to advanced scientists who were capable
+                  of mapping and predicting the most complex celestial movements
+                  visible to the naked eye.
+               </p>
+            </div>
+            <div id="inaccuracy" class="mb-12">
+               <h3
+                  class="text-xl font-bold text-gray-700 sans-serif whitespace-nowrap border-b border-gray-400 pb-1 mb-6"
+                  style="border-bottom-width: 3px"
+               >
+                  VI. Inaccuracy
+               </h3>
+               <p class="text-gray-600 leading-relaxed sans-serif mb-4">
+                  To make any definitive observations or claims in the field of
+                  archaeoastronomy, there is a reliance on accurate and precise
+                  data. Central to this is the correct measurement of a
+                  feature's orientation or azimuth. For the monuments of Brú na
+                  Bóinne, a foundational body of data comes from the work of
+                  M.J. O'Kelly, George Eogan and their respective teams.
+                  However, all plans for all of the three main passage tombs
+                  have been found to contain inaccuracies. Where these plans are
+                  perfectly suitable for understanding the physical layout and
+                  form of the tomb, these issues render the plans totally
+                  unsuitable for astronomical analysis. A direct result of the
+                  incorrect orientation of the Knowth passages led to the
+                  proposed (and incorrect) hypothesis of alignment on the
+                  equinox rise and set. In 'The megalithic art of the passage
+                  tombs at Knowth' version 7, these issues are explained and
+                  more importantly corrected!
+               </p>
+            </div>
+            <div id="tomb-design-analysis" class="mb-12">
+               <h3
+                  class="text-xl font-bold text-gray-700 sans-serif whitespace-nowrap border-b border-gray-400 pb-1 mb-6"
+                  style="border-bottom-width: 3px"
+               >
+                  VII. Tomb Design Analysis
+               </h3>
+               <h4
+                  id="sophisticated-techniques"
+                  class="text-lg font-bold text-gray-700 mt-6 mb-2 sans-serif"
+               >
+                  7.1. Sophisticated Techniques
+               </h4>
+               <p class="text-gray-600 leading-relaxed sans-serif mb-4">
+                  An examination of specific architectural and design elements
+                  common to both the Newgrange and Knowth passage tombs suggests
+                  that the builders used sophisticated planning and surveying
+                  techniques. These elements also indicate each tomb's primary
+                  orientation.
+               </p>
+               <h4
+                  id="newgrange-grooved-stones"
+                  class="text-lg font-bold text-gray-700 mt-6 mb-2 sans-serif"
+               >
+                  7.2. Newgrange Vertically Grooved Stones
+               </h4>
+               <!-- Two images with paragraphs underneath -->
+               <div class="my-6 flex flex-col md:flex-row md:space-x-4">
+                  <div class="w-full md:w-1/2 mb-4 md:mb-0">
+                     <div class="text-center border border-gray-300 p-2">
+                        <img
+                           src="./images/newgrangekerbstone52.png"
+                           alt="Image 1 description."
+                           class="w-full h-auto mb-2"
+                        />
+                        <figcaption class="text-sm text-gray-500 serif italic">
+                           Figure 9. Caption for the first image. (Suggested
+                           size: 400x300 pixels)
+                        </figcaption>
+                     </div>
+                     <h5 class="font-bold mt-4">Kerbstone 52</h5>
+                     <p class="text-gray-600 leading-relaxed sans-serif mt-4">
+                        Kerbstone 52 Newgrange is a stone located to the rear of
+                        the passage tomb. It is the stone furthest removed from
+                        the entrance stone. This highly decorated stone is
+                        characterised by a deeply incised vertical groove which
+                        seperates distinct panels of artwork.
+                     </p>
+                  </div>
+                  <div class="w-full md:w-1/2">
+                     <div class="text-center border border-gray-300 p-2">
+                        <img
+                           src="./images/newgrangeentrance.png"
+                           alt="Image 2 description."
+                           class="w-full h-auto mb-2"
+                        />
+                        <figcaption class="text-sm text-gray-500 serif italic">
+                           Figure 10. Caption for the second image. (Suggested
+                           size: 400x300 pixels)
+                        </figcaption>
+                     </div>
+                     <h5 class="font-bold mt-4">Entrance Stone</h5>
+                     <p class="text-gray-600 leading-relaxed sans-serif mt-4">
+                        The entrance stone to Newgrange, famous for it's
+                        decorative curvilinear and spirals based artwork, also
+                        features a distinctive deeply incised vertical groove.
+                     </p>
+                  </div>
+               </div>
+               <h4
+                  id="newgrange-symmetry"
+                  class="text-lg font-bold text-gray-700 mt-6 mb-2 sans-serif"
+               >
+                  7.3. Newgrange Symmetry and Orientation
+               </h4>
+               <div class="my-6 text-center border border-gray-300 p-2">
+                  <img
+                     src="./images/NewgrangeSymmetry.png"
+                     alt="Diagram of an ancient megalith."
+                     class="w-full h-auto mb-2"
+                  />
+                  <figcaption class="text-sm text-gray-500 serif italic">
+                     Figure 11. A diagram illustrating the celestial alignment
+                     of a typical Irish megalithic monument. (Suggested size:
+                     600x400 pixels)
+                  </figcaption>
+               </div>
+               <p class="text-gray-600 leading-relaxed sans-serif mb-4">
+                  Using the overhead plan for newgrange we can draw a line of
+                  symmetry between these vertically grooved stones. This line
+                  describes the tomb's longest axis. The line intersects key
+                  architectural and design features. The line intersects the
+                  chamber triple spiral motif, passes directly through the
+                  passage, next bisecting the decorated panels of the roofbox.
+                  This line precisely marks the orientation of the tomb on the
+                  winter solstice sunrise. This suggests planning and
+                  significant surveying skills have been employed by the
+                  builders of Newgrange.
+               </p>
+               <div class="my-6 grid grid-cols-2 md:grid-cols-4 gap-4">
+                  <div class="text-center border border-gray-300 p-2">
+                     <img
+                        src="./images/n1.png"
+                        alt="Artifact 1."
+                        class="w-full h-auto mb-2"
+                     />
+                     <figcaption class="text-sm text-gray-500 serif italic">
+                        Figure 12. A ceramic shard with markings. (Suggested
+                        size: 200x200 pixels)
+                     </figcaption>
+                  </div>
+                  <div class="text-center border border-gray-300 p-2">
+                     <img
+                        src="./images/n2.png"
+                        alt="Artifact 2."
+                        class="w-full h-auto mb-2"
+                     />
+                     <figcaption class="text-sm text-gray-500 serif italic">
+                        Figure 13. A carved piece of bone. (Suggested size:
+                        200x200 pixels)
+                     </figcaption>
+                  </div>
+                  <div class="text-center border border-gray-300 p-2">
+                     <img
+                        src="./images/n3.png"
+                        alt="Artifact 3."
+                        class="w-full h-auto mb-2"
+                     />
+                     <figcaption class="text-sm text-gray-500 serif italic">
+                        Figure 14. An engraved stone. (Suggested size: 200x200
+                        pixels)
+                     </figcaption>
+                  </div>
+                  <div class="text-center border border-gray-300 p-2">
+                     <img
+                        src="./images/n4.png"
+                        alt="Artifact 4."
+                        class="w-full h-auto mb-2"
+                     />
+                     <figcaption class="text-sm text-gray-500 serif italic">
+                        Figure 15. An iron tool fragment. (Suggested size:
+                        200x200 pixels)
+                     </figcaption>
+                  </div>
+               </div>
+               <h4
+                  id="knowth-grooved-stones"
+                  class="text-lg font-bold text-gray-700 mt-6 mb-2 sans-serif"
+               >
+                  7.4. Knowth Vertically Grooved Stones
+               </h4>
+               <!-- Two images with paragraphs underneath -->
+               <div class="my-6 flex flex-col md:flex-row md:space-x-4">
+                  <div class="w-full md:w-1/2 mb-4 md:mb-0">
+                     <div class="text-center border border-gray-300 p-2">
+                        <img
+                           src="./images/k74combo.png"
+                           alt="Image 1 description."
+                           class="w-full h-auto mb-2"
+                        />
+                        <figcaption class="text-sm text-gray-500 serif italic">
+                           Figure 16. Caption for the first image. (Suggested
+                           size: 400x300 pixels)
+                        </figcaption>
+                     </div>
+                     <h5 class="font-bold mt-4">Kerbstone 74</h5>
+                     <p class="text-gray-600 leading-relaxed sans-serif mt-4">
+                        The entrance to the western passage is fronted by
+                        Kerbstone 74. The design might be described as
+                        consisting of a panel representing a type of squared
+                        spiral or series of concentric lines. This continous
+                        pattern is divided by deep vertical groove down the
+                        center of the stone.
+                     </p>
+                  </div>
+                  <div class="w-full md:w-1/2">
+                     <div class="text-center border border-gray-300 p-2">
+                        <img
+                           src="./images/k11combo.png"
+                           alt="Image 2 description."
+                           class="w-full h-auto mb-2"
+                        />
+                        <figcaption class="text-sm text-gray-500 serif italic">
+                           Figure 17. Caption for the second image. (Suggested
+                           size: 400x300 pixels)
+                        </figcaption>
+                     </div>
+                     <h5 class="font-bold mt-4">Kerbstone 11</h5>
+                     <p class="text-gray-600 leading-relaxed sans-serif mt-4">
+                        The entrance to the eastern passage is fronted by
+                        Kerbstone 11. The design might be described as
+                        consisting of 2 panels of squared spirals or series of
+                        concentric lines. These panels are divided by a deep
+                        vertical groove down the center of the stone.
+                     </p>
+                  </div>
+               </div>
+               <h4
+                  id="knowth-symmetry"
+                  class="text-lg font-bold text-gray-700 mt-6 mb-2 sans-serif"
+               >
+                  7.5. Knowth Symmetry and Orientation
+               </h4>
+               <div class="my-6 text-center border border-gray-300 p-2">
+                  <img
+                     src="./images/KnowthSymmetry.svg"
+                     alt="Diagram of an ancient megalith."
+                     class="w-full h-auto mb-2"
+                  />
+                  <figcaption class="text-sm text-gray-500 serif italic">
+                     Figure 18. A diagram illustrating the celestial alignment
+                     of a typical Irish megalithic monument. (Suggested size:
+                     600x400 pixels)
+                  </figcaption>
+               </div>
+               <p class="text-gray-600 leading-relaxed sans-serif mb-4">
+                  The entrance stones to the Knowth passages are analogous with
+                  the Newgrange vertically grooved stones. Completing the same
+                  exercise with the vertically grooved entrance stones for
+                  Knowth we can make the following observations. Working from
+                  west to east, the line of symmetry exactly intersects the
+                  southmost corner of the undifferentiated chamber of Knowth's
+                  western passage. It next exactly bisects the rear stone of the
+                  recess of the eastern chamber (Orthostat 47), before exactly
+                  defining the centerline of the eastern passage. Here again we
+                  must conclude that this has been planned and executed with the
+                  same significant surveying skills in evidence. We also might
+                  assess that the pre-eminent orientation of Knowth is that of
+                  the eastern passage, as the line of symmetry is directed along
+                  this azimuth.
+               </p>
+               <div class="my-6 grid grid-cols-2 md:grid-cols-4 gap-4">
+                  <div class="text-center border border-gray-300 p-2">
+                     <img
+                        src="./images/1.png"
+                        alt="Artifact 1."
+                        class="w-full h-auto mb-2"
+                     />
+                     <figcaption class="text-sm text-gray-500 serif italic">
+                        Figure 19. A ceramic shard with markings. (Suggested
+                        size: 200x200 pixels)
+                     </figcaption>
+                  </div>
+                  <div class="text-center border border-gray-300 p-2">
+                     <img
+                        src="./images/2.png"
+                        alt="Artifact 2."
+                        class="w-full h-auto mb-2"
+                     />
+                     <figcaption class="text-sm text-gray-500 serif italic">
+                        Figure 20. A carved piece of bone. (Suggested size:
+                        200x200 pixels)
+                     </figcaption>
+                  </div>
+                  <div class="text-center border border-gray-300 p-2">
+                     <img
+                        src="./images/3.png"
+                        alt="Artifact 3."
+                        class="w-full h-auto mb-2"
+                     />
+                     <figcaption class="text-sm text-gray-500 serif italic">
+                        Figure 21. An engraved stone. (Suggested size: 200x200
+                        pixels)
+                     </figcaption>
+                  </div>
+                  <div class="text-center border border-gray-300 p-2">
+                     <img
+                        src="./images/4.png"
+                        alt="Artifact 4."
+                        class="w-full h-auto mb-2"
+                     />
+                     <figcaption class="text-sm text-gray-500 serif italic">
+                        Figure 22. An iron tool fragment. (Suggested size:
+                        200x200 pixels)
+                     </figcaption>
+                  </div>
+               </div>
+            </div>
+            <div id="horizon-analysis" class="mb-12">
+               <h3
+                  class="text-xl font-bold text-gray-700 sans-serif whitespace-nowrap border-b border-gray-400 pb-1 mb-6"
+                  style="border-bottom-width: 3px"
+               >
+                  VIII. Horizon Analysis
+               </h3>
+               <h4
+                  id="getting-a-view"
+                  class="text-lg font-bold text-gray-700 mt-6 mb-2 sans-serif"
+               >
+                  8.1. Getting a view
+               </h4>
+               <p class="text-gray-600 leading-relaxed sans-serif mb-4">
+                  Completing an in in situ analsysis of the Dowth passage tomb
+                  would be a extremely difficult if not impossible task. The
+                  view from the eastern passage is significantly restricted,
+                  hindering any astronomical or topographical analysis. This
+                  obstruction is due to several key factors:
+                  <br /><br />
+                  Damage and Alterations:
+                  <br />
+                  The entrance to the eastern passage has suffered considerable
+                  damage over time and has been altered from its original state.
+                  These changes have likely compromised the passage's initial
+                  sightlines.
+                  <br /><br />
+                  Modern Infrastructure:
+                  <br />
+                  The introduction of modern infrastructure, specifically
+                  designed to facilitate public access, has inadvertently
+                  created new obstructions. Features such as walkways, railings,
+                  and other structural additions block the natural view from
+                  within the passage.
+                  <br /><br />
+                  Environmental Obstructions:
+                  <br />
+                  The surrounding environment further compounds the issue.
+                  Nearby trees and buildings completely obscure any view toward
+                  the horizon, making it impossible to observe celestial events
+                  from this specific vantage point.
+               </p>
+               <h4
+                  id="geographic-information-systems"
+                  class="text-lg font-bold text-gray-700 mt-6 mb-2 sans-serif"
+               >
+                  8.2. Geographic Information Systems
+               </h4>
+               <p class="text-gray-600 leading-relaxed sans-serif mb-4">
+                  Our initial task is to georeference the Knowth plan and
+                  overlay it onto a modern map. This remote process provides a
+                  significant advantage by offering a clear overhead view of the
+                  internal passages while simultaneously placing them within
+                  their broader, surrounding environment. This allows for a
+                  comprehensive analysis of the site’s layout and its
+                  relationship to the surrounding landscape, which is essential
+                  for understanding the builders’ intent. Using GIS mapping and
+                  azimuth measurement tools, we can also, with extreme accuracy,
+                  recreate the tomb's line of symmetry. This analysis reveals an
+                  angle of 84° (83.8° in the WGS 84 coordinate system)
+               </p>
+               <!-- Single image with caption -->
+               <div class="my-6 text-center border border-gray-300 p-2">
+                  <img
+                     src="./images/Mace1.png"
+                     alt="Diagram of an ancient megalith."
+                     class="w-full h-auto mb-2"
+                  />
+                  <figcaption class="text-sm text-gray-500 serif italic">
+                     Figure 23. A diagram illustrating the celestial alignment
+                     of a typical Irish megalithic monument. (Suggested size:
+                     600x400 pixels)
+                  </figcaption>
+               </div>
+               <p class="text-gray-600 leading-relaxed sans-serif mb-4">
+                  To overcome the issues of an obstructed view, we can create a
+                  viewshed horizon for the site. This is a 360-degree
+                  calculation of all visible horizon points. For this analysis,
+                  we used a digital terrain model (DTM) that combines
+                  high-resolution LiDAR data for local horizons with 1
+                  arc-second SRTM data for more distant ones. A Digital Terrain
+                  Model (DTM) is a digital representation of a bare-earth
+                  surface. It has been processed to remove all features above
+                  the ground, such as trees and buildings. Using a DTM in our
+                  analysis allows us to accurately calculate a viewshed horizon
+                  as we suspect it would have appeared in prehistory, before
+                  these modern obstructions were present. The viewshed horizon,
+                  indicated by the blue line in the image, reveals a significant
+                  observation: the Dowth passage tomb mound is clearly visible
+                  on the horizon in a generally easterly direction. This
+                  immediate and easily recognized observation highlights the
+                  intervisibility between these two major passage tombs, which
+                  is crucial for understanding the broader prehistoric landscape
+                  and the intentional placement of these monuments.
+               </p>
+               <!-- Single image with caption -->
+               <div class="my-6 text-center border border-gray-300 p-2">
+                  <img
+                     src="./images/Mace2.png"
+                     alt="Diagram of an ancient megalith."
+                     class="w-full h-auto mb-2"
+                  />
+                  <figcaption class="text-sm text-gray-500 serif italic">
+                     Figure 24. A diagram illustrating the celestial alignment
+                     of a typical Irish megalithic monument. (Suggested size:
+                     600x400 pixels)
+                  </figcaption>
+               </div>
+               <p class="text-gray-600 leading-relaxed sans-serif mb-4">
+                  Based on the analysis, we can make a key observation: the
+                  direction toward the Dowth passage tomb appears to be
+                  generally consistent with the line of symmetry of Knowth's
+                  eastern passage. To confirm this, we extend the original line
+                  of symmetry directly out to the horizon. In the accompanying
+                  image, this line has not been angle-adjusted in any way, it
+                  has simply been extended. Our analysis shows that this line of
+                  symmetry is exactly directed at the center point of the Dowth
+                  passage tomb mound. In other words, the eastern passage of
+                  Knowth is precisely directed at the Dowth passage tomb on the
+                  horizon, suggesting a deliberate and precise relationship
+                  between the two monumental sites.
+               </p>
+               <!-- Single image with caption -->
+               <div class="my-6 text-center border border-gray-300 p-2">
+                  <img
+                     src="./images/Mace3.png"
+                     alt="Diagram of an ancient megalith."
+                     class="w-full h-auto mb-2"
+                  />
+                  <figcaption class="text-sm text-gray-500 serif italic">
+                     Figure 25. A diagram illustrating the celestial alignment
+                     of a typical Irish megalithic monument. (Suggested size:
+                     600x400 pixels)
+                  </figcaption>
+               </div>
+            </div>
+            <div id="light-penetration" class="mb-12">
+               <h3
+                  class="text-xl font-bold text-gray-700 sans-serif whitespace-nowrap border-b border-gray-400 pb-1 mb-6"
+                  style="border-bottom-width: 3px"
+               >
+                  IX. Light Penetration
+               </h3>
+               <h4
+                  id="sideview"
+                  class="text-lg font-bold text-gray-700 mt-6 mb-2 sans-serif"
+               >
+                  9.1. Sideview
+               </h4>
+               <p class="text-gray-600 leading-relaxed sans-serif mb-4">
+                  The next task is to determine if it was possible for any light
+                  to penetrate the eastern passage and reach the chamber's rear
+                  recess. For this analysis, the side-view plan of the eastern
+                  passage is used to measure all possible angles where light
+                  could enter. This plan is crucial for examining the tomb's
+                  internal geometry and the vertical alignment of its roof,
+                  floor, and entrance stone. A consideration in this analysis is
+                  a likely displaced passage capstone near the entrance.
+                  However, by measuring all possible entry angles, a definite
+                  'window of opportunity' for light to enter the passage was
+                  determined. This window is a narrow range of elevations,
+                  specifically between approximately 0.75° and 1.0° above the
+                  horizon. This finding is significant because it suggests the
+                  builders deliberately designed the passage to allow light to
+                  enter only under very specific conditions.
+               </p>
+               <!-- Single image with caption -->
+               <div class="my-6 text-center border border-gray-300 p-2">
+                  <img
+                     src="./images/eastpassagesideviewbeam.png"
+                     alt="Diagram of an ancient megalith."
+                     class="w-full h-auto mb-2"
+                  />
+                  <figcaption class="text-sm text-gray-500 serif italic">
+                     Figure 26. A diagram illustrating the celestial alignment
+                     of a typical Irish megalithic monument. (Suggested size:
+                     600x400 pixels)
+                  </figcaption>
+               </div>
+               <h4
+                  id="topview"
+                  class="text-lg font-bold text-gray-700 mt-6 mb-2 sans-serif"
+               >
+                  9.2. Topview
+               </h4>
+               <p class="text-gray-600 leading-relaxed sans-serif mb-4">
+                  While there is evident disturbance to the orthostats close to
+                  the passage entrance, where we examine the passage in the
+                  horizontal plane, a direct light path is nevertheless
+                  available. By analyzing the angles from an overhead
+                  perspective, it was determined that this path constitutes a
+                  narrow opening of approximately 0.4° in width.
+               </p>
+               <!-- Single image with caption -->
+               <div class="my-6 text-center border border-gray-300 p-2">
+                  <img
+                     src="./images/easternpassagebeamtop.png"
+                     alt="Diagram of an ancient megalith."
+                     class="w-full h-auto mb-2"
+                  />
+                  <figcaption class="text-sm text-gray-500 serif italic">
+                     Figure 27. A diagram illustrating the celestial alignment
+                     of a typical Irish megalithic monument. (Suggested size:
+                     600x400 pixels)
+                  </figcaption>
+               </div>
+               <h3
+                  class="text-xl font-bold text-gray-700 sans-serif whitespace-nowrap border-b border-gray-400 pb-1 mb-6"
+                  style="border-bottom-width: 3px"
+               >
+                  IX. Astronomy
+               </h3>
+               <h4
+                  id="sideview"
+                  class="text-lg font-bold text-gray-700 mt-6 mb-2 sans-serif"
+               >
+                  9.1. Modelling
+               </h4>
+               <p class="text-gray-600 leading-relaxed sans-serif mb-4">
+                  Having determined that light entry within the eastern passage
+                  has been possible, the analysis now moves to a
+                  three-dimensional model of the landscape. By creating a
+                  modeled landscape for the Knowth location using LiDAR and SRTM
+                  data, the precise view to the horizon can be shown. Importing
+                  this modelled landscape into astronomy software allows us to
+                  introduce the fourth dimension of time.
+				  <br>
+				  <br>
+				  Using a neolithic timeframe:
+				  <br>
+				  <strong>Dowth Eastern Passage Sun rise @ 83.8° 8 days before/after equinox.</strong><br>
+				  <strong>Dowth Western Passage Sun set @ 258° 17/18 days before/after equinox (sun rising at 103°).</strong>
+				  <br>
+				  <br>These azimuth values do not demonstrate any correlation with any known solar/lunar patterns beyond predictable specific solar rises and sets. Moon rises and sets (including full moon rises/sets) are certainly demonstrable, but are they predicatable ?
+				  
+               </p>
+			   <h4
+                  id="sideview"
+                  class="text-lg font-bold text-gray-700 mt-6 mb-2 sans-serif"
+               >
+                  9.2. Visualisation
+               </h4>
+			   <p class="text-gray-600 leading-relaxed sans-serif mb-4">
+                  
+				  Using the modelled landscape typical sun or moon rises out of the Dowth mound can be demonstrated. A suggested
+                  lightbox based on the analysis of the site plans can also be
+                  indicated. The only light that could ever penetrate through to
+                  the rear recess of the eastern passage of Knowth would have
+                  been the very first rays of the sun, the moon, or a planet
+                  rising from the Dowth passage tomb on the horizon.
+               </p>
+               <!-- Single image with caption -->
+               <div class="my-6 text-center border border-gray-300 p-2">
+                  <img
+                     src="./images/Stellarium1.png"
+                     alt="Diagram of an ancient megalith."
+                     class="w-full h-auto mb-2"
+                  />
+                  <figcaption class="text-sm text-gray-500 serif italic">
+                     Figure 28. A diagram illustrating the celestial alignment
+                     of a typical Irish megalithic monument. (Suggested size:
+                     600x400 pixels)
+                  </figcaption>
+               </div>
+               <!-- Single image with paragraph to the right -->
+               <div class="my-6 flex flex-col md:flex-row md:gap-4 items-start">
+                  <div
+                     class="w-full md:w-1/2 mb-4 md:mb-0 text-center flex-shrink-0 border border-gray-300 p-2"
+                  >
+                     <img
+                        src="./images/Orthostat47.png"
+                        alt="Archaeological site."
+                        class="w-full h-auto mb-2"
+                     />
+                     <figcaption class="text-sm text-gray-500 serif italic">
+                        Figure 29. An aerial view of a dig site showing multiple
+                        features. (Suggested size: 300x400 pixels)
+                     </figcaption>
+                  </div>
+                  
+				  <p
+                     class="w-full md:w-1/2 text-gray-600 leading-relaxed sans-serif"
+                  ><br>
+				  <strong>Hypothesised Lighting Effect.</strong><br>
+				  
+				  <br>
+                     Based on the visual experience of light entry at Newgrange
+                     we can suggest the likely lighting effect within the Knowth
+                     eastern passage chamber. As first light enters it will
+                     immediately strike the center of the end recess back stone
+                     (Orthostat 47). The light beam will quickly move downwards
+                     forming a spear of light which then progressively exits the
+                     chamber.
+                  </p>
+               </div>
+			   <h4
+                  id="sideview"
+                  class="text-lg font-bold text-gray-700 mt-6 mb-2 sans-serif"
+               >
+                  9.2. Directionality
+               </h4>
+			   <p class="text-gray-600 leading-relaxed sans-serif mb-4">
+                  
+				  The examination of the Dowth passage tomb has been demonstrated that passage tombs have been present directly in front of both the north and south passages. Here we have demonstrated the Dowth passage tomb to be directly in front of Knowths eastern passage. It is worth noting that Knowth passage tomb Site 7 (ME019-030007-) is located some 160 meters to the southwest, directly in front of the western passage.
+               </p>
+			   <!-- Single image with caption -->
+               <div class="my-6 text-center border border-gray-300 p-2">
+                  <img
+                     src="./images/Tomb7.png"
+                     alt="Diagram of an ancient megalith."
+                     class="w-full h-auto mb-2"
+                  />
+                  <figcaption class="text-sm text-gray-500 serif italic">
+                     Figure 23. A diagram illustrating the celestial alignment
+                     of a typical Irish megalithic monument. (Suggested size:
+                     600x400 pixels)
+                  </figcaption>
+               </div>
+               <h3
+                  id="conclusion-section"
+                  class="text-xl font-bold text-gray-700 mb-2 sans-serif"
+               >
+                  Conclusion
+               </h3>
+               <!-- Blockquote Section -->
+               <div
+                  class="relative md:w-2/3 mx-auto pl-6 border-l-4 border-gray-400"
+               >
+                  <p class="text-gray-600 leading-relaxed text-sm serif italic">
+                     This analysis of the eastern passage of Knowth leads to a
+                     definitive conclusion: it was specifically designed to
+                     capture light from a celestial body rising out of the Dowth
+                     passage tomb on the horizon. The passage itself, at 40
+                     meters, is a testament to the builders' advanced skills,
+                     creating an incredibly narrow horizontal and vertical
+                     window for light. Unlike the Newgrange passage tomb which
+                     relies on a separate lightbox, Knowth's builders engineered
+                     the passage to be the sole instrument for this precise
+                     alignment. The combined evidence leaves no doubt that the
+                     eastern passage of Knowth was not merely a tomb, but a
+                     sophisticated astronomical instrument.
+                  </p>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- JavaScript for the map -->
+      <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+      <script>
+         document.addEventListener("DOMContentLoaded", () => {
+            // Center the map on Newgrange
+            const center = [53.69473447, -6.47553879];
+            // Set the zoom level to 14
+            const map = L.map("map").setView(center, 14);
+            // Add the base layer tiles from OpenStreetMap
+            L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+               maxZoom: 19,
+               attribution:
+                  '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+            }).addTo(map);
+            // Define the locations with the updated coordinates
+            const locations = [
+               { name: "Newgrange", coords: [53.69473447, -6.47553879] },
+               { name: "Knowth", coords: [53.7012175, -6.49140427] },
+               { name: "Dowth", coords: [53.70384136, -6.45053577] },
+            ];
+            // Create a custom icon for the circle markers
+            const geojsonMarkerOptions = {
+               radius: 8,
+               // Change the marker color to pink
+               fillColor: "#FF69B4",
+               color: "#FFFFFF",
+               weight: 2,
+               opacity: 1,
+               fillOpacity: 0.8,
+            };
+            // Loop through locations and add a circle marker for each
+            locations.forEach((location) => {
+               const marker = L.circleMarker(
+                  location.coords,
+                  geojsonMarkerOptions,
+               )
+                  .addTo(map)
+                  .bindPopup(`<b>${location.name}</b>`, { autoClose: false })
+                  .openPopup();
+            });
+            // This is a common Leaflet pattern to ensure the map is correctly sized
+            // after its container has been resized or content has been loaded.
+            map.invalidateSize();
+         });
+      </script>
+   </body>
+</html>
